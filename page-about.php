@@ -43,21 +43,21 @@ Template Name: About/Text page
                                         <ul class = "o-grid o-grid--matrix o-grid--equal-height">
                                             <li class = "o-grid__item u-1/3@sm-up">
                                                 <div class = "about-item-wrap landlord">
-                                                    <h1>125<sup>+</sup></h1>
+                                                    <h1>200+</h1>
                                                     <h3>Total Landlords We Current Help</h3>
                                                     
                                                 </div>
                                             </li>
                                             <li class = "o-grid__item u-1/3@sm-up">
                                                 <div class = "about-item-wrap real-estate">
-                                                    <h1>3200 m<sup>2+</sup></h1>
+                                                    <h1>5000 m<sup>2+</sup></h1>
                                                     <h3>Real Estates Square Meters We Are Taking Care Of</h3>
                                                     
                                                 </div>
                                             </li>
                                             <li class = "o-grid__item u-1/3@sm-up">
                                                 <div class = "about-item-wrap view">
-                                                    <h1>Over 15000 Times</h1>
+                                                    <h1>Over 25,000 Times</h1>
                                                     <h3>Monthly Views Of Apartments</h3>
                                                     
                                                 </div>
