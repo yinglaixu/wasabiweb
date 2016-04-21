@@ -1,0 +1,18 @@
+.c-divider {
+    left: -$spacing-unit;
+    right: -$spacing-unit;
+    z-index: 1;
+    font-size: 0;
+    &--angled {
+        position: absolute;
+        bottom: 0;
+    }
+    &--curved {
+        background: $site-background-color;
+        top: 100%;
+    }
+}
+
+    .c-divider__img {
+        width: 100%;
+    }

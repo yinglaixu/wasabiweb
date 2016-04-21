@@ -1,0 +1,51 @@
+.c-styled-input-option {
+    position: relative;
+    padding-left: 25px;
+    &::before {
+        
+    }
+}
+
+    .c-styled-input-option__icon {
+        $size: 16px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: $size;
+        height: $size;
+        margin-top: -($size / 2);
+        background: white;
+        border: 1px solid darken($base-border-color, 5%);
+        fill: white;
+        transition: all $brand-transition;
+        content: " ";
+        .c-styled-input-el:checked + .c-styled-input-option & {
+            background: $brand-color;
+            border-color: $brand-color;
+        }
+    }
+
+    .c-styled-input-option__icon--radio {
+        border-radius: 50%;
+    }
+
+    .c-styled-input-option__icon--checkbox {
+        border-radius: $brand-radius;
+    }
+
+    .c-styled-input-option__svg {
+        $size: 8px;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: $size;
+        height: $size;
+        margin-top: -($size / 2);
+        margin-left: -($size / 2);
+    }
+
+
+
+
+

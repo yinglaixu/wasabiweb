@@ -1,0 +1,150 @@
+@if ($use-buttons) {
+/*------------------------------------*\
+    COMPONENTS -> GENERIC -> ##BUTTONS
+\*------------------------------------*/
+
+/**
+ * Based object for all buttons, not much
+ * in here as buttons generally vary from
+ * project to project.
+ *
+
+ <a href="#" class="c-btn c-btn--brand c-btn--md">
+	CTA
+ </a>
+
+ *
+ */
+
+ @mixin btn-border($color) {
+ 	position: relative;
+ 	&::before {
+ 		position: absolute;
+ 		top: 0;
+ 		right: 0;
+ 		bottom: 0;
+ 		left: 0;
+ 		border: 1px solid $color;
+ 		border-radius: $brand-radius;
+ 		transition: border $brand-transition;
+ 		content: " ";
+ 	}
+ }
+
+.c-btn {
+	display: inline-block;
+	border: 0;
+	text-decoration: none;
+	color: white;
+	text-align: center;
+	font-weight: bold;
+	text-transform: uppercase;
+	border-radius: $brand-radius;
+	transition: background $brand-transition, color $brand-transition, fill $brand-transition;
+	&:hover,
+	&:focus {
+		text-decoration: none;
+		color: white;
+	}
+}
+
+.c-btn--brand {
+	$background: $brand-color;
+	background: $background;
+	&:hover,
+	&:focus {
+		background: lighten($background, 6%);
+	}
+}
+
+.c-btn--alpha {
+	$background: $alpha-color;
+	background: $background;
+	&:hover,
+	&:focus {
+		background: lighten($background, 6%);
+	}
+}
+
+.c-btn--beta {
+	@include btn-border(white);
+
+	&:hover,
+	&:focus {
+		background: white;
+		color: $base-text-color;
+	}
+}
+
+.c-btn--gamma {
+	@include btn-border($brand-color);
+
+	&:hover,
+	&:focus {
+		background: $brand-color;
+	}
+}
+
+.c-btn--delta {
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	}
+}
+
+.c-btn--epsilon {
+	$background: $base-text-color;
+	background: $background;
+	&:hover,
+	&:focus {
+		background: lighten($background, 6%);
+	}
+}
+
+
+.c-btn--facebook {
+	$background: #3b5998;
+	background: $background;
+	&:hover,
+	&:focus {
+		background: lighten($background, 6%);
+	}
+}
+
+.c-btn--google {
+	@include btn-border(#a2a2a2);
+	color: #f44336;
+	&:hover,
+	&:focus {
+		background: #f44336;
+		color: white;
+		&::before {
+			border-color: #f44336;
+		}
+	}
+}
+
+
+.c-btn--sm {
+	padding: 0.3rem 1rem;
+}
+
+.c-btn--md {
+	padding: .5rem 5rem;
+}
+
+.c-btn--lg {
+	padding: .75rem 5rem;
+}
+
+.c-btn--xl {
+	padding: 1.1rem 5rem;
+}
+
+.c-btn--full {
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+} /* Close @if */

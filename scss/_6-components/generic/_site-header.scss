@@ -1,0 +1,58 @@
+/*------------------------------------*\
+    COMPONENTS -> GENERIC -> #SITE-HEADER
+\*------------------------------------*/
+
+$client-menu-height: 25px;
+$client-menu-spacing-at-sm: 5px;
+.c-site-header {
+	height: $site-header-height;
+	color: white;
+	text-align: right;
+	text-transform: uppercase;
+	background: $base-text-color;
+	@include screen-sm-up {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 1;
+		background: transparent;
+	}
+	.customize-support & {
+		/** wp navbar fix */
+		$wp-navbar-height: 32px;
+		top: $wp-navbar-height;
+	}
+}
+	
+	.c-site-header__inner {
+		height: 100%;
+		@include screen-sm-down {
+			padding-top: $client-menu-height + ($client-menu-spacing-at-sm * 2);
+		}
+	}
+
+	.c-site-header__client-menu {
+		line-height: $client-menu-height;
+		@include screen-sm-down {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			background: darken($base-text-color, 5%);
+			text-align: left;
+			padding: $client-menu-spacing-at-sm $half-spacing-unit;
+		}
+	}
+
+	.c-site-header__client-link {
+		color: inherit;
+		&:hover,
+		&:focus {
+			color: inherit;
+		}
+	}
+
+
+
+

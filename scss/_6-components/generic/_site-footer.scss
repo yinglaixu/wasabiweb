@@ -1,0 +1,51 @@
+/*------------------------------------*\
+    COMPONENTS -> GENERIC -> #SITE-FOOTER
+\*------------------------------------*/
+
+.c-site-footer-wrap {
+    position: relative;
+    z-index: 2;
+}
+
+.c-site-footer {
+	background: $base-text-color;
+	color: white;
+}
+
+    .c-site-footer__bottom {
+        padding: $spacing-unit 0;
+        background: darken($base-text-color, 5%);
+    }
+
+    .site-footer-layout {
+        @include screen-md-up {
+            display: table;
+            width: 100%;
+        }
+    }
+
+    .c-site-footer__layout-item {
+        @include screen-md-down {
+            &:first-child {
+                margin-bottom: $spacing-unit;                
+            }
+            &:last-child {
+                margin-bottom: -$spacing-unit;
+            }
+            li {
+                margin-bottom: $spacing-unit;
+            }
+        }
+        @include screen-md-up {
+            display: table-cell;
+            white-space: nowrap;
+        }
+    }
+
+    .c-site-footer__layout-item--right {
+        @include screen-md-up {
+            width: 100%;
+            text-align: right;
+        }
+    }
+

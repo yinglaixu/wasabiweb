@@ -1,0 +1,22 @@
+{
+  "name": "Wasabi Web AB",
+  "version": "1.0",
+  "authors": [
+    "Wasabi Web AB"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "homepage": "http://wasabiweb.se",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "eonasdan-bootstrap-datetimepicker": "~4.17.37"
+  }
+}

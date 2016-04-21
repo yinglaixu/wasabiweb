@@ -1,0 +1,40 @@
+$pull-up: 75px;
+$push-down: 20px;
+
+.c-stages {
+    position: relative;
+    background: $site-background-color;
+    @include screen-md-up {
+        
+    }
+}
+
+    .c-stages__stage {
+        text-align: center;
+    }
+
+    .c-stages__number {
+        @include font-size($txt-xxxl);
+
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1;
+        color: $brand-color;
+        text-transform: uppercase;
+        font-family: sans-serif;
+        font-weight: bold;
+        border-radius: 50%;
+        @include screen-md-up {            
+            $size: 120px;
+
+            width: $size;
+            height: $size;
+            line-height: $size;
+            margin-top: -$pull-up;
+            background: $site-background-color;
+        }
+    }
+
+    .c-stages__title {
+        font-weight: bold;
+    }

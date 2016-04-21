@@ -1,0 +1,6 @@
+.c-site-header-placeholder {
+    @include screen-sm-up {
+        height: $site-header-height;
+        background: $beta-color;
+    }
+}

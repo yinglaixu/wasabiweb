@@ -1,0 +1,47 @@
+{
+    "map": {
+        "mapParams": {
+            "longitude": 59.856808,
+            "latitude": 17.641815,
+            "zoom": 16
+        },
+        "locations": [
+            {
+                "longitude": 59.856808,
+                "latitude": 17.641815,
+                "img": "http://localhost/wasabiweb/renthia/wp-content/themes/wasabiweb/build/img/370x222.jpg",
+                "area": "Östermalmstorg",
+                "street": "Blekingegatan 46",
+                "price": "12 689kr",
+                "url" : "single-property"
+            },
+            {
+                "longitude": 59.857808,
+                "latitude": 17.642715,
+                "img": "http://localhost/wasabiweb/renthia/wp-content/themes/wasabiweb/build/img/370x222.jpg",
+                "area": "Östermalmstorg",
+                "street": "Blekingegatan 46",
+                "price": "12 689kr",
+                "url" : "single-property"
+            },
+            {
+                "longitude": 59.854808,
+                "latitude": 17.639815,
+                "img": "http://localhost/wasabiweb/renthia/wp-content/themes/wasabiweb/build/img/370x222.jpg",
+                "area": "Östermalmstorg",
+                "street": "Blekingegatan 46",
+                "price": "12 689kr",
+                "url" : "single-property"
+            },
+            {
+                "longitude": 59.858808,
+                "latitude": 17.639815,
+                "img": "http://localhost/wasabiweb/renthia/wp-content/themes/wasabiweb/build/img/370x222.jpg",
+                "area": "Östermalmstorg",
+                "street": "Blekingegatan 46",
+                "price": "12 689kr",
+                "url" : "single-property"
+            }
+        ]
+    }
+}

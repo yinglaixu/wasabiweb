@@ -1,0 +1,17 @@
+.c-below-banner-article {
+    padding-bottom: $section-padding;
+    padding-top: $section-padding;
+    @include screen-md-up {
+        padding-top: ($section-padding / 2);
+    }
+}
+    
+    .c-below-banner-article__media {
+        @include screen-md-up {
+            position: relative;
+            top: -55px; /** magic number, to match design */
+            padding: 5px;
+            border-radius: $brand-radius;
+            background: white;
+        }
+    }

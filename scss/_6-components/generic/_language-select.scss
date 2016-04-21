@@ -1,0 +1,41 @@
+.c-language-select {
+    position: relative;
+    z-index: 2;
+    margin-left: -$half-spacing-unit;
+    cursor: pointer;  
+    border-radius: $brand-radius $brand-radius 0 0;
+    transform: translateZ(0);
+    &.is-open {
+        background: white;
+    }
+}
+    
+    .c-language-select__toggle {
+        padding: 0 $half-spacing-unit;  
+    }
+
+
+	.c-language-select__items {
+		z-index: 2;
+        overflow: hidden;
+        border-radius: $brand-radius 0 $brand-radius $brand-radius;
+	}
+
+	.c-language-select__item {
+        padding: ($half-spacing-unit / 2) $half-spacing-unit;
+        padding-right: $spacing-unit;
+        border-bottom: 1px solid $base-border-color;
+		background: white;
+        text-decoration: none;
+        color: $base-text-color;
+        &:hover,
+        &:focus {
+            background: $base-border-color;
+            color: $base-text-color;
+        }
+	}
+
+    .c-language-select__flag {
+        width: 14px;
+        margin-right: 5px;
+    }

@@ -1,0 +1,76 @@
+@if ($use-styled-select) {
+/*------------------------------------*\
+    COMPONENTS -> FORMS -> $STYLED-SELECT
+\*------------------------------------*/
+/**
+ * Allow for a select box to appear visually styled by styling an underlying label and 
+ * setting the opacity of the select box to zero.  
+ * 
+ * DEPENDENCIES
+ * - [JS] styled-select
+ *
+
+<div class="c-styled-select js-select">
+    <label class="c-styled-select__label c-styled-select__label--sm">
+        Select option
+    </label>
+    <select class="c-styled-select__select">
+        <option selected disabled>Select option</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+    </select>
+</div>
+
+ */
+
+
+.c-styled-select {
+    position: relative;
+    display: block;
+    border: 1px solid $base-border-color;
+    border-radius: $brand-radius;
+    overflow: hidden;
+    &:hover,
+    &:focus {
+        border-color: darken($base-border-color, 10%);
+    }
+}
+
+    .c-styled-select__select {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        cursor: pointer;
+        background: none;
+    }
+
+    .c-styled-select__label {
+        display: block;
+        padding: 0 $half-spacing-unit;
+        width: 100%;
+        line-height: 42px;
+        text-align: left;
+        background: white;
+    }
+
+    .c-styled-select__chevron {
+        $size: 12px;
+
+        position: absolute;
+        top: 50%;
+        right: $half-spacing-unit;
+        width: $size;
+        height: $size;
+        margin-top: -($size / 2);
+        transform: rotate(90deg);
+        fill: $zeta-color;
+    }
+
+    .c-styled-select__label--md {
+        width: 100px; /* Modify as needed */
+    }
+
+} /* Close @if */

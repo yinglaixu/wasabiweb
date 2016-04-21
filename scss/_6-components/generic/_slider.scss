@@ -1,0 +1,196 @@
+@if $use-slider {
+/*------------------------------------*\
+    COMPONENTS -> GENERIC -> $PEPPERMINT-SLIDER
+\*------------------------------------*/
+
+/**
+ * Basic styles needed for the peppermint slider plugin.
+ *
+ * DEPENDENCIES
+ * - [JS] plugins/peppermint.js
+ * - [JS] components/slider.js
+ *
+
+ * basic, bare-bones slider
+
+<div class="c-slider js-slider" id="slide#">
+    <?php $number_slides = 2;
+    for ($i=0; $i<$number_slides; $i++) : ?>
+        <div class="c-slider__slide"> 
+            ...
+        </div>
+    <?php endfor;?>
+</div>
+
+
+ * Slider with left and right toggle
+ * Note: Requires click handlers in [JS] components/slider.js
+
+<div class="c-slider-wrap">
+    <div class="c-slider js-slider hard--bottom" id="slider-1">
+        <?php $number_slides = 2;
+        for ($i=0; $i<$number_slides; $i++) : ?>
+            <div class="c-slider__slide"> 
+                <img src="<?php bloginfo('template_directory'); ?>/build/img/slide-<?php echo $i+1; ?>.jpg">
+            </div>
+        <?php endfor;?>
+    </div>
+    <?php if ($number_slides > 1) : ?>
+    <button class="c-slider-toggle c-slider-toggle--left" id="slider1-left-arrow">
+    </button>
+    <button class="c-slider-toggle c-slider-toggle--right" id="slider1-right-arrow">
+    </button>
+    <?php endif; ?>
+</div>
+
+
+*/
+
+$has-dots: false;
+$has-left-right-toggle: true;
+
+.c-slider {
+    cursor: grab;
+    &.c-slider-drag {
+        cursor: grabbing;
+    }    
+}
+
+.c-slider,
+.c-slider__slide {
+    overflow: hidden;
+}
+
+.c-slider-wrap {
+    position: relative;
+}
+
+
+.c-slider-active .c-slider-slides {
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+}
+
+.c-slider-active .c-slider__slide {
+    float: left;
+    margin: 0;
+    tap-highlight-color: transparent;
+    transform: translateZ(0);
+}
+
+
+@if $has-dots {
+    /**
+     * Dots
+     */
+    .c-slider-dots {
+        position: absolute;
+        bottom: $half-spacing-unit;
+        left: 50%;
+        margin: 0;
+        font-size: 0;            
+        list-style-type: none;
+        transform: translateX(-50%);
+    }
+
+    .c-slider-dots > li {
+        $size: 12px;
+
+        display: inline-block;
+        width: $size;
+        height: $size;
+        margin: 0 2px;
+        border-radius: 50%;
+        background: rgba($brand-color,0.6);
+        cursor: pointer;
+        user-select: none;
+        outline: 0;
+        -webkit-tap-highlight-color: transparent;
+        @include screen-sm-down {
+            $size: 6px;
+
+            width: $size;
+            height: $size;
+        }
+
+        &.c-slider-active-dot,
+        &:hover {
+            background: $brand-color;            
+        }
+    }
+}
+
+@if $has-left-right-toggle {
+    /**
+     * Place HTML just before the closing tag for slider-wrap
+     *
+<button class="c-slider-toggle c-slider-toggle--left" id="site-slider-left-arrow">
+    Left
+</button>
+<button class="c-slider-toggle c-slider-toggle--right" id="site-slider-right-arrow">
+    Right
+</button>
+     */
+    .c-slider-toggle {
+        $size: 50px;
+
+        position: absolute;
+        top: 50%;
+        width: $size;
+        height: $size;
+        margin-top: -($size / 2);
+        background: rgba(black, 0.5);
+        border: 0;
+        outline: none;
+        -webkit-tap-highlight-color: transparent;
+        transition: background $brand-transition, opacity ($brand-transition * 2);
+        opacity: 0;
+        @include screen-xs-down {
+            $size: 30px;
+            width: $size;
+            height: $size;
+            margin-top: -($size / 2);
+        }
+        &:hover,
+        &:focus {
+            background: rgba(black, 0.7);
+        }
+        &--left {
+            left: 0;
+        }
+        &--right {
+            right: 0;
+        }
+
+        .c-slider-wrap:hover & {
+            opacity: 1;
+        }
+    }
+
+    .c-slider-toggle__chevron {
+        $size: 30px;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: $size;
+        height: $size;
+        margin-top: -($size / 2);
+        margin-left: -($size / 2);
+        fill: white;
+        @include screen-xs-down {
+            $size: 12px;
+            width: $size;
+            height: $size;
+            margin-top: -($size / 2);
+            margin-left: -($size / 2);
+        }
+    }
+
+    .c-slider-toggle__chevron--left {
+        transform: rotate(180deg);
+    }
+}
+
+} /* Close @if */
+

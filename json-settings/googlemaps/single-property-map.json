@@ -1,0 +1,18 @@
+{
+    "map": {
+        "mapParams": {
+            "longitude": 59.856808,
+            "latitude": 17.641815,
+            "zoom": 16
+        },
+        "locations": [
+            {
+                "longitude": 59.856808,
+                "latitude": 17.641815,
+                "area": "Östermalmstorg",
+                "street": "Blekingegatan 46",
+                "price": "12 689kr"
+            }
+        ]
+    }
+}

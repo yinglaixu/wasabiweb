@@ -1,0 +1,104 @@
+$highlight-offset: 5%;
+
+.c-site-module {
+    position: relative;
+    overflow: hidden;
+    padding-top: $highlight-offset;
+}
+
+.c-site-module--no-highlight {
+    background:white;
+    padding-top: 0;
+    margin-top: $highlight-offset;
+}
+
+    .c-site-module__inner {
+        width:100%;
+    }
+
+    .c-site-module__highlight {
+        position: absolute;
+        bottom: 100%;
+        margin-bottom: -$highlight-offset;
+        /** -ve L&R due to buggy rendering of svg no always filling entire width */
+        left: -$half-spacing-unit;
+        right: -$half-spacing-unit;
+        font-size: 0;
+        padding-top: $highlight-offset;
+        background: $site-background-color;
+    }
+
+
+        .c-site-module__highlight-img {
+            width: 100%;
+            transform: translateY(1px);
+        }
+
+    .c-site-module__head {
+        color: white;
+    }
+
+    .c-site-module__head,
+    .c-site-module__body {
+        position: relative;
+        padding: $spacing-unit;
+        @media (min-width: $screen-sm) and (max-width: $screen-md) {
+            padding-left: $half-spacing-unit;
+            padding-right: $half-spacing-unit;
+        }
+    }
+
+    .c-site-module__head a {
+        color: white;
+    }
+
+    .c-site-module__head--brand {
+        background: $brand-color;
+    }
+
+    .c-site-module__head--alpha {
+        background: $alpha-color;
+    }
+
+    .c-site-module__divider-arrow-down {
+        padding-bottom: 4%;
+    }
+
+    .c-site-module__divider-arrow-down-inner {
+        position: absolute;
+        top: 0;
+        /** -ve L&R due to buggy rendering of svg no always filling entire width */
+        left: -$half-spacing-unit;
+        right: -$half-spacing-unit;
+        font-size: 0;
+    }
+
+        .c-site-module__divider-arrow-down img {
+            width: 100%;
+            /** fix chrome subpixel rounding bug */
+            transform: translateY(-1px);
+        }
+
+
+    .c-site-module__person-photo {
+        padding: 2px;
+        background: white;
+        border-radius: 50%;
+        @media (min-width: $screen-sm) and (max-width: $screen-md) {
+            width: 60px !important;
+        }
+    }
+
+    .c-site-module__btn {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+
+    .c-site-module__btn {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }

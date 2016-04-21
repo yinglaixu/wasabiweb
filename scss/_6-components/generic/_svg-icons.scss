@@ -1,0 +1,272 @@
+@if ($use-svg-icons) {
+/*------------------------------------*\
+    COMPONENTS -> GENERIC -> ##SVG-ICONS
+\*------------------------------------*/
+/**
+ * Styling for the SVG icons.
+ * Usually either positioned to the left or right of some text, or positioned by itself
+ * within the center of a container such as a button.
+ *
+
+<a href="#" class="c-svg-icon c-svg-icon--heart">
+    <svg class="c-svg-icon__svg c-svg-icon--heart__svg">
+        <use xlink:href="<?php bloginfo('template_directory'); ?>/img/source/media/svg/build/svg-sprite.svg#icon-heart"></use>
+    </svg>
+</a>
+
+ */
+
+
+
+/**
+ * Mixin to create an svg icon.  Takes one, two, or three arguments.
+ * The first argument expects a value which will set both the width and height
+ * values of the svg.  This mixin is not intended for icons with differing 
+ * widths and heights.
+ * `$x` and `$y` parameters target the x and y axis respectively and both have
+ * a default value of center which will center the svg.
+ * The `$x` parameter can hold the value of top and bottom.
+ * The `$y` parameter can hold the value of left and right.
+ * 
+ * The `$x` and `$y` arguments can be ommited and will default to center.
+ * @include build-svg(10px);
+ *
+ * Or passing in top-right
+ * @include build-svg(10px, right top);
+ */
+@mixin build-svg($size, $x:center, $y:center) {
+    width: $size;
+    height: $size;
+
+    @if $x == left {
+        left: 0;
+    } @elseif $x == right {
+        right: 0;
+    } @else {
+        left: 50%;
+        margin-left: -($size / 2);   
+    }
+
+    @if $y == top {
+        top: 0;
+    } @elseif $y == bottom {
+        bottom: 0;
+    } @else {
+        top: 50%;
+        margin-top: -($size / 2);
+    }
+}
+
+.c-svg-icon {
+    /* Base svg-icon */
+    position: relative;
+}
+
+    .c-svg-icon__svg {
+        position: absolute;
+    }
+
+
+.c-svg-icon--heart {
+    $fill-color: #ea5f5f;
+    padding-left: 18px;
+    margin-left: 2px;
+    fill: $fill-color;
+    &:hover,
+    &:focus {
+        fill: lighten($fill-color, 3%);
+    }
+}
+
+    .c-svg-icon--heart__svg {
+        $size: 14px;
+        @include build-svg($size, left);
+        
+        .c-svg-icon--heart:hover & {
+            transform: scale(1.075);
+        }
+    }
+
+
+
+.c-svg-icon--close {            
+    $size: 25px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: $size;
+    height: $size;
+    stroke: white;
+    background: transparent;
+}
+
+    .c-svg-icon--close__svg {
+        $size: 12px;
+        @include build-svg($size);
+    }
+
+
+.c-svg-icon--language-select-chevron {
+    padding-right: 18px;
+    fill: white;
+    .is-open & {
+        fill: $base-text-color;
+    }
+    &__svg {
+        $size: 8px;
+        @include build-svg($size, right);
+        transform: rotate(90deg);
+        .is-open & {
+            transform: rotate(-90deg);
+        }
+    }
+}
+
+.c-svg-icon--tick {
+    padding-left: 25px;
+    fill: $delta-color;
+    &__svg {
+        $size: 18px;
+        @include build-svg($size, left);
+    }
+}
+
+.c-svg-icon--person {
+    padding-left: 25px;
+    fill: currentColor;
+    &__svg {
+        $size: 18px;
+        @include build-svg($size, left);
+    }
+}
+
+.c-svg-icon--calendar {
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 1rem;
+    fill: lighten($base-text-color, 40%);
+    .c-addon-group:hover & {
+        fill: lighten($base-text-color, 20%);
+    }
+    &__svg {
+        $size: 16px;
+        @include build-svg($size);
+    }
+}
+
+.c-svg-icon--time {
+    position: absolute;
+    top: 8px;
+    right: 0;
+    bottom: 8px;
+    width: 3rem;
+    border-left: 1px solid $base-border-color;
+    fill: lighten($base-text-color, 40%);
+    .c-addon-group:hover & {
+        fill: lighten($base-text-color, 20%);
+    }
+    &__svg {
+        $size: 16px;
+        @include build-svg($size);
+    }
+}
+
+.c-svg-icon--remove-img {
+    fill: rgba(white, 0.001);
+    cursor: pointer;
+    background: black;
+    font-size: 0;
+    transition: fill $brand-transition;
+    img {
+        transition: opacity $brand-transition;
+        opacity: 1;
+    }
+    &:hover,
+    &:focus {
+        fill: rgba(white, 1);
+        img {
+            opacity: 0.5;
+        }
+    }
+    &__svg {
+        $size: 26px;
+        @include build-svg($size);
+    }
+}
+
+.c-svg-icon--social {
+    $size: 30px;
+    
+    display: block;
+    width: $size;
+    height: $size;
+    fill: $base-text-color;
+    transition: fill $brand-transition;
+    &__svg {
+        @include build-svg($size);
+    }
+    &:hover,
+    &:focus {
+        fill: $alpha-color;
+    }
+}
+
+.c-svg-icon--contact {
+    display: block;
+    padding-left: 45px;
+    fill: currentColor;
+    &__svg {
+        $size: 30px;
+
+        @include build-svg($size, left);
+    }
+}
+
+.c-svg-icon--property-detail {
+    padding-left: 25px;
+    fill: currentColor;
+    &.is-not-available {
+        color: $zeta-color;
+        text-decoration: line-through;
+    }
+    &__svg {
+        $size: 16px;
+        @include build-svg($size, left);
+    }
+
+    &__svg--short {
+        /** vertically center the shorter icons */
+        transform: translateY(2px);
+    }
+}
+
+.c-svg-icon--btn-facebook,
+.c-svg-icon--btn-google {
+    
+    &__svg {
+        $size: 16px;
+
+        position: absolute;
+        left: $spacing-unit;
+        top: 50%;
+        width: $size;
+        height: $size;
+        margin-top: -($size / 2);
+    }
+}
+
+.c-svg-icon--btn-facebook {
+    fill: white;
+}
+
+.c-svg-icon--btn-google {
+    fill: #f44336;
+    &:hover,
+    &:focus {
+        fill: white;
+    }
+}
+
+} /* Close @if */

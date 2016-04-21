@@ -1,0 +1,126 @@
+
+    
+$fixed-height: 450px;
+$fixed-height-breakpoint: 1070px;
+$padding-bottom-percentage: 42%;
+
+.c-banner {
+    position: relative;
+    z-index: 0;
+    background: $base-text-color;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+    .c-banner__inner {
+        position: relative;
+        @media (max-width: $fixed-height-breakpoint) {
+            height: $fixed-height;
+        }
+        @include screen-xs-down {
+            height: 350px;
+        }
+        @media (min-width: $fixed-height-breakpoint+1) {
+            padding-bottom: $padding-bottom-percentage;                    
+        }
+    }
+    .c-banner__img,
+    .c-banner__overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+
+    .c-banner__img {
+        @include screen-md-up {
+            transform: scale(1.3);
+            transition: transform .8s;
+            .has-faded-in & {
+                transform: scale(1);
+            }
+        }
+    }
+
+    .c-banner__overlay {
+        @include screen-md-up {
+            opacity: 0;
+            transition: opacity 0.8s;
+            .has-faded-in & {
+                opacity: 1;
+            }
+        }
+        background: rgba(black, 0.2);
+        background-image: linear-gradient(
+            rgba(black, 0.3) ($site-header-height / 2),
+            rgba(black, 0.0001) $site-header-height + 100px,
+            rgba(black, 0.0001) 80%,
+            rgba(black, 0.3)
+        );
+    }
+
+    .c-banner__content {
+        $transition: 1.5s;
+        max-width: 800px;
+        margin: 0 auto;
+        opacity: 0;
+        transition: opacity $transition 0.6s, transform $transition 0.6s;
+        transform: translateY(10px);
+        @include screen-sm-up {
+            margin-top: ($site-header-height / 2);
+        }
+        .has-faded-in & {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .c-banner__img {
+        background-size: cover;
+        background-position: center center;
+    }
+
+
+    .c-banner__usps {
+        @include screen-md-up {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 8%;
+            z-index: 2;            
+        }
+    }
+
+    .c-banner__usps-inner {
+        text-align: left;
+        padding: $half-spacing-unit 0;
+        @include screen-md-up {
+            display: inline-block;    
+        }
+    }
+
+    .c-banner__usps-item.c-banner__usps-item {
+        @include screen-md-down {            
+            display: block;
+            margin-bottom: $half-spacing-unit;
+        }
+    }
+
+    .c-banner__title {
+        @include font-size($txt-xxl);
+
+        line-height: 1;
+        margin-bottom: 0;
+    }
+
+    .c-banner__sub {
+        font-style: italic;
+    }
+
+    .c-banner__ctas {
+        max-width: 520px;
+        margin: 0 auto;
+    }
+
+

@@ -1,0 +1,14 @@
+.c-partner-module {
+	background: white;
+	text-align: center;
+	border-radius: $brand-radius;
+}
+	.c-partner-module__logo {
+		padding: $spacing-unit*2 $spacing-unit;
+		margin-bottom: 0;
+		border-bottom: 1px solid $base-border-color;
+	}
+
+	.c-partner-module__body {
+		padding: $spacing-unit;
+	}

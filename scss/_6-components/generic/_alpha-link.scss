@@ -1,0 +1,9 @@
+.c-alpha-link {
+    color: $alpha-color;
+    font-weight: bold;
+    text-decoration: none;
+    &:hover,
+    &:focus {
+        color: darken($alpha-color, 10%);
+    }
+}

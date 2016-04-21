@@ -1,0 +1,78 @@
+.c-gallery {
+    position: relative;
+}
+
+    .c-gallery__item {
+        position: relative;
+        font-size: 0;
+    }
+
+    .c-gallery__item:nth-child(n+3) {
+        @include screen-xs-down {
+            position: absolute;
+            top: 0%;
+            left: 50%;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(1px, 1px, 1px, 1px);
+            
+        }
+    }
+
+    .c-gallery__item:nth-child(n+4) {
+        @include screen-md-down {
+            position: absolute;
+            top: 0%;
+            left: 50%;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(1px, 1px, 1px, 1px);
+            
+        }
+    }
+
+    .c-gallery__item:nth-child(n+5) {
+        @include screen-md-up {
+            position: absolute;
+            top: 0%;
+            left: 50%;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(1px, 1px, 1px, 1px);
+        }
+    }
+
+
+        .c-gallery-item__overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: -1px; /** subpixel error */
+            left: $spacing-unit;
+            display: none;
+            background: rgba(black, 0.5);
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .c-gallery-item__overlay\@xs-down {
+            @include screen-xs-down {
+                display: block;
+            }
+        }
+
+        .c-gallery-item__overlay\@md-down {
+            @include screen-md-down {
+                display: block;
+            }
+        }
+
+        .c-gallery-item__overlay\@md-up {
+            @include screen-md-up {
+                display: block;
+            }
+        }

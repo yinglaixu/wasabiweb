@@ -1,0 +1,13 @@
+.c-site-logo {
+	display: block;
+	width: 100px;
+	
+	@include screen-xs-up {
+		width: 185px;		
+	}
+}
+
+    .c-site-logo__img {
+        vertical-align: middle;
+    }
+
