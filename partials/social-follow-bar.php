@@ -5,26 +5,30 @@
     </h3>
     <ul class="o-inline-list o-inline-list--spaced-half social-icon-list">
         <li>
-            <a href="<?php the_field('facebook', 'options'); ?>" class="c-svg-icon c-svg-icon--social" target="_blank">
-                <object id="svg1" data="<?php bloginfo('template_directory'); ?>/build/img/facebook.svg" type="image/svg+xml"></object>
-            </a>
+            <div id = 'facebook'>
+                <a href="<?php the_field('facebook', 'options'); ?>" class="c-svg-icon c-svg-icon--social" target="_blank">
+                </a>
+            </div>
         </li>
         <li>
-            <a href="<?php the_field('twitter', 'options'); ?>" class="c-svg-icon c-svg-icon--social" target="_blank">
-                <object id="svg1" data="<?php bloginfo('template_directory'); ?>/build/img/instagram.svg" type="image/svg+xml"></object>
-            </a>
+            <div id = 'instagram'>
+                <a href="<?php the_field('instagram', 'options'); ?>" class="c-svg-icon c-svg-icon--social" target="_blank">
+                </a>
+            </div>
         </li>
         <li>
-            <a href="<?php the_field('google', 'options'); ?>" class="c-svg-icon c-svg-icon--social" target="_blank">
-                <object id="svg1" data="<?php bloginfo('template_directory'); ?>/build/img/linkedin.svg" type="image/svg+xml"></object>
-            </a>
+            <div id = "linkedin">
+                <a href="<?php the_field('linkedin', 'options'); ?>" class="c-svg-icon c-svg-icon--social" target="_blank">
+                </a>
+            </div>
         </li>
         <li>
-            <a href="<?php the_field('google', 'options'); ?>" class="c-svg-icon c-svg-icon--social" target="_blank">
-                <object id="svg1" data="<?php bloginfo('template_directory'); ?>/build/img/youtube.svg" type="image/svg+xml"></object>
-            </a>
+            <div id = "youtube">
+                <a href="<?php the_field('youtube', 'options'); ?>" class="c-svg-icon c-svg-icon--social" target="_blank">
+                </a>
+            </div>
         </li>
-    </ul>                                            
+    </ul>
 </div>
 
 <style>
@@ -55,7 +59,44 @@
         padding-left: 10px;
         padding-right: 10px;
     }
-    .social-icon-list a:hover{
-        margin-top:-30px;
+    /*.social-icon-list a:hover{*/
+        /*margin-top:-30px;*/
+    /*}*/
+
+    #facebook {
+        background: url("<?php bloginfo('template_directory'); ?>/build/img/facebook-black.svg");
+        -webkit-transition: background-image 0.2s ease-in-out;
+        transition: background-image 0.2s ease-in-out;
     }
+    #facebook:hover {
+        background: url("<?php bloginfo('template_directory'); ?>/build/img/facebook-color.svg");
+    }
+
+    #instagram {
+        background: url("<?php bloginfo('template_directory'); ?>/build/img/insta-black.svg");
+        -webkit-transition: background-image 0.2s ease-in-out;
+        transition: background-image 0.2s ease-in-out;
+    }
+    #instagram:hover {
+        background: url("<?php bloginfo('template_directory'); ?>/build/img/insta-color.svg");
+    }
+
+    #linkedin {
+        background: url("<?php bloginfo('template_directory'); ?>/build/img/linkedin-black.svg");
+        -webkit-transition: background-image 0.2s ease-in-out;
+        transition: background-image 0.2s ease-in-out;
+    }
+    #linkedin:hover {
+        background: url("<?php bloginfo('template_directory'); ?>/build/img/linkedin-color.svg");
+    }
+
+    #youtube {
+        background: url("<?php bloginfo('template_directory'); ?>/build/img/youtube-black.svg");
+        -webkit-transition: background-image 0.2s ease-in-out;
+        transition: background-image 0.2s ease-in-out;
+    }
+    #youtube:hover {
+        background: url("<?php bloginfo('template_directory'); ?>/build/img/youtube-color.svg");
+    }
+
 </style>

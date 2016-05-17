@@ -29,7 +29,7 @@ var gulp = require('gulp'),
 
 
 gulp.task('style', function() {
-    return gulp.src('scss/style.scss')
+    return gulp.src('scss/style.scss', { noCache: true, style: 'compressed' })
         .pipe(newer(cssDest))
         .pipe(sourcemaps.init())
             .pipe(sass().on('error', sass.logError))
@@ -43,9 +43,6 @@ gulp.task('style', function() {
         .pipe(gulp.dest(cssDest))
         .pipe(livereload());
 });
-
-
-
 
 
 gulp.task('mainScript', function() {

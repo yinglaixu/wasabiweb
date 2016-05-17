@@ -116,14 +116,14 @@
                             <li class="u-txt-xs">
                                 Copyright <?php echo date(Y); ?> <?php the_field('company_name', 'options'); ?>
                             </li>
-                            <li class="u-txt-xs" data-breadcrumb="|">Skapad med
-                                <a href="http://wasabiweb.se" rel="nofollow" class="c-svg-icon c-svg-icon--heart" target="_blank" title="Webbyrån Wasabi Web i Uppsala producerade denna webbplats">
-                                    <svg class="c-svg-icon__svg c-svg-icon--heart__svg">
-                                        <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-heart"></use>
-                                    </svg>
-                                    av wasabiweb
-                                </a>
-                            </li>
+<!--                            <li class="u-txt-xs" data-breadcrumb="|">Skapad med-->
+<!--                                <a href="http://wasabiweb.se" rel="nofollow" class="c-svg-icon c-svg-icon--heart" target="_blank" title="Webbyrån Wasabi Web i Uppsala producerade denna webbplats">-->
+<!--                                    <svg class="c-svg-icon__svg c-svg-icon--heart__svg">-->
+<!--                                        <use xlink:href="--><?php //bloginfo('template_directory'); ?><!--/build/img/sprite.svg#icon-heart"></use>-->
+<!--                                    </svg>-->
+<!--                                    av wasabiweb-->
+<!--                                </a>-->
+<!--                            </li>-->
                         </ul>
                     </div>
                 </div>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="50px" height="51px" viewBox="0 0 50 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3 (11970) - http://www.bohemiancoding.com/sketch -->
+    <title>facebook-black</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="front-page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="social-media-icons" sketch:type="MSLayerGroup" fill="#232323">
+            <path d="M21.4708333,39.1 L27.0908333,39.1 L27.0908333,25.4983333 L30.84,25.4983333 L31.3366667,20.8116667 L27.0908333,20.8116667 L27.0966667,18.465 C27.0966667,17.2433333 27.2133333,16.5875 28.9666667,16.5875 L31.31,16.5875 L31.31,11.9 L27.56,11.9 C23.0558333,11.9 21.4708333,14.1741667 21.4708333,17.9975 L21.4708333,20.8116667 L18.6633333,20.8116667 L18.6633333,25.4991667 L21.4708333,25.4991667 L21.4708333,39.1 L21.4708333,39.1 Z M25,50.5 C11.1933333,50.5 0,39.3066667 0,25.5 C0,11.6925 11.1933333,0.5 25,0.5 C38.8066667,0.5 50,11.6925 50,25.5 C50,39.3066667 38.8066667,50.5 25,50.5 L25,50.5 Z" id="facebook-black" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

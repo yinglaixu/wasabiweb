@@ -116,8 +116,7 @@ Template Name: Startpage
         <section class="o-section u-bg-eta">
             <div class="o-site-wrap o-site-wrap--padding">
                 <h1 class="u-text-center">
-                    Our latest apartment
-<!--                    --><?php //echo icl_t('Theme', 'What says Renthias clients'); ?>
+                    <?php echo icl_t('Theme', 'Our latest apartment'); ?>
                 </h1>
                 <ul class="o-grid o-grid--matrix o-grid--equal-height">
                     <?php
@@ -206,8 +205,7 @@ Template Name: Startpage
         <section class="o-section u-bg-eta">
             <div class="o-site-wrap o-site-wrap--padding">
                 <h1 class="u-text-center">
-                    Our Partners
-<!--                    --><?php //echo icl_t('Theme', 'What says Renthias clients'); ?>
+                    <?php echo icl_t('Theme', 'Our partners'); ?>
                 </h1>
                 <div class="c-block-slider">
                     <div class="o-site-wrap o-site-wrap--padding">
@@ -259,8 +257,7 @@ Template Name: Startpage
         <section class="o-section">
             <div class="o-site-wrap o-site-wrap--padding">
                 <h1 class="u-text-center">
-                    Our Blogs
-                    <!--                    --><?php //echo icl_t('Theme', 'What says Renthias clients'); ?>
+                    <?php echo icl_t('Theme', 'Our blogs'); ?>
                 </h1>
                 <ul class="c-ui-list u-hard--ends [ u-clean--top u-clean--bottom ]">
 <!--                    <li class="u-hard--sides">-->

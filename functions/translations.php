@@ -99,6 +99,9 @@ icl_register_string('Theme-contact', 'Responsible Display Assistant', 'Ansvarig 
 
 icl_register_string('Theme', 'Sweden', 'Sverige', false, 'sv');
 icl_register_string('Theme', 'What says Renthias clients', 'Vad säger Renthias användare?', false, 'sv');
+icl_register_string('Theme', 'Our latest apartment', 'Senast inkomna bostäder', false, 'sv');
+icl_register_string('Theme', 'Our partners', ' Våra samarbetspartners', false, 'sv');
+icl_register_string('Theme', 'Our blogs', 'Våran blogg', false, 'sv');
 icl_register_string('Theme', 'Follow us', 'Föjl oss', false, 'sv');
 icl_register_string('Theme', 'Go back', 'Tillbaka', false, 'sv');
 
