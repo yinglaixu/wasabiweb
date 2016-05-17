@@ -9,6 +9,9 @@ Template Name: Page search
     <div class="c-site-header-placeholder">
     </div>
     <?php
+
+    // set the "paged" parameter (use 'page' if the query is on a static front page)
+    $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
     // Preparing the taxonomies/terms
     $countries = get_terms('property-countries');
     $countries = array_values($countries);
@@ -17,8 +20,22 @@ Template Name: Page search
 
     // Get the objects
     $country = sanitize_text_field( $_GET['country'] ) ?: $countries[0]->slug;
-    $city = sanitize_text_field( $_GET['city'] ) ?: $cities[0]->slug;
+    $city = sanitize_text_field( $_GET['city'] ) ?: $cities[2]->slug;
     $meta_key = null;
+
+
+
+    /////////////////////////
+    // temporary setting !!//
+    /////////////////////////   
+    if( isset( $_GET['city'] ) ){
+        if ($city !== 'stockholm'){
+            $paged = set_query_var('$paged', 1);
+            $arr_params = array( 'country', 'city', 'sort');
+            remove_query_arg( $arr_params );
+        }
+    }
+
     if( isset( $_GET['sort'] ) ){
 
         preg_match( '/^(\w*)-(\w*)/', $_GET['sort'], $matches );
@@ -39,11 +56,15 @@ Template Name: Page search
         $orderby = 'meta_value_num';
         $order = 'asc';
     }
+    
+
+
+    // $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
     $args = [
         'post_type' => 'property',
         'post_status' => 'publish',
-        'posts_per_page' => -1,
+        'posts_per_page' => 10,
         'orderby' => $orderby,
         'order' => $order,
         'tax_query' => [
@@ -58,7 +79,8 @@ Template Name: Page search
                 'field'     => 'slug',
                 'terms'     => [ $city ],
             ],
-        ]
+        ],
+        'paged' => $paged
     ];
 
     if( $meta_key ){
@@ -77,6 +99,7 @@ Template Name: Page search
     }
 
     $query = new WP_Query( $args );
+
     ?>
 	<main role="main">
         <div class="u-soft-half--sides">
@@ -205,7 +228,7 @@ Template Name: Page search
                                                     </svg>
                                                 </label>
                                                 <select class="c-styled-select__select" name="sort" onchange="this.form.submit()">
-                                                    <option value="price-asc" <?php if($get_sort == 'price-asc') echo 'selected' ?>><?php echo icl_t('Theme-properties', 'Sort asc'); ?></option>
+                                                    <option value="price-asc" <?php if($get_sort == 'price-asc')  echo 'selected' ?>><?php echo icl_t('Theme-properties', 'Sort asc'); ?></option>
                                                     <option value="price-desc" <?php if($get_sort == 'price-desc') echo 'selected' ?>><?php echo icl_t('Theme-properties', 'Sort desc'); ?></option>
                                                     <option value="date-desc" <?php if($get_sort == 'date-desc') echo 'selected' ?>><?php echo icl_t('Theme-properties', 'Sort date desc'); ?></option>
                                                     <option value="date-asc" <?php if($get_sort == 'date-asc') echo 'selected' ?>><?php echo icl_t('Theme-properties', 'Sort date asc'); ?></option>
@@ -271,13 +294,28 @@ Template Name: Page search
                             <?php echo $city_name; ?>
                         </h2>
                         <ul class="c-ui-list u-hard--ends [ u-clean--top u-clean--bottom ]">
+
                             <?php
                             if( $query->have_posts() ) : while( $query->have_posts() ) : $query->the_post();
                             ?>
                                 <li class="u-hard--sides">
                                     <?php get_template_part('partials/property-overview'); ?>
                                 </li>
-                            <?php endwhile; endif; wp_reset_postdata(); ?>
+                            <?php endwhile; ?>
+
+                            <!-- pagination here -->
+                            <?php
+                              if (function_exists(custom_pagination)) {
+                                custom_pagination($query->max_num_pages,"",$paged);
+                              }
+                            ?>
+
+                          <?php wp_reset_postdata(); ?>
+
+                          <?php else:  ?>
+                            <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+                          <?php endif; ?>
+
                         </ul>
                     </div>
                 </div>
@@ -289,3 +327,37 @@ Template Name: Page search
 <script>var mapInformationForListing = <?php echo ww_get_map_information_listing( $query ); ?></script>
 
 <?php get_footer(); ?>
+
+
+<style>
+/* ============================================================
+  CUSTOM PAGINATION
+============================================================ */
+.custom-pagination span,
+.custom-pagination a {
+  display: inline-block;
+  padding: 2px 10px;
+}
+.custom-pagination a {
+  background-color: #ebebeb;
+  color: #ee7844;
+}
+.custom-pagination a:hover {
+  background-color: #ee7844;
+  color: #fff;
+}
+.custom-pagination span.page-num {
+  margin-right: 10px;
+  padding: 0;
+}
+.custom-pagination span.dots {
+  padding: 0;
+  color: gainsboro;
+}
+.custom-pagination span.current {
+  background-color: #ee7844;
+  color: #fff;
+}
+</style>
+
+

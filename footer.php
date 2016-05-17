@@ -1,5 +1,5 @@
 <div class="c-site-footer-wrap">
-    <div class="c-block-slider">
+<!--     <div class="c-block-slider">
         <div class="o-site-wrap o-site-wrap--padding">
             <div id="block-slider">
                 <div class="js-block-slider__wrap">
@@ -39,35 +39,59 @@
         <div class="c-divider c-divider--angled">
             <img class="c-divider__img" src="<?php bloginfo('template_directory'); ?>/build/img/divider-angled-large.svg" alt="">                
         </div>    
-    </div>
+    </div> -->
 
     <footer class="c-site-footer o-bare-links" role="contentinfo">
+<!--        the first part of the footer-->
         <div class="[ o-site-wrap o-site-wrap--padding ] o-section">
-            <div class="c-site-footer__layout">
-                <div class="c-site-footer__layout-item">
-                    <a href="<?php echo icl_get_home_url(); ?>" class="c-site-header__logo c-site-logo u-soft--bottom@md-down">
-                        <img class="c-site-logo__img u-svg" src="<?php bloginfo('template_directory'); ?>/build/img/site-logo.svg" alt="<?php bloginfo('name'); ?>">
-                    </a> 
+            <div class="o-grid o-grid--matrix o-grid--equal-height">
+                <div class="o-grid__item u-1/4@sm-up">
+                    <ul class = "footer-icon">
+                        <li>
+                            <a href="<?php echo icl_get_home_url(); ?>" class="c-site-header__logo c-site-logo u-soft--bottom@md-down">
+                                <img class="c-site-logo__img u-svg" src="<?php bloginfo('template_directory'); ?>/build/img/site-logo.svg" alt="<?php bloginfo('name'); ?>">
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-                <nav class="c-site-footer__layout-item c-site-footer__layout-item--right">
-                    <ul class="[ o-inline-list o-inline-list--spaced ] u-txt-uppercase">
-                        <?php
-                        $args = array(
-                            'theme_location'  => 'footer',
-                            'container'       => false,
-                            'items_wrap'      => '%3$s'
-                        );
-                        wp_nav_menu($args);
-                        ?>
-                        <li class="u-block@xs-down u-push-half--top@sm-down">
+
+                <div class="o-grid__item u-7/12@sm-up u-txt-xs">
+                    <?php get_sidebar(); ?>
+<!--                    <ul class="[ o-inline-list o-inline-list--spaced ] u-txt-uppercase">-->
+<!--                        --><?php
+//                        $args = array(
+//                            'theme_location'  => 'footer',
+//                            'container'       => false,
+//                            'items_wrap'      => '%3$s'
+//                        );
+//                        wp_nav_menu($args);
+//                        ?>
+<!--                        <li class="u-block@xs-down u-push-half--top@sm-down">-->
+<!--                            <a href="--><?php //echo icl_t('Theme-header', "Rent out link"); ?><!--" class="[ c-btn c-btn--sm c-btn--gamma ] u-txt-normal-weight">-->
+<!--                                --><?php //echo icl_t('Theme-header', "Rent out"); ?>
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+                </div>
+
+                <div class="o-grid__item u-1/6@sm-up">
+                    <ul class = "footer-icon">
+                        <li id = "footer-rent-out-button">
                             <a href="<?php echo icl_t('Theme-header', "Rent out link"); ?>" class="[ c-btn c-btn--sm c-btn--gamma ] u-txt-normal-weight">
                                 <?php echo icl_t('Theme-header', "Rent out"); ?>
                             </a>
                         </li>
                     </ul>
-                </nav>
+                </div>
+            </div>
+            <div class="o-grid o-grid--matrix">
+                <div class="o-grid_item">
+                    <?php get_template_part('partials/social-follow-bar'); ?>
+                </div>
             </div>
         </div>
+
+<!--        the bottom footer with email and address-->
         <div class="c-site-footer__bottom">
         	<div class="o-site-wrap o-site-wrap--padding">
                 <div class="c-site-footer__layout">
@@ -115,8 +139,8 @@
 <div class="c-load-spinner">
 </div>
 
-
 <?php wp_footer(); ?>
+
 
 
 <!--[if IE]>
@@ -137,6 +161,29 @@
             type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
 </script>
 <!--End of Zopim Live Chat Script-->
+
+<style>
+    .widget_nav_menu{
+        position: relative;
+        margin-left: 50px;
+        float: right;
+    }
+    .menu{
+        list-style: none;
+        margin-left: 0px;
+    }
+    #footer-rent-out-button{
+        margin-top: 20px;
+        float: right;
+    }
+    .footer-icon{
+        list-style: none;
+        margin-left: 0px;
+    }
+    .widget-title{
+        font-size: 1rem;;
+    }
+</style>
 
 </body>
 </html>

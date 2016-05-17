@@ -43,5 +43,7 @@ $functionFilesLoader
 	->loadFile( 'images' )
 	->loadFile( 'menus' )
 	->loadFile( 'seo' )
+	->loadFile( 'numeric-page' )
 	->loadFile( '/Renthia-properties/Init' )
 	->loadFile( '/User-handling/Init' );
+

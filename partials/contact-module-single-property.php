@@ -56,13 +56,13 @@ $ass_acc=get_field('associate_account');
 							</li>
 						<?php endif; ?>
 						<li>
-							<?php if ( $ass_acc['user_email'] ) : ?>
-								<a href="mailto:<?php echo $ass_acc['user_email']; ?>"
-								   class="u-txt-xs"><?php echo $ass_acc['user_email']; ?></a>
-							<?php else : ?>
+<!--							--><?php //if ( $ass_acc['user_email'] ) : ?>
+<!--								<a href="mailto:--><?php //echo $ass_acc['user_email']; ?><!--"-->
+<!--								   class="u-txt-xs">--><?php //echo $ass_acc['user_email']; ?><!--</a>-->
+<!--							--><?php //else : ?>
 								<a href="mailto:<?php the_field( 'email', 'options' ); ?>" class="u-txt-xs">
 									<?php the_field( 'email', 'options' ); ?></a>
-							<?php endif; ?>
+<!--							--><?php //endif; ?>
 						</li>
 						<!--                        <li>-->
 						<!--                            <a href="tel:-->

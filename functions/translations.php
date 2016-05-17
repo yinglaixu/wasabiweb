@@ -137,3 +137,37 @@ icl_register_string('Theme-errors', 'Account information is needed', 'Du måste 
 //icl_register_string('Theme-errors', '', '', false, 'sv');
 
 //icl_register_string('Theme-myproperties', '', '', false, 'sv');
+icl_register_string('Theme-about-us', 'what we do', 'Vad Vi Gör', false, 'sv');
+icl_register_string('Theme-about-us', 'intro-1', 'Hyresvärdar som vi hjälper just nu', false, 'sv');
+icl_register_string('Theme-about-us', 'intro-2', 'Boendevolymen i kvadratmeter som vi tar hand om', false, 'sv');
+icl_register_string('Theme-about-us', 'intro-3', 'Månadsvis som kollar på bostäder', false, 'sv');
+icl_register_string('Theme-about-us', 'intro-4', 'Över 25,000 Besökare', false, 'sv');
+icl_register_string('Theme-about-us', 'who we are', 'Vem Vi Är', false, 'sv');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

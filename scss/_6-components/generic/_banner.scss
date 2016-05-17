@@ -51,12 +51,12 @@ $padding-bottom-percentage: 42%;
                 opacity: 1;
             }
         }
-        background: rgba(black, 0.2);
+        background: rgba(black, 0.1);
         background-image: linear-gradient(
-            rgba(black, 0.3) ($site-header-height / 2),
+            rgba(black, 0.2) ($site-header-height / 2),
             rgba(black, 0.0001) $site-header-height + 100px,
             rgba(black, 0.0001) 80%,
-            rgba(black, 0.3)
+            rgba(black, 0.2)
         );
     }
 
@@ -110,7 +110,7 @@ $padding-bottom-percentage: 42%;
     .c-banner__title {
         @include font-size($txt-xxl);
 
-        line-height: 1;
+        line-height: 1.5;
         margin-bottom: 0;
     }
 
@@ -120,6 +120,11 @@ $padding-bottom-percentage: 42%;
 
     .c-banner__ctas {
         max-width: 520px;
+        margin: 0 auto;
+    }
+    .c-banner__howitworks {
+        padding-top: 40px;
+        max-width: 250px;
         margin: 0 auto;
     }
 

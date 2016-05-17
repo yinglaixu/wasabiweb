@@ -47,6 +47,7 @@ gulp.task('style', function() {
 
 
 
+
 gulp.task('mainScript', function() {
     return gulp.src(['js/start.js', 'js/plugins/*.js', 'js/components/*.js', 'js/main.js'])
         .pipe(plumber())
@@ -127,12 +128,17 @@ gulp.task('image', function() {
 });
 
 
-gulp.task('default', ['mainScript', 'polyfills', 'style', 'image', 'fonts'], function() {
+// gulp.task('default', ['mainScript', 'polyfills', 'style', 'image', 'fonts'], function() {
+//     livereload.listen();
+//     gulp.watch('scss/**/*.scss', ['style']);
+//     gulp.watch(['js/components/*.js', 'js/start.js', 'js/main.js', 'js/plugins/*.js'], ['mainScript']);
+//     gulp.watch('js/polyfills/*.js', ['polyfills']);
+//     gulp.watch(['**/*.php'], ['php']);
+//     gulp.watch('img/**/*', ['image']);
+//     gulp.watch('fonts/*', ['fonts']);
+// });
+
+gulp.task('default', function() {
     livereload.listen();
     gulp.watch('scss/**/*.scss', ['style']);
-    gulp.watch(['js/components/*.js', 'js/start.js', 'js/main.js', 'js/plugins/*.js'], ['mainScript']);
-    gulp.watch('js/polyfills/*.js', ['polyfills']);
-    gulp.watch(['**/*.php'], ['php']);
-    gulp.watch('img/**/*', ['image']);
-    gulp.watch('fonts/*', ['fonts']);
 });

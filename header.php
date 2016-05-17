@@ -61,6 +61,16 @@
 <body>
 <!--<![endif]-->
 
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PXGHM9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PXGHM9');</script>
+<!-- End Google Tag Manager -->
+
 <script>
 	(function (i, s, o, g, r, a, m) {
 		i['GoogleAnalyticsObject'] = r;
@@ -107,12 +117,24 @@
 				<ul class="o-bare-list">
 					<li class="c-site-header__client-menu u-push-half--bottom@sm-up">
 						<ul class="o-inline-list o-inline-list--spaced">
-							<li>
-								<a href="<?php echo icl_t( 'Theme-header', 'Support link' ); ?>"
-								   class="c-site-header__client-link u-txt-xxs">
-									<?php echo icl_t( 'Theme-header', 'Support' ); ?>
+							<li class="u-block@sm-down u-flush@sm-down">
+								<a href="<?php echo icl_t( 'Theme-header', "Searching link" ); ?>"
+								   class="[ c-btn c-btn--sm c-btn--delta ] u-txt-normal-weight">
+									<?php echo icl_t( 'Theme-header', "Searching" ); ?>
 								</a>
 							</li>
+							<li class="u-block@xs-down u-push-half--top@sm-down">
+								<a href="<?php echo icl_t( 'Theme-header', "Rent out link" ); ?>"
+								   class="[ c-btn c-btn--sm c-btn--gamma ] u-txt-normal-weight">
+									<?php echo icl_t( 'Theme-header', "Rent out" ); ?>
+								</a>
+							</li>
+<!--							<li>-->
+<!--								<a href="--><?php //echo icl_t( 'Theme-header', 'Support link' ); ?><!--"-->
+<!--								   class="c-site-header__client-link u-txt-xxs">-->
+<!--									--><?php //echo icl_t( 'Theme-header', 'Support' ); ?>
+<!--								</a>-->
+<!--							</li>-->
 
 							<?php if ( is_user_logged_in() ) : ?>
 								<li>
@@ -190,24 +212,24 @@
 								</div>
 							</li>
 						</ul>
-					</li>
-					<li>
-						<ul class="o-inline-list o-inline-list--spaced">
-							<li class="u-block@sm-down u-flush@sm-down">
-								<a href="<?php echo icl_t( 'Theme-header', "Searching link" ); ?>"
-								   class="[ c-btn c-btn--sm c-btn--delta ] u-txt-normal-weight">
-									<?php echo icl_t( 'Theme-header', "Searching" ); ?>
-								</a>
-							</li>
-							<li class="u-block@xs-down u-push-half--top@sm-down">
-								<a href="<?php echo icl_t( 'Theme-header', "Rent out link" ); ?>"
-								   class="[ c-btn c-btn--sm c-btn--gamma ] u-txt-normal-weight">
-									<?php echo icl_t( 'Theme-header', "Rent out" ); ?>
-								</a>
-							</li>
-							
-						</ul>
-					</li>
+<!--					</li>-->
+<!--					<li>-->
+<!--						<ul class="o-inline-list o-inline-list--spaced">-->
+<!--							<li class="u-block@sm-down u-flush@sm-down">-->
+<!--								<a href="--><?php //echo icl_t( 'Theme-header', "Searching link" ); ?><!--"-->
+<!--								   class="[ c-btn c-btn--sm c-btn--delta ] u-txt-normal-weight">-->
+<!--									--><?php //echo icl_t( 'Theme-header', "Searching" ); ?>
+<!--								</a>-->
+<!--							</li>-->
+<!--							<li class="u-block@xs-down u-push-half--top@sm-down">-->
+<!--								<a href="--><?php //echo icl_t( 'Theme-header', "Rent out link" ); ?><!--"-->
+<!--								   class="[ c-btn c-btn--sm c-btn--gamma ] u-txt-normal-weight">-->
+<!--									--><?php //echo icl_t( 'Theme-header', "Rent out" ); ?>
+<!--								</a>-->
+<!--							</li>-->
+<!--							-->
+<!--						</ul>-->
+<!--					</li>-->
 				</ul>
 			</div>
 		</div>

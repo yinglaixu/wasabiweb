@@ -316,10 +316,10 @@
                     $args = [
                         'post_type' => 'property',
                         'post_status' => 'publish',
-                        'posts_per_page' => -1,
                         'meta_key' => 'price',
                         'orderby' => 'meta_value_num',
                         'order' => 'asc',
+                        'no_found_rows' => true,
                         'post__not_in' => [ $post->ID ],
                         'tax_query' => [
                             'relation' => 'AND',
@@ -336,12 +336,12 @@
                         ]
                     ];
                     $query = new WP_Query( $args );
-                    if( $query->have_posts() ) : while( $query->have_posts() ) : $query->the_post();
+                    $i = 1; if( $query->have_posts() ) : while( $query->have_posts() && $i < 6 ) : $query->the_post();
                     ?>
                         <li class="u-hard--sides">
                             <?php get_template_part('partials/property-overview'); ?>
                         </li>
-                    <?php endwhile; endif; wp_reset_postdata(); ?>
+                    <?php $i++; endwhile; endif; wp_reset_postdata(); ?>
                 </ul>
             </div>
         </section>

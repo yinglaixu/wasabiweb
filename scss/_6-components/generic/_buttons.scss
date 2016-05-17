@@ -101,6 +101,39 @@
 	}
 }
 
+.c-btn--howitworks1 {
+  $background: $brand-color;
+  background: $background;
+  width: 250px;
+  &:hover,
+  &:focus {
+    background: lighten($background, 6%);
+  }
+}
+
+.c-btn--howitworks2 {
+		$background: none;
+		background: $background;
+		color: $brand-color;
+        width: 250px;
+	  	&:hover,
+	  	&:focus {
+			color: $brand-color;
+		  	text-decoration: underline;
+	  	}
+}
+
+.c-btn--viewmore{
+  $background: none;
+  background: $background;
+  color: $beta-color;
+  width: 250px;
+  &:hover,
+  &:focus {
+    color: $beta-color;
+    text-decoration: underline;
+  }
+}
 
 .c-btn--facebook {
 	$background: #3b5998;

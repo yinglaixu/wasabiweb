@@ -1,3 +1,4 @@
+
 /*------------------------------------*\
     SETTINGS -> VARIABLES
 \*------------------------------------*/
@@ -83,8 +84,8 @@ $h2-font-size: $txt-lg;
 $h3-font-size: $txt-md;
 $h4-font-size: $txt-sm;
 
-$base-font-family: "ff-tisa-sans-web-pro", sans-serif; /* [9] */
-
+//$base-font-family: "ff-tisa-sans-web-pro", sans-serif; /* [9] */
+$base-font-family: "source-sans-pro", sans-serif;
 
 
 
@@ -138,7 +139,7 @@ $grid-gutter-width: $spacing-unit;
  * 1. Denotes the breakpoint of the main navigation.
  */
 $screen-lg:  1200px;
-$screen-md:  1050px;
+$screen-md:  1024px;
 $screen-sm:  768px;
 $screen-xs:  480px;
 $screen-xxs: 400px;
