@@ -59,9 +59,6 @@
         padding-left: 10px;
         padding-right: 10px;
     }
-    /*.social-icon-list a:hover{*/
-        /*margin-top:-30px;*/
-    /*}*/
 
     #facebook {
         background: url("<?php bloginfo('template_directory'); ?>/build/img/facebook-black.svg");

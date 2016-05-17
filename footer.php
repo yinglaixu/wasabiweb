@@ -45,7 +45,7 @@
 <!--        the first part of the footer-->
         <div class="[ o-site-wrap o-site-wrap--padding ] o-section">
             <div class="o-grid o-grid--matrix o-grid--equal-height">
-                <div class="o-grid__item u-1/4@sm-up">
+                <div class="o-grid__item [ u-1/6@md-up u-1/1@xs-up ] ">
                     <ul class = "footer-icon">
                         <li>
                             <a href="<?php echo icl_get_home_url(); ?>" class="c-site-header__logo c-site-logo u-soft--bottom@md-down">
@@ -55,26 +55,11 @@
                     </ul>
                 </div>
 
-                <div class="o-grid__item u-7/12@sm-up u-txt-xs">
+                <div class="o-grid__item u-2/3@md-up u-1/1@xs-up u-txt-xs">
                     <?php get_sidebar(); ?>
-<!--                    <ul class="[ o-inline-list o-inline-list--spaced ] u-txt-uppercase">-->
-<!--                        --><?php
-//                        $args = array(
-//                            'theme_location'  => 'footer',
-//                            'container'       => false,
-//                            'items_wrap'      => '%3$s'
-//                        );
-//                        wp_nav_menu($args);
-//                        ?>
-<!--                        <li class="u-block@xs-down u-push-half--top@sm-down">-->
-<!--                            <a href="--><?php //echo icl_t('Theme-header', "Rent out link"); ?><!--" class="[ c-btn c-btn--sm c-btn--gamma ] u-txt-normal-weight">-->
-<!--                                --><?php //echo icl_t('Theme-header', "Rent out"); ?>
-<!--                            </a>-->
-<!--                        </li>-->
-<!--                    </ul>-->
                 </div>
 
-                <div class="o-grid__item u-1/6@sm-up">
+                <div class="o-grid__item u-1/6@md-up u-1/1@xs-up">
                     <ul class = "footer-icon">
                         <li id = "footer-rent-out-button">
                             <a href="<?php echo icl_t('Theme-header', "Rent out link"); ?>" class="[ c-btn c-btn--sm c-btn--gamma ] u-txt-normal-weight">
