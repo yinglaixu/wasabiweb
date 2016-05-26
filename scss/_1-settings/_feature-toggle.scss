@@ -204,7 +204,7 @@ $use-width-4-5:   false;
 $use-width-1-6:   true;
 $use-width-2-6:   false;
 $use-width-3-6:   false;
-$use-width-4-6:   false;
+$use-width-4-6:   true;
 $use-width-5-6:   false;
 $use-width-1-8:   false;
 $use-width-2-8:   false;
@@ -350,7 +350,7 @@ $use-txt-nounderline:   false;
 
 
 /* TEXT-ALIGNMENT */
-$use-text-right:            false;
+$use-text-right:            true;
 $use-text-right-at-xs-down: false;
 $use-text-right-at-sm-down: false;
 $use-text-right-at-md-down: false;

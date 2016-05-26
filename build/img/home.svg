@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="48px" height="38px" viewBox="0 0 48 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3 (11970) - http://www.bohemiancoding.com/sketch -->
+    <title>home</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="how-it-works" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage" width="40">
+        <g id="How-it-works" sketch:type="MSArtboardGroup" transform="translate(-831.000000, -746.000000)" stroke="#FFFFFF" stroke-width="2">
+            <path d="M848,784 L839,784 L839,767 L831,767 L855,746 L862,752.125 L862,752.125 L862,749.995577 C862,749.445735 862.453036,749 862.99703,749 L869.00297,749 C869.553614,749 870,749.444837 870,749.995577 L870,759.004423 C870,759.043236 869.997743,759.08153 869.993355,759.119186 L879,767 L872,767 L872,767 L872,784 L854,784 L854,774.995577 C854,774.444837 853.556414,774 853.009222,774 L848.990778,774 C848.450975,774 848,774.445735 848,774.995577 L848,784 Z" id="home" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

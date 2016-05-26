@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="33px" height="38px" viewBox="0 0 33 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3 (11970) - http://www.bohemiancoding.com/sketch -->
+    <title>paid</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="how-it-works" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="How-it-works" sketch:type="MSArtboardGroup" transform="translate(-734.000000, -1473.000000)">
+            <g id="paid" sketch:type="MSLayerGroup" transform="translate(735.000000, 1474.000000)">
+                <path d="M30.5903742,18.7723766 C30.2039736,17.7855099 29.5550684,16.8592641 28.6902262,16.0215506 C28.6991792,15.9074809 28.7037037,15.7927522 28.7037037,15.6774194 C28.7037037,13.2470409 26.6945599,11.0849328 23.5739996,9.70431408 L23.5739996,9.70431408 L25.8243047,2.34042204 C26.1463624,1.28652114 25.5130325,0.432278311 24.4097652,0.432278311 L5.44208666,0.432278311 C4.34461981,0.432278311 3.76023519,1.26551167 4.14978282,2.2933571 L7.02793707,9.88754447 C4.13562778,11.2722078 2.2962963,13.3520155 2.2962963,15.6774194 C2.2962963,15.7927522 2.30082078,15.9074809 2.30977381,16.0215506 L2.30977381,16.0215506 C1.44603387,16.8581964 0.79768086,17.7831489 0.411104564,18.7686034 C0.160572295,18.95001 0,19.2457394 0,19.5797503 L0,35.0008949 C0,35.5519018 0.446065467,36 0.996315107,36 L30.0036849,36 C30.5617743,36 31,35.5526854 31,35.0008949 L31,19.5797503 C31,19.2483797 30.838671,18.9542283 30.5903742,18.7723766 Z" id="Rectangle-23" stroke="#FFFFFF" stroke-width="2" sketch:type="MSShapeGroup"></path>
+                <path d="M4.23124153,2.26767081 C3.7967055,1.25401152 4.34461981,0.432278311 5.44208666,0.432278311 L24.4097652,0.432278311 C25.5130325,0.432278311 26.1138318,1.28162483 25.7543359,2.32168611 L23.3456352,9.29032258 L7.24171583,9.29032258 L4.23124153,2.26767081 Z" id="Path-Copy" stroke="#FFFFFF" stroke-width="2" sketch:type="MSShapeGroup"></path>
+                <text id="S" sketch:type="MSTextLayer" font-family="Arial Rounded MT Bold" font-size="16.0740741" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="10.3333333" y="28.9354839">S</tspan>
+                </text>
+                <rect id="Rectangle-26" fill="#FFFFFF" sketch:type="MSShapeGroup" x="14.7777778" y="12.7741935" width="2.2962963" height="4.64516129"></rect>
+                <rect id="Rectangle-26-Copy" fill="#FFFFFF" sketch:type="MSShapeGroup" x="14.7777778" y="27.8709677" width="2.2962963" height="4.64516129"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

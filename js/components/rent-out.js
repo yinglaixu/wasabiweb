@@ -36,7 +36,15 @@ WW.rentOut = function($){
 
         $('#landlordform').submit(function(e) {
 
-            var from, to, sixMonthInMs, fromDate, toDate;
+            var from, to, sixMonthInMs, fromDate, toDate, imageCount;
+
+            //imageCount = $('ul#preview-images > li').length;
+
+            // if(imageCount < 3){
+            //     alert('Image');
+            //     e.preventDefault();
+            //     e.stopPropagation();
+            // }
 
             from = document.getElementById('date-from').value;
             to = document.getElementById('date-to').value;

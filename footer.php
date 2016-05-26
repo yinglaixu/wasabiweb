@@ -45,7 +45,7 @@
 <!--        the first part of the footer-->
         <div class="[ o-site-wrap o-site-wrap--padding ] o-section">
             <div class="o-grid o-grid--matrix o-grid--equal-height">
-                <div class="o-grid__item [ u-1/6@md-up u-1/1@xs-up ] ">
+                <div class="o-grid__item u-1/6@sm-up ">
                     <ul class = "footer-icon">
                         <li>
                             <a href="<?php echo icl_get_home_url(); ?>" class="c-site-header__logo c-site-logo u-soft--bottom@md-down">
@@ -55,11 +55,11 @@
                     </ul>
                 </div>
 
-                <div class="o-grid__item u-2/3@md-up u-1/1@xs-up u-txt-xs">
+                <div class="o-grid__item u-4/6@sm-up footer-icon u-txt-xs">
                     <?php get_sidebar(); ?>
                 </div>
 
-                <div class="o-grid__item u-1/6@md-up u-1/1@xs-up">
+                <div class="o-grid__item u-1/6@sm-up ">
                     <ul class = "footer-icon">
                         <li id = "footer-rent-out-button">
                             <a href="<?php echo icl_t('Theme-header', "Rent out link"); ?>" class="[ c-btn c-btn--sm c-btn--gamma ] u-txt-normal-weight">
@@ -148,6 +148,14 @@
 <!--End of Zopim Live Chat Script-->
 
 <style>
+    #footer-rent-out-button{
+        margin-top: 20px;
+        float: right;
+    }
+    .footer-icon{
+        list-style: none;
+        margin-left: 0px;
+    }
     .widget_nav_menu{
         position: relative;
         margin-left: 50px;
@@ -157,17 +165,20 @@
         list-style: none;
         margin-left: 0px;
     }
-    #footer-rent-out-button{
-        margin-top: 20px;
-        float: right;
-    }
-    .footer-icon{
-        list-style: none;
-        margin-left: 0px;
-    }
     .widget-title{
         font-size: 1rem;;
     }
+
+    @media (max-width: 587px){
+        .widget_nav_menu{
+            margin-left: 30px;
+            float: left;
+        }
+        #sidebar ul{
+            margin-left: 0;
+        }
+    }
+
 </style>
 
 </body>

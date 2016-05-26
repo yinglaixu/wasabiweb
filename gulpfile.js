@@ -59,6 +59,9 @@ gulp.task('mainScript', function() {
             }))
             .pipe(concat('main.js'))
             .pipe(uglify())
+            .on('error', function(){
+                console.log("error")
+            })
             .pipe(filesize())
             .pipe(rename({suffix: '.min'}))
         .pipe(sourcemaps.write('.'))

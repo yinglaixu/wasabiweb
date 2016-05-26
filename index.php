@@ -123,7 +123,7 @@ Template Name: Startpage
                     $args = [
                         'post_type' => 'property',
                         'post_status' => 'publish',
-                        'orderby' => 'rand',
+                        'orderby' => 'modified',
                         'posts_per_page' => 6,
                     ];
 

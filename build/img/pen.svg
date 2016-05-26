@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="39px" height="41px" viewBox="0 0 39 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3 (11970) - http://www.bohemiancoding.com/sketch -->
+    <title>pen</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="how-it-works" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="How-it-works" sketch:type="MSArtboardGroup" transform="translate(-388.000000, -1109.000000)">
+            <g id="pen" sketch:type="MSLayerGroup" transform="translate(404.872191, 1131.948910) rotate(44.000000) translate(-404.872191, -1131.948910) translate(397.372191, 1108.948910)">
+                <path d="M14.2013181,36.8068135 C14.253637,36.6849548 14.2825087,36.5504796 14.2825087,36.4091497 L14.2825087,1.05823561 C14.2825087,0.504707307 13.8360118,0.0592427616 13.2852298,0.0592427616 L1.09738686,0.0592427616 C0.540110943,0.0592427616 0.100107984,0.506507094 0.100107984,1.05823561 L0.100107984,36.4091497 C0.100107984,36.6906946 0.215621883,36.9442822 0.401617928,37.1255138 C0.429466646,37.1724522 0.46401687,37.2209212 0.505459733,37.2705185 L7.43826743,45.5674476 L14.0237778,37.2862523 C14.1671903,37.1059129 14.2235533,36.9397038 14.2013181,36.8068135 Z" id="Rectangle-21" stroke="#FFFFFF" stroke-width="2" sketch:type="MSShapeGroup"></path>
+                <polygon id="Triangle-3" fill="#FFFFFF" sketch:type="MSShapeGroup" transform="translate(7.191308, 44.201024) scale(1, -1) translate(-7.191308, -44.201024) " points="7.00559381 42.8346012 9.01345376 45.5674476 5.36916295 45.5674476 "></polygon>
+                <rect id="Rectangle-22" stroke="#FFFFFF" stroke-width="2" sketch:type="MSShapeGroup" x="0.100107984" y="8.25778174" width="14.1824007" height="6.63085969"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

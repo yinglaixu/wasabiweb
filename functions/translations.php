@@ -147,7 +147,7 @@ icl_register_string('Theme-about-us', 'intro-3', 'Månadsvis som kollar på bost
 icl_register_string('Theme-about-us', 'intro-4', 'Över 25,000 Besökare', false, 'sv');
 icl_register_string('Theme-about-us', 'who we are', 'Vem Vi Är', false, 'sv');
 
-
+icl_register_string('Theme-how-it-works', 'contact-text', 'Vi vill gärna höra från dig, mer information kontakta:', false, 'sv');
 
 
 
