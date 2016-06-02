@@ -36,7 +36,7 @@ WW.rentOut = function($){
 
         $('#landlordform').submit(function(e) {
 
-            var from, to, sixMonthInMs, fromDate, toDate, imageCount;
+            var from, to, sixMonthInMs, fromDate, toDate;
 
             //imageCount = $('ul#preview-images > li').length;
 
@@ -113,7 +113,7 @@ WW.rentOut = function($){
 
         } else {
 
-            console.warn('Invalid image');
+            // console.warn('Invalid image');
         }
     }
 

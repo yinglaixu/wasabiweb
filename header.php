@@ -112,17 +112,17 @@
 					     alt="<?php bloginfo( 'name' ); ?>">
 				</a>
 			</div>
-			<div class="o-flag__body">
+			<div class="o-flag__body u-txt-sm">
 				<ul class="o-bare-list">
-					<li class="c-site-header__client-menu u-push-half--bottom@sm-up">
+					<li class="c-site-header__client-menu">
 						<ul class="o-inline-list o-inline-list--spaced">
-							<li class="u-block@sm-down u-flush@sm-down">
+							<li>
 								<a href="<?php echo icl_t( 'Theme-header', "Searching link" ); ?>"
 								   class="[ c-btn c-btn--sm c-btn--delta ] u-txt-normal-weight">
 									<?php echo icl_t( 'Theme-header', "Searching" ); ?>
 								</a>
 							</li>
-							<li class="u-block@xs-down u-push-half--top@sm-down">
+							<li>
 								<a href="<?php echo icl_t( 'Theme-header', "Rent out link" ); ?>"
 								   class="[ c-btn c-btn--sm c-btn--gamma ] u-txt-normal-weight">
 									<?php echo icl_t( 'Theme-header', "Rent out" ); ?>
@@ -231,6 +231,7 @@
 <!--					</li>-->
 				</ul>
 			</div>
+
 		</div>
 	</div>
 </header>

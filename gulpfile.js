@@ -22,6 +22,7 @@ var gulp = require('gulp'),
     cssDest = 'build/css',
     imgDest = 'build/img',
     fontsDest = 'build/fonts',
+    gutil = require('gulp-util'),
     jsDest = {
         global: 'build/js',
         polyfills: 'build/js/polyfills'
@@ -50,20 +51,19 @@ gulp.task('mainScript', function() {
         .pipe(plumber())
         .pipe(newer(jsDest.global))
         .pipe(sourcemaps.init())
-            .pipe(esLint())
-            .pipe(esLint.format())
-            .pipe(babel({
-                ignore: [
-                    'js/plugins/*.js'
-                ]
-            }))
-            .pipe(concat('main.js'))
-            .pipe(uglify())
-            .on('error', function(){
-                console.log("error")
-            })
-            .pipe(filesize())
-            .pipe(rename({suffix: '.min'}))
+        .pipe(esLint())
+        .pipe(esLint.format())
+        .pipe(babel({
+            ignore: [
+                'js/plugins/*.js',
+                'js/components/googlemaps.js'
+            ]
+        }))
+        .pipe(concat('main.js'))
+        // .pipe(uglify()
+        //     .on('error', gutil.log))
+        .pipe(filesize())
+        .pipe(rename({suffix: '.min'}))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(jsDest.global))
         .pipe(livereload());

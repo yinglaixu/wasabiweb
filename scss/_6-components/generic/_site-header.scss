@@ -5,12 +5,13 @@
 $client-menu-height: 25px;
 $client-menu-spacing-at-sm: 5px;
 .c-site-header {
-	height: $site-header-height;
+	height: 120px;
 	color: white;
 	text-align: right;
 	text-transform: uppercase;
 	background: $base-text-color;
 	@include screen-sm-up {
+		height: $site-header-height;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -27,19 +28,19 @@ $client-menu-spacing-at-sm: 5px;
 	
 	.c-site-header__inner {
 		height: 100%;
-		@include screen-sm-down {
-			padding-top: $client-menu-height + ($client-menu-spacing-at-sm * 2);
-		}
+		//@include screen-sm-down {
+		//	padding-top: $client-menu-height + ($client-menu-spacing-at-sm * 2);
+		//}
 	}
 
 	.c-site-header__client-menu {
 		line-height: $client-menu-height;
 		@include screen-sm-down {
-			position: absolute;
+			//position: absolute;
 			top: 0;
-			left: 0;
+			//left: 0;
 			right: 0;
-			background: darken($base-text-color, 5%);
+			//background: darken($base-text-color, 5%);
 			text-align: left;
 			padding: $client-menu-spacing-at-sm $half-spacing-unit;
 		}
