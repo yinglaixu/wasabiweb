@@ -9,6 +9,7 @@ icl_register_string('Theme-header', 'Rent out link', get_field('t-rent_out-link'
 icl_register_string('Theme-header', 'Support', get_field('t-support', 'options'), false, 'sv');
 icl_register_string('Theme-header', 'Support link', get_field('t-support-link', 'options'), false, 'sv');
 icl_register_string('Theme-header', 'Log in', get_field('t-log_in', 'options'), false, 'sv');
+icl_register_string('Theme-header', 'Sign up', get_field('t-sign_up', 'options'), false, 'sv');
 icl_register_string('Theme-header', 'My pages', get_field('t-my_pages', 'options'), false, 'sv');
 
 icl_register_string('Theme-form', 'Area', 'Område', false, 'sv');
@@ -120,14 +121,21 @@ icl_register_string('Theme-mypages', 'Update contact information', 'Uppdatera ko
 
 icl_register_string('Theme-login', 'Login heading', get_field('login-heading', 'options'), false, 'sv');
 icl_register_string('Theme-login', 'Login text', get_field('login-text', 'options'), false, 'sv');
+icl_register_string('Theme-login', 'Signup heading', get_field('signup-heading', 'options'), false, 'sv');
+icl_register_string('Theme-login', 'Signup text', get_field('signup-text', 'options'), false, 'sv');
 icl_register_string('Theme-login', 'Register text', get_field('login-register_text', 'options'), false, 'sv');
 icl_register_string('Theme-login', 'Forgot password?', get_field('login-forgot_password', 'options'), false, 'sv');
 icl_register_string('Theme-login', 'Password', 'Lösenord', false, 'sv');
-icl_register_string('Theme-login', 'Button text', get_field('login-button_text', 'options'), false, 'sv');
+icl_register_string('Theme-login', 'Login Button text', get_field('login-button_text', 'options'), false, 'sv');
+icl_register_string('Theme-login', 'Signup Button text', get_field('signup-button_text', 'options'), false, 'sv');
 icl_register_string('Theme-login', 'Login page link', get_field('login-url', 'options'), false, 'sv');
 icl_register_string('Theme-login', 'Facebook login', 'Logga in med Facebook', false, 'sv');
 icl_register_string('Theme-login', 'Google login', 'Logga in med Google', false, 'sv');
+icl_register_string('Theme-login', 'Facebook signup', 'Bli medlem med Facebook', false, 'sv');
+icl_register_string('Theme-login', 'Google signup', 'Bli medlem med Google', false, 'sv');
 icl_register_string('Theme-login', 'Or', 'Eller', false, 'sv');
+icl_register_string('Theme-login', 'Already have account', 'Är du redan medlem av Renthia?', false, 'sv');
+icl_register_string('Theme-login', 'Dont have account', 'Har du inget konto?', false, 'sv');
 
 icl_register_string('Theme-login', 'Show map', 'Visa karta', false, 'sv');
 
