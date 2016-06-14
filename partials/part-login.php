@@ -14,7 +14,7 @@ if( isset( $_GET['language'] ) ) {
 
 <header class="u-text-center">
     <h1 class="u-flush--bottom">
-          <?php echo icl_t('Theme-login', 'Log in'); ?>
+          <?php echo icl_t('Theme-login', 'Login heading'); ?>
     </h1>
 	<p>
 		<?php echo icl_t('Theme-login', 'Login text'); ?>
