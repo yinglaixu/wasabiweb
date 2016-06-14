@@ -14,10 +14,10 @@ if( isset( $_GET['language'] ) ) {
 
 <header class="u-text-center">
     <h1 class="u-flush--bottom">
-          <?php echo icl_t('Theme-login', 'Log in'); ?>
+		<?php echo icl_t('Theme-login', 'Signup heading'); ?>
     </h1>
 	<p>
-		<?php echo icl_t('Theme-login', 'Login text'); ?>
+		<?php echo icl_t('Theme-login', 'Signup text'); ?>
 	</p>
 </header>
 
@@ -27,7 +27,7 @@ if( isset( $_GET['language'] ) ) {
             <svg class="c-svg-icon__svg c-svg-icon--btn-facebook__svg">
                 <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-facebook"></use>
             </svg>
-            <?php echo icl_t('Theme-login', 'Facebook login'); ?>
+            <?php echo icl_t('Theme-login', 'Facebook signup'); ?>
         </a>
     </li>
     <li>
@@ -35,7 +35,7 @@ if( isset( $_GET['language'] ) ) {
             <svg class="c-svg-icon__svg c-svg-icon--btn-google__svg">
                 <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-google"></use>
             </svg>
-            <?php echo icl_t('Theme-login', 'Google login'); ?>
+            <?php echo icl_t('Theme-login', 'Google signup'); ?>
         </a>
     </li>
 </ul>
@@ -133,22 +133,24 @@ if( $_SESSION['fields-validation'] == true ) :
 <!--				--><?php //echo icl_t('Theme-login', 'Register text'); ?>
 <!--			</label>-->
 <!--		</li>-->
-		<li>
-			<a href="<?php echo wp_lostpassword_url( site_url() ); ?>"><?php echo icl_t('Theme-login', 'Forgot password?'); ?></a>
-		</li>
+<!--		<li>-->
+<!--			<a href="--><?php //echo wp_lostpassword_url( site_url() ); ?><!--">--><?php //echo icl_t('Theme-login', 'Forgot password?'); ?><!--</a>-->
+<!--		</li>-->
 		<li>
 			<button type="submit" class="c-btn c-btn--brand c-btn--lg c-btn--full">
-				<?php echo icl_t('Theme-login', 'Login Button text'); ?>
+				<?php echo icl_t('Theme-login', 'Signup Button text'); ?>
 			</button>
 		</li>
-        <li>
-            <span><?php echo icl_t( 'Theme-login', 'Dont have account' ) ?></span>
-            <a href="#" class="btn btn--brand btn--md"
-               data-change="modal"
-               data-target="<?php bloginfo( 'template_directory' ); ?>/partials/modals/signup.php?language=<?php echo ICL_LANGUAGE_CODE; ?>">
-				<?php echo icl_t( 'Theme-login', 'Signup heading' ) ?>
-            </a>
-        </li>
+		<li>
+			<span><span><?php echo icl_t( 'Theme-login', 'Already have account' ) ?></span></span>
+			<a href="#" class="btn btn--brand btn--md"
+			   data-change="modal"
+			   data-target="<?php bloginfo( 'template_directory' ); ?>/partials/modals/login.php?language=<?php echo ICL_LANGUAGE_CODE; ?>">
+				<?php echo icl_t( 'Theme-header', 'Log in' ) ?>
+			</a>
+		</li>
 	</ul>
 	<?php wp_nonce_field( 'user_validation', 'user_nonce' ); ?>
 </form>
+		
+
