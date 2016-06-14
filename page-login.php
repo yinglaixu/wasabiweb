@@ -21,7 +21,7 @@ if( is_user_logged_in() ) {
 				<div class="o-grid u-text-center">
 					<div class="o-grid__item u-2/4@sm-up ">
 						<div class="o-section u-hard--bottom">
-							<?php get_template_part( 'partials/part-login' ); ?>
+							<?php get_template_part( 'partials/part-signup' ); ?>
 						</div>
 					</div>
 				</div>
