@@ -1,9 +1,10 @@
+$section-padding: $spacing-unit * 2;
 @if ($use-section) {
 /*------------------------------------*\
     OBJECTS -> BASE-LAYOUT -> #SECTION
 \*------------------------------------*/
 
-$section-padding: $spacing-unit * 2;
+
 
 /**
  * Adds padding top and bottom to give some breathing space

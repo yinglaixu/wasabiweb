@@ -75,15 +75,15 @@ Template Name: Startpage
                                                 <img src="<?php bloginfo('template_directory'); ?>/build/img/blank.gif"
                                                      class="c-img-control-wrap__img js-img-control"
                                                      data-lg-src="<?php echo the_sub_field('image');?>"
-                                                     data-lg-width="90"
-                                                     data-lg-height="70"
+                                                     data-lg-width="80"
+                                                     data-lg-height="80"
                                                      data-fluid="false"
                                                      alt="">
 
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="c-stages__title u-txt-lg">
+                                    <li class="c-stages__title u-txt-lg" style = "padding-top: 20px;">
                                         <?php the_sub_field('heading'); ?>
                                     </li>
                                 </ul>

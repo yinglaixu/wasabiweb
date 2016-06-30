@@ -122,17 +122,18 @@ if( $_SESSION['fields-validation'] == true ) :
 			</ul>
 		</li>
 
-<!--		<li>-->
-<!--			<input class="c-styled-input-el u-hidden" type="checkbox" name="login[register]" value="true" id="modal-register-checkbox">-->
-<!--			<label class="c-styled-input-option c-styled-input-option--radio" for="modal-register-checkbox">-->
-<!--                <span class="c-styled-input-option__icon c-styled-input-option__icon--checkbox">-->
-<!--                    <svg class="c-styled-input-option__svg">-->
-<!--	                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/renthia/wp-content/themes/wasabiweb/build/img/sprite.svg#icon-tick-alt"></use>-->
-<!--                    </svg>-->
-<!--                </span>-->
-<!--				--><?php //echo icl_t('Theme-login', 'Register text'); ?>
-<!--			</label>-->
-<!--		</li>-->
+		<li>
+			<input class="c-styled-input-el u-hidden" type="checkbox" name="login[register]" value="true" id="modal-register-checkbox">
+			<label class="c-styled-input-option c-styled-input-option--radio" for="modal-register-checkbox">
+                <span class="c-styled-input-option__icon c-styled-input-option__icon--checkbox">
+                    <svg class="c-styled-input-option__svg">
+	                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/renthia/wp-content/themes/wasabiweb/build/img/sprite.svg#icon-tick-alt"></use>
+                    </svg>
+                </span>
+				<?php echo icl_t('Theme-login', 'Register text'); ?>
+			</label>
+		</li>
+
 		<li>
 			<a href="<?php echo wp_lostpassword_url( site_url() ); ?>"><?php echo icl_t('Theme-login', 'Forgot password?'); ?></a>
 		</li>

@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Page landlord
+Template Name: Page landlord Version 2
 */
 ?>
 <?php /*
@@ -9,24 +9,34 @@ if( ! is_user_logged_in() ) {
     exit;
 }
 */?>
+
+
+
 <?php get_header(); ?>
+
 <div class="c-page-content js-page-content" id="mainContent">
     <div class="c-site-header-placeholder">
     </div>
-    
 	<main role="main">
-        <?php get_template_part('partials/subpage-banner'); ?>   
-        
+<!--        --><?php //get_template_part('partials/landlord-introduction'); ?>
+
+        <div id = "listProperty">
+<!--            --><?php //get_template_part('partials/subpage-banner'); ?>
+        </div>
+
         <section class="o-section">
             <?php
             $val = $GLOBALS['simplerap'];
             $error_style = 'style="color:red"';
             ?>
+
+
+
             <form class="c-block-form" id="landlordform" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="rentoutform" value="true">
                 <div class="o-site-wrap o-site-wrap--padding">
-                    <ul class="c-ui-list u-hard--ends [ u-clean--top u-clean--bottom ]">
-                        <li class="u-hard--sides">
+                    <ul class = 'c-ui-list u-hard--ends [ u-clean--top u-clean--bottom ]'>
+                        <li class = 'u-hard--sides'>
                             <div class="o-grid u-text-center">
                                 <div class="o-grid__item u-3/4@sm-up u-text-center">
                                     <h1><?php the_title(); ?></h1>
@@ -36,34 +46,172 @@ if( ! is_user_logged_in() ) {
                                 </div>
                             </div>
                         </li>
-                        <li class="u-hard--sides">
+                        <li class = 'u-hard--sides'></li>
+                    </ul>
+                    <ul class="c-ui-list u-hard--ends [ u-clean--top u-clean--bottom ]">
+                        <!--address-->
+                        <li class="u-hard--sides" id = 'rentoutFormAddress'>
+                            <h2 class="u-flush--bottom">
+                                <?php echo icl_t('Theme-form', 'Address'); ?>
+                            </h2>
                             <ul class="o-grid o-grid--matrix">
+
+    <!--                                country-->
                                 <li class="o-grid__item u-1/2@sm-up">
                                     <ul class="o-bare-list o-bare-list--spaced-sixth">
                                         <li>
-                                            <label for="area" <?php if( $val->rapCheckError('rentout-area') ) echo $error_style; ?>>
-                                                <strong><?php echo icl_t('Theme-form', 'Area'); ?>:</strong>
+                                            <label>
+                                               <?php echo icl_t('Theme-form', 'Country'); ?>:
                                             </label>
                                         </li>
+
                                         <li>
-                                            <input required type="text" name="rentout[area]" id="area" class="c-text-input c-text-input--lg" placeholder="<?php echo icl_t('Theme-form', 'Area placeholder'); ?>" value="<?php esc_html_e( $_POST['rentout']['area'] ); ?>">
+                                            <div class="c-styled-select js-select">
+                                                <?php
+                                                $countries = get_field('rentout_countries');
+                                                $country = $country ?: get_field('rentout_countries')[0]['rentout_country'];
+                                                ?>
+                                                <label class="c-styled-select__label c-styled-select__label--sm">
+                                                    <span class="js-styled-select-text">
+                                                        <?php echo $country; ?>
+                                                    </span>
+                                                    <svg class="c-styled-select__chevron">
+                                                        <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-chevron"></use>
+                                                    </svg>
+                                                </label>
+                                                <select class="c-styled-select__select" name="rentout[country]" id ="rentoutCountries">
+                                                    <?php if( have_rows('rentout_countries') ) : while( have_rows('rentout_countries') ) : the_row(); ?>
+                                                        <?php $current = get_sub_field('rentout_country'); ?>
+                                                        <option value="<?php echo $current; ?>" <?php if( $current === $country ) echo "selected"; ?>> <?php echo $current; ?> </option>
+                                                    <?php endwhile; endif; ?>
+                                                </select>
+                                            </div>
                                         </li>
                                     </ul>
                                 </li>
+    <!--                                city-->
                                 <li class="o-grid__item u-1/2@sm-up">
                                     <ul class="o-bare-list o-bare-list--spaced-sixth">
+                                        <li>
+                                            <label>
+                                                 <?php echo icl_t('Theme-form', 'City'); ?>:
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <div class="c-styled-select js-select">
+                                                <?php
+                                                $cities = get_field('rentout_cities');
+                                                $city = $city ?: get_field('rentout_cities')[0]['rentout_city'];
+                                                ?>
+                                                <label class="c-styled-select__label c-styled-select__label--sm">
+                                                    <span class="js-styled-select-text" id ="chosenCity">
+                                                        <?php echo $city; ?>
+                                                    </span>
+                                                    <svg class="c-styled-select__chevron">
+                                                        <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-chevron"></use>
+                                                    </svg>
+                                                </label>
+                                                <select class="c-styled-select__select" name="rentout[city]" id ="rentoutCities">
+                                                    <?php if( have_rows('rentout_cities') ) : while( have_rows('rentout_cities') ) : the_row(); ?>
+                                                        <?php $current = get_sub_field('rentout_city'); ?>
+                                                        <option value="<?php echo $current; ?>"> <?php echo $current; ?> </option>
+                                                    <?php endwhile; endif; ?>
+                                                </select>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+    <!--                                area-->
+                                <li class="o-grid__item u-1/2@sm-up">
+                                    <ul class="o-bare-list o-bare-list--spaced-sixth">
+                                        <li>
+                                            <label>
+                                                 <?php echo icl_t('Theme-form', 'Area'); ?>:
+                                            </label>
+                                        </li>
+
+                                        <li>
+                                            <div class="c-styled-select js-select">
+                                                <?php
+                                                $area = $_POST['rentout']['area'];
+                                                $areas = get_field('rentout_areas');
+                                                $area = $area ?: get_field('rentout_areas')[0]['rentout_area'];
+                                                ?>
+                                                <label class="c-styled-select__label c-styled-select__label--sm">
+                                                    <span class="js-styled-select-text" id ="chosenArea">
+                                                        <?php echo $area; ?>
+                                                    </span>
+                                                    <svg class="c-styled-select__chevron">
+                                                        <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-chevron"></use>
+                                                    </svg>
+                                                </label>
+                                                <select class="c-styled-select__select" name="rentout[area]" id ="rentoutAreas">
+                                                    <?php if( have_rows('rentout_areas') ) : while( have_rows('rentout_areas') ) : the_row(); ?>
+                                                        <?php $current = get_sub_field('rentout_area'); ?>
+                                                        <option value="<?php echo $current; ?>"> <?php echo $current; ?> </option>
+                                                    <?php endwhile; endif; ?>
+                                                </select>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+    <!--                                zipcode-->
+                                <li class="o-grid__item u-1/2@sm-up">
+                                    <ul class="o-bare-list o-bare-list--spaced-sixth">
+                                        <li>
+                                            <label for="postcode" <?php if( $val->rapCheckError('rentout-postcode') ) echo $error_style; ?>>
+                                                <?php echo icl_t('Theme-form', 'Zipcode'); ?>:
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input required type="text" name="rentout[postcode]" id="postcode" class="c-text-input c-text-input--lg" placeholder="75277 Uppsala" value="<?php esc_html_e( $_POST['rentout']['postcode'] ); ?>">
+                                        </li>
+                                    </ul>
+                                </li>
+    <!--                                address-->
+                                <li class="o-grid__item u-1/1@sm-up">
+                                    <ul class="o-bare-list o-bare-list--spaced-sixth">
+                                        <li>
+                                            <label for="address" <?php if( $val->rapCheckError('rentout-address') ) echo $error_style; ?>>
+                                                <?php echo icl_t('Theme-form', 'Address'); ?>:
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input required type="text" name="rentout[address]" id="address" class="c-text-input c-text-input--lg" placeholder="<?php echo icl_t('Theme-form', 'Address placeholder'); ?>" value="<?php esc_html_e( $_POST['rentout']['address'] ); ?>">
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                         </li>
+                        <!--property-->
+                        <li class="u-hard--sides" id = 'rentoutFormProperty'>
+                            <h2 class="u-flush--bottom">
+                                <?php echo icl_t('Theme-form', 'Property'); ?>
+                            </h2>
+                            <ul class="o-grid o-grid--matrix">
+                                <!--                                type of property-->
+                                <li class="o-grid__item u-1/1@sm-up">
+                                    <ul class="o-bare-list o-bare-list--spaced-sixth">
                                         <li <?php if( $val->rapCheckError('rentout-property-type') ) echo $error_style; ?>>
-                                            <strong><?php echo icl_t('Theme-form', 'Hometype'); ?>:</strong>
+                                            <?php echo icl_t('Theme-form', 'Hometype'); ?>:
                                         </li>
                                         <li class="u-form-center-items">
-                                            <ul class="o-inline-list o-inline-list--spaced">
+                                            <ul class="o-inline-list o-inline-list--spaced-double u-text-center">
                                                 <li>
                                                     <input required class="c-styled-input-el u-hidden" type="radio" name="rentout[property-type]" value="villa" id="type-villa">
                                                     <label class="c-styled-input-option c-styled-input-option--radio" for="type-villa">
-                                                        <span class="c-styled-input-option__icon c-styled-input-option__icon--radio">
+                                                        <p class="c-svg-icon--rentout-property-type">
+                                                            <svg id = 'icon-villa-default' class="c-svg-icon--rentout-property-type__svg">
+                                                                <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-rentout-villa"></use>
+                                                            </svg>
+                                                            <svg id = 'icon-villa-checked' class="c-svg-icon--rentout-property-type__svg">
+                                                                <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-rentout-villa-checked"></use>
+                                                            </svg>
+                                                        </p>
+                                                        <span class="c-styled-input-option__icon c-styled-input-option__icon--radio" style = "display: none;">
                                                             <svg class="c-styled-input-option__svg">
                                                                 <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-circle"></use>
-                                                            </svg> 
+                                                            </svg>
                                                         </span>
                                                         <?php echo icl_t('Theme-form-options', 'Villa'); ?>
                                                     </label>
@@ -71,10 +219,18 @@ if( ! is_user_logged_in() ) {
                                                 <li>
                                                     <input class="c-styled-input-el u-hidden" type="radio" name="rentout[property-type]"  value="apartment" id="type-apartment">
                                                     <label class="c-styled-input-option c-styled-input-option--radio" for="type-apartment">
-                                                        <span class="c-styled-input-option__icon c-styled-input-option__icon--radio">
+                                                        <p class="c-svg-icon--rentout-property-type">
+                                                            <svg id = 'icon-apartment-default' class="c-svg-icon--rentout-property-type__svg">
+                                                                <use  xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-rentout-apartment"></use>
+                                                            </svg>
+                                                            <svg id = 'icon-apartment-checked' class="c-svg-icon--rentout-property-type__svg">
+                                                                <use  xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-rentout-apartment-checked"></use>
+                                                            </svg>
+                                                        </p>
+                                                        <span class="c-styled-input-option__icon c-styled-input-option__icon--radio" style = "display:none;">
                                                             <svg class="c-styled-input-option__svg">
                                                                 <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-circle"></use>
-                                                            </svg> 
+                                                            </svg>
                                                         </span>
                                                         <?php echo icl_t('Theme-form-options', 'Apartment'); ?>
                                                     </label>
@@ -82,10 +238,18 @@ if( ! is_user_logged_in() ) {
                                                 <li>
                                                     <input class="c-styled-input-el u-hidden" type="radio" name="rentout[property-type]"  value="terraced" id="type-terraced">
                                                     <label class="c-styled-input-option c-styled-input-option--radio" for="type-terraced">
-                                                        <span class="c-styled-input-option__icon c-styled-input-option__icon--radio">
+                                                        <p class="c-svg-icon--rentout-property-type">
+                                                            <svg id = 'icon-sharedroom-default' class="c-svg-icon--rentout-property-type__svg">
+                                                                <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-rentout-sharedroom"></use>
+                                                            </svg>
+                                                            <svg id = 'icon-sharedroom-checked' class="c-svg-icon--rentout-property-type__svg">
+                                                                <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-rentout-sharedroom-checked"></use>
+                                                            </svg>
+                                                        </p>
+                                                        <span class="c-styled-input-option__icon c-styled-input-option__icon--radio" style = "display:none;">
                                                             <svg class="c-styled-input-option__svg">
                                                                 <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-circle"></use>
-                                                            </svg> 
+                                                            </svg>
                                                         </span>
                                                         <?php echo icl_t('Theme-form-options', 'Terraced'); ?>
                                                     </label>
@@ -94,28 +258,46 @@ if( ! is_user_logged_in() ) {
                                         </li>
                                     </ul>
                                 </li>
+                                <!--                                room count-->
                                 <li class="o-grid__item u-1/2@sm-up">
                                     <ul class="o-bare-list o-bare-list--spaced-sixth">
                                         <li>
-                                            <label for="rooms" <?php if( $val->rapCheckError('rentout-rooms') ) echo $error_style; ?>>
-                                                <strong><?php echo icl_t('Theme-form', 'Rooms'); ?>:</strong>
+                                            <label>
+                                                <?php echo icl_t('Theme-form', 'Rooms'); ?>
                                             </label>
                                         </li>
+
                                         <li>
-                                            <div class="c-addon-group c-addon-group--inside c-addon-group--inside--right">
-                                                <input required name="rentout[rooms]" id="rooms" type="number" placeholder="5" class="c-text-input c-text-input--lg c-addon-group--inside__input" value="<?php esc_html_e( $_POST['rentout']['rooms'] ); ?>">
-                                                <span class="c-addon-group--inside__addon">
-                                                    <?php echo icl_t('Theme-form', 'Rooms amount'); ?>
-                                                </span>
+                                            <div class="c-styled-select js-select">
+                                                <?php
+                                                $room = $_POST['rentout']['rooms'];
+                                                $rooms = get_field('rentout_rooms');
+                                                $room = $room ?: get_field('rentout_rooms')[0]['rentout_room'];
+                                                ?>
+                                                <label class="c-styled-select__label c-styled-select__label--sm">
+                                                    <span class="js-styled-select-text">
+                                                        <?php echo $room; ?>
+                                                    </span>
+                                                    <svg class="c-styled-select__chevron">
+                                                        <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-chevron"></use>
+                                                    </svg>
+                                                </label>
+                                                <select class="c-styled-select__select" name="rentout[rooms]" id ="rooms">
+                                                    <?php if( have_rows('rentout_rooms') ) : while( have_rows('rentout_rooms') ) : the_row(); ?>
+                                                        <?php $current = get_sub_field('rentout_room'); ?>
+                                                        <option value="<?php echo $current; ?>"> <?php echo $current; ?> </option>
+                                                    <?php endwhile; endif; ?>
+                                                </select>
                                             </div>
                                         </li>
                                     </ul>
                                 </li>
+                                
                                 <li class="o-grid__item u-1/2@sm-up">
                                     <ul class="o-bare-list o-bare-list--spaced-sixth">
                                         <li>
                                             <label for="volume" <?php if( $val->rapCheckError('rentout-volume') ) echo $error_style; ?>>
-                                                <strong><?php echo icl_t('Theme-form', 'Size'); ?>:</strong>
+                                                <?php echo icl_t('Theme-form', 'Size'); ?>:
                                             </label>
                                         </li>
                                         <li>
@@ -128,117 +310,14 @@ if( ! is_user_logged_in() ) {
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="o-grid__item u-1/2@sm-up">
-                                    <ul class="o-bare-list o-bare-list--spaced-sixth">
-                                        <li>
-                                            <label for="address" <?php if( $val->rapCheckError('rentout-address') ) echo $error_style; ?>>
-                                                <strong><?php echo icl_t('Theme-form', 'Address'); ?>:</strong>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <input required type="text" name="rentout[address]" id="address" class="c-text-input c-text-input--lg" placeholder="<?php echo icl_t('Theme-form', 'Address placeholder'); ?>" value="<?php esc_html_e( $_POST['rentout']['address'] ); ?>">
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="o-grid__item u-1/2@sm-up">
-                                    <ul class="o-bare-list o-bare-list--spaced-sixth">
-                                        <li>
-                                            <label for="postcode" <?php if( $val->rapCheckError('rentout-postcode') ) echo $error_style; ?>>
-                                                <strong><?php echo icl_t('Theme-form', 'Zipcode and city'); ?>:</strong>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <input required type="text" name="rentout[postcode]" id="postcode" class="c-text-input c-text-input--lg" placeholder="75277 Uppsala" value="<?php esc_html_e( $_POST['rentout']['postcode'] ); ?>">
-                                        </li>
-                                    </ul>
-                                </li>
-                               <li class="o-grid__item u-1/2@sm-up">
-                                    <ul class="o-bare-list o-bare-list--spaced-sixth">
-                                        <li>
-                                            <label for="date-from" <?php if( $val->rapCheckError('rentout-date-from') ) echo $error_style; ?>>
-                                                <strong><?php echo icl_t('Theme-form', 'From date'); ?>:</strong>
-                                            </label>                                            
-                                        </li>
-                                        <li>
-                                            <div class="c-addon-group c-addon-group--inside c-addon-group--inside--right u-pointer js-datepicker" data-lang="sv" data-years="1995-2020" data-format="YYYY-MM-DD" data-sundayfirst="false">
-                                                <input required name="rentout[date-from]" id="date-from" type="text" placeholder="<?php echo date("Y-m-d"); ?>" class="c-text-input c-text-input--lg c-addon-group--inside__input" value="<?php esc_html_e( $_POST['rentout']['date-from'] ); ?>">
-                                                <span class="c-addon-group--inside__addon">
-                                                    <span class="c-svg-icon c-svg-icon--calendar">
-                                                        <svg class="c-svg-icon__svg c-svg-icon--calendar__svg">
-                                                            <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-calendar"></use>
-                                                        </svg>                                                 
-                                                    </span>
-                                                </span>
-                                            </div>                                            
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="o-grid__item u-1/2@sm-up">
-                                    <ul class="o-bare-list o-bare-list--spaced-sixth">
-                                        <li>
-                                            <label for="date-to" <?php if( $val->rapCheckError('rentout-date-to') ) echo $error_style; ?>>
-                                                <strong><?php echo icl_t('Theme-form', 'To date'); ?>:</strong>
-                                            </label>                                            
-                                        </li>
-                                        <li>
-                                            <div class="c-addon-group c-addon-group--inside c-addon-group--inside--right u-pointer js-datepicker" data-lang="sv" data-years="1995-2020" data-format="YYYY-MM-DD" data-sundayfirst="false">
-                                                <input required name="rentout[date-to]" id="date-to" type="text" placeholder="<?php echo date("Y-m-d"); ?>" class="c-text-input c-text-input--lg c-addon-group--inside__input" value="<?php esc_html_e( $_POST['rentout']['date-to'] ); ?>">
-                                                <span class="c-addon-group--inside__addon">
-                                                    <span class="c-svg-icon c-svg-icon--calendar">
-                                                        <svg class="c-svg-icon__svg c-svg-icon--calendar__svg">
-                                                            <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-calendar"></use>
-                                                        </svg>                                                 
-                                                    </span>
-                                                </span>
-                                            </div>                                            
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="o-grid__item">
-                                    <ul class="o-bare-list o-bare-list--spaced-sixth">
-                                        <li>
-                                            <label for="price" <?php if( $val->rapCheckError('rentout-price') ) echo $error_style; ?>>
-                                                <strong><?php echo icl_t('Theme-form', 'Price'); ?>:</strong>
-                                            </label>
-                                        </li>
-                                        
-                                        <li>
-                                            <div class="c-addon-group c-addon-group--inside c-addon-group--inside--right">
-                                                <input required name="rentout[price]" id="price" type="number" placeholder="129999" class="c-text-input c-text-input--lg c-addon-group--inside__input" value="<?php esc_html_e( $_POST['rentout']['price'] ); ?>">
-                                                <span class="c-addon-group--inside__addon">
-                                                    <?php echo icl_t('Theme-form', 'Price cost per month'); ?>
-                                                </span>
-                                            </div>
-                                        </li>
-
-                                        <li class="js-price-notification display-none">
-                                            <?php the_field( 'add_ten_percent_info_heading' ); ?>                                       
-
-                                            <?php if( have_rows( 'add_ten_percent_info' ) ): ?>
-                                                <ul class="o-bare-list o-bare-list--spaced-half">
-
-                                                    <?php while ( have_rows( 'add_ten_percent_info' ) ) : the_row(); ?>                                               
-                                               
-                                                        <li class="c-svg-icon c-svg-icon--tick">
-                                                            <svg class="c-svg-icon__svg c-svg-icon--tick__svg">
-                                                                <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-tick"></use>
-                                                            </svg> 
-                                                            <?php the_sub_field( 'add_ten_percent_info_row' ); ?>
-                                                        </li>                                           
-                                                      
-                                                    <?php endwhile; ?>
-                                                </ul>
-                                            <?php endif; ?>
-                                        </li>
-
-                                    </ul>
-                                </li>
+                                <!--description-->
                                 <li class="o-grid__item">
                                     <ul class="o-bare-list o-bare-list--spaced-sixth">
                                         <li>
                                             <label for="description" <?php if( $val->rapCheckError('rentout-description') ) echo $error_style; ?>>
-                                                <strong><?php echo icl_t('Theme-form', 'Description'); ?>:</strong>
+                                                <?php echo icl_t('Theme-form', 'Description'); ?>:
                                             </label>
+                                            <small><?php echo icl_t('Theme-form', 'Description comment'); ?></small>
                                         </li>
                                         <li>
                                             <textarea required name="rentout[description]" id="description" type="number" placeholder="<?php echo icl_t('Theme-form', 'Description placeholder'); ?>" class="c-text-input c-text-input--textarea"><?php echo esc_textarea( $_POST['rentout']['description'] ); ?></textarea>
@@ -247,169 +326,307 @@ if( ! is_user_logged_in() ) {
                                 </li>
                             </ul>
                         </li>
-                        <li class="u-hard--sides">
+                        <!--step1 btn-->
+                        <li class="u-hard--sides" id = 'step_1Btn'>
+                            <a href="#rentoutFormDate" class="[ c-btn c-btn--xl c-btn--alpha ] js-scroll" id = "step_1BtnNext">
+                                <?php echo icl_t('Theme-form', 'NextBtn'); ?>
+                            </a>
+                        </li>
+                        <!--rent out date-->
+                        <li class="u-hard--sides" id = 'rentoutFormDate'>
+                            <h2 class="u-flush--bottom"> <?php echo icl_t('Theme-form', 'Rent out date'); ?> </h2>
+                            <p><?php echo icl_t('Theme-form', 'Rent out date comment'); ?></p>
+                            <ul class="o-grid o-grid--matrix">
+    <!--                                from date-->
+                               <li class="o-grid__item u-1/2@sm-up">
+                                    <ul class="o-bare-list o-bare-list--spaced-sixth">
+                                        <li>
+                                            <label for="date-from" <?php if( $val->rapCheckError('rentout-date-from') ) echo $error_style; ?>>
+                                                <?php echo icl_t('Theme-form', 'From date'); ?>:
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <div class="c-addon-group c-addon-group--inside c-addon-group--inside--right u-pointer js-datepicker" data-lang="sv" data-years="1995-2020" data-format="YYYY-MM-DD" data-sundayfirst="false">
+                                                <input required name="rentout[date-from]" id="date-from" type="text" placeholder="<?php echo date("Y-m-d"); ?>" class="c-text-input c-text-input--lg c-addon-group--inside__input" value="<?php esc_html_e( $_POST['rentout']['date-from'] ); ?>">
+                                                <span class="c-addon-group--inside__addon">
+                                                    <span class="c-svg-icon c-svg-icon--calendar">
+                                                        <svg class="c-svg-icon__svg c-svg-icon--calendar__svg">
+                                                            <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-calendar"></use>
+                                                        </svg>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+    <!--                                to date-->
+                                <li class="o-grid__item u-1/2@sm-up">
+                                    <ul class="o-bare-list o-bare-list--spaced-sixth">
+                                        <li>
+                                            <label for="date-to" <?php if( $val->rapCheckError('rentout-date-to') ) echo $error_style; ?>>
+                                                <?php echo icl_t('Theme-form', 'To date'); ?>:
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <div class="c-addon-group c-addon-group--inside c-addon-group--inside--right u-pointer js-datepicker" data-lang="sv" data-years="1995-2020" data-format="YYYY-MM-DD" data-sundayfirst="false">
+                                                <input required name="rentout[date-to]" id="date-to" type="text" placeholder="<?php echo date("Y-m-d"); ?>" class="c-text-input c-text-input--lg c-addon-group--inside__input" value="<?php esc_html_e( $_POST['rentout']['date-to'] ); ?>">
+                                                <span class="c-addon-group--inside__addon">
+                                                    <span class="c-svg-icon c-svg-icon--calendar">
+                                                        <svg class="c-svg-icon__svg c-svg-icon--calendar__svg">
+                                                            <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-calendar"></use>
+                                                        </svg>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                </ul>
+                        </li>
+<!--                        rent out price-->
+                        <li class="u-hard--sides" id = 'rentoutFormPrice'>
+                            <h2 class="u-flush--bottom"> <?php echo icl_t('Theme-form', 'Rent out price'); ?> </h2>
+                            <ul class="o-grid o-grid--matrix">
+    <!--                                price-->
+                                <li class="o-grid__item u-1/2@sm-up">
+                                    <ul class="o-bare-list o-bare-list--spaced-sixth">
+                                        <li>
+                                            <label for="price">
+                                                <?php echo icl_t('Theme-form', 'Rent out price you want'); ?>
+                                            </label>
+                                        </li>
+
+                                        <li>
+                                            <div class="c-addon-group c-addon-group--inside c-addon-group--inside--right">
+                                                <input required id="price" type="number" placeholder="129999" class="c-text-input c-text-input--lg c-addon-group--inside__input">
+                                                <span class="c-addon-group--inside__addon">
+                                                    <?php echo icl_t('Theme-form', 'Price cost per month'); ?>
+                                                </span>
+                                            </div>
+                                        </li>
+
+                                        <li class="js-price-notification display-none">
+                                            <p><?php echo icl_t('Theme-form', 'Rent out price recommend comment'); ?></p>
+                                        </li>
+                                    </ul>
+                                </li>
+    <!--                                Renthia rentout price-->
+                                <li class="o-grid__item u-1/2@sm-up">
+                                    <ul class="o-bare-list o-bare-list--spaced-sixth">
+                                        <li>
+                                            <label for="price" <?php if( $val->rapCheckError('rentout-price') ) echo $error_style; ?>>
+                                                <strong><?php echo icl_t('Theme-form', 'Rent out price Renthia'); ?>:</strong>
+                                            </label>
+                                        </li>
+
+                                        <li>
+                                            <div class="c-addon-group c-addon-group--inside c-addon-group--inside--right" id = 'priceRenthiaInput'>
+                                                <input required name="rentout[price]" id="priceRenthia" type="number" placeholder="139999" class="c-text-input c-text-input--lg c-addon-group--inside__input" value="<?php esc_html_e( $_POST['rentout']['price'] ); ?>">
+                                                <span class="c-addon-group--inside__addon">
+                                                    <?php echo icl_t('Theme-form', 'Price cost per month'); ?>
+                                                </span>
+                                            </div>
+                                            <strong id = "priceRenthiaDisplay"> </strong>
+                                        </li>
+
+                                        <li class="js-price-notification display-none">
+                                            <?php the_field( 'add_ten_percent_info_heading' ); ?>
+
+                                            <?php if( have_rows( 'add_ten_percent_info' ) ): ?>
+                                                <ul class="o-bare-list o-bare-list--spaced-half">
+
+                                                    <?php while ( have_rows( 'add_ten_percent_info' ) ) : the_row(); ?>
+
+                                                        <li class="c-svg-icon c-svg-icon--tick">
+                                                            <svg class="c-svg-icon__svg c-svg-icon--tick__svg">
+                                                                <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-tick"></use>
+                                                            </svg>
+                                                            <?php the_sub_field( 'add_ten_percent_info_row' ); ?>
+                                                        </li>
+
+                                                    <?php endwhile; ?>
+                                                </ul>
+                                            <?php endif; ?>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--step2 btn-->
+                        <li class="u-hard--sides" id = 'step_2Btn'>
+                            <a href="#rentoutFormUtilities" class="[ c-btn c-btn--xl c-btn--alpha ] js-scroll" id = "step_2BtnNext">
+                                <?php echo icl_t('Theme-form', 'NextBtn'); ?>
+                            </a>
+                            <a href="#rentoutFormAddress" class="[ c-btn c-btn--md c-btn--viewmore ] js-scroll" id = "step_2BtnBack">
+                                <?php echo icl_t('Theme-form', 'BackBtn'); ?>
+                            </a>
+                        </li>
+                        <!--utilities-->
+                        <li class="u-hard--sides" id = 'rentoutFormUtilities'>
                             <h2 class="u-flush--bottom">
                                 <?php the_field('utilities-heading'); ?>
                             </h2>
                             <p><?php the_field('utilities-text'); ?></p>
                             <ul class="o-grid o-grid--matrix">
-                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/5@lg-up">
+                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/4@lg-up">
                                     <input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[utils][]"  value="heat" id="chk-heat">
                                     <label class="c-styled-input-option c-styled-input-option--radio" for="chk-heat">
                                         <span class="c-styled-input-option__icon c-styled-input-option__icon--checkbox">
                                             <svg class="c-styled-input-option__svg">
                                                 <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-tick-alt"></use>
-                                            </svg> 
+                                            </svg>
                                         </span>
                                         <?php echo icl_t('Theme-form-options', 'Heat'); ?>
                                     </label>
+
                                 </li>
-                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/5@lg-up">
+                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/4@lg-up">
                                     <input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[utils][]"  value="water" id="chk-water">
                                     <label class="c-styled-input-option c-styled-input-option--radio" for="chk-water">
                                         <span class="c-styled-input-option__icon c-styled-input-option__icon--checkbox">
                                             <svg class="c-styled-input-option__svg">
                                                 <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-tick-alt"></use>
-                                            </svg> 
+                                            </svg>
                                         </span>
                                         <?php echo icl_t('Theme-form-options', 'Water'); ?>
                                     </label>
                                 </li>
-                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/5@lg-up">
+                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/4@lg-up">
                                     <input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[utils][]"  value="dishwasher" id="chk-dishwasher">
                                     <label class="c-styled-input-option c-styled-input-option--radio" for="chk-dishwasher">
                                         <span class="c-styled-input-option__icon c-styled-input-option__icon--checkbox">
                                             <svg class="c-styled-input-option__svg">
                                                 <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-tick-alt"></use>
-                                            </svg> 
+                                            </svg>
                                         </span>
                                         <?php echo icl_t('Theme-form-options', 'Dishwasher'); ?>
                                     </label>
                                 </li>
-                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/5@lg-up">
+                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/4@lg-up">
                                     <input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[utils][]"  value="wheelchair" id="chk-wheelchair">
                                     <label class="c-styled-input-option c-styled-input-option--radio" for="chk-wheelchair">
                                         <span class="c-styled-input-option__icon c-styled-input-option__icon--checkbox">
                                             <svg class="c-styled-input-option__svg">
                                                 <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-tick-alt"></use>
-                                            </svg> 
+                                            </svg>
                                         </span>
                                         <?php echo icl_t('Theme-form-options', 'Wheelchair access'); ?>
                                     </label>
                                 </li>
-                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/5@lg-up">
+                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/4@lg-up">
                                     <input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[utils][]"  value="pets" id="chk-pets">
                                     <label class="c-styled-input-option c-styled-input-option--radio" for="chk-pets">
                                         <span class="c-styled-input-option__icon c-styled-input-option__icon--checkbox">
                                             <svg class="c-styled-input-option__svg">
                                                 <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-tick-alt"></use>
-                                            </svg> 
+                                            </svg>
                                         </span>
                                         <?php echo icl_t('Theme-form-options', 'Pets'); ?>
                                     </label>
                                 </li>
-                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/5@lg-up">
+                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/4@lg-up">
                                     <input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[utils][]"  value="shower" id="chk-shower">
                                     <label class="c-styled-input-option c-styled-input-option--radio" for="chk-shower">
                                         <span class="c-styled-input-option__icon c-styled-input-option__icon--checkbox">
                                             <svg class="c-styled-input-option__svg">
                                                 <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-tick-alt"></use>
-                                            </svg> 
+                                            </svg>
                                         </span>
                                         <?php echo icl_t('Theme-form-options', 'Shower'); ?>
                                     </label>
                                 </li>
-                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/5@lg-up">
+                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/4@lg-up">
                                     <input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[utils][]"  value="smoking" id="chk-smoking-allowed">
                                     <label class="c-styled-input-option c-styled-input-option--radio" for="chk-smoking-allowed">
                                         <span class="c-styled-input-option__icon c-styled-input-option__icon--checkbox">
                                             <svg class="c-styled-input-option__svg">
                                                 <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-tick-alt"></use>
-                                            </svg> 
+                                            </svg>
                                         </span>
                                         <?php echo icl_t('Theme-form-options', 'Smoking'); ?>
                                     </label>
                                 </li>
-                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/5@lg-up">
+                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/4@lg-up">
                                     <input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[utils][]"  value="washing_machine" id="chk-washing-machine">
                                     <label class="c-styled-input-option c-styled-input-option--radio" for="chk-washing-machine">
                                         <span class="c-styled-input-option__icon c-styled-input-option__icon--checkbox">
                                             <svg class="c-styled-input-option__svg">
                                                 <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-tick-alt"></use>
-                                            </svg> 
+                                            </svg>
                                         </span>
                                         <?php echo icl_t('Theme-form-options', 'Washing machine'); ?>
                                     </label>
                                 </li>
-                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/5@lg-up">
+                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/4@lg-up">
                                     <input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[utils][]"  value="toilet" id="chk-toilet">
                                     <label class="c-styled-input-option c-styled-input-option--radio" for="chk-toilet">
                                         <span class="c-styled-input-option__icon c-styled-input-option__icon--checkbox">
                                             <svg class="c-styled-input-option__svg">
                                                 <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-tick-alt"></use>
-                                            </svg> 
+                                            </svg>
                                         </span>
                                         <?php echo icl_t('Theme-form-options', 'Toilet'); ?>
                                     </label>
                                 </li>
-                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/5@lg-up">
+                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/4@lg-up">
                                     <input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[utils][]"  value="wifi" id="chk-wifi">
                                     <label class="c-styled-input-option c-styled-input-option--radio" for="chk-wifi">
                                         <span class="c-styled-input-option__icon c-styled-input-option__icon--checkbox">
                                             <svg class="c-styled-input-option__svg">
                                                 <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-tick-alt"></use>
-                                            </svg> 
+                                            </svg>
                                         </span>
                                         <?php echo icl_t('Theme-form-options', 'Wi-Fi'); ?>
                                     </label>
                                 </li>
-                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/5@lg-up">
+                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/4@lg-up">
                                     <input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[utils][]"  value="tv" id="chk-tv">
                                     <label class="c-styled-input-option c-styled-input-option--radio" for="chk-tv">
                                         <span class="c-styled-input-option__icon c-styled-input-option__icon--checkbox">
                                             <svg class="c-styled-input-option__svg">
                                                 <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-tick-alt"></use>
-                                            </svg> 
+                                            </svg>
                                         </span>
                                         <?php echo icl_t('Theme-form-options', 'TV'); ?>
                                     </label>
                                 </li>
-                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/5@lg-up">
+                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/4@lg-up">
                                     <input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[utils][]"  value="parking" id="chk-parking">
                                     <label class="c-styled-input-option c-styled-input-option--radio" for="chk-parking">
                                         <span class="c-styled-input-option__icon c-styled-input-option__icon--checkbox">
                                             <svg class="c-styled-input-option__svg">
                                                 <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-tick-alt"></use>
-                                            </svg> 
+                                            </svg>
                                         </span>
                                         <?php echo icl_t('Theme-form-options', 'Parking'); ?>
                                     </label>
                                 </li>
-                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/5@lg-up">
+                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/4@lg-up">
                                     <input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[utils][]"  value="electricity" id="chk-electricity">
                                     <label class="c-styled-input-option c-styled-input-option--radio" for="chk-electricity">
                                         <span class="c-styled-input-option__icon c-styled-input-option__icon--checkbox">
                                             <svg class="c-styled-input-option__svg">
                                                 <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-tick-alt"></use>
-                                            </svg> 
+                                            </svg>
                                         </span>
                                         <?php echo icl_t('Theme-form-options', 'Electricity'); ?>
                                     </label>
-                                </li>                   
-                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/5@lg-up">
+                                </li>
+                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/4@lg-up">
                                     <input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[utils][]"  value="furniture" id="chk-furnished">
                                     <label class="c-styled-input-option c-styled-input-option--radio" for="chk-furnished">
                                         <span class="c-styled-input-option__icon c-styled-input-option__icon--checkbox">
                                             <svg class="c-styled-input-option__svg">
                                                 <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-tick-alt"></use>
-                                            </svg> 
+                                            </svg>
                                         </span>
                                         <?php echo icl_t('Theme-form-options', 'Furniture'); ?>
                                     </label>
                                 </li>
                             </ul>
                         </li>
-                        <li class="u-hard--sides">
+                        <!--openhouse-->
+                        <li class="u-hard--sides" id = 'rentoutFormOpenHouse'>
                             <h2 class="u-flush">
                                 <?php the_field('open_house-heading'); ?>
                             </h2>
@@ -421,8 +638,8 @@ if( ! is_user_logged_in() ) {
                                             <ul class="o-bare-list o-bare-list--spaced-sixth">
                                                 <li>
                                                     <label for="open-date-1">
-                                                        <strong><?php echo icl_t('Theme-form', 'Date'); ?>:</strong>
-                                                    </label>                                            
+                                                        <?php echo icl_t('Theme-form', 'Date'); ?>:
+                                                    </label>
                                                 </li>
                                                 <li>
                                                     <div class="c-addon-group c-addon-group--inside c-addon-group--inside--right u-pointer js-datepicker" data-lang="sv" data-years="1995-2020" data-format="YYYY-MM-DD" data-sundayfirst="false">
@@ -431,10 +648,10 @@ if( ! is_user_logged_in() ) {
                                                             <span class="c-svg-icon c-svg-icon--calendar">
                                                                 <svg class="c-svg-icon__svg c-svg-icon--calendar__svg">
                                                                     <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-calendar"></use>
-                                                                </svg>                                                 
+                                                                </svg>
                                                             </span>
                                                         </span>
-                                                    </div>                                            
+                                                    </div>
                                                 </li>
                                             </ul>
                                         </li>
@@ -442,8 +659,8 @@ if( ! is_user_logged_in() ) {
                                             <ul class="o-bare-list o-bare-list--spaced-sixth">
                                                 <li>
                                                     <label>
-                                                        <strong><?php echo icl_t('Theme-form', 'Time'); ?>:</strong>
-                                                    </label>                                            
+                                                        <?php echo icl_t('Theme-form', 'Time'); ?>:
+                                                    </label>
                                                 </li>
                                                 <li>
                                                     <div class="c-styled-select js-select">
@@ -454,8 +671,8 @@ if( ! is_user_logged_in() ) {
                                                             <span class="c-svg-icon c-svg-icon--time">
                                                                 <svg class="c-svg-icon__svg c-svg-icon--time__svg">
                                                                     <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-clock"></use>
-                                                                </svg>                                                 
-                                                            </span> 
+                                                                </svg>
+                                                            </span>
                                                         </label>
                                                         <select class="c-styled-select__select" name="rentout[open-time][]" id="open-time-1">
                                                             <option value="stockholm" disabled selected><?php echo icl_t('Theme-form', 'Choose time'); ?></option>
@@ -464,26 +681,27 @@ if( ! is_user_logged_in() ) {
                                                                     $j = 0;
                                                                 } else {
                                                                     $j = '';
-                                                                } 
+                                                                }
                                                                 ?>
                                                                 <option value="<?php echo $j . $i . ':00';?>"><?php echo $j . $i . ':00';?></option>
                                                                 <option value="<?php echo $j . $i . ':30';?>"><?php echo $j . $i . ':30';?></option>
                                                             <?php endfor; ?>
                                                         </select>
-                                                    </div>                                           
+                                                    </div>
                                                 </li>
                                             </ul>
                                         </li>
-                                    </ul>                                
+                                    </ul>
                                 </div>
-                                
+
                             </div>
 
                             <a href="#" class="c-btn c-btn--epsilon c-btn--lg js-clone-opening-times-btn">
                                 + <?php echo icl_t('Theme-form', 'Add showing'); ?>
                             </a>
                         </li>
-                        <li class="u-hard--sides">
+                        <!--image-->
+                        <li class="u-hard--sides" id = 'rentoutFormImage'>
                             <h2 class="u-flush">
                                 <?php the_field('images-heading'); ?>
                             </h2>
@@ -491,7 +709,7 @@ if( ! is_user_logged_in() ) {
                             <ul class="o-grid o-grid--matrix u-flush--bottom" id="preview-images">
 
                             </ul>
-                            <label for="choose-file" class="c-btn c-btn--epsilon c-btn--lg">
+                            <label for="choose-file" class="c-btn c-btn--epsilon c-btn--lg" id = 'submitImgBtn'>
                                 + <?php echo icl_t('Theme-form', 'Add image'); ?>
                             </label>
                             <div id="attached-images">
@@ -502,8 +720,48 @@ if( ! is_user_logged_in() ) {
                                 <input type="file" id="choose-file" class="image-files" accept="image/*" style="display: none"/>
                             </div>
                         </li>
-                        <?php /*
-                        <li class="u-hard--sides">
+                        <!--extra-->
+                        <li class="u-hard--sides" id = 'rentoutFormExtra'>
+                            <h2 class="u-flush"><?php the_field('extras-heading'); ?></h2>
+                            <p><?php the_field('extras-text'); ?></p>
+                            <ul class="o-grid o-grid--matrix">
+                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/5@lg-up">
+                                    <input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[extras][]"  value="cleaning" id="chk-cleaning">
+                                    <label class="c-styled-input-option c-styled-input-option--radio" for="chk-cleaning">
+                                        <span class="c-styled-input-option__icon c-styled-input-option__icon--checkbox">
+                                            <svg class="c-styled-input-option__svg">
+                                                <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-tick-alt"></use>
+                                            </svg>
+                                        </span>
+                                        <?php echo icl_t('Theme-form-options', 'Cleaning'); ?>
+                                    </label>
+                                </li>
+                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/5@lg-up">
+                                    <input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[extras][]"  value="storage" id="chk-storage">
+                                    <label class="c-styled-input-option c-styled-input-option--radio" for="chk-storage">
+                                        <span class="c-styled-input-option__icon c-styled-input-option__icon--checkbox">
+                                            <svg class="c-styled-input-option__svg">
+                                                <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-tick-alt"></use>
+                                            </svg>
+                                        </span>
+                                        <?php echo icl_t('Theme-form-options', 'Storage'); ?>
+                                    </label>
+                                </li>
+                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/5@lg-up">
+                                    <input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[extras][]"  value="movers" id="chk-movers">
+                                    <label class="c-styled-input-option c-styled-input-option--radio" for="chk-movers">
+                                        <span class="c-styled-input-option__icon c-styled-input-option__icon--checkbox">
+                                            <svg class="c-styled-input-option__svg">
+                                                <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-tick-alt"></use>
+                                            </svg>
+                                        </span>
+                                        <?php echo icl_t('Theme-form-options', 'Moving help'); ?>
+                                    </label>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--personal info-->
+                        <li class="u-hard--sides" id = "rentoutFormPersonalInfo">
                             <h2 class="u-flush">
                                 <?php the_field('your_info-heading'); ?>
                             </h2>
@@ -513,7 +771,7 @@ if( ! is_user_logged_in() ) {
                                     <ul class="o-bare-list o-bare-list--spaced-sixth">
                                         <li>
                                             <label for="firstname" <?php if( $val->rapCheckError('rentout-firstname') ) echo $error_style; ?>>
-                                                <strong><?php echo icl_t('Theme-form', 'Forename'); ?>:</strong>
+                                                <?php echo icl_t('Theme-form', 'Forename'); ?>:
                                             </label>
                                         </li>
                                         <li>
@@ -525,7 +783,7 @@ if( ! is_user_logged_in() ) {
                                     <ul class="o-bare-list o-bare-list--spaced-sixth">
                                         <li>
                                             <label for="surname" <?php if( $val->rapCheckError('rentout-surname') ) echo $error_style; ?>>
-                                                <strong><?php echo icl_t('Theme-form', 'Surname'); ?>:</strong>
+                                                <?php echo icl_t('Theme-form', 'Surname'); ?>:
                                             </label>
                                         </li>
                                         <li>
@@ -536,12 +794,12 @@ if( ! is_user_logged_in() ) {
                                 <li class="o-grid__item u-1/2@sm-up">
                                     <ul class="o-bare-list o-bare-list--spaced-sixth">
                                         <li>
-                                            <label for="telephone" <?php if( $val->rapCheckError('rentout-telephone') ) echo $error_style; ?>>
-                                                <strong><?php echo icl_t('Theme-form', 'Telephone'); ?>:</strong>
+                                            <label for="telephone" >
+                                                <?php echo icl_t('Theme-form', 'Telephone'); ?>:
                                             </label>
                                         </li>
                                         <li>
-                                            <input required type="tel" name="rentout[telephone]" id="telephone" class="c-text-input c-text-input--lg" placeholder="+46700 00 00 00" value="<?php esc_html_e( $_POST['rentout']['telephone'] ); ?>">
+                                            <input type="tel" name="rentout[telephone]" id="telephone" class="c-text-input c-text-input--lg" placeholder="+46700 00 00 00" value="<?php esc_html_e( $_POST['rentout']['telephone'] ); ?>">
                                         </li>
                                     </ul>
                                 </li>
@@ -549,7 +807,7 @@ if( ! is_user_logged_in() ) {
                                     <ul class="o-bare-list o-bare-list--spaced-sixth">
                                         <li>
                                             <label for="email" <?php if( $val->rapCheckError('rentout-email') ) echo $error_style; ?>>
-                                                <strong><?php echo icl_t('Theme-form', 'E-mail'); ?>:</strong>
+                                                <?php echo icl_t('Theme-form', 'E-mail'); ?>:
                                             </label>
                                         </li>
                                         <li>
@@ -559,47 +817,8 @@ if( ! is_user_logged_in() ) {
                                 </li>
                             </ul>
                         </li>
-                        */ ?>
-                        <li class="u-hard--sides">
-                            <h2 class="u-flush"><?php the_field('extras-heading'); ?></h2>
-                            <p><?php the_field('extras-text'); ?></p>
-                            <ul class="o-grid o-grid--matrix">
-                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/5@lg-up">
-                                    <input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[extras][]"  value="cleaning" id="chk-cleaning">
-                                    <label class="c-styled-input-option c-styled-input-option--radio" for="chk-cleaning">
-                                        <span class="c-styled-input-option__icon c-styled-input-option__icon--checkbox">
-                                            <svg class="c-styled-input-option__svg">
-                                                <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-tick-alt"></use>
-                                            </svg> 
-                                        </span>
-                                        <?php echo icl_t('Theme-form-options', 'Cleaning'); ?>
-                                    </label>
-                                </li>
-                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/5@lg-up">
-                                    <input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[extras][]"  value="storage" id="chk-storage">
-                                    <label class="c-styled-input-option c-styled-input-option--radio" for="chk-storage">
-                                        <span class="c-styled-input-option__icon c-styled-input-option__icon--checkbox">
-                                            <svg class="c-styled-input-option__svg">
-                                                <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-tick-alt"></use>
-                                            </svg> 
-                                        </span>
-                                        <?php echo icl_t('Theme-form-options', 'Storage'); ?>
-                                    </label>
-                                </li>
-                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/5@lg-up">
-                                    <input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[extras][]"  value="movers" id="chk-movers">
-                                    <label class="c-styled-input-option c-styled-input-option--radio" for="chk-movers">
-                                        <span class="c-styled-input-option__icon c-styled-input-option__icon--checkbox">
-                                            <svg class="c-styled-input-option__svg">
-                                                <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-tick-alt"></use>
-                                            </svg> 
-                                        </span>
-                                        <?php echo icl_t('Theme-form-options', 'Moving help'); ?>
-                                    </label>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="u-hard--sides">
+                        <!--submit button-->
+                        <li class="u-hard--sides" id = 'rentoutFormSubmitBtn'>
                             <button type="submit" class="c-btn c-btn--xl c-btn--alpha">
                                 <?php echo icl_t('Theme-form', 'Send object'); ?>
                             </button>
@@ -607,9 +826,145 @@ if( ! is_user_logged_in() ) {
                     </ul>
                 </div>
             </form>
+<!--            <div class = 'o-grid'>-->
+<!--                <div class = 'o-grid__item u-1/3@sm-up'id = 'confirmedSidebar'>-->
+<!--                    <div class="o-section" style = 'background: white; overflow:auto; height:750px; z-index: 99;'>-->
+<!--                        <ul style = 'list-style: none; '>-->
+<!--                            <li>-->
+<!--                                <h2> Your property </h2>-->
+<!--                                <p>Below here is a summary of your prospect</p>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <div class="c-svg-icon c-svg-icon--rentout-title">-->
+<!--                                    <svg class="c-svg-icon__svg c-svg-icon--rentout-title__svg">-->
+<!--                                        <use xlink:href="--><?php //bloginfo('template_directory'); ?><!--/build/img/sprite.svg#icon-rentout-address"></use>-->
+<!--                                    </svg>-->
+<!--                                    <strong>Address</strong>-->
+<!--                                </div>-->
+<!--                                <p id = 'confirmedAddress'></p>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <div class="c-svg-icon c-svg-icon--rentout-title">-->
+<!--                                    <svg class="c-svg-icon__svg c-svg-icon--rentout-title__svg">-->
+<!--                                        <use xlink:href="--><?php //bloginfo('template_directory'); ?><!--/build/img/sprite.svg#icon-rentout-property"></use>-->
+<!--                                    </svg>-->
+<!--                                    <strong>Property</strong>-->
+<!--                                </div>-->
+<!--                                <p id = 'confirmedProperty'></p>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <div class="c-svg-icon c-svg-icon--rentout-title">-->
+<!--                                    <svg class="c-svg-icon__svg c-svg-icon--rentout-title__svg">-->
+<!--                                        <use xlink:href="--><?php //bloginfo('template_directory'); ?><!--/build/img/sprite.svg#icon-rentout-date"></use>-->
+<!--                                    </svg>-->
+<!--                                    <strong>Rent out date</strong>-->
+<!--                                </div>-->
+<!--                                <p id = 'confirmedRentDate'></p>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <div class="c-svg-icon c-svg-icon--rentout-title">-->
+<!--                                    <svg class="c-svg-icon__svg c-svg-icon--rentout-title__svg">-->
+<!--                                        <use xlink:href="--><?php //bloginfo('template_directory'); ?><!--/build/img/sprite.svg#icon-rentout-price"></use>-->
+<!--                                    </svg>-->
+<!--                                    <strong>Rent out price</strong>-->
+<!--                                </div>-->
+<!--                                <p id = 'confirmedRentPrice'></p>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <div class="c-svg-icon c-svg-icon--rentout-title">-->
+<!--                                    <svg class="c-svg-icon__svg c-svg-icon--rentout-title__svg">-->
+<!--                                        <use xlink:href="--><?php //bloginfo('template_directory'); ?><!--/build/img/sprite.svg#icon-rentout-use"></use>-->
+<!--                                    </svg>-->
+<!--                                    <strong>Utilities</strong>-->
+<!--                                </div>-->
+<!--                                <p id = 'confirmedUtilities'></p>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <div class="c-svg-icon c-svg-icon--rentout-title">-->
+<!--                                    <svg class="c-svg-icon__svg c-svg-icon--rentout-title__svg">-->
+<!--                                        <use xlink:href="--><?php //bloginfo('template_directory'); ?><!--/build/img/sprite.svg#icon-rentout-openhouse"></use>-->
+<!--                                    </svg>-->
+<!--                                    <strong>Open House</strong>-->
+<!--                                </div>-->
+<!--                                <p id = 'confirmedOpenHouse'></p>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <div class="c-svg-icon c-svg-icon--rentout-title">-->
+<!--                                    <svg class="c-svg-icon__svg c-svg-icon--rentout-title__svg">-->
+<!--                                        <use xlink:href="--><?php //bloginfo('template_directory'); ?><!--/build/img/sprite.svg#icon-rentout-img"></use>-->
+<!--                                    </svg>-->
+<!--                                    <strong>Uploaded Images</strong>-->
+<!--                                </div>-->
+<!--                                <p> Preview in the left side form.</p>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <div class="c-svg-icon c-svg-icon--rentout-title">-->
+<!--                                    <svg class="c-svg-icon__svg c-svg-icon--rentout-title__svg">-->
+<!--                                        <use xlink:href="--><?php //bloginfo('template_directory'); ?><!--/build/img/sprite.svg#icon-rentout-extra"></use>-->
+<!--                                    </svg>-->
+<!--                                    <strong>Additional Services</strong>-->
+<!--                                </div>-->
+<!--                                <p id = 'confirmedExtra'></p>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
         </section>
 
 	</main>
 </div>
 
 <?php get_footer(); ?>
+
+<style>
+    .confirmSidebarFixed {
+        width: 355px;
+        position: fixed;
+        top: 0;
+        z-index: 99;
+    }
+    #priceRenthiaInput{
+        display: none;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

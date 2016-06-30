@@ -24,6 +24,8 @@
 			<h1><?php echo $subject; ?></h1>
 		</header>
 		<div class='main'>
+			<p><strong>Country: </strong><?php echo $country; ?></p>
+			<p><strong>City: </strong><?php echo $city; ?></p>
 			<p><strong>Area: </strong><?php echo $area; ?></p>
 			<p><strong>Type of property: </strong><?php echo $property_type; ?></p>
 			<p><strong>Rooms: </strong><?php echo $rooms; ?></p>
@@ -46,11 +48,9 @@
 					<?php echo $open_date[$i] . ' - ' . $open_time[$i]; ?>
 				<?php endfor; ?>
 			</p>
-			<?php /*
 			<p><strong>First name: </strong><?php echo $first_name; ?></p>
 			<p><strong>Surname: </strong><?php echo $surname; ?></p>
 			<p><strong>Telephone: </strong><?php echo $telephone; ?></p>
-            */ ?>
 			<p><strong>E-mail: </strong><?php echo $email; ?></p>
 			<?php if( is_array( $extras ) ) : ?>
 			<?php $extras_merge = implode( ', ', $extras ); ?>

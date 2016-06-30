@@ -3,7 +3,7 @@
     <h3 class="u-txt-md socal-follow-bar-title">
         <strong><?php echo icl_t('Theme', 'Follow us'); ?></strong>
     </h3>
-    <ul class="o-inline-list o-inline-list--spaced-half social-icon-list">
+    <ul class="o-inline-list social-icon-list">
         <li>
             <div id = 'facebook'>
                 <a href="<?php the_field('facebook', 'options'); ?>" class="c-svg-icon c-svg-icon--social" target="_blank">

@@ -75,11 +75,57 @@ WW.modalDialog = function($) {
         setTimeout(() => {
             modalDialog.html('');
         }, delay);
+
+    };
+
+    const changeModal = function changeModal() {
+        const delay = 0;
+        const button = $(this), target = button.data('target');
+
+        $(this).closest('.js-modal').removeClass('is-open');
+        body.css({
+            'overflow' : 'auto',
+            'padding-right' : 0
+        }).removeClass('modal-open');
+        $('.js-navbar').css({
+            'margin-right' : 0
+        });
+
+        body.addClass('is-loading');
+        $.ajax(target, { dataType: 'text'})
+            .then(contents => {
+                modalDialog.html(contents);
+                setTimeout(() => {
+                    body.removeClass('is-loading');
+                    modalDialog.children().addClass('is-open');
+                    if (body.height() > $(window).height()) {
+                        body.css({
+                            'overflow' : 'hidden',
+                            'padding-right' : WW.scrollbarWidth
+                        }).addClass('modal-open');
+                        $('.js-navbar').css({
+                            'margin-right' : WW.scrollbarWidth
+                        });
+                    }
+                }, delay);
+            })
+            .fail(() => {
+                body.removeClass('is-loading');
+                throw 'Unable to load modal: ' + target;
+            });
     };
 
     body.on('click', '*[data-toggle="modal"]', openModal);
     modalDialog.on('click', '*[data-dismiss="modal"]', closeModal);
-
+    // if (body.hasClass('modal-open')){
+    //     console.log('has modal open');
+    //     modalDialog.on('click', '*[data-change = "modal"]', changeModal);
+    // }
+    // else{
+    //     console.log('dont has modal open');
+    //     body.on('click', '*[data-change = "modal"]', changeModal);
+    // }
+    modalDialog.on('click', '*[data-change = "modal"]', changeModal);
     modalDialog.on('click', '.js-modal-dialog', e => {
         e.stopPropagation();
     });
@@ -88,4 +134,39 @@ WW.modalDialog = function($) {
 };
 
 // add the following to main.js .modalDialog($)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="121px" height="73px" viewBox="0 0 121 73" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3 (11970) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-rentout-sharedroom-checked</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="icon-rentout-sharedroom-checked" sketch:type="MSLayerGroup" transform="translate(0.000000, 0.500000)" stroke="#D24E13">
+            <rect id="Rectangle-15" stroke-width="2" fill="#EE7844" sketch:type="MSShapeGroup" x="11.8392658" y="36.3" width="95.3128492" height="35.6214953"></rect>
+            <rect id="Rectangle-15-Copy" stroke-width="2" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0.337988827" y="69.546729" width="120.662011" height="2.37476636"></rect>
+            <g id="Group-Copy-5" transform="translate(8.111732, 0.000000)" sketch:type="MSShapeGroup">
+                <path d="M18.6310227,2.93674206 L15.7899559,0.435934953 L0.484940491,13.9079497 L0.484940491,72.0555209 L31.0949721,72.0555209 L31.0949721,13.9079497 L28.2000243,11.3597146 L28.2000243,3.43942114 C28.2000243,1.78153282 26.8562813,0.435934953 25.1986904,0.435934953 L21.5907194,0.435934953 C20.0976344,0.435934953 18.8688688,1.51726899 18.6310227,2.93674206 Z" id="Rectangle-16" stroke-width="2" fill="#FFFFFF"></path>
+                <rect id="Rectangle-18" fill="#EE7844" x="11.263845" y="23.2311065" width="9.05222249" height="11.8668513" rx="3"></rect>
+                <rect id="Rectangle-18-Copy-3" fill="#EE7844" x="11.263845" y="39.7595362" width="9.05222249" height="11.8668513" rx="3"></rect>
+                <rect id="Rectangle-18-Copy-4" fill="#EE7844" x="12.9925681" y="60.1902952" width="5.5947764" height="10.160358" rx="3"></rect>
+            </g>
+            <g id="Group-Copy-6" transform="translate(43.938547, 0.000000)" sketch:type="MSShapeGroup">
+                <path d="M18.6310227,2.93674206 L15.7899559,0.435934953 L0.484940491,13.9079497 L0.484940491,72.0555209 L31.0949721,72.0555209 L31.0949721,13.9079497 L28.2000243,11.3597146 L28.2000243,3.43942114 C28.2000243,1.78153282 26.8562813,0.435934953 25.1986904,0.435934953 L21.5907194,0.435934953 C20.0976344,0.435934953 18.8688688,1.51726899 18.6310227,2.93674206 Z" id="Rectangle-16" stroke-width="2" fill="#FFFFFF"></path>
+                <rect id="Rectangle-18" fill="#EE7844" x="11.263845" y="23.2311065" width="9.05222249" height="11.8668513" rx="3"></rect>
+                <rect id="Rectangle-18-Copy-3" fill="#EE7844" x="11.263845" y="39.7595362" width="9.05222249" height="11.8668513" rx="3"></rect>
+                <path d="M12.9925681,62.9935536 C12.9925681,61.4453568 14.2481451,60.1902952 15.7899563,60.1902952 L15.7899563,60.1902952 C17.3349111,60.1902952 18.5873445,61.4361545 18.5873445,62.9935536 L18.5873445,70.3506532 L12.9925681,70.3506532 L12.9925681,62.9935536 Z" id="Rectangle-18-Copy-4" fill="#EE7844"></path>
+            </g>
+            <g id="Group-Copy-7" transform="translate(79.765363, 0.000000)" sketch:type="MSShapeGroup">
+                <path d="M18.6310227,2.93674206 L15.7899559,0.435934953 L0.484940491,13.9079497 L0.484940491,72.0555209 L31.0949721,72.0555209 L31.0949721,13.9079497 L28.2000243,11.3597146 L28.2000243,3.43942114 C28.2000243,1.78153282 26.8562813,0.435934953 25.1986904,0.435934953 L21.5907194,0.435934953 C20.0976344,0.435934953 18.8688688,1.51726899 18.6310227,2.93674206 Z" id="Rectangle-16" stroke-width="2" fill="#FFFFFF"></path>
+                <rect id="Rectangle-18" fill="#EE7844" x="11.263845" y="23.2311065" width="9.05222249" height="11.8668513" rx="3"></rect>
+                <rect id="Rectangle-18-Copy-3" fill="#EE7844" x="11.263845" y="39.7595362" width="9.05222249" height="11.8668513" rx="3"></rect>
+                <rect id="Rectangle-18-Copy-4" fill="#EE7844" x="12.9925681" y="60.1902952" width="5.5947764" height="10.160358" rx="3"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

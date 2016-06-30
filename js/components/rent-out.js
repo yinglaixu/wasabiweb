@@ -36,15 +36,15 @@ WW.rentOut = function($){
 
         $('#landlordform').submit(function(e) {
 
-            var from, to, sixMonthInMs, fromDate, toDate;
+            var from, to, sixMonthInMs, fromDate, toDate, imageCount;
 
-            //imageCount = $('ul#preview-images > li').length;
+            imageCount = $('ul#preview-images > li').length;
 
-            // if(imageCount < 3){
-            //     alert('Image');
-            //     e.preventDefault();
-            //     e.stopPropagation();
-            // }
+            if(imageCount < 3){
+                alert('Heads Up! You will need to upload minimum 3 pictures of your home. This will help you to find more tenants. / Påminnelse! Du måste ladda upp minst 3 bilder på ditt objekt. Detta kommer hjälpa dig att hitta fler hyresgäster till ditt objekt.');
+                e.preventDefault();
+                e.stopPropagation();
+            }
 
             from = document.getElementById('date-from').value;
             to = document.getElementById('date-to').value;

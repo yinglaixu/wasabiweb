@@ -1,3 +1,8 @@
+@mixin reveal() {
+	height: auto;
+	width: auto;
+	clip: auto;
+}
 @if ($use-flyout) {
 
 /**
@@ -129,11 +134,7 @@ $left-bottom: false;
 $left-top: false;
 
 
-@mixin reveal() {
-	height: auto;
-	width: auto;
-	clip: auto;
-}
+
 
 
 .o-flyout {

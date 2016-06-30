@@ -6,9 +6,9 @@ if ( 'true' === $_POST['rentoutform'] ) {
 
 	// Validate fields $_POST['rentout']['']
 	$mail
-		->rapValidateRequiredField( 'rentout-area', $_POST['rentout']['area'] )
+//		->rapValidateRequiredField( 'rentout-area', $_POST['rentout']['area'] )
 		->rapValidateRequiredField( 'rentout-property-type', $_POST['rentout']['property-type'] )
-		->rapValidateNumber( 'rentout-rooms', $_POST['rentout']['rooms'] )
+//		->rapValidateNumber( 'rentout-rooms', $_POST['rentout']['rooms'] )
 		->rapValidateNumber( 'rentout-volume', $_POST['rentout']['volume'] )
 		->rapValidateRequiredField( 'rentout-address', $_POST['rentout']['address'] )
 		->rapValidateRequiredField( 'rentout-postcode', $_POST['rentout']['postcode'] )
@@ -63,14 +63,15 @@ if ( 'true' === $_POST['rentoutform'] ) {
 			'utils'         => $_POST['rentout']['utils'],
 			'open_date'     => $_POST['rentout']['open-date'],
 			'open_time'     => $_POST['rentout']['open-time'],
-			/*'first_name'    => $_POST['rentout']['firstname'],
+			'first_name'    => $_POST['rentout']['firstname'],
 			'surname'       => $_POST['rentout']['surname'],
-			'telephone'     => $_POST['rentout']['telephone'],*/
+			'telephone'     => $_POST['rentout']['telephone'],
+			'email'     	=> $_POST['rentout']['email'],
 			'extras'        => $_POST['rentout']['extras'],
 		];
 
 
-		$vars['email'] = $user ? $user->user_email : 'Inte inloggad/registrerad';
+//		$vars['email'] = $user ? $user->user_email : 'Inte inloggad/registrerad';
 
 
 		$files = [ ];
@@ -101,9 +102,9 @@ if ( 'true' === $_POST['rentoutform'] ) {
 		$property->rooms            = $vars['rooms'];
 		$property->volume           = $vars['volume'];
 		$property->utilities        = $vars['utils'];
-		/*$property->contactFirstName = $vars['first_name'];
+		$property->contactFirstName = $vars['first_name'];
 		$property->contactSurname   = $vars['surname'];
-		$property->contactTelephone = $vars['telephone'];*/
+		$property->contactTelephone = $vars['telephone'];
 		$property->contactEmail     = $vars['email'];
 		$property->owner            = $user ? $user->ID : 0;
 		$property

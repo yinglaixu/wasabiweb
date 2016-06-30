@@ -20,9 +20,10 @@ var gulp = require('gulp'),
     newer = require('gulp-newer'),
     livereload = require('gulp-livereload'),
     cssDest = 'build/css',
+    gulpIgnore = require('gulp-ignore'),
     imgDest = 'build/img',
     fontsDest = 'build/fonts',
-    gutil = require('gulp-util'),
+
     jsDest = {
         global: 'build/js',
         polyfills: 'build/js/polyfills'
@@ -30,38 +31,39 @@ var gulp = require('gulp'),
 
 
 gulp.task('style', function() {
-    return gulp.src('scss/style.scss', { noCache: true, style: 'compressed' })
+    return gulp.src('scss/style.scss')
         .pipe(newer(cssDest))
         .pipe(sourcemaps.init())
-            .pipe(sass().on('error', sass.logError))
-            .pipe(autoprefixer({
-                browsers: ['last 4 versions'],
-                cascade: false
-            }))
-            .pipe(minifyCSS({'advanced': false}))
-            .pipe(rename({suffix: '.min'}))
+        .pipe(sass().on('error', sass.logError))
+        .pipe(autoprefixer({
+            browsers: ['last 4 versions'],
+            cascade: false
+        }))
+        .pipe(minifyCSS({'advanced': false}))
+        .pipe(rename({suffix: '.min'}))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(cssDest))
         .pipe(livereload());
 });
 
 
+
+
 gulp.task('mainScript', function() {
     return gulp.src(['js/start.js', 'js/plugins/*.js', 'js/components/*.js', 'js/main.js'])
         .pipe(plumber())
+        .pipe(gulpIgnore.exclude(/^_/))
         .pipe(newer(jsDest.global))
         .pipe(sourcemaps.init())
         .pipe(esLint())
         .pipe(esLint.format())
         .pipe(babel({
             ignore: [
-                'js/plugins/*.js',
-                'js/components/googlemaps.js'
+                'js/plugins/*.js'
             ]
         }))
         .pipe(concat('main.js'))
-        // .pipe(uglify()
-        //     .on('error', gutil.log))
+        .pipe(uglify())
         .pipe(filesize())
         .pipe(rename({suffix: '.min'}))
         .pipe(sourcemaps.write('.'))
@@ -74,10 +76,10 @@ gulp.task('polyfills', function() {
         .pipe(plumber())
         .pipe(newer(jsDest.polyfills))
         .pipe(sourcemaps.init())
-            .pipe(babel())
-            .pipe(uglify())
-            .pipe(filesize())
-            .pipe(rename({suffix: '.min'}))
+        .pipe(babel())
+        .pipe(uglify())
+        .pipe(filesize())
+        .pipe(rename({suffix: '.min'}))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(jsDest.polyfills))
         .pipe(livereload());
@@ -98,12 +100,12 @@ gulp.task('fonts', function() {
 gulp.task('image', function() {
     gulp.src(['img/media/**/*', 'img/wasabiweb.svg'])
         .pipe(newer(imgDest))
-        .pipe(imagemin({ 
-            optimizationLevel: 3, 
-            progressive: true, 
+        .pipe(imagemin({
+            optimizationLevel: 3,
+            progressive: true,
             interlaced: true,
             svgoPlugins: [{removeViewBox: false}],
-            use: [pngquant()] 
+            use: [pngquant()]
         }))
         .pipe(gulp.dest(imgDest))
         .pipe(notify({ message: 'Images task complete' }));
@@ -128,17 +130,12 @@ gulp.task('image', function() {
 });
 
 
-// gulp.task('default', ['mainScript', 'polyfills', 'style', 'image', 'fonts'], function() {
-//     livereload.listen();
-//     gulp.watch('scss/**/*.scss', ['style']);
-//     gulp.watch(['js/components/*.js', 'js/start.js', 'js/main.js', 'js/plugins/*.js'], ['mainScript']);
-//     gulp.watch('js/polyfills/*.js', ['polyfills']);
-//     gulp.watch(['**/*.php'], ['php']);
-//     gulp.watch('img/**/*', ['image']);
-//     gulp.watch('fonts/*', ['fonts']);
-// });
-
-gulp.task('default', function() {
+gulp.task('default', ['mainScript', 'polyfills', 'style', 'image', 'fonts'], function() {
     livereload.listen();
     gulp.watch('scss/**/*.scss', ['style']);
+    gulp.watch(['js/components/*.js','js/start.js', 'js/main.js', 'js/plugins/*.js'], ['mainScript']);
+    gulp.watch('js/polyfills/*.js', ['polyfills']);
+    gulp.watch(['**/*.php'], ['php']);
+    gulp.watch('img/**/*', ['image']);
+    gulp.watch('fonts/*', ['fonts']);
 });

@@ -1,3 +1,25 @@
+@mixin build-svg($size, $x:center, $y:center) {
+    width: $size;
+    height: $size;
+
+    @if $x == left {
+        left: 0;
+    } @elseif $x == right {
+        right: 0;
+    } @else {
+        left: 50%;
+        margin-left: -($size / 2);
+    }
+
+    @if $y == top {
+        top: 0;
+    } @elseif $y == bottom {
+        bottom: 0;
+    } @else {
+        top: 50%;
+        margin-top: -($size / 2);
+    }
+}
 @if ($use-svg-icons) {
 /*------------------------------------*\
     COMPONENTS -> GENERIC -> ##SVG-ICONS
@@ -34,28 +56,7 @@
  * Or passing in top-right
  * @include build-svg(10px, right top);
  */
-@mixin build-svg($size, $x:center, $y:center) {
-    width: $size;
-    height: $size;
 
-    @if $x == left {
-        left: 0;
-    } @elseif $x == right {
-        right: 0;
-    } @else {
-        left: 50%;
-        margin-left: -($size / 2);   
-    }
-
-    @if $y == top {
-        top: 0;
-    } @elseif $y == bottom {
-        bottom: 0;
-    } @else {
-        top: 50%;
-        margin-top: -($size / 2);
-    }
-}
 
 .c-svg-icon {
     /* Base svg-icon */
@@ -239,6 +240,24 @@
     &__svg--short {
         /** vertically center the shorter icons */
         transform: translateY(2px);
+    }
+}
+
+.c-svg-icon--rentout-property-type {
+    margin-bottom: 0px;
+    &__svg {
+        $size: 100px;
+        @include build-svg($size, left);
+        padding: 5px;
+    }
+}
+
+.c-svg-icon--rentout-title {
+    padding-left: 30px;
+    fill: currentColor;
+    &__svg {
+        $size: 20px;
+        @include build-svg($size, left);
     }
 }
 

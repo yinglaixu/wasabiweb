@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="121px" height="72px" viewBox="0 0 121 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3 (11970) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-rentout-sharedroom</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="icon-rentout-sharedroom" sketch:type="MSLayerGroup" stroke="#989898">
+            <rect id="Rectangle-15" fill="#DDDDDD" sketch:type="MSShapeGroup" x="11.7460251" y="36.0141176" width="94.5622083" height="35.3409566"></rect>
+            <rect id="Rectangle-15-Copy" stroke-width="4" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0.33532698" y="68.9990104" width="119.711732" height="2.35606377"></rect>
+            <g id="Group-Copy-5" transform="translate(8.047848, 0.000000)" sketch:type="MSShapeGroup">
+                <path d="M18.486978,2.9159769 L15.6656014,0.432501727 L0.481121319,13.798417 L0.481121319,71.4880443 L30.8500822,71.4880443 L30.8500822,13.798417 L27.9779337,11.2702506 L27.9779337,3.42987408 C27.9779337,1.76750227 26.6389263,0.432501727 24.9871771,0.432501727 L21.4337405,0.432501727 C19.9629868,0.432501727 18.7312488,1.50542246 18.486978,2.9159769 Z" id="Rectangle-16" stroke-width="2" fill="#FFFFFF"></path>
+                <rect id="Rectangle-18" fill="#DDDDDD" x="11.1751361" y="23.0481488" width="8.98093129" height="11.7733933" rx="3"></rect>
+                <rect id="Rectangle-18-Copy-3" fill="#DDDDDD" x="11.1751361" y="39.4464081" width="8.98093129" height="11.7733933" rx="3"></rect>
+                <rect id="Rectangle-18-Copy-4" fill="#DDDDDD" x="12.8902445" y="60.5737427" width="5.55071448" height="10.0803397" rx="3"></rect>
+            </g>
+            <g id="Group-Copy-6" transform="translate(43.592507, 0.000000)" sketch:type="MSShapeGroup">
+                <path d="M18.486978,2.9159769 L15.6656014,0.432501727 L0.481121319,13.798417 L0.481121319,71.4880443 L30.8500822,71.4880443 L30.8500822,13.798417 L27.9779337,11.2702506 L27.9779337,3.42987408 C27.9779337,1.76750227 26.6389263,0.432501727 24.9871771,0.432501727 L21.4337405,0.432501727 C19.9629868,0.432501727 18.7312488,1.50542246 18.486978,2.9159769 Z" id="Rectangle-16" stroke-width="2" fill="#FFFFFF"></path>
+                <rect id="Rectangle-18" fill="#DDDDDD" x="11.1751361" y="23.0481488" width="8.98093129" height="11.7733933" rx="3"></rect>
+                <rect id="Rectangle-18-Copy-3" fill="#DDDDDD" x="11.1751361" y="39.4464081" width="8.98093129" height="11.7733933" rx="3"></rect>
+                <path d="M12.8902445,63.3549239 C12.8902445,61.81892 14.1359332,60.5737427 15.6656017,60.5737427 L15.6656017,60.5737427 C17.1983892,60.5737427 18.440959,61.8097902 18.440959,63.3549239 L18.440959,70.6540823 L12.8902445,70.6540823 L12.8902445,63.3549239 Z" id="Rectangle-18-Copy-4" fill="#DDDDDD"></path>
+            </g>
+            <g id="Group-Copy-7" transform="translate(79.137167, 0.000000)" sketch:type="MSShapeGroup">
+                <path d="M18.486978,2.9159769 L15.6656014,0.432501727 L0.481121319,13.798417 L0.481121319,71.4880443 L30.8500822,71.4880443 L30.8500822,13.798417 L27.9779337,11.2702506 L27.9779337,3.42987408 C27.9779337,1.76750227 26.6389263,0.432501727 24.9871771,0.432501727 L21.4337405,0.432501727 C19.9629868,0.432501727 18.7312488,1.50542246 18.486978,2.9159769 Z" id="Rectangle-16" stroke-width="2" fill="#FFFFFF"></path>
+                <rect id="Rectangle-18" fill="#DDDDDD" x="11.1751361" y="23.0481488" width="8.98093129" height="11.7733933" rx="3"></rect>
+                <rect id="Rectangle-18-Copy-3" fill="#DDDDDD" x="11.1751361" y="39.4464081" width="8.98093129" height="11.7733933" rx="3"></rect>
+                <rect id="Rectangle-18-Copy-4" fill="#DDDDDD" x="12.8902445" y="60.5737427" width="5.55071448" height="10.0803397" rx="3"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -177,6 +177,16 @@
                             <table>
                                 <tr>
                                     <td>
+                                        <p><strong>Country:</strong><br>
+                                            <?php echo $country; ?></p>
+                                    </td>
+<!--                                    <td>-->
+<!--                                        <p><strong>Type of property:</strong><br>-->
+<!--                                            --><?php //echo $property_type; ?><!--</p>-->
+<!--                                    </td>-->
+                                </tr>
+                                <tr>
+                                    <td>
                                         <p><strong>Area:</strong><br>
                                             <?php echo $area; ?></p>
                                     </td>

@@ -1,3 +1,22 @@
+@mixin section-collapse($bp, $screen) {
+    .c-section-collapse#{$screen}__content {
+        @media (max-width: $bp) {
+            @include hidden;
+        }
+    }
+    .c-section-collapse#{$screen}__toggle {
+        display: none;
+        @media screen and (max-width: $bp) {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: block;
+            cursor: pointer;
+        }
+    }
+}
 @if ($use-section-collapse) {
 /*------------------------------------*\
     OBJECTS -> NAVS -> ##SECTION-COLLAPSE
@@ -81,25 +100,7 @@
 
  */
 
-@mixin section-collapse($bp, $screen) {
-    .c-section-collapse#{$screen}__content {
-        @media (max-width: $bp) {
-            @include hidden;
-        }
-    }
-    .c-section-collapse#{$screen}__toggle {
-        display: none;
-        @media screen and (max-width: $bp) {
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            display: block;
-            cursor: pointer;
-        }
-    }
-}
+
 
 
 $bp-screen-xs: false;

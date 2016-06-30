@@ -1,21 +1,23 @@
+@mixin columns($number) {
+	column-count: $number;
+	&\@sm-down {
+		@media (max-width: $screen-sm) {
+			column-count: $number;
+		}
+	}
+	&\@xs-down {
+		@media (max-width: $screen-xs) {
+			column-count: $number;
+		}
+	}
+}
+
 @if ($use-columns) {
 /*------------------------------------*\
     OBJECTS -> GENERIC -> ##COLUMNS
 \*------------------------------------*/
 
-@mixin columns($number) {
-    column-count: $number;
-    &\@sm-down {
-        @media (max-width: $screen-sm) {
-            column-count: $number;
-        }
-    }
-    &\@xs-down {
-        @media (max-width: $screen-xs) {
-            column-count: $number;
-        }
-    }
-}
+
 
 $column-gap: $spacing-unit;
 

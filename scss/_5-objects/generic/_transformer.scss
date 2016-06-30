@@ -1,3 +1,33 @@
+
+@mixin transform() {
+    .o-transformer {
+        @include ui-link();
+
+        display: block;
+    }
+    @each $breakpoint in $breakpoints {
+        @if nth($breakpoint, 3) {
+            @media (max-width: #{nth($breakpoint, 2)}) {
+
+                .o-transformer\@#{nth($breakpoint, 1)} {
+                    display: table;
+                }
+
+                .o-transformer\@#{nth($breakpoint, 1)}__img,
+                .o-transformer\@#{nth($breakpoint, 1)}__content {
+                    display: table-cell;
+                    vertical-align: middle;
+                }
+
+                .o-transformer\@#{nth($breakpoint, 1)}__img--top,
+                .o-transformer\@#{nth($breakpoint, 1)}__content--top {
+                    vertical-align: top;
+                }
+            }
+        }
+    }
+};
+
 @if $use-transformer {
 
 /*------------------------------------*\
@@ -117,34 +147,6 @@ $breakpoints: (
     (md, $screen-md, false),
 );
 
-@mixin transform() {
-    .o-transformer {
-        @include ui-link();
-
-        display: block;
-    }
-    @each $breakpoint in $breakpoints {
-        @if nth($breakpoint, 3) {
-            @media (max-width: #{nth($breakpoint, 2)}) {
-
-                .o-transformer\@#{nth($breakpoint, 1)} {
-                    display: table;
-                }
-
-                    .o-transformer\@#{nth($breakpoint, 1)}__img,
-                    .o-transformer\@#{nth($breakpoint, 1)}__content {
-                        display: table-cell;
-                        vertical-align: middle;
-                    }
-
-                    .o-transformer\@#{nth($breakpoint, 1)}__img--top,
-                    .o-transformer\@#{nth($breakpoint, 1)}__content--top {
-                        vertical-align: top;
-                    }
-            }            
-        }
-    }
-};
 
 @include transform;
 

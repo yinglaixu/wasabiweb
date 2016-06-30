@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="30px" height="22px" viewBox="0 0 30 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3 (11970) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-rentout-img</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="list-property-complete" sketch:type="MSArtboardGroup" transform="translate(-897.000000, -1044.000000)">
+            <g id="icon-rentout-img" sketch:type="MSLayerGroup" transform="translate(897.500000, 1044.774975)">
+                <rect id="Rectangle-162" stroke="#1A1A1A" stroke-width="2" sketch:type="MSShapeGroup" x="0" y="2.27373675e-13" width="29" height="21" rx="2"></rect>
+                <path d="M10.6410367,8.28932619 L10.6251017,8.27446652 L4.54307858,14.7966378 L5.1858054,15.3959902 L10.6774076,9.50696786 L15.0107337,13.5478598 L15.6100862,12.905133 L10.6499683,8.27974826 L10.6410367,8.28932619 Z" id="Rectangle-163" stroke="#1A1A1A" stroke-width="2" sketch:type="MSShapeGroup"></path>
+                <path d="M17.767906,10.9965215 L13.5848099,15.4823429 L14.2275367,16.0816953 L18.4106328,11.595874 L23.3114045,16.1659176 L23.910757,15.5231908 L19.0099852,10.9531472 L19.0223564,10.9398808 L18.3796295,10.3405283 L18.3672584,10.3537947 L18.296973,10.2882525 L17.6976205,10.9309793 L17.767906,10.9965215 Z" id="Rectangle-163-Copy-2" stroke="#1A1A1A" stroke-width="2" sketch:type="MSShapeGroup"></path>
+                <circle id="Oval-19" fill="#1A1A1A" sketch:type="MSShapeGroup" cx="21.4569214" cy="6.27446652" r="2"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

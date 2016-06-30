@@ -1,3 +1,15 @@
+@mixin make-item($size) {
+    padding: $size 0;
+    >li {
+        padding: $size;
+        &:last-child {
+            padding-bottom: 0;
+        }
+        &:first-child {
+            padding-top: 0;
+        }
+    }
+}
 @if $use-ui-list {
 /*------------------------------------*\
     COMPOENTS -> LISTS -> $UI-LIST
@@ -19,18 +31,7 @@
 
  */
 
-@mixin make-item($size) {
-    padding: $size 0;
-    >li {
-        padding: $size;
-        &:last-child {
-            padding-bottom: 0;
-        }
-        &:first-child {
-            padding-top: 0;
-        }
-    }
-}
+
 
 
 $ui-list-border-color:  $base-border-color;

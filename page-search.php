@@ -12,6 +12,7 @@ Template Name: Page search
 
     // set the "paged" parameter (use 'page' if the query is on a static front page)
     $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+
     // Preparing the taxonomies/terms
     $countries = get_terms('property-countries');
     $countries = array_values($countries);
@@ -56,10 +57,7 @@ Template Name: Page search
         $orderby = 'meta_value_num';
         $order = 'asc';
     }
-    
 
-
-    // $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
     $args = [
         'post_type' => 'property',
@@ -237,17 +235,19 @@ Template Name: Page search
                                         </li>
                                     </ul>
                                 </li>
+
                                 <li class="c-filter-bar__item">
-                                    <input class="c-styled-input-el u-hidden" onchange="this.form.submit()" type="checkbox" name="include-rentedout"  value="true" id="show-rentout" <?php if( isset( $_GET['include-rentedout'] ) ) echo 'checked'; ?>>
-                                    <label class="c-styled-input-option c-styled-input-option--radio" for="show-rentout">
-                                        <span class="c-styled-input-option__icon c-styled-input-option__icon--checkbox">
-                                            <svg class="c-styled-input-option__svg">
-                                                <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-tick-alt"></use>
-                                            </svg>
-                                        </span>
-                                        <?php echo icl_t('Theme-properties', 'Include'); ?>
-                                    </label>
+<!--                                    <input class="c-styled-input-el u-hidden" onchange="this.form.submit()" type="checkbox" name="include-rentedout"  value="true" id="show-rentout" --><?php //if( isset( $_GET['include-rentedout'] ) ) echo 'checked'; ?><!-->
+<!--                                    <label class="c-styled-input-option c-styled-input-option--radio" for="show-rentout">-->
+<!--                                        <span class="c-styled-input-option__icon c-styled-input-option__icon--checkbox">-->
+<!--                                            <svg class="c-styled-input-option__svg">-->
+<!--                                                <use xlink:href="--><?php //bloginfo('template_directory'); ?><!--/build/img/sprite.svg#icon-tick-alt"></use>-->
+<!--                                            </svg>-->
+<!--                                        </span>-->
+<!--                                        --><?php //echo icl_t('Theme-properties', 'Include'); ?>
+<!--                                    </label>-->
                                 </li>
+
                             </ul>
                         </div>
                     </form>
@@ -327,6 +327,9 @@ Template Name: Page search
 <script>var mapInformationForListing = <?php echo ww_get_map_information_listing( $query ); ?></script>
 
 <?php get_footer(); ?>
+
+
+
 
 
 <style>

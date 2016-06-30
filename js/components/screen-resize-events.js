@@ -3,7 +3,7 @@
 \*------------------------------------*/
 
 WW.screenResizeEvents = ($, ...funcs) => {
-    'use strict';
+    // 'use strict';
     const debounceTime = 200;
     const efficientFn = WW.debounce(() => {
         window.requestAnimationFrame(() => {
