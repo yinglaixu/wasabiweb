@@ -15,7 +15,6 @@
     }
 }
 
-
     .c-region-block__inner {
         @include screen-sm-up {
             position: absolute;
@@ -53,3 +52,7 @@
             background: rgba($brand-color, 0.5);
         }
     }
+
+.c-region-block_block-overlay{
+    background: rgba(black, 0.3) !important;
+}

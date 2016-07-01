@@ -16,6 +16,11 @@ WW.styledSelect = function($) {
             val = el.find(':selected').text();
         el.siblings('label').find('.js-styled-select-text').text(val);
     });
+
+    // add a cover to Amsterdam
+    var theItem = $('a[href="##"]').children();
+    theItem.addClass('c-region-block_block-overlay');
+
     return this;
 };
 

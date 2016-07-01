@@ -161,9 +161,9 @@ Template Name: Startpage
                         <p><?php the_field('cities-text'); ?></p>
                     </div>
                 </div>
-                <div class="[ o-grid o-grid--no-gutter ] u-soft--top">
+                <div class="[ o-grid o-grid--no-gutter ] u-soft--top" id = "indexCitiesAndCountries">
                     <?php
-                    $grid = [ 'u-1/4@md-up', 'u-1/2@md-up', 'u-1/4@md-up' ];
+                    $grid = [ 'u-1/4@md-up', 'u-1/2@md-up', 'u-1/4@md-up', 'u-1/2@md-up', 'u-1/2@md-up' ];
                     $i = -1;
                     if( have_rows('cities-cities') ) : while( have_rows('cities-cities') ) : the_row(); $i++;
                     ?>
@@ -295,12 +295,10 @@ Template Name: Startpage
                                                 </div>
                                             </div>
                                         </figure>
-                                        <div class="c-partner-module__body emplbody">
-                                            <h2>
-                                                <?php the_title(); ?>
-                                            </h2>
-
-
+                                        <div class="c-partner-module__body">
+                                            <p>
+                                                <strong><?php the_title(); ?></strong>
+                                            </p>
                                             <?php echo substr(strip_tags(get_the_content()),0,100); ?>
                                             <h4><a href="<?php the_permalink()?>"><?php  echo _e('Read More');?></a></h4>
                                         </div>
@@ -430,3 +428,26 @@ Template Name: Startpage
 </div>
 
 <?php get_footer(); ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

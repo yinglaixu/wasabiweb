@@ -399,19 +399,19 @@ WW.rentOutForm = function ($) {
             }
         }
         else if($('#type-apartment').is(':checked')){
-            if(selectedRoom === '1 room'){
+            if(selectedRoom === '1 room' || selectedRoom === '1 rum'){
                 value = ApartmentPrice[selectedArea].room_1;
             }
-            else if(selectedRoom === '2 rooms'){
+            else if(selectedRoom === '2 rooms' || selectedRoom === '2 rum'){
                 value = ApartmentPrice[selectedArea].room_2;
             }
-            else if(selectedRoom === '3 rooms'){
+            else if(selectedRoom === '3 rooms' || selectedRoom === '3 rum'){
                 value = ApartmentPrice[selectedArea].room_3;
             }
-            else if(selectedRoom === '4 rooms'){
+            else if(selectedRoom === '4 rooms' || selectedRoom === '4 rum'){
                 value = ApartmentPrice[selectedArea].room_4;
             }
-            else if(selectedRoom === '5 rooms'){
+            else if(selectedRoom === '5 rooms' || selectedRoom === '5 rum'){
                 value = ApartmentPrice[selectedArea].room_5;
             }
         }

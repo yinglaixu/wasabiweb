@@ -11,7 +11,6 @@ if( ! is_user_logged_in() ) {
 */?>
 
 
-
 <?php get_header(); ?>
 
 <div class="c-page-content js-page-content" id="mainContent">
@@ -914,6 +913,16 @@ if( ! is_user_logged_in() ) {
 
 	</main>
 </div>
+
+
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>-->
+<!--<script>-->
+<!---->
+<!--    function log(){-->
+<!--        $('#rooms').-->
+<!--    }-->
+<!---->
+<!--</script>-->
 
 <?php get_footer(); ?>
 

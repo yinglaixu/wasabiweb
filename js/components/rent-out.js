@@ -39,13 +39,6 @@ WW.rentOut = function($){
             var from, to, sixMonthInMs, fromDate, toDate, imageCount;
 
             imageCount = $('ul#preview-images > li').length;
-
-            if(imageCount < 3){
-                alert('Heads Up! You will need to upload minimum 3 pictures of your home. This will help you to find more tenants. / Påminnelse! Du måste ladda upp minst 3 bilder på ditt objekt. Detta kommer hjälpa dig att hitta fler hyresgäster till ditt objekt.');
-                e.preventDefault();
-                e.stopPropagation();
-            }
-
             from = document.getElementById('date-from').value;
             to = document.getElementById('date-to').value;
             sixMonthInMs = 15778476000;
@@ -53,12 +46,21 @@ WW.rentOut = function($){
             fromDate = new Date(from).getTime();
             toDate = new Date(to).getTime();
 
-            if( (toDate - fromDate) < sixMonthInMs ) {
-                alert('The period must be more then 6 month / Uthyrningsperioden måste vara längre än 6 månader.');
+
+            if(imageCount < 3){
+                alert('Heads Up! You will need to upload minimum 3 pictures of your home. This will help you to find more tenants. / Påminnelse! Du måste ladda upp minst 3 bilder på ditt objekt. Detta kommer hjälpa dig att hitta fler hyresgäster till ditt objekt.');
                 e.preventDefault();
                 e.stopPropagation();
             }
 
+            else if( (toDate - fromDate) < sixMonthInMs ) {
+                alert('The period must be more then 6 month / Uthyrningsperioden måste vara längre än 6 månader.');
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            else{
+                $('body').addClass('is-loading');
+            }
         });
     }
 
