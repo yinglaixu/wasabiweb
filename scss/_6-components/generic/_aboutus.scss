@@ -1,0 +1,32 @@
+
+/*------------------------------------*\
+    COMPONENTS -> GENERIC -> #ABOUTUS
+\*------------------------------------*/
+/**
+ *
+ */
+
+.employ-wrap {
+    background: white;
+    box-shadow: 0px 1px #D8D8D8;
+    &__inner {
+        margin-left: 20px;
+        padding-bottom: 1px;
+    }
+}
+
+.map-wrap{
+    background: white;
+}
+
+.employ-wrap--item{
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+}
+
+
+@media(max-width: 840px){
+    .employ-map{
+        display: none;
+    }
+}

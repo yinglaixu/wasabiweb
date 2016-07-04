@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="118px" height="83px" viewBox="0 0 118 83" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3 (11970) - http://www.bohemiancoding.com/sketch -->
+    <title>view</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="about-us" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="About-us" sketch:type="MSArtboardGroup" transform="translate(-263.000000, -3917.000000)">
+            <g id="Group" sketch:type="MSLayerGroup" transform="translate(153.000000, 3866.000000)">
+                <g id="view" transform="translate(110.000000, 53.000000)" sketch:type="MSShapeGroup">
+                    <g id="Oval-4-+-Rectangle-23-+-Rectangle-23-Copy">
+                        <ellipse id="Oval-4" stroke="#EE7844" stroke-width="4" fill="#FFFFFF" cx="27.2891963" cy="22.0338983" rx="21.9532279" ry="22.0338983"></ellipse>
+                        <rect id="Rectangle-23" fill="#EE7844" x="10.957701" y="39.9638666" width="3.52554499" height="14.3469971"></rect>
+                        <path d="M9.51392721,43.0843479 L18.102661,47.9989267 L9.95472684,61.98597 C8.58623803,64.3351682 5.54937914,65.1366423 3.18249176,63.7822803 L3.18249176,63.7822803 C0.810778416,62.4251568 0.00518857243,59.4073983 1.36599307,57.0713913 L9.51392721,43.0843479 L9.51392721,43.0843479 Z" id="Rectangle-23-Copy" stroke="#EE7844" stroke-width="4" fill="#FFFFFF"></path>
+                        <path d="M13.2727273,22.7003767 C13.7534246,13.3379945 21.93302,7.18714995 29.7833887,8.21445157" id="Path-2" stroke="#F49D76" stroke-width="4"></path>
+                    </g>
+                    <g id="Oval-5-+-Oval-7" transform="translate(22.000000, 23.000000)" stroke="#EE7844" stroke-width="4">
+                        <path d="M49.903701,55.862026 C49.1857183,55.9531039 48.445682,56 47.6835921,56 C47.45535,56 47.2274824,55.9983094 47,55.994954 C46.7725176,55.9983094 46.54465,56 46.3164079,56 C45.554316,56 44.8142778,55.9531037 44.0962934,55.8620253 C19.436953,53.9730708 5.46605697e-16,33.2418233 0,28 C5.46605712e-16,22.7581767 19.436953,2.02692917 44.0962934,0.137974732 C44.8142778,0.0468963153 45.554316,0 46.3164079,0 C46.54465,0 46.7725176,0.00169057479 47,0.00504599668 C47.2274824,0.00169057479 47.45535,0 47.6835921,0 C48.445682,0 49.1857183,0.0468960732 49.903701,0.137974027 C74.563047,2.02692917 94,22.7581767 94,28 C94,33.2418233 74.563047,53.9730708 49.9037066,55.8620253 Z" id="Oval-5" fill="#FFFFFF"></path>
+                        <ellipse id="Oval-7" fill="#F49D76" cx="47.5108696" cy="28" rx="15.326087" ry="15.5555556"></ellipse>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

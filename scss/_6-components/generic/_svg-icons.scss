@@ -260,7 +260,29 @@
         @include build-svg($size, left);
     }
 }
+.c-svg-icon--aboutus-side{
+    margin-bottom: 0px;
+    &__svg {
+        $size: 100px;
 
+        width: $size;
+        left: 30%;
+        top: -40%;
+        margin-top: -$size;
+        padding: 5px;
+    }
+}
+.c-svg-icon--aboutus-map{
+    margin-bottom: 0px;
+    &__svg {
+        $size: 600px;
+
+        width: $size;
+        height: $size;
+        left: $spacing-unit;
+        padding: 5px;
+    }
+}
 .c-svg-icon--btn-facebook,
 .c-svg-icon--btn-google {
     

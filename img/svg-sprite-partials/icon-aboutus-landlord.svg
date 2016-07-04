@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="108px" height="91px" viewBox="0 0 108 91" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3 (11970) - http://www.bohemiancoding.com/sketch -->
+    <title>landlord</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="about-us" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="About-us" sketch:type="MSArtboardGroup" transform="translate(-259.000000, -3348.000000)">
+            <g id="Group" sketch:type="MSLayerGroup" transform="translate(153.500000, 3314.419922)">
+                <g id="landlord" transform="translate(106.000000, 35.000000)" sketch:type="MSShapeGroup">
+                    <g id="Oval-1-+-Rectangle-5" transform="translate(0.406250, 13.957892)" stroke="#EE7844" stroke-width="4" fill="#FFFFFF">
+                        <ellipse id="Oval-1" cx="13.8782132" cy="10.674165" rx="10.7240738" ry="10.674165"></ellipse>
+                        <rect id="Rectangle-5" x="0" y="21.3483301" width="27.7564264" height="32.7899188"></rect>
+                    </g>
+                    <g id="Oval-1-+-Rectangle-5-Copy" transform="translate(71.312500, 0.685714)" stroke="#EE7844" stroke-width="4" fill="#FFFFFF">
+                        <ellipse id="Oval-1" cx="17.8125" cy="13.8804124" rx="13.7642045" ry="13.8804124"></ellipse>
+                        <rect id="Rectangle-5" x="0" y="27.7608247" width="35.625" height="45.7820324"></rect>
+                    </g>
+                    <g id="Rectangle-6-Copy-+-Rectangle-6-+-Oval-2" transform="translate(21.312500, 11.685714)">
+                        <rect id="Rectangle-6-Copy" stroke="#EE7844" stroke-width="4" fill="#FFFFFF" x="10.3125" y="0" width="44.0625" height="59.4" rx="15"></rect>
+                        <rect id="Rectangle-6" stroke="#EE7844" stroke-width="4" fill="#F59D76" x="0" y="33" width="64.6875" height="44.3142857" rx="6"></rect>
+                        <rect id="Rectangle-10" fill="#FFFFFF" x="12.5" y="36.7714286" width="39.6875" height="36.7714286"></rect>
+                        <path d="M34.6875,61.8261937 C37.4184196,60.8554364 39.375,58.2360872 39.375,55.1571429 C39.375,51.2517007 36.2270021,48.0857143 32.34375,48.0857143 C28.4604979,48.0857143 25.3125,51.2517007 25.3125,55.1571429 C25.3125,58.2360872 27.2690804,60.8554364 30,61.8261937 L30,64.6000847 C30,65.8978104 31.0493326,66.9428571 32.34375,66.9428571 C33.6471918,66.9428571 34.6875,65.8939622 34.6875,64.6000847 L34.6875,61.8261937 Z" id="Oval-2" fill="#EE7844"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
