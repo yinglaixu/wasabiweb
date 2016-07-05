@@ -44,7 +44,7 @@ Template Name: Insurance page
                                 <div>
                                     <img class=" " src="<?php  echo get_field('insurance_example2_img');?>" alt="">
                                 </div>
-                                <p><?php  echo get_field('insurance_example2_text');?></p>
+                                <p><?php echo get_field('insurance_example2_text');?></p>
                             </div>
                         </div>
                     </div>

@@ -34,47 +34,47 @@ Template Name: Support
                         <div class="o-grid__item u-2/3@sm-up">
                             <div class="o-section u-hard--bottom">
                                 <ul class="[ c-ui-list c-ui-list--dark ] u-hard--ends [ u-clean--top u-clean--bottom ]">
-                                    <li class="u-hard--sides">
-                                        <?php the_content(); ?>
-                                        <ul class="o-bare-list o-bare-list--spaced">
-                                            <li>
-                                                <ul class="o-inline-list o-inline-list--spaced-double u-bleed--top u-bleed--bottom">
-                                                    
-                                                    <?php if( get_field( 'support_email' ) ) : ?>
-                                                        <li class="u-soft--ends">
-                                                            <a href="mailto:<?php the_field('support_email'); ?>" class="c-alpha-link c-svg-icon c-svg-icon--contact">
-                                                                <svg class="c-svg-icon__svg c-svg-icon--contact__svg">
-                                                                    <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-mail-circle"></use>
-                                                                </svg>
-                                                                <?php the_field( 'support_email' ); ?>
-                                                            </a>
-                                                        </li>
-                                                    <?php endif; ?>
-
-                                                    <?php if( get_field( 'telephone', 'options' ) ) : ?>
-                                                        <li class="u-soft--ends">
-                                                            <a href="tel:<?php the_field('telephone_link', 'options'); ?>" class="c-alpha-link c-svg-icon c-svg-icon--contact">
-                                                                <svg class="c-svg-icon__svg c-svg-icon--contact__svg">
-                                                                    <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-telephone-circle"></use>
-                                                                </svg>
-                                                                <?php the_field( 'telephone', 'options' ); ?>
-                                                            </a>
-                                                        </li>
-                                                    <?php endif; ?>
-
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <ul class="o-bare-list">
-                                                    <li><?php the_field('address', 'options'); ?></li>
-                                                    <li><?php echo sprintf("%s %s", get_field('zipcode', 'options'), get_field('city', 'options')); ?></li>
-                                                    <li><?php echo icl_t('Theme', 'Sweden'); ?></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
+<!--                                    <li class="u-hard--sides">-->
+<!--                                        --><?php //the_content(); ?>
+<!--                                        <ul class="o-bare-list o-bare-list--spaced">-->
+<!--                                            <li>-->
+<!--                                                <ul class="o-inline-list o-inline-list--spaced-double u-bleed--top u-bleed--bottom">-->
+<!--                                                    -->
+<!--                                                    --><?php //if( get_field( 'support_email' ) ) : ?>
+<!--                                                        <li class="u-soft--ends">-->
+<!--                                                            <a href="mailto:--><?php //the_field('support_email'); ?><!--" class="c-alpha-link c-svg-icon c-svg-icon--contact">-->
+<!--                                                                <svg class="c-svg-icon__svg c-svg-icon--contact__svg">-->
+<!--                                                                    <use xlink:href="--><?php //bloginfo('template_directory'); ?><!--/build/img/sprite.svg#icon-mail-circle"></use>-->
+<!--                                                                </svg>-->
+<!--                                                                --><?php //the_field( 'support_email' ); ?>
+<!--                                                            </a>-->
+<!--                                                        </li>-->
+<!--                                                    --><?php //endif; ?>
+<!---->
+<!--                                                    --><?php //if( get_field( 'telephone', 'options' ) ) : ?>
+<!--                                                        <li class="u-soft--ends">-->
+<!--                                                            <a href="tel:--><?php //the_field('telephone_link', 'options'); ?><!--" class="c-alpha-link c-svg-icon c-svg-icon--contact">-->
+<!--                                                                <svg class="c-svg-icon__svg c-svg-icon--contact__svg">-->
+<!--                                                                    <use xlink:href="--><?php //bloginfo('template_directory'); ?><!--/build/img/sprite.svg#icon-telephone-circle"></use>-->
+<!--                                                                </svg>-->
+<!--                                                                --><?php //the_field( 'telephone', 'options' ); ?>
+<!--                                                            </a>-->
+<!--                                                        </li>-->
+<!--                                                    --><?php //endif; ?>
+<!---->
+<!--                                                </ul>-->
+<!--                                            </li>-->
+<!--                                            <li>-->
+<!--                                                <ul class="o-bare-list">-->
+<!--                                                    <li>--><?php //the_field('address', 'options'); ?><!--</li>-->
+<!--                                                    <li>--><?php //echo sprintf("%s %s", get_field('zipcode', 'options'), get_field('city', 'options')); ?><!--</li>-->
+<!--                                                    <li>--><?php //echo icl_t('Theme', 'Sweden'); ?><!--</li>-->
+<!--                                                </ul>-->
+<!--                                            </li>-->
+<!--                                        </ul>-->
+<!--                                    </li>-->
                                     <li class="u-hard--sides" id="support-form">
-                                        <h2><?php _e("Kontakta oss") ?></h2>
+                                        <h2><?php  echo get_field('support_title');?></h2>
                                         <?php
                                         $val = $GLOBALS['simplerap'];
                                         $error_style = 'style="color:red"';
@@ -155,6 +155,83 @@ Template Name: Support
                                                         </li>
                                                     </ul>
                                                 </li>
+                                                <!--                                country-->
+                                                <li class="o-grid__item u-1/2@sm-up">
+                                                    <ul class="o-bare-list o-bare-list--spaced-sixth">
+                                                        <li>
+                                                            <label>
+                                                                <strong><?php echo icl_t('Theme-form', 'Country'); ?>*:</strong>
+                                                            </label>
+                                                        </li>
+
+                                                        <li>
+                                                            <div class="c-styled-select js-select">
+                                                                <?php
+                                                                $country = $_POST['support']['country'];
+                                                                $country = $country ?: get_field('support_countries')[0]['support_country'];
+                                                                ?>
+                                                                <label class="c-styled-select__label c-styled-select__label--sm">
+                                                                    <span class="js-styled-select-text">
+                                                                        <?php echo $country; ?>
+                                                                    </span>
+                                                                    <svg class="c-styled-select__chevron">
+                                                                        <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-chevron"></use>
+                                                                    </svg>
+                                                                </label>
+                                                                <select class="c-styled-select__select" name="support[country]">
+                                                                    <?php if( have_rows('support_countries') ) : while( have_rows('support_countries') ) : the_row(); ?>
+                                                                        <?php $current = get_sub_field('support_country'); ?>
+                                                                        <option value="<?php echo $current; ?>" <?php if( $current === $country ) echo "selected"; ?>> <?php echo $current; ?> </option>
+                                                                    <?php endwhile; endif; ?>
+                                                                </select>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <!--                                city-->
+                                                <li class="o-grid__item u-1/2@sm-up">
+                                                    <ul class="o-bare-list o-bare-list--spaced-sixth">
+                                                        <li>
+                                                            <label>
+                                                                <strong><?php echo icl_t('Theme-form', 'City'); ?>*:</strong>
+                                                            </label>
+                                                        </li>
+                                                        <li>
+                                                            <div class="c-styled-select js-select">
+                                                                <?php
+                                                                $city = $_POST['support']['city'];
+                                                                $city = $city ?: get_field('support_cities')[0]['support_city'];
+                                                                ?>
+                                                                <label class="c-styled-select__label c-styled-select__label--sm">
+                                                                    <span class="js-styled-select-text">
+                                                                        <?php echo $city; ?>
+                                                                    </span>
+                                                                    <svg class="c-styled-select__chevron">
+                                                                        <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-chevron"></use>
+                                                                    </svg>
+                                                                </label>
+                                                                <select class="c-styled-select__select" name="support[city]">
+                                                                    <?php if( have_rows('support_cities') ) : while( have_rows('support_cities') ) : the_row(); ?>
+                                                                        <?php $current = get_sub_field('support_city'); ?>
+                                                                        <option value="<?php echo $current; ?>" <?php if( $current === $city ) echo "selected"; ?>> <?php echo $current; ?> </option>
+                                                                    <?php endwhile; endif; ?>
+                                                                </select>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="o-grid__item">
+                                                    <ul class="o-bare-list o-bare-list--spaced-sixth">
+                                                        <li>
+                                                            <label for="address" <?php if( $val->rapCheckError('support-address') ) echo $error_style; ?>>
+                                                                <strong><?php echo icl_t('Theme-form', 'Address'); ?>*:</strong>
+                                                            </label>
+                                                        </li>
+                                                        <li>
+                                                            <input required type="text" name="support[address]" id="support-address" class="c-text-input c-text-input--lg" placeholder="<?php echo icl_t('Theme-form', 'Address placeholder'); ?>" value="<?php esc_html_e( $_POST['support']['address'] ); ?>">
+                                                        </li>
+                                                    </ul>
+                                                </li>
                                                 <li class="o-grid__item">
                                                     <ul class="o-bare-list o-bare-list--spaced-sixth">
                                                         <li>
@@ -181,11 +258,37 @@ Template Name: Support
                         <div class="o-grid__item u-1/3@sm-up">
                             <div class="o-section u-hard--bottom u-soft--left@lg-up">
                                 <ul class="o-bare-list o-bare-list--spaced-half">
+                                    <li><h2><?php echo get_field( 'question_title'); ?></h2></li>
+<!--                                    <li><strong>--><?php //echo get_field( 'landlords'); ?><!--</strong></li>-->
                                     <li>
-                                        <?php get_template_part('partials/contact-module'); ?>
+                                        <ul class = 'drop-down o-bare-list'>
+                                            <li class = 'drop-down-button'><strong><a href = "#"><?php echo get_field( 'landlords_question_1'); ?></a></strong></li>
+                                            <li class = 'drop-down-content'><p><?php echo get_field( 'landlords_answer_1'); ?></p></li>
+                                        </ul>
                                     </li>
                                     <li>
-                                        <?php get_template_part('partials/social-follow-bar'); ?>
+                                        <ul class = 'drop-down o-bare-list'>
+                                            <li class = 'drop-down-button'><strong><a href = "#"><?php echo get_field( 'landlords_question_2'); ?></a></strong></li>
+                                            <li class = 'drop-down-content'><p><?php echo get_field( 'landlords_answer_2'); ?></p></li>
+                                        </ul>
+                                    </li>
+<!--                                    <li><strong>--><?php //echo get_field( 'tenants'); ?><!--</strong></li>-->
+                                    <li>
+                                        <ul class = 'drop-down o-bare-list'>
+                                            <li class = 'drop-down-button'><strong><a href = "#"><?php echo get_field( 'tenants_question_1'); ?></a></strong></li>
+                                            <li class = 'drop-down-content'><p><?php echo get_field( 'tenants_answer_1'); ?></p></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul class = 'drop-down o-bare-list'>
+                                            <li class = 'drop-down-button'><strong><a href = "#"><?php echo get_field( 'tenants_question_2'); ?></a></strong></li>
+                                            <li class = 'drop-down-content'><p><?php echo get_field( 'tenants_answer_2'); ?></p></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <strong><a style = 'color:black;' href = "<?php echo get_field( 'link_to_qa_link'); ?>"><?php echo get_field( 'link_to_qa_text'); ?></a>
+                                        </p>
                                     </li>
                                 </ul>
                             </div>

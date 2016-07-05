@@ -28,6 +28,9 @@
 			<p><strong>E-mail: </strong><?php echo $email; ?></p>
 			<p><strong>Telephone: </strong><?php echo $telephone; ?></p>
 			<p><strong>Problem: </strong><?php echo $problem; ?></p>
+			<p><strong>Country: </strong><?php echo $country; ?></p>
+			<p><strong>City: </strong><?php echo $city; ?></p>
+			<p><strong>Address: </strong><?php echo $address; ?></p>
 			<p><strong>Message: </strong><br><?php echo $message; ?></p>
 		</div>
 	</body>

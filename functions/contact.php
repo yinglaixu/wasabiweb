@@ -53,12 +53,11 @@ if ( isset( $_POST['formname'] ) ) {
 
 		$mail
 			->rapValidateRequiredField( 'support-name', $_POST['support']['name'] )
+			->rapValidateRequiredField( 'support-address', $_POST['support']['address'] )
 			->rapValidateEmail( 'support-email', $_POST['support']['email'] )
 			->rapValidateRequiredField( 'support-message', $_POST['support']['message'], 3 );
 
 		if ( ! $mail->rapCheckErrors() ) {
-
-			$mail->addRecipient( get_field('email', 'options') );
 
 			$vars = [
 				'subject'   => 'En besökare behöver hjälp',
@@ -66,8 +65,19 @@ if ( isset( $_POST['formname'] ) ) {
 				'email'     => $_POST['support']['email'],
 				'telephone' => $_POST['support']['telephone'],
 				'problem'   => $_POST['support']['problem'],
+				'country'	=> $_POST['support']['country'],
+				'city'		=> $_POST['support']['city'],
+				'address'	=> $_POST['support']['address'],
 				'message'   => $_POST['support']['message'],
 			];
+
+			if ($vars['country'] === 'Sweden'){
+				$mail->addRecipient( get_field('support_email_sweden', 'options') );
+			}
+			else if($vars['country'] === 'Netherland'){
+				$mail->addRecipient( get_field('support_email_netherlands', 'options') );
+			}
+			$mail->addRecipient( get_field('email_ne', 'options') );
 
 			$customer_mail = new Ww_Contact_Simple_Rap();
 			$customer_mail
@@ -78,7 +88,6 @@ if ( isset( $_POST['formname'] ) ) {
 				->rapBuildSetBody( get_template_directory() . '/partials/mails/support-customer-mail.php' )
 				->setSubject('Renthia.com - We will get back to you');
 			$customer_mail->rapSend();
-
 			$mail
 				->rapEscapeSetVariables( $vars )
 				->rapBuildSetBody( get_template_directory() . '/partials/mails/support-mail.php' )
