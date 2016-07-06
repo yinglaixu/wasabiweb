@@ -1,31 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="121px" height="73px" viewBox="0 0 121 73" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<svg width="97px" height="82px" viewBox="0 0 97 82" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
     <!-- Generator: Sketch 3.3 (11970) - http://www.bohemiancoding.com/sketch -->
     <title>icon-rentout-sharedroom-checked</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="icon-rentout-sharedroom-checked" sketch:type="MSLayerGroup" transform="translate(0.000000, 0.500000)" stroke="#D24E13">
-            <rect id="Rectangle-15" stroke-width="2" fill="#EE7844" sketch:type="MSShapeGroup" x="11.8392658" y="36.3" width="95.3128492" height="35.6214953"></rect>
-            <rect id="Rectangle-15-Copy" stroke-width="2" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0.337988827" y="69.546729" width="120.662011" height="2.37476636"></rect>
-            <g id="Group-Copy-5" transform="translate(8.111732, 0.000000)" sketch:type="MSShapeGroup">
-                <path d="M18.6310227,2.93674206 L15.7899559,0.435934953 L0.484940491,13.9079497 L0.484940491,72.0555209 L31.0949721,72.0555209 L31.0949721,13.9079497 L28.2000243,11.3597146 L28.2000243,3.43942114 C28.2000243,1.78153282 26.8562813,0.435934953 25.1986904,0.435934953 L21.5907194,0.435934953 C20.0976344,0.435934953 18.8688688,1.51726899 18.6310227,2.93674206 Z" id="Rectangle-16" stroke-width="2" fill="#FFFFFF"></path>
-                <rect id="Rectangle-18" fill="#EE7844" x="11.263845" y="23.2311065" width="9.05222249" height="11.8668513" rx="3"></rect>
-                <rect id="Rectangle-18-Copy-3" fill="#EE7844" x="11.263845" y="39.7595362" width="9.05222249" height="11.8668513" rx="3"></rect>
-                <rect id="Rectangle-18-Copy-4" fill="#EE7844" x="12.9925681" y="60.1902952" width="5.5947764" height="10.160358" rx="3"></rect>
-            </g>
-            <g id="Group-Copy-6" transform="translate(43.938547, 0.000000)" sketch:type="MSShapeGroup">
-                <path d="M18.6310227,2.93674206 L15.7899559,0.435934953 L0.484940491,13.9079497 L0.484940491,72.0555209 L31.0949721,72.0555209 L31.0949721,13.9079497 L28.2000243,11.3597146 L28.2000243,3.43942114 C28.2000243,1.78153282 26.8562813,0.435934953 25.1986904,0.435934953 L21.5907194,0.435934953 C20.0976344,0.435934953 18.8688688,1.51726899 18.6310227,2.93674206 Z" id="Rectangle-16" stroke-width="2" fill="#FFFFFF"></path>
-                <rect id="Rectangle-18" fill="#EE7844" x="11.263845" y="23.2311065" width="9.05222249" height="11.8668513" rx="3"></rect>
-                <rect id="Rectangle-18-Copy-3" fill="#EE7844" x="11.263845" y="39.7595362" width="9.05222249" height="11.8668513" rx="3"></rect>
-                <path d="M12.9925681,62.9935536 C12.9925681,61.4453568 14.2481451,60.1902952 15.7899563,60.1902952 L15.7899563,60.1902952 C17.3349111,60.1902952 18.5873445,61.4361545 18.5873445,62.9935536 L18.5873445,70.3506532 L12.9925681,70.3506532 L12.9925681,62.9935536 Z" id="Rectangle-18-Copy-4" fill="#EE7844"></path>
-            </g>
-            <g id="Group-Copy-7" transform="translate(79.765363, 0.000000)" sketch:type="MSShapeGroup">
-                <path d="M18.6310227,2.93674206 L15.7899559,0.435934953 L0.484940491,13.9079497 L0.484940491,72.0555209 L31.0949721,72.0555209 L31.0949721,13.9079497 L28.2000243,11.3597146 L28.2000243,3.43942114 C28.2000243,1.78153282 26.8562813,0.435934953 25.1986904,0.435934953 L21.5907194,0.435934953 C20.0976344,0.435934953 18.8688688,1.51726899 18.6310227,2.93674206 Z" id="Rectangle-16" stroke-width="2" fill="#FFFFFF"></path>
-                <rect id="Rectangle-18" fill="#EE7844" x="11.263845" y="23.2311065" width="9.05222249" height="11.8668513" rx="3"></rect>
-                <rect id="Rectangle-18-Copy-3" fill="#EE7844" x="11.263845" y="39.7595362" width="9.05222249" height="11.8668513" rx="3"></rect>
-                <rect id="Rectangle-18-Copy-4" fill="#EE7844" x="12.9925681" y="60.1902952" width="5.5947764" height="10.160358" rx="3"></rect>
-            </g>
+        <g id="icon-rentout-sharedroom-checked" sketch:type="MSLayerGroup" transform="translate(0.247312, 0.576923)" stroke="#D24E13">
+            <rect id="Rectangle-169" fill="#979797" sketch:type="MSShapeGroup" transform="translate(23.538462, 36.615385) scale(-1, 1) translate(-23.538462, -36.615385) " x="22.5384615" y="11.6153846" width="2" height="50"></rect>
+            <path d="M28.2931664,26.4556213 L16.6153846,26.4556213 L16.6153846,52.2307692 L78.4615385,52.2307692 L78.4615385,26.4556213 L67.7068336,26.4556213 C62.9659294,23.5884729 55.8965103,21.7692308 48,21.7692308 C40.1034897,21.7692308 33.0340706,23.5884729 28.2931664,26.4556213 Z" id="Rectangle-165-Copy-3" stroke-width="2" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            <rect id="Rectangle-168" fill="#EE7844" sketch:type="MSShapeGroup" x="31.3846154" y="35.6153846" width="33.2307692" height="15.6923077"></rect>
+            <rect id="Rectangle-165" stroke-width="2" fill="#FFFFFF" sketch:type="MSShapeGroup" x="6.46153846" y="50.3846154" width="82.1538462" height="23.0769231"></rect>
+            <path d="M86.3526432,80.8461538 L96,80.8461538 L96,67.9230769 L0,67.9230769 L0,80.8461538 L9.64735684,80.8461538 L11.4101262,75.7692308 L84.5898738,75.7692308 L86.3526432,80.8461538 Z" id="Rectangle-165-Copy" stroke-width="2" fill="#EE7844" sketch:type="MSShapeGroup"></path>
+            <path d="M13.5514154,1.25055521e-12 L33.5266371,1.25055521e-12 C34.633114,1.25055521e-12 35.9828362,1.23134906 36.5483312,2.76934729 L40.2816367,12.9229604 C40.8439954,14.4524287 39.9722148,15.6923077 38.3324141,15.6923077 L8.74563843,15.6923077 C7.1067538,15.6923077 6.23092077,14.4609586 6.79641576,12.9229604 L10.5297213,2.76934729 C11.09208,1.23987901 12.4443201,1.25055521e-12 13.5514154,1.25055521e-12 Z" id="Rectangle-170" stroke-width="2" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
         </g>
     </g>
 </svg>

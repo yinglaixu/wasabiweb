@@ -58,7 +58,7 @@ icl_register_string('Theme-form', 'Send', 'Skicka', false, 'sv');
 
 icl_register_string('Theme-form-options', 'Villa', 'Villa', false, 'sv');
 icl_register_string('Theme-form-options', 'Apartment', 'Lägenhet', false, 'sv');
-icl_register_string('Theme-form-options', 'Terraced', 'Radhus', false, 'sv');
+icl_register_string('Theme-form-options', 'Terraced', 'Del av rum', false, 'sv');
 icl_register_string('Theme-form-options', 'Heat', 'Värme', false, 'sv');
 icl_register_string('Theme-form-options', 'Water', 'Vatten', false, 'sv');
 icl_register_string('Theme-form-options', 'Dishwasher', 'Diskmaskin', false, 'sv');
