@@ -1,6 +1,6 @@
 
 
-WW.cloneOpeningTimes = function($) {
+WW.clone = function($) {
     'use strict';
 
     function clone(e) {
@@ -42,6 +42,7 @@ WW.cloneOpeningTimes = function($) {
     }
 
     $('.js-clone-opening-times-btn').on('click', clone);
+
     return this;
 };
 

@@ -22,11 +22,11 @@ WW.styledSelect = function($) {
     theItem.addClass('c-region-block_block-overlay');
 
     // toggle drop down menu
-    $(".drop-down-button").click(function(e) {
+    $('.drop-down-button').click(function(e) {
         e.preventDefault();
         /*  Toggle the CSS closed class which reduces the height of the UL thus
          hiding all LI apart from the first */
-        $(this).next().toggleClass("open");
+        $(this).next().toggleClass('open');
     });
 
     return this;

@@ -243,6 +243,21 @@
     }
 }
 
+.c-svg-icon--trash {
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 1rem;
+    fill: lighten($base-text-color, 40%);
+    .c-addon-group:hover & {
+        fill: lighten($base-text-color, 20%);
+    }
+    &__svg {
+        $size: 25px;
+        @include build-svg($size);
+        margin-top: 33px;
+    }
+}
 .c-svg-icon--rentout-property-type {
     margin-bottom: 0px;
     &__svg {
@@ -252,6 +267,18 @@
     }
 }
 
+.c-svg-icon--mydocument {
+    margin-bottom: 0px;
+    padding-top: 10rem;
+    &:hover{
+        opacity: 0.7;
+    }
+    &__svg {
+        $size: 100px;
+        @include build-svg($size, left);
+        padding: 5px;
+    }
+}
 .c-svg-icon--rentout-title {
     padding-left: 30px;
     fill: currentColor;
@@ -269,7 +296,6 @@
         left: 30%;
         top: -40%;
         margin-top: -$size;
-        padding: 5px;
     }
 }
 .c-svg-icon--aboutus-map{

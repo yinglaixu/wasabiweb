@@ -319,7 +319,7 @@ if( ! is_user_logged_in() ) {
                                             <small><?php echo icl_t('Theme-form', 'Description comment'); ?></small>
                                         </li>
                                         <li>
-                                            <textarea required name="rentout[description]" id="description" type="number" placeholder="<?php echo icl_t('Theme-form', 'Description placeholder'); ?>" class="c-text-input c-text-input--textarea"><?php echo esc_textarea( $_POST['rentout']['description'] ); ?></textarea>
+                                            <textarea required name="rentout[description]" id="description" type="text" placeholder="<?php echo icl_t('Theme-form', 'Description placeholder'); ?>" class="c-text-input c-text-input--textarea"><?php echo esc_textarea( $_POST['rentout']['description'] ); ?></textarea>
                                         </li>
                                     </ul>
                                 </li>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="167px" height="167px" viewBox="0 0 167 167" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3 (11970) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-set</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="icon-set" sketch:type="MSLayerGroup" transform="translate(83.247312, 83.500000) scale(-1, -1) rotate(-135.000000) translate(-83.247312, -83.500000) translate(1.747312, 1.500000)" stroke="#979797" stroke-width="3" fill="#FFFFFF">
+            <circle id="Oval-39-Copy-2" sketch:type="MSShapeGroup" cx="81.5" cy="82" r="81.5"></circle>
+            <g id="Group" transform="translate(32.000000, 33.000000)" sketch:type="MSShapeGroup">
+                <rect id="Rectangle-183" x="43" y="17" width="14" height="65"></rect>
+                <rect id="Rectangle-183-Copy-2" transform="translate(53.000000, 49.500000) rotate(-90.000000) translate(-53.000000, -49.500000) " x="46" y="17" width="14" height="65"></rect>
+                <path d="M2.84217094e-13,43.6951962 L22,38.6738359 L22,60.3261641 L2.84217094e-13,55.3048038 L2.84217094e-13,43.6951962 Z" id="Rectangle-183-Copy-3"></path>
+                <path d="M55.8333333,0.588257715 C61.2199028,2.86411357 65,8.19648342 65,14.4117423 C65,22.6960135 58.2842712,29.4117423 50,29.4117423 C41.7157288,29.4117423 35,22.6960135 35,14.4117423 C35,8.19648342 38.7800972,2.86411357 44.1666667,0.588257715 L44.1666667,14.4117423 L55.8333333,14.4117423 L55.8333333,0.588257715 Z" id="Oval-37"></path>
+                <path d="M55.8333333,97.4117423 C61.2199028,95.1358864 65,89.8035166 65,83.5882577 C65,75.3039865 58.2842712,68.5882577 50,68.5882577 C41.7157288,68.5882577 35,75.3039865 35,83.5882577 C35,89.8035166 38.7800972,95.1358864 44.1666667,97.4117423 L44.1666667,83.5882577 L55.8333333,83.5882577 L55.8333333,97.4117423 Z" id="Oval-37-Copy"></path>
+                <rect id="Rectangle-189" x="73" y="37" width="15" height="25"></rect>
+                <rect id="Rectangle-189-Copy" x="88.4142136" y="43" width="12.5" height="13"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,28 @@
+
+/*------------------------------------*\
+    COMPONENTS -> GENERIC -> #MYPAGES
+\*------------------------------------*/
+/**
+ *
+ */
+
+
+.my-document-link{
+    text-decoration: none;
+}
+.my-document-link:hover{
+    color: #f1956c;
+}
+.completeStatus{
+    color: green;
+}
+
+
+// convert to pdf style
+.convertToPdf{
+    font-family: "Times New Roman";
+    font-size: 0.9rem;
+}
+.convertToPdf li{
+    font-size: 0.9rem;
+}

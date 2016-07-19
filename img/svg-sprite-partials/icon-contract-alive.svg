@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="163px" height="163px" viewBox="0 0 163 163" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3 (11970) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-contract-alive</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="icon-contract-alive" sketch:type="MSLayerGroup">
+            <circle id="Oval-39" fill="#E9E9E9" sketch:type="MSShapeGroup" cx="81.5" cy="81.5" r="81.5"></circle>
+            <g id="Group" transform="translate(41.000000, 34.000000)">
+                <rect id="Rectangle-172" stroke="#424242" stroke-width="3" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="69.4994893" height="96"></rect>
+                <g transform="translate(73.719101, 7.232877)" stroke="#424242" stroke-width="3" sketch:type="MSShapeGroup">
+                    <rect id="Rectangle-173" fill="#FFFFFF" x="0" y="0" width="7.28089888" height="63.7808219" rx="8"></rect>
+                    <rect id="Rectangle-174" fill="#424242" x="0" y="59.8014247" width="7.28089888" height="3.94520548"></rect>
+                    <path d="M6.2223075,77.8494246 C6.87658955,74.139694 7.28089888,69.0278091 7.28089888,63.3836713 C7.28089888,63.3836713 0,63.3836712 0,63.3836713 C0,69.0278091 0.404309326,74.139694 1.05859138,77.8494246 L6.2223075,77.8494246 Z" id="Oval-25" fill="#FFFFFF"></path>
+                    <path d="M3.64044945,84.3006326 C4.31118318,84.3006328 5.79908409,79.7465061 5.79908409,77.1918904 C5.79908409,77.1918904 1.48181479,77.1918904 1.48181479,77.1918904 C1.48181479,79.7465061 2.96971573,84.3006324 3.64044945,84.3006326 Z" id="Oval-25-Copy" fill="#FFFFFF"></path>
+                </g>
+                <rect id="Rectangle-176" stroke="#FF9900" fill="#FF9900" sketch:type="MSShapeGroup" x="20.5188968" y="10.5205479" width="29.7854954" height="2.63013699"></rect>
+                <rect id="Rectangle-176-Copy" stroke="#FF9900" fill="#FF9900" sketch:type="MSShapeGroup" x="8.60469867" y="20.4148728" width="52.9519918" height="2.63013699"></rect>
+                <rect id="Rectangle-176-Copy-2" stroke="#FF9900" fill="#FF9900" sketch:type="MSShapeGroup" x="8.60469867" y="26.1632648" width="52.9519918" height="2.63013699"></rect>
+                <rect id="Rectangle-176-Copy-3" stroke="#FF9900" fill="#FF9900" sketch:type="MSShapeGroup" x="8.60469867" y="31.9116567" width="52.9519918" height="2.63013699"></rect>
+                <ellipse id="Oval-27" stroke="#FF9900" stroke-width="3" fill="#FFFFFF" sketch:type="MSShapeGroup" cx="17.5403473" cy="75.2876712" rx="6.94994893" ry="6.90410959"></ellipse>
+                <ellipse id="Oval-27-Copy" fill="#FF9900" sketch:type="MSShapeGroup" cx="17.5403473" cy="75.2876712" rx="2.97854954" ry="2.95890411"></ellipse>
+                <path d="M33.0949949,83.2228024 C35.7209446,83.342504 37.0664608,83.542256 39.859318,83.2228024 C47.1048403,82.3940423 30.2062211,73.1368534 41.7694136,72.1487694 C50.7490089,71.3814558 43.1044237,80.7852834 43.7163157,82.2933429 C44.3282076,83.8014025 50.7137787,83.2228027 50.7137787,83.2228027 C51.5168746,82.7979902 50.7441286,81.2797332 52.0102539,81.2797332 C53.2763792,81.2797332 52.6341374,83.5422557 53.2763792,83.5422557 L56.1299388,83.2228027 C58.4062172,79.4264515 51.8684436,81.7581441 58.4726192,83.8617094 C59.2695081,84.1155348 59.8573613,83.7784589 60.679785,83.86171 C61.2672338,83.9211754 61.7247476,82.9150052 62.206328,83.2228027 C62.2613618,83.257977 62.8909206,83.4958615 62.94562,83.5422557" id="Path-37" stroke="#FF9900" stroke-width="3" sketch:type="MSShapeGroup"></path>
+                <g id="Oval-27-+-Oval-27-Copy" transform="translate(10.590398, 68.383562)"></g>
+            </g>
+        </g>
+    </g>
+</svg>

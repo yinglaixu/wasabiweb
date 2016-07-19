@@ -33,7 +33,7 @@
             .styledSelect($)
             .datepicker($)
             .modalDialog($)
-            .cloneOpeningTimes($)
+            .clone($)
             .sectionCollapse($)
             .blockSlider($)
             .updateProperty($)
