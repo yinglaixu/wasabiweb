@@ -40,6 +40,7 @@ if ('true' === $_POST['contractform']) {
 //		$property->rooms     							   = $vars['rooms'];
 //		$property->volume    							   = $vars['volume'];
 		$property->address     			                   = $vars['address'];
+		$property->contractLandlordRoomNumber              = $vars['roomnumber'];
 
 		$property->contractRentalPeriodChoice			   = $vars['rental_period_choice'];
 		// Date save format must be: yyyymmdd

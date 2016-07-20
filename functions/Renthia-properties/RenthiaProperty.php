@@ -32,6 +32,7 @@ class Renthia_Property
 	// Landlord contract
 	const FK_CONTRACT_ENTER_DATE = 'field_578de6731304a';
 	const FK_CONTRACT_LANDLORD_PERSONAL_NUMBER = 'field_578de2c813035';
+	const FK_CONTRACT_LANDLORD_ROOM_NUMBER = 'field_578f6499bbc11';
 	const FK_CONTRACT_RENTAL_PERIOD_CHOICE = 'field_578de2db13036';
 	const FK_CONTRACT_RENTAL_PERIOD_1 = 'field_578de31213037';
 	const FK_CONTRACT_RENTAL_PERIOD_2_DATE_FROM = 'field_578de33213038';
@@ -109,6 +110,7 @@ class Renthia_Property
 
 	// landlord contract
 	public $contractLandlordPersonalNumber;
+	public $contractLandlordRoomNumber;
 	public $contractRentalPeriodChoice;
 	public $contractRentalPeriodF;
 	public $contractRentalPeriod2DateFrom;
@@ -967,7 +969,12 @@ class Renthia_Property
 		return $this;
 	}
 
-	// save the contract information to database
+	/**
+	 * save the contract data to db
+	 *
+	 * @return $this
+	 */
+
 	public function saveContractDataInDb()
 	{
 //
@@ -991,6 +998,9 @@ class Renthia_Property
 
 		update_field(static::FK_CONTRACT_RENTAL_PERIOD_CHOICE, $this->contractRentalPeriodChoice, $this->first_id);
 		update_field(static::FK_CONTRACT_RENTAL_PERIOD_CHOICE, $this->contractRentalPeriodChoice, $this->second_id);
+
+		update_field(static::FK_CONTRACT_LANDLORD_ROOM_NUMBER, $this->contractLandlordRoomNumber, $this->first_id);
+		update_field(static::FK_CONTRACT_LANDLORD_ROOM_NUMBER, $this->contractLandlordRoomNumber, $this->second_id);
 
 		update_field(static::FK_CONTRACT_RENTAL_PERIOD_1, $this->contractRentalPeriodF, $this->first_id);
 		update_field(static::FK_CONTRACT_RENTAL_PERIOD_1, $this->contractRentalPeriodF, $this->second_id);

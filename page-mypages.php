@@ -173,17 +173,17 @@ $user = wp_get_current_user();
 					$GLOBALS['pending'] = get_field('my_pages-pending');
 					if( $query->have_posts() ) : while( $query->have_posts() ) : $query->the_post();
 					$GLOBALS['my-property'] = true;
-					$contractStatus = 'incomplete';
-					$inventoryStatus = 'incomplete';
-					$inspectionStatus = 'incomplete';
+					$contractStatus = icl_t('Theme-mypages', 'Incomplete');
+					$inventoryStatus = icl_t('Theme-mypages', 'Incomplete');
+					$inspectionStatus = icl_t('Theme-mypages', 'Incomplete');
 					if(get_field('contract_complete')){
-						$contractStatus = 'complete';
+						$contractStatus = icl_t('Theme-mypages', 'Complete');
 					}
 					if(get_field('inventory_complete')){
-						$inventoryStatus = 'complete';
+						$inventoryStatus = icl_t('Theme-mypages', 'Complete');
 					}
 					if(get_field('inspection_complete')){
-						$inspectionStatus = 'complete';
+						$inspectionStatus = icl_t('Theme-mypages', 'Complete');
 					}
 
 					?>

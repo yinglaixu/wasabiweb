@@ -2,6 +2,8 @@ WW.myPages = function($) {
 
     function init() {
 
+        // my-pages
+
         $('#toogleUserDetails').on('click', function(e) {
 
             e.preventDefault();

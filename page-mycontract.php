@@ -28,6 +28,7 @@ if( ! ( intval( $user->ID ) === intval( $owner['ID'] ) ) ) {
 // Save some page variables
 $contract_form_title = get_field('contract_form_title');
 $view_contract_btn = get_field('view_contract_btn');
+$explanation_contract_form = get_field('explanation_contract_form');
 $form_title_1 = get_field('form_title_1');
 $form_desc_1 = get_field('form_description_1');
 $form_title_2 = get_field('form_title_2');
@@ -54,6 +55,8 @@ $subtitle_10 = get_field('contract_subtitle_10');
 $subtitle_11 = get_field('contract_subtitle_11');
 $subtitle_12 = get_field('contract_subtitle_12');
 
+$rental_price_landlord = get_field('rent_price_for_landlord');
+$rental_price_tenant = get_field('rent_price_for_tenant');
 $rental_period_1 = get_field('rental_period_1');
 $rental_period_2 = get_field('rental_period_2');
 $rental_period_3 = get_field('rental_period_3');
@@ -63,13 +66,20 @@ $equipment_and_inspection = get_field('equipment_and_inspection');
 $insurance_and_liability = get_field('insurance_and_liability');
 $tenure = get_field('tenure');
 $validity = get_field('contract_validity');
+$key_sets_info = get_field('key_sets_info');
 $showing = get_field('showing');
 $extra_info = get_field('contract_extra_info');
+
 // Everything is OK
 $post = get_post( $obj_id );
 
 setup_postdata( $post );
+
+// prepare the translation of the value to swedish
+$current_language = ICL_LANGUAGE_CODE;
 ?>
+
+
 <div class="c-page-content js-page-content" id="mainContent">
 	<div class="c-site-header-placeholder">
 	</div>
@@ -102,6 +112,8 @@ setup_postdata( $post );
 									<a class="c-btn c-btn--md c-btn--brand" id="btn-view-contract">
 										<?php echo $view_contract_btn; ?>
 									</a>
+									<p></p>
+									<p><?php echo $explanation_contract_form; ?></p>
 								</div>
 							</div>
 						</li>
@@ -124,7 +136,7 @@ setup_postdata( $post );
 										</li>
 									</ul>
 								</li>
-								<li class="o-grid__item u-2/3@sm-up">
+								<li class="o-grid__item u-1/3@sm-up">
 									<ul class="o-bare-list o-bare-list--spaced-sixth">
 										<li>
 											<label for="address">
@@ -133,6 +145,19 @@ setup_postdata( $post );
 										</li>
 										<li>
 											<input required type="text" name="contract[address]" id="address" class="c-text-input c-text-input--lg" placeholder="<?php echo icl_t('Theme-form', 'Address placeholder'); ?>" value="<?php the_field('address'); ?>">
+										</li>
+									</ul>
+								</li>
+
+								<li class="o-grid__item u-1/3@sm-up">
+									<ul class="o-bare-list o-bare-list--spaced-sixth">
+										<li>
+											<label for="address">
+												<strong><?php echo icl_t('Theme-mycontract', 'Room number'); ?>:</strong>
+											</label>
+										</li>
+										<li>
+											<input required type="text" name="contract[roomnumber]" id="roomnumber" class="c-text-input c-text-input--lg" placeholder=" " value="<?php the_field('landlord_room_number'); ?>">
 										</li>
 									</ul>
 								</li>
@@ -519,7 +544,7 @@ setup_postdata( $post );
 														<use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-tick-alt"></use>
 													</svg>
 												</span>
-											<?php echo icl_t('Theme-mycontract', 'Electriciy/gas'); ?>
+											<?php echo icl_t('Theme-mycontract', 'Electricity/gas'); ?>
 										</label>
 									</li>
 									<li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/5@lg-up">
@@ -765,7 +790,7 @@ setup_postdata( $post );
 <!--submit btn						-->
 						<li class="u-hard--sides">
 							<button type="submit" id="btn-contract-form-submit" class="c-btn c-btn--xl c-btn--alpha">
-								<?php echo icl_t('Theme-form', 'Send object'); ?>
+								<?php echo icl_t('Theme-form', 'Submit form'); ?>
 							</button>
 						</li>
 					</ul>
@@ -793,34 +818,36 @@ setup_postdata( $post );
 							<strong><?php the_field('contract_enter_date'); ?></strong>
 							<?php echo icl_t('Theme-mycontract', 'between'); ?> (1)
 							<strong><?php the_field('first_name'); ?></strong>
-							<strong><?php the_field('surname'); ?></strong>,
+							<strong><?php the_field('surname'); ?></strong> -
 							<strong><?php the_field('contract_landlord_personal_number'); ?></strong>
-							<?php echo icl_t('Theme-mycontract', 'Landlord and'); ?>(2)
-							<strong><?php the_field('contract_tenant_name'); ?></strong>,
+							<?php echo icl_t('Theme-mycontract', 'Landlord and'); ?> (2)
+							<strong><?php the_field('contract_tenant_name'); ?></strong> -
 							<strong><?php the_field('contract_tenant_personal_number'); ?></strong>
-							<?php echo icl_t('Theme-mycontract', 'Tenant'); ?>.
+							<?php echo icl_t('Theme-mycontract', 'Tenant'); ?>
+							<?php echo icl_t('Theme-mycontract', 'Renthia'); ?>.
 						</p>
 					</li>
 					<li class="u-hard--sides">
 						<h3><?php echo $subtitle_1;?></h3>
 						<p><?php echo icl_t('Theme-mycontract', 'The landlord hereby leases'); ?>
-							<strong><?php the_field('rooms'); ?></strong> <?php echo icl_t('Theme-mycontract', 'room'); ?>(s)
-							<?php echo icl_t('Theme-mycontract', 'and'); ?>
+							<strong><?php the_field('rooms'); ?></strong> <?php echo icl_t('Theme-mycontract', 'room'); ?>(s),
+							<?php echo icl_t('Theme-mycontract', 'about'); ?>
 							<strong><?php the_field('volume'); ?></strong> m<sup>2</sup>,
-							<?php echo icl_t('Theme-mycontract', 'with address'); ?>
+							<?php echo icl_t('Theme-mycontract', 'with address'); ?>,
+							<?php echo icl_t('Theme-mycontract', 'number of apartment'); ?>
+							<strong><?php the_field('landlord_room_number'); ?></strong>,
 							<strong><?php the_field('address'); ?></strong>,
 							<strong><?php the_field('area'); ?></strong>
 							<?php echo icl_t('Theme-mycontract', 'rental object'); ?>.
 						</p>
 					</li>
-<!--rental object					-->
+<!--rental period					-->
 					<li class="u-hard--sides">
 						<h3><?php echo $subtitle_2;?></h3>
-						<h4><?php echo icl_t('Theme-mycontract', 'Rental period'); ?></h4>
 						<div class="contract_rental_period_1" style="display: none">
 							<p>
 								<?php echo icl_t('Theme-mycontract', 'From'); ?>
-								<strong><?php the_field('contract_rental_period_1'); ?></strong>
+								<strong><?php the_field('contract_rental_period_1'); ?></strong>.
 								<?php echo $rental_period_1; ?>
 							</p>
 						</div>
@@ -828,8 +855,8 @@ setup_postdata( $post );
 							<p>
 								<?php echo icl_t('Theme-mycontract', 'From'); ?>
 								<strong><?php the_field('contract_rental_period_2_date_from'); ?></strong>
-								<?php echo icl_t('Theme-mycontract', 'to'); ?>
-								<strong><?php the_field('contract_rental_period_2_date_to'); ?></strong>
+								<?php echo icl_t('Theme-mycontract', 'To'); ?>
+								<strong><?php the_field('contract_rental_period_2_date_to'); ?></strong>.
 								<?php echo $rental_period_2; ?>
 							</p>
 						</div>
@@ -837,8 +864,8 @@ setup_postdata( $post );
 							<p>
 								<?php echo icl_t('Theme-mycontract', 'From'); ?>
 								<strong><?php the_field('contract_rental_period_3_date_from'); ?></strong>
-								<?php echo icl_t('Theme-mycontract', 'to'); ?>
-								<strong><?php the_field('contract_rental_period_3_date_to'); ?></strong>
+								<?php echo icl_t('Theme-mycontract', 'To'); ?>
+								<strong><?php the_field('contract_rental_period_3_date_to'); ?></strong>.
 								<?php echo $rental_period_3; ?>
 							</p>
 						</div>
@@ -848,13 +875,13 @@ setup_postdata( $post );
 						</p>
 					</li>
 <!--rental price					-->
-					<li class="u-hard--sides o-grid">
-						<ul>
-							<h3><?php echo $subtitle_3;?></h3>
+					<li class="u-hard--sides">
+						<h3><?php echo $subtitle_3;?></h3>
+						<ul class="o-grid">
 							<li class="o-grid__item u-1/2@sm-up">
 								<ul class="o-grid o-bare-list">
 									<li class="o-grid__item">
-										<h4><?php echo icl_t('Theme-mycontract', 'Tenant'); ?></h4>
+										<h4><?php echo icl_t('Theme-mycontract', 'Tenant title'); ?></h4>
 									</li>
 									<li class="o-grid__item u-1/2">
 										<?php echo icl_t('Theme-mycontract', 'Rental price'); ?>:
@@ -887,10 +914,14 @@ setup_postdata( $post );
 										<strong><?php $first_price = $deposit + $rent_price; echo round($first_price); ?> SEK</strong>
 									</li>
 									<li class="o-grid__item u-1/2">
-										<?php echo icl_t('Theme-mycontract', 'Invoce received mail'); ?>:
+										<?php echo icl_t('Theme-mycontract', 'Invoice received mail'); ?>:
 									</li>
 									<li class="o-grid__item u-1/2">
 										<strong><?php the_field('contract_tenant_email'); ?></strong>
+									</li>
+									<li><p></p></li>
+									<li class="o-grid__item">
+										<?php echo $rental_price_tenant; ?>
 									</li>
 								</ul>
 							</li>
@@ -935,6 +966,12 @@ setup_postdata( $post );
 									<li class="o-grid__item u-1/2">
 										<strong><?php the_field('contract_landlord_bank_account_number'); ?></strong>
 									</li>
+
+									<li><p></p></li>
+									<li class="o-grid__item">
+										<?php echo $rental_price_landlord; ?>
+									</li>
+
 								</ul>
 							</li>
 						</ul>
@@ -971,8 +1008,8 @@ setup_postdata( $post );
 								</strong>
 							</p>
 							<p>
-								<?php echo icl_t('Theme-mycontract', 'If'); ?> <?php echo $operation_fee_type ?> <?php echo icl_t('Theme-mycontract', 'is included, the cost of'); ?>
-								<?php echo $operation_fee_type ?> <?php echo icl_t('Theme-mycontract', 'will be a maximum of'); ?>
+								<?php echo icl_t('Theme-mycontract', 'If'); ?> <strong><?php echo $operation_fee_type ?></strong> <?php echo icl_t('Theme-mycontract', 'is included, the cost of'); ?>
+								<?php echo icl_t('Theme-mycontract', 'will be a maximum of'); ?>
 								<strong><?php echo $operation_fee ?> SEK / <?php echo icl_t('Theme-mycontract', 'month'); ?></strong>.
 								<?php echo icl_t('Theme-mycontract', 'Excess amounts will be'); ?>.
 							</p>
@@ -984,7 +1021,7 @@ setup_postdata( $post );
 						<ul class="o-bare-list o-bare-list--spaced-sixth">
 							<?php echo $care_wellbeing_1; ?>
 							<li>
-								<?php echo icl_t('Theme-mycontract', 'Tenant'); ?>
+								- <?php echo icl_t('Theme-mycontract', 'Tenant title'); ?>
 								<strong><?php the_field('contract_keep_pets') ?></strong>
 								<?php echo icl_t('Theme-mycontract', 'to keep pets in the rented property'); ?>.
 							</li>
@@ -1003,8 +1040,13 @@ setup_postdata( $post );
 					</li>
 <!--Tenure					-->
 					<li class="u-hard--sides">
+						<ul class="o-bare-list o-bare-list--spaced-sixth">
 						<h3><?php echo $subtitle_8; ?></h3>
-						<ul class="o-bare-list o-bare-list--spaced-sixth"><?php echo $tenure; ?></ul>
+						<li>
+							- <?php echo icl_t('Theme-mycontract', 'The rent shall be occupied'); ?>: <strong><?php the_field('contract_tenant_name'); ?></strong>
+						</li>
+						<?php echo $tenure; ?>
+						</ul>
 					</li>
 <!--Validity					-->
 					<li class="u-hard--sides">
@@ -1020,9 +1062,9 @@ setup_postdata( $post );
 					<li class="u-hard--sides">
 						<h3><?php echo $subtitle_11; ?></h3>
 						<p>
-							<strong><?php the_field('contract_key_sets') ?></strong> <?php echo icl_t('Theme-mycontract', 'sets of keys'); ?>. </br>
-							<?php echo icl_t('Theme-mycontract', 'The keys is handed'); ?>.
+							<strong><?php the_field('contract_key_sets') ?></strong> <?php echo icl_t('Theme-mycontract', 'The keys is handed'); ?>.
 						</p>
+						<p><?php echo $key_sets_info; ?></p>
 					</li>
 <!--extra info					-->
 					<li class="u-hard--sides">

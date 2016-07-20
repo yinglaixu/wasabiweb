@@ -26,6 +26,7 @@ if( ! ( intval( $user->ID ) === intval( $owner['ID'] ) ) ) {
 // Save some page variables
 $inventory_form_title = get_field('inventory_form_title');
 $view_inventory_btn = get_field('view_inventory_btn');
+$explanation_inventory_list = get_field('explanation_inventory_list');
 $inventory_content_title = get_field('inventory_content_title');
 $change_inventory_btn = get_field('change_inventory_btn');
 
@@ -67,6 +68,8 @@ setup_postdata( $post );
 									<a class="c-btn c-btn--md c-btn--brand" id="btn-view-inventory">
 										<?php echo $view_inventory_btn; ?>
 									</a>
+									<p></p>
+									<p><?php echo $explanation_inventory_list; ?></p>
 								</div>
 							</div>
 						</li>
@@ -570,7 +573,7 @@ setup_postdata( $post );
 						<!--submit button-->
 						<li class="u-hard--sides" id="SubmitBtn">
 							<button type="submit" class="c-btn c-btn--xl c-btn--alpha">
-								<?php echo icl_t('Theme-form', 'Send object'); ?>
+								<?php echo icl_t('Theme-form', 'Submit form'); ?>
 							</button>
 						</li>
 					</ul>

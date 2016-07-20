@@ -26,6 +26,7 @@ if( ! ( intval( $user->ID ) === intval( $owner['ID'] ) ) ) {
 // Save some page variables
 $inspection_form_title = get_field('inspection_form_title');
 $view_inspection_btn = get_field('view_inspection_btn');
+$explanation_inspection_list = get_field('explanation_inspection_list');
 $inspection_content_title = get_field('inspection_content_title');
 $change_inspection_btn = get_field('change_inspection_btn');
 
@@ -67,6 +68,8 @@ setup_postdata( $post );
 									<a class="c-btn c-btn--md c-btn--brand" id="btn-view-inspection">
 										<?php echo $view_inspection_btn;?>
 									</a>
+									<p></p>
+									<p><?php echo $explanation_inspection_list; ?></p>
 								</div>
 							</div>
 						</li>
@@ -472,7 +475,7 @@ setup_postdata( $post );
 						<!--submit button-->
 						<li class="u-hard--sides" id="SubmitBtn">
 							<button type="submit" class="c-btn c-btn--xl c-btn--alpha">
-								<?php echo icl_t('Theme-form', 'Send object'); ?>
+								<?php echo icl_t('Theme-form', 'Submit form'); ?>
 							</button>
 						</li>
 					</ul>
