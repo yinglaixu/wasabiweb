@@ -87,6 +87,27 @@ setup_postdata( $post );
 											</a>
 										</div>
 									</div>
+
+									<ul class="o-grid o-grid--matrix u-flush--bottom">
+										<li class="o-grid__item u-1/2@sm-up js-clone-inventory-group__name">
+											<ul class="o-bare-list o-bare-list--spaced-sixth">
+												<li>
+													<label>
+														<?php echo icl_t('Theme-inventory_inspection', 'Name'); ?>:
+													</label>
+												</li>
+											</ul>
+										</li>
+										<li class="o-grid__item u-1/2@sm-up js-clone-inventory-group__name">
+											<ul class="o-bare-list o-bare-list--spaced-sixth">
+												<li>
+													<label>
+														<?php echo icl_t('Theme-inventory_inspection', 'Count'); ?>:
+													</label>
+												</li>
+											</ul>
+										</li>
+									</ul>
 									<!--get current row-->
 									<?php
 
@@ -100,11 +121,6 @@ setup_postdata( $post );
 												<li class="o-grid__item u-1/2@sm-up js-clone-inventory-group__name">
 													<ul class="o-bare-list o-bare-list--spaced-sixth">
 														<li>
-															<label>
-																<?php echo icl_t('Theme-inventory_inspection', 'Name'); ?>:
-															</label>
-														</li>
-														<li>
 															<div class="c-addon-group c-addon-group--inside c-addon-group--inside--right u-pointer">
 																<input name="inventory[kitchen-name][]" type="text" placeholder=" " class="c-text-input c-text-input--lg c-addon-group--inside__input" value="<?php the_sub_field('inventory_list_kitchen_name'); ?>">
 															</div>
@@ -113,11 +129,6 @@ setup_postdata( $post );
 												</li>
 												<li class="o-grid__item u-1/4@sm-up js-clone-inventory-group__description">
 													<ul class="o-bare-list o-bare-list--spaced-sixth">
-														<li>
-															<label>
-																<?php echo icl_t('Theme-inventory_inspection', 'Count'); ?>:
-															</label>
-														</li>
 														<li>
 															<div class="c-addon-group c-addon-group--inside c-addon-group--inside--right u-pointer">
 																<input name="inventory[kitchen-count][]" type="text" placeholder=" " class="c-text-input c-text-input--lg c-addon-group--inside__input" value="<?php the_sub_field('inventory_list_kitchen_count'); ?>">
@@ -158,6 +169,26 @@ setup_postdata( $post );
 											</a>
 										</div>
 									</div>
+									<ul class="o-grid o-grid--matrix u-flush--bottom">
+										<li class="o-grid__item u-1/2@sm-up js-clone-inventory-group__name">
+											<ul class="o-bare-list o-bare-list--spaced-sixth">
+												<li>
+													<label>
+														<?php echo icl_t('Theme-inventory_inspection', 'Name'); ?>:
+													</label>
+												</li>
+											</ul>
+										</li>
+										<li class="o-grid__item u-1/2@sm-up js-clone-inventory-group__name">
+											<ul class="o-bare-list o-bare-list--spaced-sixth">
+												<li>
+													<label>
+														<?php echo icl_t('Theme-inventory_inspection', 'Count'); ?>:
+													</label>
+												</li>
+											</ul>
+										</li>
+									</ul>
 									<!--get current row-->
 									<?php
 
@@ -171,11 +202,6 @@ setup_postdata( $post );
 												<li class="o-grid__item u-1/2@sm-up js-clone-inventory-group__name">
 													<ul class="o-bare-list o-bare-list--spaced-sixth">
 														<li>
-															<label>
-																<?php echo icl_t('Theme-inventory_inspection', 'Name'); ?>:
-															</label>
-														</li>
-														<li>
 															<div class="c-addon-group c-addon-group--inside c-addon-group--inside--right u-pointer">
 																<input name="inventory[livingroom-name][]" type="text" placeholder=" " class="c-text-input c-text-input--lg c-addon-group--inside__input" value="<?php the_sub_field('inventory_list_livingroom_name'); ?>">
 															</div>
@@ -184,11 +210,6 @@ setup_postdata( $post );
 												</li>
 												<li class="o-grid__item u-1/4@sm-up js-clone-inventory-group__description">
 													<ul class="o-bare-list o-bare-list--spaced-sixth">
-														<li>
-															<label>
-																<?php echo icl_t('Theme-inventory_inspection', 'Count'); ?>:
-															</label>
-														</li>
 														<li>
 															<div class="c-addon-group c-addon-group--inside c-addon-group--inside--right u-pointer">
 																<input name="inventory[livingroom-count][]" type="text" placeholder=" " class="c-text-input c-text-input--lg c-addon-group--inside__input" value="<?php the_sub_field('inventory_list_livingroom_count'); ?>">
@@ -229,6 +250,26 @@ setup_postdata( $post );
 											</a>
 										</div>
 									</div>
+									<ul class="o-grid o-grid--matrix u-flush--bottom">
+										<li class="o-grid__item u-1/2@sm-up js-clone-inventory-group__name">
+											<ul class="o-bare-list o-bare-list--spaced-sixth">
+												<li>
+													<label>
+														<?php echo icl_t('Theme-inventory_inspection', 'Name'); ?>:
+													</label>
+												</li>
+											</ul>
+										</li>
+										<li class="o-grid__item u-1/2@sm-up js-clone-inventory-group__name">
+											<ul class="o-bare-list o-bare-list--spaced-sixth">
+												<li>
+													<label>
+														<?php echo icl_t('Theme-inventory_inspection', 'Count'); ?>:
+													</label>
+												</li>
+											</ul>
+										</li>
+									</ul>
 									<!--get current row-->
 									<?php
 
@@ -242,11 +283,6 @@ setup_postdata( $post );
 												<li class="o-grid__item u-1/2@sm-up js-clone-inventory-group__name">
 													<ul class="o-bare-list o-bare-list--spaced-sixth">
 														<li>
-															<label>
-																<?php echo icl_t('Theme-inventory_inspection', 'Name'); ?>:
-															</label>
-														</li>
-														<li>
 															<div class="c-addon-group c-addon-group--inside c-addon-group--inside--right u-pointer">
 																<input name="inventory[bathroom-name][]" type="text" placeholder=" " class="c-text-input c-text-input--lg c-addon-group--inside__input" value="<?php the_sub_field('inventory_list_bathroom_name'); ?>">
 															</div>
@@ -255,11 +291,6 @@ setup_postdata( $post );
 												</li>
 												<li class="o-grid__item u-1/4@sm-up js-clone-inventory-group__description">
 													<ul class="o-bare-list o-bare-list--spaced-sixth">
-														<li>
-															<label>
-																<?php echo icl_t('Theme-inventory_inspection', 'Count'); ?>:
-															</label>
-														</li>
 														<li>
 															<div class="c-addon-group c-addon-group--inside c-addon-group--inside--right u-pointer">
 																<input name="inventory[bathroom-count][]" type="text" placeholder=" " class="c-text-input c-text-input--lg c-addon-group--inside__input" value="<?php the_sub_field('inventory_list_bathroom_count'); ?>">
@@ -300,6 +331,26 @@ setup_postdata( $post );
 											</a>
 										</div>
 									</div>
+									<ul class="o-grid o-grid--matrix u-flush--bottom">
+										<li class="o-grid__item u-1/2@sm-up js-clone-inventory-group__name">
+											<ul class="o-bare-list o-bare-list--spaced-sixth">
+												<li>
+													<label>
+														<?php echo icl_t('Theme-inventory_inspection', 'Name'); ?>:
+													</label>
+												</li>
+											</ul>
+										</li>
+										<li class="o-grid__item u-1/2@sm-up js-clone-inventory-group__name">
+											<ul class="o-bare-list o-bare-list--spaced-sixth">
+												<li>
+													<label>
+														<?php echo icl_t('Theme-inventory_inspection', 'Count'); ?>:
+													</label>
+												</li>
+											</ul>
+										</li>
+									</ul>
 									<!--get current row-->
 									<?php
 
@@ -313,11 +364,6 @@ setup_postdata( $post );
 												<li class="o-grid__item u-1/2@sm-up js-clone-inventory-group__name">
 													<ul class="o-bare-list o-bare-list--spaced-sixth">
 														<li>
-															<label>
-																<?php echo icl_t('Theme-inventory_inspection', 'Name'); ?>:
-															</label>
-														</li>
-														<li>
 															<div class="c-addon-group c-addon-group--inside c-addon-group--inside--right u-pointer">
 																<input name="inventory[bedroom-name][]" type="text" placeholder=" " class="c-text-input c-text-input--lg c-addon-group--inside__input" value="<?php the_sub_field('inventory_list_bedroom_name'); ?>">
 															</div>
@@ -326,11 +372,6 @@ setup_postdata( $post );
 												</li>
 												<li class="o-grid__item u-1/4@sm-up js-clone-inventory-group__description">
 													<ul class="o-bare-list o-bare-list--spaced-sixth">
-														<li>
-															<label>
-																<?php echo icl_t('Theme-inventory_inspection', 'Count'); ?>:
-															</label>
-														</li>
 														<li>
 															<div class="c-addon-group c-addon-group--inside c-addon-group--inside--right u-pointer">
 																<input name="inventory[bedroom-count][]" type="text" placeholder=" " class="c-text-input c-text-input--lg c-addon-group--inside__input" value="<?php the_sub_field('inventory_list_bedroom_count'); ?>">
@@ -371,6 +412,26 @@ setup_postdata( $post );
 											</a>
 										</div>
 									</div>
+									<ul class="o-grid o-grid--matrix u-flush--bottom">
+										<li class="o-grid__item u-1/2@sm-up js-clone-inventory-group__name">
+											<ul class="o-bare-list o-bare-list--spaced-sixth">
+												<li>
+													<label>
+														<?php echo icl_t('Theme-inventory_inspection', 'Name'); ?>:
+													</label>
+												</li>
+											</ul>
+										</li>
+										<li class="o-grid__item u-1/2@sm-up js-clone-inventory-group__name">
+											<ul class="o-bare-list o-bare-list--spaced-sixth">
+												<li>
+													<label>
+														<?php echo icl_t('Theme-inventory_inspection', 'Count'); ?>:
+													</label>
+												</li>
+											</ul>
+										</li>
+									</ul>
 									<!--get current row-->
 									<?php
 
@@ -384,11 +445,6 @@ setup_postdata( $post );
 												<li class="o-grid__item u-1/2@sm-up js-clone-inventory-group__name">
 													<ul class="o-bare-list o-bare-list--spaced-sixth">
 														<li>
-															<label>
-																<?php echo icl_t('Theme-inventory_inspection', 'Name'); ?>:
-															</label>
-														</li>
-														<li>
 															<div class="c-addon-group c-addon-group--inside c-addon-group--inside--right u-pointer">
 																<input name="inventory[toalett-name][]" type="text" placeholder=" " class="c-text-input c-text-input--lg c-addon-group--inside__input" value="<?php the_sub_field('inventory_list_toalett_name'); ?>">
 															</div>
@@ -397,11 +453,6 @@ setup_postdata( $post );
 												</li>
 												<li class="o-grid__item u-1/4@sm-up js-clone-inventory-group__description">
 													<ul class="o-bare-list o-bare-list--spaced-sixth">
-														<li>
-															<label>
-																<?php echo icl_t('Theme-inventory_inspection', 'Count'); ?>:
-															</label>
-														</li>
 														<li>
 															<div class="c-addon-group c-addon-group--inside c-addon-group--inside--right u-pointer">
 																<input name="inventory[toalett-count][]" type="text" placeholder=" " class="c-text-input c-text-input--lg c-addon-group--inside__input" value="<?php the_sub_field('inventory_list_toalett_count'); ?>">
@@ -442,6 +493,26 @@ setup_postdata( $post );
 											</a>
 										</div>
 									</div>
+									<ul class="o-grid o-grid--matrix u-flush--bottom">
+										<li class="o-grid__item u-1/2@sm-up js-clone-inventory-group__name">
+											<ul class="o-bare-list o-bare-list--spaced-sixth">
+												<li>
+													<label>
+														<?php echo icl_t('Theme-inventory_inspection', 'Name'); ?>:
+													</label>
+												</li>
+											</ul>
+										</li>
+										<li class="o-grid__item u-1/2@sm-up js-clone-inventory-group__name">
+											<ul class="o-bare-list o-bare-list--spaced-sixth">
+												<li>
+													<label>
+														<?php echo icl_t('Theme-inventory_inspection', 'Count'); ?>:
+													</label>
+												</li>
+											</ul>
+										</li>
+									</ul>
 									<!--get current row-->
 									<?php
 
@@ -455,11 +526,6 @@ setup_postdata( $post );
 												<li class="o-grid__item u-1/2@sm-up js-clone-inventory-group__name">
 													<ul class="o-bare-list o-bare-list--spaced-sixth">
 														<li>
-															<label>
-																<?php echo icl_t('Theme-inventory_inspection', 'Name'); ?>:
-															</label>
-														</li>
-														<li>
 															<div class="c-addon-group c-addon-group--inside c-addon-group--inside--right u-pointer">
 																<input name="inventory[entrance-name][]" type="text" placeholder=" " class="c-text-input c-text-input--lg c-addon-group--inside__input" value="<?php the_sub_field('inventory_list_entrance_name'); ?>">
 															</div>
@@ -468,11 +534,6 @@ setup_postdata( $post );
 												</li>
 												<li class="o-grid__item u-1/4@sm-up js-clone-inventory-group__description">
 													<ul class="o-bare-list o-bare-list--spaced-sixth">
-														<li>
-															<label>
-																<?php echo icl_t('Theme-inventory_inspection', 'Count'); ?>:
-															</label>
-														</li>
 														<li>
 															<div class="c-addon-group c-addon-group--inside c-addon-group--inside--right u-pointer">
 																<input name="inventory[entrance-count][]" type="text" placeholder=" " class="c-text-input c-text-input--lg c-addon-group--inside__input" value="<?php the_sub_field('inventory_list_entrance_count'); ?>">
@@ -513,6 +574,26 @@ setup_postdata( $post );
 											</a>
 										</div>
 									</div>
+									<ul class="o-grid o-grid--matrix u-flush--bottom">
+										<li class="o-grid__item u-1/2@sm-up js-clone-inventory-group__name">
+											<ul class="o-bare-list o-bare-list--spaced-sixth">
+												<li>
+													<label>
+														<?php echo icl_t('Theme-inventory_inspection', 'Name'); ?>:
+													</label>
+												</li>
+											</ul>
+										</li>
+										<li class="o-grid__item u-1/2@sm-up js-clone-inventory-group__name">
+											<ul class="o-bare-list o-bare-list--spaced-sixth">
+												<li>
+													<label>
+														<?php echo icl_t('Theme-inventory_inspection', 'Count'); ?>:
+													</label>
+												</li>
+											</ul>
+										</li>
+									</ul>
 									<!--get current row-->
 									<?php
 
@@ -526,11 +607,6 @@ setup_postdata( $post );
 												<li class="o-grid__item u-1/2@sm-up js-clone-inventory-group__name">
 													<ul class="o-bare-list o-bare-list--spaced-sixth">
 														<li>
-															<label>
-																<?php echo icl_t('Theme-inventory_inspection', 'Name'); ?>:
-															</label>
-														</li>
-														<li>
 															<div class="c-addon-group c-addon-group--inside c-addon-group--inside--right u-pointer">
 																<input name="inventory[others-name][]" type="text" placeholder=" " class="c-text-input c-text-input--lg c-addon-group--inside__input" value="<?php the_sub_field('inventory_list_others_name'); ?>">
 															</div>
@@ -539,11 +615,6 @@ setup_postdata( $post );
 												</li>
 												<li class="o-grid__item u-1/4@sm-up js-clone-inventory-group__description">
 													<ul class="o-bare-list o-bare-list--spaced-sixth">
-														<li>
-															<label>
-																<?php echo icl_t('Theme-inventory_inspection', 'Count'); ?>:
-															</label>
-														</li>
 														<li>
 															<div class="c-addon-group c-addon-group--inside c-addon-group--inside--right u-pointer">
 																<input name="inventory[others-count][]" type="text" placeholder=" " class="c-text-input c-text-input--lg c-addon-group--inside__input" value="<?php the_sub_field('inventory_list_others_count'); ?>">

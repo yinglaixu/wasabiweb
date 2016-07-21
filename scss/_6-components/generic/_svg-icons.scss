@@ -255,7 +255,7 @@
     &__svg {
         $size: 25px;
         @include build-svg($size);
-        margin-top: 33px;
+        margin-top: 9px;
     }
 }
 .c-svg-icon--rentout-property-type {

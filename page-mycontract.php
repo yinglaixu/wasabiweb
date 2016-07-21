@@ -76,7 +76,40 @@ $post = get_post( $obj_id );
 setup_postdata( $post );
 
 // prepare the translation of the value to swedish
+$furnished_condition = get_field('contact_furnished_condition');
+$apartment_utilities = get_field('contract_house_rental_utilities');
+$house_utilities = get_field('contract_house_rental_utilities');
+
+$property_type = get_field('property_type');
+$property_name = $subtitle_4_apartment;
+$operation_fee_type = 'electricity';
+$operation_fee = get_field('contract_electricity_fee');
+
+if ($property_type == 'villa') {
+	$property_name = $subtitle_4_house;
+	$operation_fee_type = 'operation';
+	$operation_fee = get_field('contract_operation_fee');
+}
+
+$if_keep_pets = get_field('contract_keep_pets');
+
 $current_language = ICL_LANGUAGE_CODE;
+$translation_of_furnish = array('furnished' => 'Möblerad', 'partly furnished' => 'Delvis Möblerad', 'unfurnished' => 'Omöblerad');
+$translation_of_operation_type = array('electricity' => 'el', 'operation' => 'maxavgift');
+$translation_of_keep_pets = array('Is not allowed' => 'Inte tillåtet', 'Is allowed' => 'Tillåtet');
+$translation_of_utilities = array('Storage' => 'Förråd', 'Parking place' => 'Parkeringsplats', 'Cable TV' => 'Kabel TV', 'Heat' => 'Värme',
+	'Community fee' => 'Samhällsavgift', 'Garbage handling' => 'Sophantering', 'Garage' => 'Garage', 'Water' => 'Vatten', 'Electricity/gas' => ' El/gas',
+	'Wi-Fi' => 'Wi-Fi');
+
+if ($current_language === 'sv'){
+	$furnished_condition = $translation_of_furnish[$furnished_condition];
+	$operation_fee_type = $translation_of_operation_type[$operation_fee_type];
+	$if_keep_pets = $translation_of_keep_pets[$if_keep_pets];
+	foreach ($house_utilities as $util){
+		$util = $translation_of_utilities[$util];
+	}
+}
+
 ?>
 
 
@@ -775,7 +808,7 @@ $current_language = ICL_LANGUAGE_CODE;
 									<ul class="o-bare-list o-bare-list--spaced-sixth">
 										<li>
 											<label for="extranote">
-												<strong><?php echo icl_t('Theme-mycontract', 'Extra notes'); ?>:</strong>
+												<strong><?php echo icl_t('Theme-mycontract', 'Other paragraphs'); ?>:</strong>
 											</label>
 										</li>
 										<li>
@@ -830,13 +863,13 @@ $current_language = ICL_LANGUAGE_CODE;
 					<li class="u-hard--sides">
 						<h3><?php echo $subtitle_1;?></h3>
 						<p><?php echo icl_t('Theme-mycontract', 'The landlord hereby leases'); ?>
-							<strong><?php the_field('rooms'); ?></strong> <?php echo icl_t('Theme-mycontract', 'room'); ?>(s),
+							<strong><?php the_field('rooms'); ?></strong> <?php echo icl_t('Theme-mycontract', 'room'); ?>,
 							<?php echo icl_t('Theme-mycontract', 'about'); ?>
 							<strong><?php the_field('volume'); ?></strong> m<sup>2</sup>,
-							<?php echo icl_t('Theme-mycontract', 'with address'); ?>,
+							<?php echo icl_t('Theme-mycontract', 'with address'); ?>
+							<strong><?php the_field('address'); ?></strong>,
 							<?php echo icl_t('Theme-mycontract', 'number of apartment'); ?>
 							<strong><?php the_field('landlord_room_number'); ?></strong>,
-							<strong><?php the_field('address'); ?></strong>,
 							<strong><?php the_field('area'); ?></strong>
 							<?php echo icl_t('Theme-mycontract', 'rental object'); ?>.
 						</p>
@@ -871,7 +904,7 @@ $current_language = ICL_LANGUAGE_CODE;
 						</div>
 						<p>
 							<?php echo icl_t('Theme-mycontract', 'The property is'); ?>
-							<strong><?php the_field('contact_furnished_condition'); ?></strong>.
+							<strong><?php echo $furnished_condition; ?></strong>.
 						</p>
 					</li>
 <!--rental price					-->
@@ -979,18 +1012,6 @@ $current_language = ICL_LANGUAGE_CODE;
 <!--rental utilities					-->
 					<li class="u-hard--sides">
 						<div>
-							<?php
-							$property_type = get_field('property_type');
-							$property_name = $subtitle_4_apartment;
-							$operation_fee_type = 'electricity';
-							$operation_fee = get_field('contract_electricity_fee');
-
-							if ($property_type == 'villa') {
-								$property_name = $subtitle_4_house;
-								$operation_fee_type = 'operation';
-								$operation_fee = get_field('contract_operation_fee');
-							}
-							?>
 							<h3>
 								<?php echo $property_name; ?>
 							</h3>
@@ -999,10 +1020,22 @@ $current_language = ICL_LANGUAGE_CODE;
 								<strong>
 									<?php
 									if ($property_type == 'villa') {
-										echo the_field('contract_house_rental_utilities');
+										$length = count($house_utilities) - 1;
+										foreach ($house_utilities as $util){
+											if($util != $house_utilities[$length]){
+												$util = $util.', ';
+											}
+											echo $util;
+										}
 									}
-									else{
-										echo the_field('contract_apartment_rental_utilities');
+									else if ($property_type = 'apartment'){
+										$length = count($apartment_utilities) - 1;
+										foreach ($apartment_utilities as $util){
+											if($util != $apartment_utilities[$length]){
+												$util = $util.', ';
+											}
+											echo $util;
+										}
 									}
 									?>
 								</strong>
@@ -1022,7 +1055,7 @@ $current_language = ICL_LANGUAGE_CODE;
 							<?php echo $care_wellbeing_1; ?>
 							<li>
 								- <?php echo icl_t('Theme-mycontract', 'Tenant title'); ?>
-								<strong><?php the_field('contract_keep_pets') ?></strong>
+								<strong><?php echo $if_keep_pets; ?></strong>
 								<?php echo icl_t('Theme-mycontract', 'to keep pets in the rented property'); ?>.
 							</li>
 							<?php echo $care_wellbeing_2; ?>

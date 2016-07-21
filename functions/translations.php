@@ -55,7 +55,7 @@ icl_register_string('Theme-form', 'Name placeholder', 'Förnamn Efternamn', fals
 icl_register_string('Theme-form', 'Problem', 'Problem & Ärende', false, 'sv');
 icl_register_string('Theme-form', 'Message', 'Meddelande', false, 'sv');
 icl_register_string('Theme-form', 'Send', 'Skicka', false, 'sv');
-icl_register_string('Theme-form', 'Submit form', 'publicera min lista', false, 'sv');
+icl_register_string('Theme-form', 'Submit form', 'publicera min dokumentera', false, 'sv');
 
 icl_register_string('Theme-form-options', 'Villa', 'Villa', false, 'sv');
 icl_register_string('Theme-form-options', 'Apartment', 'Lägenhet', false, 'sv');

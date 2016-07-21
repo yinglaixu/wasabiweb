@@ -12,17 +12,17 @@ WW.myPages = function($) {
 
         });
 
-        if($('#contractStatus').html() === 'complete'){
+        if($('#contractStatus').html() === 'complete' || $('#contractStatus').html() === 'Färdigställt'){
             $('#icon-contract').hide();
             $('#icon-contract-alive').show();
             $('#contractStatus').addClass('completeStatus');
         }
-        if($('#inventoryStatus').html() === 'complete'){
+        if($('#inventoryStatus').html() === 'complete' || $('#inventoryStatus').html() === 'Färdigställt'){
             $('#icon-inventory').hide();
             $('#icon-inventory-alive').show();
             $('#inventoryStatus').addClass('completeStatus');
         }
-        if($('#inspectionStatus').html() === 'complete'){
+        if($('#inspectionStatus').html() === 'complete' || $('#inspectionStatus').html() === 'Färdigställt' ){
             $('#icon-inspection').hide();
             $('#icon-inspection-alive').show();
             $('#inspectionStatus').addClass('completeStatus');
@@ -280,11 +280,6 @@ WW.myPages = function($) {
 				<li class="o-grid__item u-1/2@sm-up js-clone-inventory-group__name">
 					<ul class="o-bare-list o-bare-list--spaced-sixth">
 					<li>
-					<label>
-					<?php echo icl_t('Theme-inventory_inspection', 'Name'); ?>:
-					</label>
-					</li>
-					<li>
 					<div class="c-addon-group c-addon-group--inside c-addon-group--inside--right u-pointer">
 					<input name="${roomName}" type="text" placeholder=" " class="c-text-input c-text-input--lg c-addon-group--inside__input" value=" ">
 					</div>
@@ -293,11 +288,6 @@ WW.myPages = function($) {
 				</li>
 				<li class="o-grid__item u-1/4@sm-up js-clone-inventory-group__description">
 					<ul class="o-bare-list o-bare-list--spaced-sixth">
-					<li>
-					<label>
-					<?php echo icl_t('Theme-inventory_inspection', 'Count'); ?>:
-					</label>
-					</li>
 					<li>
 					<div class="c-addon-group c-addon-group--inside c-addon-group--inside--right u-pointer">
 					<input name="${roomCount}" type="text" placeholder=" " class="c-text-input c-text-input--lg c-addon-group--inside__input" value=" ">
@@ -348,11 +338,6 @@ WW.myPages = function($) {
 			<ul class="o-grid o-grid--matrix u-flush--bottom">
 				<li class="o-grid__item u-3/4@sm-up js-clone-inspection-group__name">
 					<ul class="o-bare-list o-bare-list--spaced-sixth">
-					<li>
-					<label>
-					<?php echo icl_t('Theme-inventory_inspection', 'Notes'); ?>:
-					</label>
-					</li>
 					<li>
 					<div class="c-addon-group c-addon-group--inside c-addon-group--inside--right u-pointer">
 					<input name="${roomName}" type="text" placeholder=" " class="c-text-input c-text-input--lg c-addon-group--inside__input" value=" ">
