@@ -262,9 +262,16 @@ icl_register_string('Theme-about-us', 'who we are', 'Vem Vi Är', false, 'sv');
 icl_register_string('Theme-how-it-works', 'contact-text', 'Vi vill gärna höra från dig, mer information kontakta:', false, 'sv');
 
 
-
-
-
+icl_register_string('Theme-qa', 'About Renthia', 'Om Renthia', false, 'sv');
+icl_register_string('Theme-qa', 'My account', 'Mitt konto', false, 'sv');
+icl_register_string('Theme-qa', 'Payment', 'Betalning', false, 'sv');
+icl_register_string('Theme-qa', 'Contract/Inventory list/Inspection list', 'Hyresavtal / Inventarielista / Besiktningsinstrument', false, 'sv');
+icl_register_string('Theme-qa', 'Landlord', 'Hyresvärd', false, 'sv');
+icl_register_string('Theme-qa', 'Tenant', 'Hyresgäst', false, 'sv');
+icl_register_string('Theme-qa', 'Legal issue', 'Juridiska frågor', false, 'sv');
+icl_register_string('Theme-qa', 'Insurance', 'Försäkring', false, 'sv');
+icl_register_string('Theme-qa', 'View more', 'Ser mer...', false, 'sv');
+icl_register_string('Theme-qa', 'Hide', 'Dölja', false, 'sv');
 
 
 

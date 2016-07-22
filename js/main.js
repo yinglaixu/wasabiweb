@@ -38,6 +38,7 @@
             .blockSlider($)
             .updateProperty($)
             .myPages($)
+            .questionAnswer($)
             .scrollToHashLocations($)
             .screenResizeEvents($,
                 WW.checkCurrentMediaQuery.init,
