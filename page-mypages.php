@@ -38,6 +38,8 @@ $user = wp_get_current_user();
 	$query = new WP_Query( $args );
 	?>
 	<main role="main" class="u-bg-eta">
+		<?php get_template_part('partials/subpage-banner'); ?>
+
 		<div class="o-site-wrap o-site-wrap--padding">
 			<div class="u-soft-half--sides">
 				<ul class="[ c-ui-list c-ui-list--dark ] u-hard--bottom [ u-clean--top u-clean--bottom ]">

@@ -94,20 +94,20 @@ if ($property_type == 'villa') {
 $if_keep_pets = get_field('contract_keep_pets');
 
 $current_language = ICL_LANGUAGE_CODE;
-$translation_of_furnish = array('furnished' => 'Möblerad', 'partly furnished' => 'Delvis Möblerad', 'unfurnished' => 'Omöblerad');
+$translation_of_furnish = array('furnished' => 'möblerad', 'partly furnished' => 'delvis möblerad', 'unfurnished' => 'omöblerad');
 $translation_of_operation_type = array('electricity' => 'el', 'operation' => 'maxavgift');
-$translation_of_keep_pets = array('Is not allowed' => 'Inte tillåtet', 'Is allowed' => 'Tillåtet');
-$translation_of_utilities = array('Storage' => 'Förråd', 'Parking place' => 'Parkeringsplats', 'Cable TV' => 'Kabel TV', 'Heat' => 'Värme',
-	'Community fee' => 'Samhällsavgift', 'Garbage handling' => 'Sophantering', 'Garage' => 'Garage', 'Water' => 'Vatten', 'Electricity/gas' => ' El/gas',
-	'Wi-Fi' => 'Wi-Fi');
+$translation_of_keep_pets = array('is not allowed' => 'inte tillåtet', 'is allowed' => 'tillåtet');
+$translation_of_utilities = array('storage' => 'förråd', 'parking' => 'parkeringsplats', 'cable-tv' => 'kabel TV', 'heat' => 'värme',
+	'community' => 'samhällsavgift', 'garbage' => 'sophantering', 'garage' => 'garage', 'water' => 'vatten', 'electricity/gas' => 'el/gas',
+	'wi-fi' => 'wi-fi');
 
 if ($current_language === 'sv'){
+	$furnished_condition = (string)$furnished_condition;
+	$if_keep_pets = (string)$if_keep_pets;
+
 	$furnished_condition = $translation_of_furnish[$furnished_condition];
 	$operation_fee_type = $translation_of_operation_type[$operation_fee_type];
 	$if_keep_pets = $translation_of_keep_pets[$if_keep_pets];
-	foreach ($house_utilities as $util){
-		$util = $translation_of_utilities[$util];
-	}
 }
 
 ?>
@@ -831,10 +831,14 @@ if ($current_language === 'sv'){
 			</form>
 		</section>
 		<section class="o-section" id="contract-content" style="display: none;">
-			<div class="o-site-wrap o-site-wrap--padding">
-				<h4 id="contractComplete" style="color:green;"> </h4>
-			</div>
 			<div class="o-site-wrap o-site-wrap--padding u-bg-eta" style="padding-left: 5rem; padding-right: 5rem;">
+				<div class="o-grid u-text-center">
+					<img class="c-site-logo__img u-svg"
+						 src="<?php bloginfo( 'template_directory' ); ?>/build/img/logo-contract.png"
+						 alt="<?php bloginfo( 'name' ); ?>"
+						 style="width:30%;"
+					>
+				</div>
 				<ul class="c-ui-list u-hard--ends [ u-clean--top u-clean--bottom ]">
 					<li class="u-hard--sides">
 						<div class="o-grid u-text-center">
@@ -1020,21 +1024,47 @@ if ($current_language === 'sv'){
 								<strong>
 									<?php
 									if ($property_type == 'villa') {
+
 										$length = count($house_utilities) - 1;
-										foreach ($house_utilities as $util){
-											if($util != $house_utilities[$length]){
-												$util = $util.', ';
+										if ($current_language === 'en'){
+											foreach ($house_utilities as $util){
+												if($util != $house_utilities[$length]){
+													$util = $util.', ';
+												}
+												echo $util;
 											}
-											echo $util;
 										}
+										else if($current_language === 'sv'){
+											foreach ($house_utilities as $util){
+												if($util != $house_utilities[$length]){
+													$util = (string)$util;
+													$util = $translation_of_utilities[$util];
+													$util = $util.', ';
+												}
+												echo $util;
+											}
+										}
+
 									}
 									else if ($property_type = 'apartment'){
 										$length = count($apartment_utilities) - 1;
-										foreach ($apartment_utilities as $util){
-											if($util != $apartment_utilities[$length]){
-												$util = $util.', ';
+										if ($current_language === 'en'){
+											foreach ($apartment_utilities as $util){
+												if($util != $apartment_utilities[$length]){
+													$util = $util.', ';
+												}
+												echo $util;
 											}
-											echo $util;
+										}
+										else if($current_language === 'sv'){
+											foreach ($apartment_utilities as $util){
+												if($util != $apartment_utilities[$length]){
+													$util = (string)$util;
+													$util = $translation_of_utilities[$util];
+													$util = $util.', ';
+												}
+												echo $util;
+											}
 										}
 									}
 									?>
