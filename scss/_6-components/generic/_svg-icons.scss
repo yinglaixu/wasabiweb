@@ -280,10 +280,10 @@
     }
 }
 .c-svg-icon--rentout-title {
-    padding-left: 30px;
+    padding-left: 40px;
     fill: currentColor;
     &__svg {
-        $size: 20px;
+        $size: 30px;
         @include build-svg($size, left);
     }
 }

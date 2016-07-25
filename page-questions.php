@@ -35,7 +35,12 @@ Template Name: Frequent questions
                     <article class = "o-grid__item u-1/2@sm-up">
                             <div >
                                 <div class="o-section u-hard--bottom">
-                                    <h3><?php echo icl_t('Theme-qa', 'About Renthia'); ?></h3>
+                                    <div class="c-svg-icon c-svg-icon--rentout-title">
+                                        <svg class="c-svg-icon__svg c-svg-icon--rentout-title__svg">
+                                            <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-qa-about"></use>
+                                        </svg>
+                                        <h3><?php echo icl_t('Theme-qa', 'About Renthia'); ?></h3>
+                                    </div>
                                     <ul class="o-bare-list" id="question-about-renthia">
                                         <?php
                                         if( have_rows('qa-about-renthia') ):
@@ -61,7 +66,12 @@ Template Name: Frequent questions
                     <article class = "o-grid__item u-1/2@sm-up">
                         <div >
                             <div class="o-section u-hard--bottom">
-                                <h3><?php echo icl_t('Theme-qa', 'My account'); ?></h3>
+                                <div class="c-svg-icon c-svg-icon--rentout-title">
+                                    <svg class="c-svg-icon__svg c-svg-icon--rentout-title__svg">
+                                        <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-qa-account"></use>
+                                    </svg>
+                                    <h3><?php echo icl_t('Theme-qa', 'My account'); ?></h3>
+                                </div>
                                 <ul class="o-bare-list" id="question-my-account">
                                     <?php
                                     if( have_rows('qa-my-account') ):
@@ -87,7 +97,12 @@ Template Name: Frequent questions
                     <article class = "o-grid__item u-1/2@sm-up">
                         <div >
                             <div class="o-section u-hard--bottom">
-                                <h3><?php echo icl_t('Theme-qa', 'Payment'); ?></h3>
+                                <div class="c-svg-icon c-svg-icon--rentout-title">
+                                    <svg class="c-svg-icon__svg c-svg-icon--rentout-title__svg">
+                                        <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-qa-payment"></use>
+                                    </svg>
+                                    <h3><?php echo icl_t('Theme-qa', 'Payment'); ?></h3>
+                                </div>
                                 <ul class="o-bare-list" id="question-payment">
                                     <?php
                                     if( have_rows('qa-payment') ):
@@ -113,7 +128,12 @@ Template Name: Frequent questions
                     <article class = "o-grid__item u-1/2@sm-up">
                         <div >
                             <div class="o-section u-hard--bottom">
-                                <h3><?php echo icl_t('Theme-qa', 'Contract/Inventory list/Inspection list'); ?></h3>
+                                <div class="c-svg-icon c-svg-icon--rentout-title">
+                                    <svg class="c-svg-icon__svg c-svg-icon--rentout-title__svg">
+                                        <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-qa-contract"></use>
+                                    </svg>
+                                    <h3><?php echo icl_t('Theme-qa', 'Contract/Inventory list/Inspection list'); ?></h3>
+                                </div>
                                 <ul class="o-bare-list" id="question-contract">
                                     <?php
                                     if( have_rows('qa-contract') ):
@@ -139,7 +159,12 @@ Template Name: Frequent questions
                     <article class = "o-grid__item u-1/2@sm-up">
                         <div >
                             <div class="o-section u-hard--bottom">
-                                <h3><?php echo icl_t('Theme-qa', 'Landlord'); ?></h3>
+                                <div class="c-svg-icon c-svg-icon--rentout-title">
+                                    <svg class="c-svg-icon__svg c-svg-icon--rentout-title__svg">
+                                        <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-qa-landlord"></use>
+                                    </svg>
+                                    <h3><?php echo icl_t('Theme-qa', 'Landlord'); ?></h3>
+                                </div>
                                 <ul class="o-bare-list" id="question-landlord">
                                     <?php
                                     if( have_rows('qa-landlord') ):
@@ -165,7 +190,12 @@ Template Name: Frequent questions
                     <article class = "o-grid__item u-1/2@sm-up">
                         <div >
                             <div class="o-section u-hard--bottom">
-                                <h3><?php echo icl_t('Theme-qa', 'Tenant'); ?></h3>
+                                <div class="c-svg-icon c-svg-icon--rentout-title">
+                                    <svg class="c-svg-icon__svg c-svg-icon--rentout-title__svg">
+                                        <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-qa-tenant"></use>
+                                    </svg>
+                                    <h3><?php echo icl_t('Theme-qa', 'Tenant'); ?></h3>
+                                </div>
                                 <ul class="o-bare-list" id="question-tenant">
                                     <?php
                                     if( have_rows('qa-tenant') ):
@@ -191,7 +221,12 @@ Template Name: Frequent questions
                     <article class = "o-grid__item u-1/2@sm-up">
                         <div >
                             <div class="o-section u-hard--bottom">
-                                <h3><?php echo icl_t('Theme-qa', 'Insurance'); ?></h3>
+                                <div class="c-svg-icon c-svg-icon--rentout-title">
+                                    <svg class="c-svg-icon__svg c-svg-icon--rentout-title__svg">
+                                        <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-qa-insurance"></use>
+                                    </svg>
+                                    <h3><?php echo icl_t('Theme-qa', 'Insurance'); ?></h3>
+                                </div>
                                 <ul class="o-bare-list" id="question-insurance">
                                     <?php
                                     if( have_rows('qa-insurance') ):
@@ -226,6 +261,9 @@ Template Name: Frequent questions
 <style>
     #question-answer a{
         text-decoration: none;
+    }
+    #question-answer h3{
+        padding-top: 5px;
     }
 </style>
 

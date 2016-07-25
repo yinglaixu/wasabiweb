@@ -16,10 +16,21 @@ WW.questionAnswer = function($){
     'use strict';
     function init(){
 
-        var questionList = $('#question-about-renthia');
-        var questionTest = $('#question-about-others');
-        hideMoreQuestions(questionList);
-        hideMoreQuestions(questionTest);
+        var aboutRenthia = $('#question-about-renthia');
+        var myAccount = $('#question-my-account');
+        var payment = $('#question-payment');
+        var contract = $('#question-contract');
+        var landlord = $('#question-landlord');
+        var tenant = $('#question-tenant');
+        var insurance = $('#question-insurance');
+
+        hideMoreQuestions(aboutRenthia);
+        hideMoreQuestions(myAccount);
+        hideMoreQuestions(payment);
+        hideMoreQuestions(contract);
+        hideMoreQuestions(landlord);
+        hideMoreQuestions(tenant);
+        hideMoreQuestions(insurance);
 
         $('.toggle-more').on('click', function(e) {
 
@@ -66,7 +77,10 @@ WW.questionAnswer = function($){
             parent.find('.toggle-less').show();
 
             for(var i = n-1; i >= 4;i--){
-                lists.eq(i).fadeIn();
+                var j = i % 2;
+                if(j === 0){
+                    lists.eq(i).fadeIn();
+                }
             }
         }
     }

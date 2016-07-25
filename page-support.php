@@ -261,28 +261,28 @@ Template Name: Support
                                     <li><h2><?php echo get_field( 'question_title'); ?></h2></li>
 <!--                                    <li><strong>--><?php //echo get_field( 'landlords'); ?><!--</strong></li>-->
                                     <li>
-                                        <ul class = 'drop-down o-bare-list'>
-                                            <li class = 'drop-down-button'><strong><a href = "#"><?php echo get_field( 'landlords_question_1'); ?></a></strong></li>
-                                            <li class = 'drop-down-content'><p><?php echo get_field( 'landlords_answer_1'); ?></p></li>
+                                        <ul class="drop-down o-bare-list">
+                                            <li><a href = "#" class="toggle-slide"><?php echo get_field( 'landlords_question_1'); ?></a></li>
+                                            <li style="display: none;"><?php echo get_field( 'landlords_answer_1'); ?></li>
                                         </ul>
                                     </li>
                                     <li>
-                                        <ul class = 'drop-down o-bare-list'>
-                                            <li class = 'drop-down-button'><strong><a href = "#"><?php echo get_field( 'landlords_question_2'); ?></a></strong></li>
-                                            <li class = 'drop-down-content'><p><?php echo get_field( 'landlords_answer_2'); ?></p></li>
+                                        <ul class ="drop-down o-bare-list">
+                                            <li><a href = "#" class="toggle-slide"><?php echo get_field( 'landlords_question_2'); ?></a></li>
+                                            <li style="display: none;"><?php echo get_field( 'landlords_answer_2'); ?></li>
                                         </ul>
                                     </li>
 <!--                                    <li><strong>--><?php //echo get_field( 'tenants'); ?><!--</strong></li>-->
                                     <li>
                                         <ul class = 'drop-down o-bare-list'>
-                                            <li class = 'drop-down-button'><strong><a href = "#"><?php echo get_field( 'tenants_question_1'); ?></a></strong></li>
-                                            <li class = 'drop-down-content'><p><?php echo get_field( 'tenants_answer_1'); ?></p></li>
+                                            <li><a href = "#" class="toggle-slide"><?php echo get_field( 'tenants_question_1'); ?></a></li>
+                                            <li style="display: none;"><?php echo get_field( 'tenants_answer_1'); ?></li>
                                         </ul>
                                     </li>
                                     <li>
                                         <ul class = 'drop-down o-bare-list'>
-                                            <li class = 'drop-down-button'><strong><a href = "#"><?php echo get_field( 'tenants_question_2'); ?></a></strong></li>
-                                            <li class = 'drop-down-content'><p><?php echo get_field( 'tenants_answer_2'); ?></p></li>
+                                            <li><a href = "#" class="toggle-slide"><?php echo get_field( 'tenants_question_2'); ?></a></li>
+                                            <li style="display: none;"><?php echo get_field( 'tenants_answer_2'); ?></li>
                                         </ul>
                                     </li>
                                     <li>

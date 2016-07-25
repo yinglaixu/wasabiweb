@@ -6,6 +6,7 @@
 	@media (min-width: 1175px) {
 		padding-bottom: 13%;
 	}
+
 }
 
 	.c-subpage-banner__img,
@@ -18,8 +19,11 @@
 	}
 
 	.c-subpage-banner__img {
+		/* Create the parallax scrolling effect */
+		background-attachment: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
 		background-size: cover;
-		background-position: center center;
 	}
 
 	.c-subpage-banner__overlay {

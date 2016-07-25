@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3 (11970) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-qa-tenant</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="icon-qa-tenant" sketch:type="MSLayerGroup">
+            <path d="M15,30 C23.2842712,30 30,23.2842712 30,15 C30,6.71572875 23.2842712,0 15,0 C6.71572875,0 0,6.71572875 0,15 C0,23.2842712 6.71572875,30 15,30 Z" id="Oval-39-Copy-3" fill="#DDDDDD" sketch:type="MSShapeGroup"></path>
+            <path d="M19.1411886,14.5783333 C19.1831467,14.8158525 19.2050298,15.0600766 19.2050298,15.3091577 L19.2050298,21.2946311 L10.7949702,21.2946311 L10.7949702,15.3091577 C10.7949702,15.0718949 10.8146909,14.839224 10.852576,14.6126854 L10.852576,14.6126854 L14.3008503,11.1644111 C14.5283049,11.1262506 14.7618815,11.1063884 15,11.1063884 C15.2501195,11.1063884 15.4951386,11.1283394 15.7332548,11.1703995 L19.1411886,14.5783333 Z" id="Rectangle-13" stroke="#FFFFFF" stroke-width="2" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            <rect id="Path" fill="#FFFFFF" sketch:type="MSShapeGroup" x="17.1591573" y="9.26178676" width="1.95391132" height="3.6892032" rx="8"></rect>
+            <polygon id="Triangle-12" fill="#FFFFFF" sketch:type="MSShapeGroup" points="15 8.70536892 23.1611108 15.9596897 6.83888916 15.9596897 "></polygon>
+        </g>
+    </g>
+</svg>

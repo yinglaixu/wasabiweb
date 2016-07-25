@@ -34,3 +34,9 @@ if( $image ) :
         </div>
     </div>
 <?php endif; ?>
+
+<style>
+    .parallax{
+        background-image: url();;
+    }
+</style>

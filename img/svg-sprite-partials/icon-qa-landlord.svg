@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="30px" height="31px" viewBox="0 0 30 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3 (11970) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-qa-landlord</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="icon-qa-landlord" sketch:type="MSLayerGroup">
+            <path d="M15,30.4344828 C23.2842712,30.4344828 30,23.718754 30,15.4344828 C30,7.15021151 23.2842712,0.434482759 15,0.434482759 C6.71572875,0.434482759 0,7.15021151 0,15.4344828 C0,23.718754 6.71572875,30.4344828 15,30.4344828 Z" id="Oval-18" fill="#D8D8D8" sketch:type="MSShapeGroup"></path>
+            <rect id="Rectangle-168" fill="#FFFFFF" sketch:type="MSShapeGroup" x="14" y="12.1400146" width="2" height="13.8599854"></rect>
+            <circle id="Oval-65" fill="#FFFFFF" sketch:type="MSShapeGroup" cx="15" cy="10" r="4"></circle>
+            <path d="M15.3853035,17 L17.3118211,17" id="Line" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path d="M15.3853035,20 L18.8530352,20" id="Line-Copy-4" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path d="M15.3853035,23 L17.3118211,23" id="Line-Copy-5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>
