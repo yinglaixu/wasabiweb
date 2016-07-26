@@ -12,17 +12,17 @@ WW.myPages = function($) {
 
         });
 
-        if($('#contractStatus').html() === 'complete' || $('#contractStatus').html() === 'Färdigställt'){
+        if($('#contractStatus').html() === 'Complete' || $('#contractStatus').html() === 'Färdigställt'){
             $('#icon-contract').hide();
             $('#icon-contract-alive').show();
             $('#contractStatus').addClass('completeStatus');
         }
-        if($('#inventoryStatus').html() === 'complete' || $('#inventoryStatus').html() === 'Färdigställt'){
+        if($('#inventoryStatus').html() === 'Complete' || $('#inventoryStatus').html() === 'Färdigställt'){
             $('#icon-inventory').hide();
             $('#icon-inventory-alive').show();
             $('#inventoryStatus').addClass('completeStatus');
         }
-        if($('#inspectionStatus').html() === 'complete' || $('#inspectionStatus').html() === 'Färdigställt' ){
+        if($('#inspectionStatus').html() === 'Complete' || $('#inspectionStatus').html() === 'Färdigställt' ){
             $('#icon-inspection').hide();
             $('#icon-inspection-alive').show();
             $('#inspectionStatus').addClass('completeStatus');

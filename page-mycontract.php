@@ -691,7 +691,7 @@ if ($current_language === 'sv'){
 									<ul class="o-bare-list o-bare-list--spaced-sixth">
 										<li>
 											<label for="electricityfee">
-												<strong><?php echo icl_t('Theme-mycontract', 'Electriciy fee'); ?>:</strong>
+												<strong><?php echo icl_t('Theme-mycontract', 'Electricity fee'); ?>:</strong>
 											</label>
 										</li>
 										<li>

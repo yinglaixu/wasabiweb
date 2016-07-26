@@ -126,8 +126,6 @@
 
 <?php wp_footer(); ?>
 
-
-
 <!--[if IE]>
     <script src="<?php bloginfo('template_directory'); ?>/build/js/polyfills/ie-placeholder.min.js"></script>
     <script src="<?php bloginfo('template_directory'); ?>/build/js/polyfills/requestAnimationFrame.min.js"></script>

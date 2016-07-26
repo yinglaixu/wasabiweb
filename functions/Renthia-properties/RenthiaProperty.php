@@ -211,8 +211,7 @@ class Renthia_Property
 	private function createPost()
 	{
 
-//		$post_status = $this->owner === 0 ? 'trash' : 'draft';
-		$post_status = 'draft';
+		$post_status = $this->owner === 0 ? 'trash' : 'draft';
 
 		$args = [
 			'post_status' => $post_status,
