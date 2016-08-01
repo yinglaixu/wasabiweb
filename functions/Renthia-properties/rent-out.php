@@ -45,11 +45,12 @@ if ( 'true' === $_POST['rentoutform'] ) {
 
 		$mail
 			->rapSetSuccessPage( icl_t( 'Theme-options', 'Landlord landing page' ) )
-			->setFrom( 'noreply-renthia@oshi.wasabiweb.se', 'Renthia.com' )
-			->addRecipient( get_field( 'email', 'options' ) );
+			->setFrom( 'noreply-renthia@oshi.wasabiweb.se', 'Renthia.com' );
 
 		$vars = [
 			'subject'       => 'New object for renting',
+			'country'		=> $_POST['rentout']['country'],
+			'city'			=> $_POST['rentout']['city'],
 			'area'          => $_POST['rentout']['area'],
 			'property_type' => $_POST['rentout']['property-type'],
 			'rooms'         => $_POST['rentout']['rooms'],
@@ -70,6 +71,12 @@ if ( 'true' === $_POST['rentoutform'] ) {
 			'extras'        => $_POST['rentout']['extras'],
 		];
 
+		if ($vars['country'] === 'Sweden' || $vars['country'] === 'Sverige' ){
+			$mail->addRecipient( get_field('email', 'options') );
+		}
+        else if($vars['country'] === 'Netherlands'){
+			$mail->addRecipient( get_field('email-nl', 'options') );
+		}
 
 //		$vars['email'] = $user ? $user->user_email : 'Inte inloggad/registrerad';
 
@@ -123,6 +130,7 @@ if ( 'true' === $_POST['rentoutform'] ) {
 			$customer_mail
 				->addRecipient($vars['email'])
 				->setFrom('noreply-renthia@oshi.wasabiweb.se', 'Renthia.com');
+			
 			$customer_mail
 				->rapEscapeSetVariables($vars)
 				->rapBuildSetBody(get_template_directory() . '/partials/mails/rent-out-customer-mail.php')
@@ -140,6 +148,18 @@ if ( 'true' === $_POST['rentoutform'] ) {
 				false,
 				true
 			);
+
+			// Creating and sending confirmation e-mail to the customer
+			$customer_mail = new Ww_Contact_Simple_Rap();
+			$customer_mail
+				->addRecipient($vars['email'])
+				->setFrom('noreply-renthia@oshi.wasabiweb.se', 'Renthia.com');
+
+			$customer_mail
+				->rapEscapeSetVariables($vars)
+				->rapBuildSetBody(get_template_directory() . '/partials/mails/rent-out-customer-mail.php')
+				->setSubject('Renthia.com - Thank you for using Renthia');
+			$customer_mail->rapSend();
 		}
 
 		// Sending the main mail to Renthia

@@ -71,13 +71,12 @@ if ( isset( $_POST['formname'] ) ) {
 				'message'   => $_POST['support']['message'],
 			];
 
-			if ($vars['country'] === 'Sweden'){
+			if ($vars['country'] === 'Sweden' || $vars['country'] === 'Sverige' ){
 				$mail->addRecipient( get_field('support_email_sweden', 'options') );
 			}
 			else if($vars['country'] === 'Netherland'){
 				$mail->addRecipient( get_field('support_email_netherlands', 'options') );
 			}
-			$mail->addRecipient( get_field('email_ne', 'options') );
 
 			$customer_mail = new Ww_Contact_Simple_Rap();
 			$customer_mail
