@@ -35,6 +35,7 @@ icl_register_string('Theme-form', 'Rent out price recommend comment', 'Detta pri
 icl_register_string('Theme-form', 'Rent out price Renthia', 'Hyran med Renthias service', false, 'sv');
 icl_register_string('Theme-form', 'Price', 'Önskat pris (Kr/Mån)', false, 'sv');
 icl_register_string('Theme-form', 'Eur/month', 'Kr/Mån', false, 'sv');
+icl_register_string('Theme-form', 'Month', '/Mån', false, 'sv');
 icl_register_string('Theme-form', 'Description', 'Objektbeskrivning', false, 'sv');
 icl_register_string('Theme-form', 'Description comment', 'Renthia rekommenderar att skriva så enkelt som möjligt. Ca 100 ord.', false, 'sv');
 icl_register_string('Theme-form', 'Description placeholder', 'Här skriver du en beskrivning av bostaden...', false, 'sv');
