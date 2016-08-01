@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Page landlord Version 2
+Template Name: Page landlord
 */
 ?>
 <?php /*
@@ -17,10 +17,10 @@ if( ! is_user_logged_in() ) {
     <div class="c-site-header-placeholder">
     </div>
 	<main role="main">
-<!--        --><?php //get_template_part('partials/landlord-introduction'); ?>
+            <?php get_template_part('partials/landlord-introduction'); ?>
 
         <div id = "listProperty">
-<!--            --><?php //get_template_part('partials/subpage-banner'); ?>
+            <?php get_template_part('partials/subpage-banner'); ?>
         </div>
 
         <section class="o-section">
@@ -129,7 +129,7 @@ if( ! is_user_logged_in() ) {
                                             </label>
                                         </li>
 
-                                        <li>
+                                        <li id="forSweden">
                                             <div class="c-styled-select js-select">
                                                 <?php
                                                 $area = $_POST['rentout']['area'];
@@ -399,7 +399,7 @@ if( ! is_user_logged_in() ) {
                                             <div class="c-addon-group c-addon-group--inside c-addon-group--inside--right">
                                                 <input required id="price" type="number" placeholder="129999" class="c-text-input c-text-input--lg c-addon-group--inside__input">
                                                 <span class="c-addon-group--inside__addon">
-                                                    <?php echo icl_t('Theme-form', 'Price cost per month'); ?>
+                                                    <span class="currency">kr</span><?php echo icl_t('Theme-form', 'Month'); ?>
                                                 </span>
                                             </div>
                                         </li>
@@ -421,13 +421,9 @@ if( ! is_user_logged_in() ) {
                                         <li>
                                             <div class="c-addon-group c-addon-group--inside c-addon-group--inside--right" id = 'priceRenthiaInput'>
                                                 <input required name="rentout[price]" id="priceRenthia" type="number" placeholder="139999" class="c-text-input c-text-input--lg c-addon-group--inside__input" value="<?php esc_html_e( $_POST['rentout']['price'] ); ?>">
-                                                <span class="c-addon-group--inside__addon">
-                                                    <?php echo icl_t('Theme-form', 'Price cost per month'); ?>
-                                                </span>
                                             </div>
-                                            <strong id = "priceRenthiaDisplay"> </strong>
+                                            <strong id = "priceRenthiaDisplay"> </strong> <strong><span class="currency">kr</span><?php echo icl_t('Theme-form', 'Month'); ?></strong>
                                         </li>
-
                                         <li class="js-price-notification display-none">
                                             <?php the_field( 'add_ten_percent_info_heading' ); ?>
 
@@ -937,7 +933,6 @@ if( ! is_user_logged_in() ) {
         display: none;
     }
 </style>
-
 
 
 

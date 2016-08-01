@@ -1,7 +1,9 @@
 WW.rentOutForm = function ($) {
     
-    // Cities
-    //var cities = ['Stockholm','Göteborg','Malmö'];
+    //Cities
+    var SwedenCities = ['Stockholm','Göteborg','Malmö'];
+    var NetherlandsCities = ['Amsterdam'];
+
     // Areas
     var GoteborgAreas = ['Hisingen','Centrum','Västra-Centrum','Östra-Centrum','Billda','Mölndal','Kungsbacka','Hovås','Partille','Lerum','Härryda','Sävedalen','Angered','Torslanda','Västra-Frölunda','Gunnilse','Kungälv','Långedrag','Kullavik'];
     var MalmoAreas = ['Lund','Malmö-Centrum','Malmö-Syd','Malmö-Väst','Malmö-Öst','Malmö-Norr'];
@@ -212,6 +214,7 @@ WW.rentOutForm = function ($) {
     function init() {
 
         replaceToValid();
+        filterCities();
         filterAreas();
         $('#icon-villa-default').show();
         $('#icon-apartment-default').show();
@@ -229,6 +232,7 @@ WW.rentOutForm = function ($) {
         $('#rentoutFormSubmitBtn').hide();
         $('#rentoutFormPersonalInfo').hide();
 
+        $('#rentoutCountries').on('change', filterCities);
         $('#rentoutCities').on('change', filterAreas);
         $('#type-villa').on('change', togglePropertyIcons);
         $('#type-apartment').on('change', togglePropertyIcons);
@@ -297,7 +301,7 @@ WW.rentOutForm = function ($) {
 
                 $(this).val(value);
                 priceOutput.val(valueRethia);
-                $('#priceRenthiaDisplay').html(valueRethia + ' SEK/Month');
+                $('#priceRenthiaDisplay').html(valueRethia);
             }
         });
     }
@@ -309,6 +313,40 @@ WW.rentOutForm = function ($) {
             myStr = myStr.replace(',', '-');
             $(this).val(myStr);
         });
+    }
+
+
+    function filterCities(){
+        var selectedCountry = $('#rentoutCountries option:selected').val();
+        if (selectedCountry === 'Sverige' || selectedCountry === 'Sweden'){
+            $('#rentoutCities option').each(function(){
+                var theString = $(this).val();
+                if(jQuery.inArray(theString, SwedenCities) !== -1){
+                    $(this).show();
+                }
+                else{
+                    $(this).hide();
+                }
+            });
+            $('#rentoutCities option[value = "Stockholm"]').prop('selected', true);
+            $('#chosenCity').html('Stockholm');
+            $('.currency').html('SEK');
+        }
+        else if(selectedCountry === 'Netherlands'){
+            $('#rentoutCities option').each(function(){
+                var theString = $(this).val();
+                if(jQuery.inArray(theString, NetherlandsCities) !== -1){
+                    $(this).show();
+                }
+                else{
+                    $(this).hide();
+                }
+            });
+            $('#rentoutCities option[value = "Amsterdam"]').prop('selected', true);
+            $('#chosenCity').html('Amsterdam');
+            $('.currency').html('Eur');
+
+        }
     }
 
     function filterAreas(){
@@ -385,47 +423,53 @@ WW.rentOutForm = function ($) {
 
     function rentPriceCalculate(){
 
-        var selectedArea, selectedRoom, Volume;
-        selectedArea = $('#rentoutAreas :selected').val();
-        selectedRoom = $('#rooms').val();
-        Volume = $('#volume').val();
-        if($('#type-villa').is(':checked')){
-            value = VillaPrice[selectedArea];
-            if( Volume < 200 ){
-                value = value.under;
-            }
-            else if(Volume >= 200 ){
-                value = value.above;
-            }
+        // if choose netherlands, no suggested price so far
+        if($('#rentoutCountries option:selected').val() === 'Netherlands'){
+            priceInput.val(0);
         }
-        else if($('#type-apartment').is(':checked')){
-            if(selectedRoom === '1 room' || selectedRoom === '1 rum'){
-                value = ApartmentPrice[selectedArea].room_1;
+        else{
+            var selectedArea, selectedRoom, Volume;
+            selectedArea = $('#rentoutAreas :selected').val();
+            selectedRoom = $('#rooms').val();
+            Volume = $('#volume').val();
+            if($('#type-villa').is(':checked')){
+                value = VillaPrice[selectedArea];
+                if( Volume < 200 ){
+                    value = value.under;
+                }
+                else if(Volume >= 200 ){
+                    value = value.above;
+                }
             }
-            else if(selectedRoom === '2 rooms' || selectedRoom === '2 rum'){
-                value = ApartmentPrice[selectedArea].room_2;
+            else if($('#type-apartment').is(':checked')){
+                if(selectedRoom === '1 room' || selectedRoom === '1 rum'){
+                    value = ApartmentPrice[selectedArea].room_1;
+                }
+                else if(selectedRoom === '2 rooms' || selectedRoom === '2 rum'){
+                    value = ApartmentPrice[selectedArea].room_2;
+                }
+                else if(selectedRoom === '3 rooms' || selectedRoom === '3 rum'){
+                    value = ApartmentPrice[selectedArea].room_3;
+                }
+                else if(selectedRoom === '4 rooms' || selectedRoom === '4 rum'){
+                    value = ApartmentPrice[selectedArea].room_4;
+                }
+                else if(selectedRoom === '5 rooms' || selectedRoom === '5 rum'){
+                    value = ApartmentPrice[selectedArea].room_5;
+                }
             }
-            else if(selectedRoom === '3 rooms' || selectedRoom === '3 rum'){
-                value = ApartmentPrice[selectedArea].room_3;
+            else if($('#type-terraced').is(':checked')){
+                value = sharedroomPrice[selectedArea];
             }
-            else if(selectedRoom === '4 rooms' || selectedRoom === '4 rum'){
-                value = ApartmentPrice[selectedArea].room_4;
-            }
-            else if(selectedRoom === '5 rooms' || selectedRoom === '5 rum'){
-                value = ApartmentPrice[selectedArea].room_5;
-            }
-        }
-        else if($('#type-terraced').is(':checked')){
-            value = sharedroomPrice[selectedArea];
-        }
 
-        priceInput.val(value);
+            priceInput.val(value);
 
-        if (priceInput.val().length > 0) {
-            priceNotification.slideDown(200);
-            var valueRethia = Math.round(Number(value) * 1.1);
-            priceOutput.val(valueRethia);
-            $('#priceRenthiaDisplay').html(valueRethia + ' SEK/Month');
+            if (priceInput.val().length > 0) {
+                priceNotification.slideDown(200);
+                var valueRethia = Math.round(Number(value) * 1.1);
+                priceOutput.val(valueRethia);
+                $('#priceRenthiaDisplay').html(valueRethia);
+            }
         }
     }
 
