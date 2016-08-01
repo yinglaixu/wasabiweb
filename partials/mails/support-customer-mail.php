@@ -1,189 +1,86 @@
 <!doctype html>
 <html>
-	<head>
-		<meta name="viewport" content="width=device-width">
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Renthia</title>
-		<style>
-			/* -------------------------------------
-				GLOBAL
-			------------------------------------- */
-			* {
-				font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-				font-size: 100%;
-				line-height: 1.6em;
-				margin: 0;
-				padding: 0;
-			}
-			img {
-				max-width: 600px;
-				width: 100%;
-			}
-			body {
-				-webkit-font-smoothing: antialiased;
-				height: 100%;
-				-webkit-text-size-adjust: none;
-				width: 100% !important;
-			}
-			/* -------------------------------------
-				ELEMENTS
-			------------------------------------- */
-			a {
-				color: #ee7844;
-			}
-			.btn-primary {
-				Margin-bottom: 10px;
-				width: auto !important;
-			}
-			.btn-primary td {
-				background-color: #ee7844;
-				border-radius: 25px;
-				font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-				font-size: 14px;
-				text-align: center;
-				vertical-align: top;
-			}
-			.btn-primary td a {
-				background-color: #ee7844;
-				border: solid 1px #ee7844;
-				border-radius: 25px;
-				border-width: 10px 20px;
-				display: inline-block;
-				color: #ffffff;
-				cursor: pointer;
-				font-weight: bold;
-				line-height: 2;
-				text-decoration: none;
-			}
-			.last {
-				margin-bottom: 0;
-			}
-			.first {
-				margin-top: 0;
-			}
-			.padding {
-				padding: 10px 0;
-			}
-			/* -------------------------------------
-				BODY
-			------------------------------------- */
-			table.body-wrap {
-				padding: 20px;
-				width: 100%;
-			}
-			table.body-wrap .container {
-				border: 1px solid #f0f0f0;
-			}
-			/* -------------------------------------
-				FOOTER
-			------------------------------------- */
-			table.footer-wrap {
-				clear: both !important;
-				width: 100%;
-			}
-			.footer-wrap .container p {
-				color: #666666;
-				font-size: 12px;
+<head>
+	<meta name="viewport" content="width=device-width">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Renthia</title>
+	<meta name="viewport" content="width=device-width">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Renthia</title>
 
-			}
-			table.footer-wrap a {
-				color: #999999;
-			}
-			/* -------------------------------------
-				TYPOGRAPHY
-			------------------------------------- */
-			h1,
-			h2,
-			h3 {
-				color: #111111;
-				font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-				font-weight: 200;
-				line-height: 1.2em;
-				margin: 40px 0 10px;
-			}
-			h1 {
-				font-size: 36px;
-			}
-			h2 {
-				font-size: 28px;
-			}
-			h3 {
-				font-size: 22px;
-			}
-			p,
-			ul,
-			ol {
-				font-size: 14px;
-				font-weight: normal;
-				margin-bottom: 10px;
-			}
-			ul li,
-			ol li {
-				margin-left: 5px;
-				list-style-position: inside;
-			}
-			/* ---------------------------------------------------
-				RESPONSIVENESS
-			------------------------------------------------------ */
-			/* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
-			.container {
-				clear: both !important;
-				display: block !important;
-				Margin: 0 auto !important;
-				max-width: 600px !important;
-			}
-			/* Set the padding on the td rather than the div for Outlook compatibility */
-			.body-wrap .container {
-				padding: 20px;
-			}
-			/* This should also be a block element, so that it will fill 100% of the .container */
-			.content {
-				display: block;
-				margin: 0 auto;
-				max-width: 600px;
-			}
-			/* Let's make sure tables in the content area are 100% wide */
-			.content table {
-				width: 100%;
-			}
-		</style>
-	</head>
+	<!-- Latest compiled and minified CSS of bootstrap -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<style type="text/css">
+		body{
+			background-color: #f6f6f6;
+			margin-top: 50px;
+		}
+		.container{
+			width: 800px;
+			background: white;
+			padding-left: 0px;
+		}
+		.sideImg{
+			width: 300px;
+			height: 600px;
+			background-image: url("http://www.renthia.com/wp-content/uploads/2016/07/email-pic.jpg");
+			background-repeat: no-repeat;
 
-	<body bgcolor="#f6f6f6">
+		}
+		.footer{
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+	</style>
+</head>
 
-	<!-- body -->
-		<table class="body-wrap" bgcolor="#f6f6f6">
-			<tr>
-				<td></td>
-				<td class="container" bgcolor="#FFFFFF">
-					<img src="http://www.renthia.com/wp-content/uploads/2015/12/Renthia_logo.png">
-					<!-- content -->
-					<div class="content">
-						<table>
-							<tr>
-								<td>
-									<h3>Thank you for contacting us!</h3>
-									<p>We will look into the issue and get back to you as soon as possible.</p>
-									<br>
-									<p>Your message to us:</p>
-									<div class='main'>
-										<p><strong>Problem: </strong><br><?php echo $problem; ?></p>
-										<p><strong>Message: </strong><br><?php echo $message; ?></p>
-									</div>
-									<br>
-									<p>Thanks, have a lovely day.</p>
-									<p><a href="http://www.renthia.com">www.renthia.com</a></p>
-								</td>
-							</tr>
-						</table>
-					</div>
-					<!-- /content -->
-
-				</td>
-				<td></td>
-			</tr>
-		</table>
-	<!-- /body -->
-
-	</body>
+<body>
+<div class="container">
+	<div class="row content">
+		<div class="col-xs-12">
+			<div class="col-xs-5 sideImg"></div>
+			<div class="col-xs-6 col-xs-offset-1">
+				<table>
+					<tr>
+						<td></td>
+						<td class="container">
+							<!-- content -->
+							<div class="content">
+								<table>
+									<tr>
+										<td>
+											<h3>Thank you for contacting us!</h3>
+											<p>We will look into the issue and get back to you as soon as possible.</p>
+											<br>
+											<p>Your message to us:</p>
+											<div class='main'>
+												<p><strong>Problem: </strong><br><?php echo $problem; ?></p>
+												<p><strong>Message: </strong><br><?php echo $message; ?></p>
+											</div>
+											<br>
+											<p>Thanks, have a lovely day.</p>
+											<p><a href="http://www.renthia.com">www.renthia.com</a></p>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<!-- /content -->
+						</td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="col-xs-12 footer">
+			<div class="col-xs-4">
+				<img width="150px" src="http://www.renthia.com/wp-content/uploads/2015/12/Renthia_logo.png">
+			</div>
+			<div class="col-xs-4 col-xs-offset-4">
+				<p>Thanks, have a lovely day.</p>
+				<p><a href="http://www.renthia.com">www.renthia.com</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
 </html>

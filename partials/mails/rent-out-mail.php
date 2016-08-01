@@ -31,7 +31,7 @@
 			<p><strong>Rooms: </strong><?php echo $rooms; ?></p>
 			<p><strong>Volume: </strong><?php echo $volume; ?> m2</p>
 			<p><strong>Address: </strong><?php echo $address; ?></p>
-			<p><strong>Postcode & City: </strong><?php echo $postcode; ?></p>
+			<p><strong>Postcode: </strong><?php echo $postcode; ?></p>
 			<p><strong>Longitud/Latitud hittad: </strong><?php echo $geolookup; ?></p>
 			<p><strong>Date from: </strong><?php echo $date_from; ?></p>
 			<p><strong>Date to: </strong><?php echo $date_to; ?></p>

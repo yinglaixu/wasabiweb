@@ -20,8 +20,8 @@ Template Name: Page search
     $cities = array_values($cities);
 
     // Get the objects
-    $country = sanitize_text_field( $_GET['country'] ) ?: $countries[0]->slug;
-    $city = sanitize_text_field( $_GET['city'] ) ?: $cities[2]->slug;
+    $country = sanitize_text_field( $_GET['country'] ) ?: $countries[1]->slug;
+    $city = sanitize_text_field( $_GET['city'] ) ?: $cities[3]->slug;
     $meta_key = null;
 
 
