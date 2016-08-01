@@ -9,16 +9,16 @@ Template Name: Startpage
 
 	<main role="main">
 <!--        banner image-->
-        <?php $image = get_field('banner-image'); ?>
+        <?php //$image = get_field('banner-image'); ?>
         <style scoped>
             /* 500x350 */
             .c-banner__img {
-               background-image: url('<?php echo $image['sizes']['500x350']; ?>');
+               background-image: url('<?php //echo $image['sizes']['500x350']; ?>');
             }
             @media (min-width: 481px) {
                 /* 2000x850 */
                 .c-banner__img {
-                   background-image: url('<?php echo $image['sizes']['2000x850']; ?>');
+                   background-image: url('<?php //echo $image['sizes']['2000x850']; ?>');
                 }
             }
         </style>
@@ -29,35 +29,36 @@ Template Name: Startpage
                 <div class="c-divider c-divider--angled">
                     <img class="c-divider__img" src="<?php bloginfo('template_directory'); ?>/build/img/divider-angled-large.svg" alt="">                
                 </div>
+
                 <div class="c-banner__img">
-                </div>
-                <div class="c-banner__overlay">
-                    <div class="[ o-site-wrap o-site-wrap--padding ] u-fill-height">
-                        <div class="o-flag u-fill-height">
-                            <div class="o-flag__body">
-                                <div class="c-banner__content">
-                                    <h1 class="c-banner__title">
-                                        <?php the_field('banner-heading'); ?>
-                                    </h1>
-                                    <div class="c-banner__ctas">
-                                        <ul class="o-grid o-grid--matrix">
-                                            <li class="o-grid__item u-1/2@xs-up">
-                                                <a href="<?php the_field('banner-first_button-link'); ?>" class="[ c-btn c-btn--xl c-btn--full c-btn--brand ] u-txt-normal-weight">
-                                                    <?php the_field('banner-first_button-text'); ?>
-                                                </a>
-                                            </li>
-                                            <li class="o-grid__item u-1/2@xs-up">
-                                                <a href="<?php the_field('banner-second_button-link'); ?>" class="[ c-btn c-btn--xl c-btn--full c-btn--beta ] u-txt-normal-weight">
-                                                    <?php the_field('banner-second_button-text'); ?>
-                                                </a>
-                                            </li>
-                                        </ul>                                        
+                    <div class="c-banner__overlay">
+                        <div class="[ o-site-wrap o-site-wrap--padding ] u-fill-height">
+                            <div class="o-flag u-fill-height">
+                                <div class="o-flag__body">
+                                    <div class="c-banner__content">
+                                        <h1 class="c-banner__title">
+                                            <?php the_field('banner-heading'); ?>
+                                        </h1>
+                                        <div class="c-banner__ctas">
+                                            <ul class="o-grid o-grid--matrix">
+                                                <li class="o-grid__item u-1/2@xs-up">
+                                                    <a href="<?php the_field('banner-first_button-link'); ?>" class="[ c-btn c-btn--xl c-btn--full c-btn--brand ] u-txt-normal-weight">
+                                                        <?php the_field('banner-first_button-text'); ?>
+                                                    </a>
+                                                </li>
+                                                <li class="o-grid__item u-1/2@xs-up">
+                                                    <a href="<?php the_field('banner-second_button-link'); ?>" class="[ c-btn c-btn--xl c-btn--full c-btn--beta ] u-txt-normal-weight">
+                                                        <?php the_field('banner-second_button-text'); ?>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div>                                            
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>                            
+                </div>
             </div>
         </section>
 

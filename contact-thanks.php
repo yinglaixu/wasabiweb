@@ -10,6 +10,7 @@ Template Name: contact thanks
 	<div class="c-site-header-placeholder">
 	</div>
 	<main role="main">
+		<?php get_template_part('partials/subpage-banner'); ?>
 		<article class="o-section o-site-wrap o-site-wrap--padding">
 			<div class="o-grid">
 				<div class="o-grid__item u-1/2@md-up">
