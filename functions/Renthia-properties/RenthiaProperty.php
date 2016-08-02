@@ -604,10 +604,12 @@ class Renthia_Property
 		  property_map_latitude - IMPORTANT - put longitude here
 		*/
 		if ($this->priceNeedsUpdate()) {
-			$price = ICL_LANGUAGE_CODE === 'sv' ? ' kr' : ' euro';
-			$price = $this->price . $price;
-			update_field(static::FK_PRICE, $price, $this->first_id);
-			update_field(static::FK_PRICE, $price, $this->second_id);
+//			$price = ICL_LANGUAGE_CODE === 'sv' ? ' kr' : ' euro';
+//			$price = $this->price . $price;
+//			update_field(static::FK_PRICE, $price, $this->first_id);
+//			update_field(static::FK_PRICE, $price, $this->second_id);
+			update_field(static::FK_PRICE, $this->price, $this->first_id);
+			update_field(static::FK_PRICE, $this->price, $this->second_id);
 		}
 
 		update_field(static::FK_LOCATION, $this->location, $this->first_id);

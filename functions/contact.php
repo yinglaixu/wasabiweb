@@ -18,6 +18,7 @@ if ( isset( $_POST['formname'] ) ) {
 		if( ! $mail->rapCheckErrors() ) {
 
 			$mail->addRecipient( get_field( 'email', 'options' ) );
+			$mail->addRecipient( $_POST['apply']['assistant-email']);
 
 			$vars = [
 				'subject'   => 'En besökare har ansökt om bostad',
@@ -25,6 +26,8 @@ if ( isset( $_POST['formname'] ) ) {
 				'email'     => $_POST['apply']['email'],
 				'telephone' => $_POST['apply']['telephone'],
 				'date'   	=> $_POST['apply']['select-date'],
+				'link'		=> $_POST['apply']['link'],
+				'assistant' => $_POST['apply']['assistant-email']
 			];
 
 			$customer_mail = new Ww_Contact_Simple_Rap();
