@@ -28,6 +28,8 @@
 		<p><strong>E-mail: </strong><?php echo $email; ?></p>
 		<p><strong>Telephone: </strong><?php echo $telephone; ?></p>
 		<p><strong>Time and date: </strong><?php echo $date; ?></p>
+		<p><strong>Link: </strong><?php echo $link; ?></p>
+		<p><strong>Asssistant Email: </strong><?php echo $assistant; ?></p>
 	</div>
 </body>
 </html>

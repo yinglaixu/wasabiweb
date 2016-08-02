@@ -53,8 +53,7 @@
 											<p>You have applied for:</p>
 											<p><?php echo $property; ?></p>
 											<br>
-											<p>Thanks, have a lovely day.</p>
-											<p><a href="http://www.renthia.com">www.renthia.com</a></p>
+											<p><strong>Asssistant Email: </strong><?php echo $assistant; ?></p>
 										</td>
 									</tr>
 								</table>

@@ -81,7 +81,13 @@ $language_code = sanitize_text_field( $_GET['language'] );
                                 </ul>
 					        </li>
 					        <li>
+                                <?php
+                                $permalink = get_permalink($id);
+                                $assistantEmail = get_field('associate_account', $id);
+                                ?>
 						        <input type="hidden" name="apply[address]" value="<?php the_field('address', $id); ?>">
+                                <input type="hidden" name="apply[link]" value="<?php echo $permalink; ?>">
+                                <input type="hidden" name="apply[assistant-email]" value="<?php echo $assistantEmail['user_email']; ?>">
 					            <button type="submit" class="c-btn c-btn--alpha c-btn--lg c-btn--full">
 					                <?php echo icl_t('Theme-properties', 'Apply', false, $parameter, false, $language_code); ?>
 					            </button>

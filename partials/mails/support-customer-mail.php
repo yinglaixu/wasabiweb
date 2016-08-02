@@ -57,9 +57,6 @@
 												<p><strong>Problem: </strong><br><?php echo $problem; ?></p>
 												<p><strong>Message: </strong><br><?php echo $message; ?></p>
 											</div>
-											<br>
-											<p>Thanks, have a lovely day.</p>
-											<p><a href="http://www.renthia.com">www.renthia.com</a></p>
 										</td>
 									</tr>
 								</table>
