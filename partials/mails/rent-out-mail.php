@@ -35,7 +35,13 @@
 			<p><strong>Longitud/Latitud hittad: </strong><?php echo $geolookup; ?></p>
 			<p><strong>Date from: </strong><?php echo $date_from; ?></p>
 			<p><strong>Date to: </strong><?php echo $date_to; ?></p>
-			<p><strong>Price: </strong><?php echo $price; ?> <?php echo icl_t('theme-form', 'Price cost per month'); ?></p>
+			<?php
+				$currency = "SEK/Month";
+				if ($country === 'Netherlands'){
+					$currency = "Eur/Month";
+				}
+			?>
+			<p><strong>Price: </strong><?php echo $price; ?> <?php echo $currency; ?></p>
 			<p><strong>Description: </strong><br><?php echo $description; ?></p>
 			<?php if( is_array( $utils ) ) : ?>
 			<?php $utils_merge = implode( ', ', $utils ); ?>

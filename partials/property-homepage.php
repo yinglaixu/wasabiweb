@@ -23,26 +23,14 @@
 						<div class="o-flag__body property-front-page_price">
 							<div class="c-region-block__title u-txt-md c-results-frontpage__price">
 								<?php
-								/* FIRST
-                                 * Note: This function only returns results from the default “category” taxonomy. For custom taxonomies use get_the_terms().
-                                 */
-								$categories = get_the_terms( $post->ID, 'property-countries' );
-								// now you can view your category in array:
-								// using var_dump( $categories );
-								// or you can take all with foreach:
-								foreach( $categories as $category ) {
-									$Country = $category->slug;
-								}
-
-								$currency = "kr";
-								if($Country === "sverige"){
+								$currency = get_field('currency');
+								if ($currency){
+									echo $currency;
+								}else{
 									$currency = "SEK";
 								}
-								else if($Country = "netherlands"){
-									$currency = "Eur";
-								}
 								?>
-								<?php echo intval( get_field('price') ); ?> <?php echo $currency ?> <?php echo icl_t('Theme-form', 'Month'); ?>
+								<?php echo intval( get_field('price') ); ?> <?php echo $currency; ?><?php echo icl_t('Theme-form', 'Month'); ?>
 							</div>
 						</div>
 					</div>

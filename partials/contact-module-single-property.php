@@ -86,26 +86,14 @@ $ass_acc=get_field('associate_account');
 				<li><?php the_field( 'address' ); ?></li>
 				<li class="u-txt-lg u-txt-brand">
 					<?php
-					/* FIRST
-                     * Note: This function only returns results from the default “category” taxonomy. For custom taxonomies use get_the_terms().
-                     */
-					$categories = get_the_terms( $post->ID, 'property-countries' );
-					// now you can view your category in array:
-					// using var_dump( $categories );
-					// or you can take all with foreach:
-					foreach( $categories as $category ) {
-						$Country = $category->slug;
-					}
-
-					$currency = "kr";
-					if($Country === "sverige"){
+					$currency = get_field('currency');
+					if ($currency){
+						echo $currency;
+					}else{
 						$currency = "SEK";
 					}
-					else if($Country = "netherlands"){
-						$currency = "Eur";
-					}
 					?>
-					<?php echo intval( get_field('price') ); ?> <?php echo $currency ?> <?php echo icl_t('Theme-form', 'Month'); ?>
+					<?php echo intval( get_field('price') ); ?> <?php echo $currency; ?><?php echo icl_t('Theme-form', 'Month'); ?>
 				</li>
 			</ul>
 		</div>

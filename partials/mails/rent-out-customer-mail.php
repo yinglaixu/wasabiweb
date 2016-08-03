@@ -109,7 +109,13 @@
                                                 <tr>
                                                     <td>
                                                         <p><strong>Price:</strong><br>
-                                                            <?php echo $price . ' ' . icl_t('theme-form', 'Price cost per month'); ?></p>
+                                                            <?php
+                                                            $currency = "SEK/Month";
+                                                            if ($country === 'Netherlands'){
+                                                                $currency = "Eur/Month";
+                                                            }
+                                                            ?>
+                                                            <?php echo $price . ' ' .$currency; ?></p>
                                                     </td>
                                                 </tr>
                                                 <tr>

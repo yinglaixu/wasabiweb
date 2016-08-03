@@ -77,7 +77,7 @@ if ( 'true' === $_POST['rentoutform'] ) {
         else if($vars['country'] === 'Netherlands'){
 			$mail->addRecipient( get_field('email-nl', 'options') );
 		}
-
+		
 //		$vars['email'] = $user ? $user->user_email : 'Inte inloggad/registrerad';
 
 
@@ -118,9 +118,10 @@ if ( 'true' === $_POST['rentoutform'] ) {
 			->lookUpGeoLocation()
 			->saveSetImages( $files )
 			->setShowings( $vars['open_date'], $vars['open_time'] )
+			->setOverviewText($vars['country'], $vars['city'])
 			->makePosts()
 			->saveMetaDataToDb();
-
+		
 		// Did geo location lookup worked?
 		$vars['geolookup'] = $property->geoLocationFound() ? 'Ja' : 'Nej';
 

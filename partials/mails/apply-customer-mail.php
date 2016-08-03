@@ -59,7 +59,6 @@
 								</table>
 							</div>
 							<!-- /content -->
-
 						</td>
 						<td></td>
 					</tr>

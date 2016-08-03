@@ -11,6 +11,7 @@ class Renthia_Property
 	// ACF field keys
 	// TEXT/NUMBER/DATE PICKER/RADIO BUTTON fields (one field)
 	const FK_OVERVIEW_TEXT = 'field_567964acb6694';
+	const FK_CURRENCY = 'field_57a08ed836e00';
 	const FK_PRICE = 'field_567964025084b';
 	const FK_LOCATION = 'field_56795baa2b7ab';
 	const FK_PROPERTY_TYPE = 'field_56795baf2b7ac';
@@ -84,7 +85,7 @@ class Renthia_Property
 	const FK_INSPECTION_LIST_OTHERS = 'field_578dd9cf28fb7';
 
 //	Fields not in use at the moment
-//	public $overviewText;
+	public $overviewText;
 
 
 	private $first_id;
@@ -92,6 +93,7 @@ class Renthia_Property
 	private $trid;
 	private $latitude;
 	private $longitude;
+	private $currency;
 
 	public $mainContent;
 	public $price;
@@ -226,29 +228,7 @@ class Renthia_Property
 		return $id;
 	}
 
-
-//	public function addCategory($country){
-//
-//		$sv_cat_id = array(14);
-//		$nl_cat_id = array(91);
-//
-//		$sv_cat_id = array_map( 'intval', $sv_cat_id );
-//		$sv_cat_id = array_unique( $sv_cat_id );
-//
-//		$nl_cat_id = array_map( 'intval', $nl_cat_id );
-//		$nl_cat_id = array_unique( $nl_cat_id );
-//		// set the country category of the post
-//		if($country === 'Sweden' || $country === 'Sverige'){
-//			wp_set_object_terms( 1733, $sv_cat_id, 'property-countries', true );
-//			wp_set_object_terms( 1733, $sv_cat_id, 'property-countries', true );
-//		}
-//		else if($country === 'Netherlands'){
-//			wp_set_object_terms( 1733, $nl_cat_id, 'property-countries', true );
-//			wp_set_object_terms( 1733, $nl_cat_id, 'property-countries', true );
-//		}
-//
-//		return $this;
-//	}
+	
 
 	/**
 	 * Take a post id and setting the first and second ids (both languages)
@@ -324,6 +304,21 @@ class Renthia_Property
 		return $this;
 	}
 
+
+	/**
+	 * add complement information in overview text
+	 */
+
+	public function setOverviewText($country, $city){
+		$this->overviewText = sprintf('%s - %s', $country, $city);
+		if($country === 'Sweden' || $country === 'Sverige'){
+			$this->currency = 'SEK';
+		}
+		else if($country === 'Netherlands'){
+			$this->currency = "Eur";
+		}
+		return $this;
+	}
 
 	/**
 	 * Saves images from $_FILES to disk/db, and creating an array according to the ACF repeater field standard
@@ -534,6 +529,12 @@ class Renthia_Property
 		update_field(static::FK_PRICE, $this->price, $this->first_id);
 		update_field(static::FK_PRICE, $this->price, $this->second_id);
 
+		update_field(static::FK_OVERVIEW_TEXT, $this->overviewText, $this->first_id);
+		update_field(static::FK_OVERVIEW_TEXT, $this->overviewText, $this->second_id);
+
+		update_field(static::FK_CURRENCY, $this->currency, $this->first_id);
+		update_field(static::FK_CURRENCY, $this->currency, $this->second_id);
+
 		update_field(static::FK_LOCATION, $this->location, $this->first_id);
 		update_field(static::FK_LOCATION, $this->location, $this->second_id);
 
@@ -603,6 +604,7 @@ class Renthia_Property
 		  property_map_longitude - IMPORTANT - put latitude here
 		  property_map_latitude - IMPORTANT - put longitude here
 		*/
+
 		if ($this->priceNeedsUpdate()) {
 //			$price = ICL_LANGUAGE_CODE === 'sv' ? ' kr' : ' euro';
 //			$price = $this->price . $price;
@@ -611,6 +613,7 @@ class Renthia_Property
 			update_field(static::FK_PRICE, $this->price, $this->first_id);
 			update_field(static::FK_PRICE, $this->price, $this->second_id);
 		}
+
 
 		update_field(static::FK_LOCATION, $this->location, $this->first_id);
 		update_field(static::FK_LOCATION, $this->location, $this->second_id);
