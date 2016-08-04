@@ -77,7 +77,7 @@ if ( isset( $_POST['formname'] ) ) {
 			if ($vars['country'] === 'Sweden' || $vars['country'] === 'Sverige' ){
 				$mail->addRecipient( get_field('support_email_sweden', 'options') );
 			}
-			else if($vars['country'] === 'Netherland'){
+			else if($vars['country'] === 'Netherlands'){
 				$mail->addRecipient( get_field('support_email_netherlands', 'options') );
 			}
 

@@ -246,7 +246,7 @@ if ($current_language === 'sv'){
 											<?php $period_type = get_field('contract_rental_period_choice'); ?>
 											<ul class="o-inline-list o-inline-list--spaced">
 												<li>
-													<input required class="c-styled-input-el u-hidden" type="radio" name = "contract[rental_period_choice]" value="period_1" id="type-period_1" <?php if( $period_type === 'period_1' ) echo 'checked'; ?>>
+													<input class="c-styled-input-el u-hidden" type="radio" name = "contract[rental_period_choice]" value="period_1" id="type-period_1" <?php if( $period_type === 'period_1' ) echo 'checked'; ?>>
 													<label class="c-styled-input-option c-styled-input-option--radio" for="type-period_1">
                                                         <span class="c-styled-input-option__icon c-styled-input-option__icon--radio">
                                                             <svg class="c-styled-input-option__svg">
@@ -544,7 +544,7 @@ if ($current_language === 'sv'){
 									<ul class="o-inline-list o-inline-list--spaced">
 										<?php $pet = get_field('contract_house_kallhyra'); ?>
 										<li>
-											<input required class="c-styled-input-el u-hidden" type="radio" name="contract[kallhyra]" value="yes" id="type-is-kall" <?php if( $pet === 'yes' ) echo 'checked'; ?>>
+											<input class="c-styled-input-el u-hidden" type="radio" name="contract[kallhyra]" value="yes" id="type-is-kall" <?php if( $pet === 'yes' ) echo 'checked'; ?>>
 											<label class="c-styled-input-option c-styled-input-option--radio" for="type-is-kall">
                                                         <span class="c-styled-input-option__icon c-styled-input-option__icon--radio">
                                                             <svg class="c-styled-input-option__svg">
@@ -719,7 +719,7 @@ if ($current_language === 'sv'){
 											<ul class="o-inline-list o-inline-list--spaced">
 												<?php $type = get_field('contact_furnished_condition'); ?>
 												<li>
-													<input required class="c-styled-input-el u-hidden" type="radio" name="contract[furnishedcondition]" value="is furnished" id="type-full" <?php if( $type === 'is furnished' ) echo 'checked'; ?>>
+													<input class="c-styled-input-el u-hidden" type="radio" name="contract[furnishedcondition]" value="is furnished" id="type-full" <?php if( $type === 'is furnished' ) echo 'checked'; ?>>
 													<label class="c-styled-input-option c-styled-input-option--radio" for="type-full">
                                                         <span class="c-styled-input-option__icon c-styled-input-option__icon--radio">
                                                             <svg class="c-styled-input-option__svg">

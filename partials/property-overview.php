@@ -38,9 +38,6 @@
 				<li>
 					<ul class="o-inline-list o-breadcrumbs">
 						<li>
-							<?php the_field('overview_text'); ?>
-						</li>
-						<li data-breadcrumb="|">
 							<?php the_field( 'rooms' ); ?> <?php echo icl_t('Theme-properties', 'Room', 'Rum'); ?>
 						</li>
 						<li data-breadcrumb="|">
@@ -71,7 +68,7 @@
 					<?php
 					$currency = get_field('currency');
 					if ($currency){
-						echo $currency;
+						$currency = get_field('currency');
 					}else{
 						$currency = "SEK";
 					}
