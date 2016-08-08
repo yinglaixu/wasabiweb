@@ -62,8 +62,8 @@
                 <div class="o-grid__item u-1/6@sm-up ">
                     <ul class = "footer-icon">
                         <li id = "footer-rent-out-button">
-                            <a href="<?php echo icl_t('Theme-header', "Rent out link"); ?>" class="[ c-btn c-btn--sm c-btn--gamma ] u-txt-normal-weight">
-                                <?php echo icl_t('Theme-header', "Rent out"); ?>
+                            <a href="<?php echo apply_filters( 'wpml_translate_single_string', 'http://www.renthia.com/sv/hyr-ut-ditt-boende', 'Theme-header', "Rent out link"); ?>" class="[ c-btn c-btn--sm c-btn--gamma ] u-txt-normal-weight">
+                                <?php echo apply_filters( 'wpml_translate_single_string', 'Hyr ut ditt boende','Theme-header', "Rent out"); ?>
                             </a>
                         </li>
                     </ul>
@@ -83,15 +83,15 @@
                     <div class="c-site-footer__layout-item">
                         <ul class="[ o-inline-list o-inline-list--spaced ] u-txt-zeta">
 <!--                            <li class="u-txt-xs">-->
-<!--                                <strong class="u-txt-eta">--><?php //echo icl_t('theme-form', "Telephone"); ?><!-- :</strong>-->
+<!--                                <strong class="u-txt-eta">--><?php //echo apply_filters( 'wpml_translate_single_string','theme-form', "Telephone"); ?><!-- :</strong>-->
 <!--                                <a href="tel:--><?php //the_field('telephone_link', 'options'); ?><!--">--><?php //the_field('telephone', 'options'); ?><!--</a>-->
 <!--                            </li>-->
                             <li class="u-txt-xs">
-                                <strong class="u-txt-eta"><?php echo icl_t('Theme-form', "E-mail"); ?> : </strong>
+                                <strong class="u-txt-eta"><?php echo apply_filters( 'wpml_translate_single_string', 'E-post', 'Theme-form', "E-mail"); ?> : </strong>
                                 <a href="mailto:<?php the_field('email', 'options'); ?>"><?php the_field('email', 'options'); ?></a>
                             </li>
                             <li class="u-txt-xs">
-                                <strong class="u-txt-eta"><?php echo icl_t('Theme-form', 'Address'); ?> : </strong>
+                                <strong class="u-txt-eta"><?php echo apply_filters( 'wpml_translate_single_string', 'Adress', 'Theme-form', 'Address'); ?> : </strong>
                                 <span><?php printf( '%s, %s %s', get_field('address', 'options'), get_field('zipcode', 'options'), get_field('city', 'options') ); ?>, <?php _e("Sverige"); ?></span>
                             </li>
                         </ul>

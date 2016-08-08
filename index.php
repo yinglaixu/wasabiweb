@@ -117,7 +117,7 @@ Template Name: Startpage
         <section class="o-section u-bg-eta">
             <div class="o-site-wrap o-site-wrap--padding">
                 <h1 class="u-text-center">
-                    <?php echo icl_t('Theme', 'Our latest apartment'); ?>
+                    <?php _e('Our latest apartment','Theme'); ?>
                 </h1>
                 <ul class="o-grid o-grid--matrix o-grid--equal-height">
                     <?php
@@ -206,7 +206,7 @@ Template Name: Startpage
         <section class="o-section u-bg-eta">
             <div class="o-site-wrap o-site-wrap--padding">
                 <h1 class="u-text-center">
-                    <?php echo icl_t('Theme', 'Our partners'); ?>
+                    <?php echo apply_filters( 'wpml_translate_single_string','Våra samarbetspartners','Theme','Our partners'); ?>
                 </h1>
                 <div class="c-block-slider">
                     <div class="o-site-wrap o-site-wrap--padding">
@@ -258,7 +258,7 @@ Template Name: Startpage
         <section class="o-section">
             <div class="o-site-wrap o-site-wrap--padding">
                 <h1 class="u-text-center">
-                    <?php echo icl_t('Theme', 'Our blogs'); ?>
+                    <?php echo apply_filters( 'wpml_translate_single_string', 'Våran blogg', 'Theme', 'Our blogs'); ?>
                 </h1>
                 <ul class="c-ui-list u-hard--ends [ u-clean--top u-clean--bottom ]">
 <!--                    <li class="u-hard--sides">-->
@@ -404,7 +404,7 @@ Template Name: Startpage
 <!--        <section class="o-section u-bg-eta">-->
 <!--            <div class="o-site-wrap o-site-wrap--padding">-->
 <!--                <h1 class="u-text-center">-->
-<!--                    --><?php //echo icl_t('Theme', 'What says Renthias clients'); ?>
+<!--                    --><?php //echo apply_filters( 'wpml_translate_single_string','Theme', 'What says Renthias clients'); ?>
 <!--                </h1>-->
 <!--                <ul class="[ o-grid o-grid--matrix ] u-soft--top">-->
 <!--                    --><?php

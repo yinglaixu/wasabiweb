@@ -2,6 +2,10 @@
 
 // icl_register_string('Theme', '', get_field('', 'options'), false, 'sv');
 
+// do_action( 'wpml_register_single_string', string $context, string $name, string $value )
+
+//do_action( 'wpml_register_single_string', 'Theme-header', 'Rent out', get_field('t-rent_out', 'options'), false, 'sv');
+
 icl_register_string('Theme-header', 'Searching', get_field('t-searching', 'options'), false, 'sv');
 icl_register_string('Theme-header', 'Searching link', get_field('t-searching-link', 'options'), false, 'sv');
 icl_register_string('Theme-header', 'Rent out', get_field('t-rent_out', 'options'), false, 'sv');
@@ -11,6 +15,8 @@ icl_register_string('Theme-header', 'Support link', get_field('t-support-link', 
 icl_register_string('Theme-header', 'Log in', get_field('t-log_in', 'options'), false, 'sv');
 icl_register_string('Theme-header', 'Sign up', get_field('t-sign_up', 'options'), false, 'sv');
 icl_register_string('Theme-header', 'My pages', get_field('t-my_pages', 'options'), false, 'sv');
+
+
 
 icl_register_string('Theme-form', 'NextBtn', 'Nästa', false, 'sv');
 icl_register_string('Theme-form', 'BackBtn', 'Back', false, 'sv');
@@ -113,8 +119,10 @@ icl_register_string('Theme-contact', 'Responsible Display Assistant', 'Ansvarig 
 
 icl_register_string('Theme', 'Sweden', 'Sverige', false, 'sv');
 icl_register_string('Theme', 'What says Renthias clients', 'Vad säger Renthias användare?', false, 'sv');
+
+do_action('wpml_register_single_string', 'Theme', 'Our latest apartment', 'Senast inkomna bostäder');
 icl_register_string('Theme', 'Our latest apartment', 'Senast inkomna bostäder', false, 'sv');
-icl_register_string('Theme', 'Our partners', ' Våra samarbetspartners', false, 'sv');
+icl_register_string('Theme', 'Our partners', 'Våra samarbetspartners', false, 'sv');
 icl_register_string('Theme', 'Our blogs', 'Våran blogg', false, 'sv');
 icl_register_string('Theme', 'Follow us', 'Föjl oss', false, 'sv');
 icl_register_string('Theme', 'Go back', 'Tillbaka', false, 'sv');
