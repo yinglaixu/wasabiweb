@@ -11,6 +11,7 @@ class Renthia_Property
 	// ACF field keys
 	// TEXT/NUMBER/DATE PICKER/RADIO BUTTON fields (one field)
 	const FK_OVERVIEW_TEXT = 'field_567964acb6694';
+	const FK_COUNTRY = 'field_57a85f430e006';
 	const FK_CURRENCY = 'field_57a08ed836e00';
 	const FK_PRICE = 'field_567964025084b';
 	const FK_LOCATION = 'field_56795baa2b7ab';
@@ -96,6 +97,7 @@ class Renthia_Property
 	private $currency;
 
 	public $mainContent;
+	public $country;
 	public $price;
 	public $location;
 	public $propertyType;
@@ -311,10 +313,10 @@ class Renthia_Property
 
 	public function setOverviewText($country, $city){
 		$this->overviewText = sprintf('%s - %s', $country, $city);
-		if($country === 'Sweden' || $country === 'Sverige'){
+		if($country === 'Sweden' || $country === 'Sverige' || $country === 'Zweden'){
 			$this->currency = 'SEK';
 		}
-		else if($country === 'Netherlands'){
+		else if($country === 'Netherlands' || $country === 'Nederland'){
 			$this->currency = "Eur";
 		}
 		return $this;
@@ -528,6 +530,9 @@ class Renthia_Property
 //		$price = $this->price . $price;
 		update_field(static::FK_PRICE, $this->price, $this->first_id);
 		update_field(static::FK_PRICE, $this->price, $this->second_id);
+
+		update_field(static::FK_COUNTRY, $this->country, $this->first_id);
+		update_field(static::FK_COUNTRY, $this->country, $this->second_id);
 
 		update_field(static::FK_OVERVIEW_TEXT, $this->overviewText, $this->first_id);
 		update_field(static::FK_OVERVIEW_TEXT, $this->overviewText, $this->second_id);

@@ -71,10 +71,10 @@ if ( 'true' === $_POST['rentoutform'] ) {
 			'extras'        => $_POST['rentout']['extras'],
 		];
 
-		if ($vars['country'] === 'Sweden' || $vars['country'] === 'Sverige' ){
+		if ($vars['country'] === 'Sweden' || $vars['country'] === 'Sverige' || $vars['country'] === 'Zweden' ){
 			$mail->addRecipient( get_field('email', 'options') );
 		}
-        else if($vars['country'] === 'Netherlands'){
+        else if($vars['country'] === 'Netherlands' || $vars['country'] === 'Nederland'){
 			$mail->addRecipient( get_field('email-nl', 'options') );
 		}
 		
@@ -97,6 +97,7 @@ if ( 'true' === $_POST['rentoutform'] ) {
 		// Creating and inserting data/images to db/disk
 		$property               = new Renthia_Property();
 		$property->mainContent  = $vars['description'];
+		$property->country      = $vars['country'];
 		$property->price        = $vars['price'];
 		$property->location     = $vars['area'];
 		$property->propertyType = $vars['property_type'];

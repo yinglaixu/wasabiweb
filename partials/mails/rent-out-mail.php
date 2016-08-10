@@ -37,7 +37,7 @@
 			<p><strong>Date to: </strong><?php echo $date_to; ?></p>
 			<?php
 				$currency = "SEK/Month";
-				if ($country === 'Netherlands'){
+				if ($country === 'Netherlands'||$country === 'Nederland'){
 					$currency = "Eur/Month";
 				}
 			?>

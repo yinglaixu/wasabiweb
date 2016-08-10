@@ -18,10 +18,18 @@ Template Name: Page search
     $countries = array_values($countries);
     $cities = get_terms('property-cities');
     $cities = array_values($cities);
+    $language = ICL_LANGUAGE_CODE;
 
     // Get the objects
-    $country = sanitize_text_field( $_GET['country'] ) ?: $countries[1]->slug;
-    $city = sanitize_text_field( $_GET['city'] ) ?: $cities[3]->slug;
+    if($language === 'sv' || $language === 'en'){
+        $country = sanitize_text_field( $_GET['country'] ) ?: $countries[1]->slug;
+        $city = sanitize_text_field( $_GET['city'] ) ?: $cities[3]->slug;
+    }
+    else if($language === 'nl'){
+        $country = sanitize_text_field( $_GET['country'] ) ?: $countries[0]->slug;
+        $city = sanitize_text_field( $_GET['city'] ) ?: $cities[0]->slug;
+    }
+
     $meta_key = null;
 
 

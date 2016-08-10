@@ -1,20 +1,20 @@
 <div class="c-site-footer-wrap">
-<!--     <div class="c-block-slider">
+    <!--     <div class="c-block-slider">
         <div class="o-site-wrap o-site-wrap--padding">
             <div id="block-slider">
                 <div class="js-block-slider__wrap">
                     <ul class="[ o-grid o-grid--center ] js-block-slider__items">
                         <?php
-                        $args = [
-                            'post_type' => 'partner',
-                            'post_status' => 'publish',
-                            'posts_per_page' => -1,
-                            'orderby' => 'menu_order',
-                            'order' => 'asc',
-                        ];
-                        $query = new WP_Query( $args );
-                        if( $query->have_posts() ) : while( $query->have_posts() ) : $query->the_post();
-                        ?>
+    $args = [
+        'post_type' => 'partner',
+        'post_status' => 'publish',
+        'posts_per_page' => -1,
+        'orderby' => 'menu_order',
+        'order' => 'asc',
+    ];
+    $query = new WP_Query( $args );
+    if( $query->have_posts() ) : while( $query->have_posts() ) : $query->the_post();
+        ?>
                             <li class="o-grid__item [ u-1/2 u-1/3@xs-up u-1/5@md-up ]">
                                <div class="c-img-control-wrap u-center-block js-img-control-wrap">
                                     <div class="c-img-control-wrap__inner u-no-bg js-img-control-wrap__inner">
@@ -32,17 +32,17 @@
                                 </div>
                             </li>
                         <?php endwhile; endif; wp_reset_postdata(); ?>
-                    </ul>                    
-                </div>                    
-            </div>    
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="c-divider c-divider--angled">
-            <img class="c-divider__img" src="<?php bloginfo('template_directory'); ?>/build/img/divider-angled-large.svg" alt="">                
-        </div>    
+            <img class="c-divider__img" src="<?php bloginfo('template_directory'); ?>/build/img/divider-angled-large.svg" alt="">
+        </div>
     </div> -->
 
     <footer class="c-site-footer o-bare-links" role="contentinfo">
-<!--        the first part of the footer-->
+        <!--        the first part of the footer-->
         <div class="[ o-site-wrap o-site-wrap--padding ] o-section">
             <div class="o-grid o-grid--matrix o-grid--equal-height">
                 <div class="o-grid__item u-1/6@sm-up ">
@@ -76,43 +76,63 @@
             </div>
         </div>
 
-<!--        the bottom footer with email and address-->
+        <!--        the bottom footer with email and address-->
         <div class="c-site-footer__bottom">
-        	<div class="o-site-wrap o-site-wrap--padding">
+            <div class="o-site-wrap o-site-wrap--padding">
                 <div class="c-site-footer__layout">
                     <div class="c-site-footer__layout-item">
                         <ul class="[ o-inline-list o-inline-list--spaced ] u-txt-zeta">
-<!--                            <li class="u-txt-xs">-->
-<!--                                <strong class="u-txt-eta">--><?php //echo apply_filters( 'wpml_translate_single_string','theme-form', "Telephone"); ?><!-- :</strong>-->
-<!--                                <a href="tel:--><?php //the_field('telephone_link', 'options'); ?><!--">--><?php //the_field('telephone', 'options'); ?><!--</a>-->
-<!--                            </li>-->
+                            <!--                            <li class="u-txt-xs">-->
+                            <!--                                <strong class="u-txt-eta">--><?php //echo apply_filters( 'wpml_translate_single_string','theme-form', "Telephone"); ?><!-- :</strong>-->
+                            <!--                                <a href="tel:--><?php //the_field('telephone_link', 'options'); ?><!--">--><?php //the_field('telephone', 'options'); ?><!--</a>-->
+                            <!--                            </li>-->
                             <li class="u-txt-xs">
                                 <strong class="u-txt-eta"><?php echo apply_filters( 'wpml_translate_single_string', 'E-post', 'Theme-form', "E-mail"); ?> : </strong>
-                                <a href="mailto:<?php the_field('email', 'options'); ?>"><?php the_field('email', 'options'); ?></a>
+                                <?php
+                                $email = get_field('email', 'options');
+                                if (ICL_LANGUAGE_CODE ==='nl'){
+                                    $email = get_field('email-nl', 'options');
+                                }
+                                ?>
+                                <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
                             </li>
                             <li class="u-txt-xs">
                                 <strong class="u-txt-eta"><?php echo apply_filters( 'wpml_translate_single_string', 'Adress', 'Theme-form', 'Address'); ?> : </strong>
-                                <span><?php printf( '%s, %s %s', get_field('address', 'options'), get_field('zipcode', 'options'), get_field('city', 'options') ); ?>, <?php _e("Sverige"); ?></span>
+                                <?php
+                                $address= apply_filters( 'wpml_translate_single_string', 'Hälsigegatan 49', 'Theme-header', 'Address' );
+                                $zipcode= apply_filters( 'wpml_translate_single_string', '11331', 'Theme-header', 'Zipcode' );
+                                $city= apply_filters( 'wpml_translate_single_string', 'Stockholm', 'Theme-header', 'City' );
+                                ?>
+                                <span><?php printf( '%s, %s %s', $address, $zipcode, $city); ?>,
+                                    <?php
+                                    if (ICL_LANGUAGE_CODE ==='sv' || ICL_LANGUAGE_CODE === 'en'){
+                                        _e("Sverige");
+                                    }
+                                    else if(ICL_LANGUAGE_CODE ==='nl'){
+                                        echo "Nederland";
+                                    }
+                                    ?>
+                                </span>
                             </li>
                         </ul>
                     </div>
                     <div class="c-site-footer__layout-item c-site-footer__layout-item--right">
                         <ul class="o-inline-list o-breadcrumbs u-txt-zeta">
                             <li class="u-txt-xs">
-                                Copyright <?php echo date(Y); ?> <?php the_field('company_name', 'options'); ?>
+                                Copyright <?php echo date(Y); ?> <?php echo apply_filters( 'wpml_translate_single_string', 'Renthia AB', 'Theme-header', 'Company name' ); ; ?>
                             </li>
-<!--                            <li class="u-txt-xs" data-breadcrumb="|">Skapad med-->
-<!--                                <a href="http://wasabiweb.se" rel="nofollow" class="c-svg-icon c-svg-icon--heart" target="_blank" title="Webbyrån Wasabi Web i Uppsala producerade denna webbplats">-->
-<!--                                    <svg class="c-svg-icon__svg c-svg-icon--heart__svg">-->
-<!--                                        <use xlink:href="--><?php //bloginfo('template_directory'); ?><!--/build/img/sprite.svg#icon-heart"></use>-->
-<!--                                    </svg>-->
-<!--                                    av wasabiweb-->
-<!--                                </a>-->
-<!--                            </li>-->
+                            <!--                            <li class="u-txt-xs" data-breadcrumb="|">Skapad med-->
+                            <!--                                <a href="http://wasabiweb.se" rel="nofollow" class="c-svg-icon c-svg-icon--heart" target="_blank" title="Webbyrån Wasabi Web i Uppsala producerade denna webbplats">-->
+                            <!--                                    <svg class="c-svg-icon__svg c-svg-icon--heart__svg">-->
+                            <!--                                        <use xlink:href="--><?php //bloginfo('template_directory'); ?><!--/build/img/sprite.svg#icon-heart"></use>-->
+                            <!--                                    </svg>-->
+                            <!--                                    av wasabiweb-->
+                            <!--                                </a>-->
+                            <!--                            </li>-->
                         </ul>
                     </div>
                 </div>
-            </div>                
+            </div>
         </div>
     </footer>
 </div>
@@ -120,18 +140,18 @@
 <div id="modal-dialog">
 </div>
 <div class="c-show-bp" id="showBp">
-</div> 
+</div>
 <div class="c-load-spinner">
 </div>
 
 <?php wp_footer(); ?>
 
 <!--[if IE]>
-    <script src="<?php bloginfo('template_directory'); ?>/build/js/polyfills/ie-placeholder.min.js"></script>
-    <script src="<?php bloginfo('template_directory'); ?>/build/js/polyfills/requestAnimationFrame.min.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/build/js/polyfills/ie-placeholder.min.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/build/js/polyfills/requestAnimationFrame.min.js"></script>
 <![endif]-->
 <!--[if lt IE 9]>
-    <script src="<?php bloginfo('template_directory'); ?>/build/js/polyfills/respond.min.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/build/js/polyfills/respond.min.js"></script>
 <![endif]-->
 
 <!--Start of Zopim Live Chat Script-->
@@ -139,7 +159,7 @@
     window.$zopim||(function(d,s){var z=$zopim=function(c){
         z._.push(c)},$=z.s=
         d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
-        _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute('charset','utf-8');
+    _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute('charset','utf-8');
         $.src='//v2.zopim.com/?3WUC6VbmJhTuP0bMT6M0trCoMbFqHWgU';z.t=+new Date;$.
             type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
 </script>

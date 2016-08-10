@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Page landlord
+Template Name: Page landlord Version 2
 */
 ?>
 <?php /*
@@ -9,6 +9,10 @@ if( ! is_user_logged_in() ) {
     exit;
 }
 */?>
+
+<?php
+    $language = ICL_LANGUAGE_CODE;
+?>
 
 
 <?php get_header(); ?>
@@ -68,7 +72,12 @@ if( ! is_user_logged_in() ) {
                                             <div class="c-styled-select js-select">
                                                 <?php
                                                 $countries = get_field('rentout_countries');
-                                                $country = $country ?: get_field('rentout_countries')[0]['rentout_country'];
+                                                if($language === 'sv'|| $language === 'en'){
+                                                    $country = $country ?: get_field('rentout_countries')[0]['rentout_country'];
+                                                }
+                                                else if($language === 'nl'){
+                                                    $country = $country ?: get_field('rentout_countries')[1]['rentout_country'];
+                                                }
                                                 ?>
                                                 <label class="c-styled-select__label c-styled-select__label--sm">
                                                     <span class="js-styled-select-text">
@@ -163,7 +172,7 @@ if( ! is_user_logged_in() ) {
                                             </label>
                                         </li>
                                         <li>
-                                            <input required type="text" name="rentout[postcode]" id="postcode" class="c-text-input c-text-input--lg" placeholder="75277 Uppsala" value="<?php esc_html_e( $_POST['rentout']['postcode'] ); ?>">
+                                            <input required type="text" name="rentout[postcode]" id="postcode" class="c-text-input c-text-input--lg" placeholder="<?php echo icl_t('Theme-form', 'Postnummer placeholder'); ?>" value="<?php esc_html_e( $_POST['rentout']['postcode'] ); ?>">
                                         </li>
                                     </ul>
                                 </li>
@@ -806,7 +815,7 @@ if( ! is_user_logged_in() ) {
                                             </label>
                                         </li>
                                         <li>
-                                            <input required type="email" name="rentout[email]" id="email" class="c-text-input c-text-input--lg" placeholder="mail@mail.se" value="<?php esc_html_e( $_POST['rentout']['email'] ); ?>">
+                                            <input required type="email" name="rentout[email]" id="email" class="c-text-input c-text-input--lg" placeholder="mail@mail.com" value="<?php esc_html_e( $_POST['rentout']['email'] ); ?>">
                                         </li>
                                     </ul>
                                 </li>
@@ -936,7 +945,35 @@ if( ! is_user_logged_in() ) {
 
 
 
-
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
+<!--<script>-->
+<!---->
+<!--    var pricePerSquaremeter = {-->
+<!--        Centrum:26.32,-->
+<!--        Noord:15.35,-->
+<!--        West:26.12,-->
+<!--        'Nieuw-west':16.16,-->
+<!--        Zuid:22.34,-->
+<!--        Oost:19.41,-->
+<!--        'Zuid-Oost':10.89-->
+<!--    };-->
+<!---->
+<!--    function test(){-->
+<!--        var selectedArea, Volume, value;-->
+<!--        if($('#rentoutCountries option:selected').val() === 'Netherlands' || $('#rentoutCountries option:selected').val() === 'Nederland'){-->
+<!--            selectedArea = $('#chosenArea').html();-->
+<!--            Volume = $('#volume').val();-->
+<!--            var unitPrice = pricePerSquaremeter[selectedArea];-->
+<!--            value = parseInt(unitPrice * Volume);-->
+<!--        }-->
+<!--        console.log(Volume);-->
+<!--        console.log(selectedArea);-->
+<!--        console.log(typeof selectedArea);-->
+<!--        console.log(unitPrice);-->
+<!--        console.log(value)-->
+<!--    }-->
+<!---->
+<!--</script>-->
 
 
 

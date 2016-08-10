@@ -5,9 +5,10 @@ WW.rentOutForm = function ($) {
     var NetherlandsCities = ['Amsterdam'];
 
     // Areas
-    var GoteborgAreas = ['Hisingen','Centrum','Västra-Centrum','Östra-Centrum','Billda','Mölndal','Kungsbacka','Hovås','Partille','Lerum','Härryda','Sävedalen','Angered','Torslanda','Västra-Frölunda','Gunnilse','Kungälv','Långedrag','Kullavik'];
+    var GoteborgAreas = ['Hisingen','Göteborg-Centrum','Västra-Centrum','Östra-Centrum','Billda','Mölndal','Kungsbacka','Hovås','Partille','Lerum','Härryda','Sävedalen','Angered','Torslanda','Västra-Frölunda','Gunnilse','Kungälv','Långedrag','Kullavik'];
     var MalmoAreas = ['Lund','Malmö-Centrum','Malmö-Syd','Malmö-Väst','Malmö-Öst','Malmö-Norr'];
     var StockholmAreas = ['Botkyrka','Danderyd','Ekerö','Haninge','Huddinge','Järfälla','Lidingö','Nacka--Skarpnäck','Norrtälje','Salem','Sigtuna','Sollentuna','Solna','Bromma','Enskede--Årsta','Hägersten--Liljeholmen','Katarina--Sofia','Kista--Spånga','Hässelby--Vällingby','Kungsholmen','Gamla-Stan','Södermalm','Skärholmen--Bredäng','Vasastan--Norrmalm','Farsta','Östermalm--Djurgården','Sundbyberg','Södertälje','Tyresö','Täby','Upplands-Väsby','Upplands-Bro','Vallentuna','Vaxholm','Värmdeö','Österåker'];
+    var AmsterdamAreas = ['Centrum', 'Noord', 'West', 'Nieuw-west', 'Zuid', 'Oost', 'Zuid-Oost'];
 
     //Areas & apartment price
     var ApartmentPrice = {
@@ -50,7 +51,7 @@ WW.rentOutForm = function ($) {
         'Österåker':{room_1:6000,room_2:7200,room_3:9500,room_4:12500,room_5:13500},
         // goteborg
         Hisingen:{room_1:7200,room_2:8500,room_3:10200,room_4:11200,room_5:12500},
-        Centrum:{room_1:8500,room_2:1e4,room_3:12500,room_4:13500,room_5:14500},
+        'Göteborg-Centrum':{room_1:8500,room_2:1e4,room_3:12500,room_4:13500,room_5:14500},
         'Västra-Centrum':{room_1:7500,room_2:8700,room_3:10500,room_4:11700,room_5:13800},
         'Östra-Centrum':{room_1:7500,room_2:8700,room_3:10500,room_4:11700,room_5:13800},
         Billda:{room_1:6500,room_2:7300,room_3:9400,room_4:10400,room_5:11500},
@@ -115,7 +116,7 @@ WW.rentOutForm = function ($) {
         'Värmdeö':{under:17500,above:2e4},
         'Österåker':{under:17500,above:2e4},
         Hisingen:{under:12500,above:14500},
-        Centrum:{under:14500,above:17500},
+        'Göteborg-Centrum':{under:14500,above:17500},
         'Västra-Centrum':{under:14500,above:17500},
         'Östra-Centrum':{under:14500,above:17500},
         Billda:{under:15000,above:18000},
@@ -179,7 +180,7 @@ WW.rentOutForm = function ($) {
         'Värmdeö':3000,
         'Österåker':2500,
         Hisingen:2500,
-        Centrum:3500,
+        'Göteborg-Centrum':3500,
         'Västra-Centrum':3000,
         'Östra-Centrum':3000,
         Billda:2500,
@@ -203,6 +204,16 @@ WW.rentOutForm = function ($) {
         'Malmö-Väst':3000,
         'Malmö-Öst':3000,
         'Malmö-Norr':3000
+    };
+
+    var pricePerSquaremeter = {
+        Centrum:26.32,
+        Noord:15.35,
+        West:26.12,
+        'Nieuw-west':16.16,
+        Zuid:22.34,
+        Oost:19.41,
+        'Zuid-Oost':10.89
     };
 
     var priceInput = $('#price');
@@ -318,7 +329,7 @@ WW.rentOutForm = function ($) {
 
     function filterCities(){
         var selectedCountry = $('#rentoutCountries option:selected').val();
-        if (selectedCountry === 'Sverige' || selectedCountry === 'Sweden'){
+        if (selectedCountry === 'Sverige' || selectedCountry === 'Sweden' || selectedCountry === 'Zweden'){
             $('#rentoutCities option').each(function(){
                 var theString = $(this).val();
                 if(jQuery.inArray(theString, SwedenCities) !== -1){
@@ -332,7 +343,7 @@ WW.rentOutForm = function ($) {
             $('#chosenCity').html('Stockholm');
             $('.currency').html('SEK');
         }
-        else if(selectedCountry === 'Netherlands'){
+        else if(selectedCountry === 'Netherlands' || selectedCountry === 'Nederland'){
             $('#rentoutCities option').each(function(){
                 var theString = $(this).val();
                 if(jQuery.inArray(theString, NetherlandsCities) !== -1){
@@ -347,6 +358,8 @@ WW.rentOutForm = function ($) {
             $('.currency').html('Eur');
 
         }
+        filterAreas();
+        rentPriceCalculate();
     }
 
     function filterAreas(){
@@ -390,6 +403,19 @@ WW.rentOutForm = function ($) {
             $('#rentoutAreas option[value = "Lund"]').prop('selected', true);
             $('#chosenArea').html('Lund');
         }
+        else if(selectedCity === 'Amsterdam'){
+            $('#rentoutAreas option').each(function(){
+                var theString = $(this).val();
+                if(jQuery.inArray(theString, AmsterdamAreas) !== -1){
+                    $(this).show();
+                }
+                else{
+                    $(this).hide();
+                }
+            });
+            $('#rentoutAreas option[value = "Centrum"]').prop('selected', true);
+            $('#chosenArea').html('Centrum');
+        }
     }
 
     function togglePropertyIcons(){
@@ -423,14 +449,16 @@ WW.rentOutForm = function ($) {
 
     function rentPriceCalculate(){
 
-        // if choose netherlands, no suggested price so far
-        if($('#rentoutCountries option:selected').val() === 'Netherlands'){
-            priceInput.val(0);
+        var selectedArea, Volume, value;
+        selectedArea = $('#rentoutAreas :selected').val();
+
+        if($('#rentoutCountries option:selected').val() === 'Netherlands' || $('#rentoutCountries option:selected').val() === 'Nederland'){
+            Volume = $('#volume').val();
+            var unitPrice = pricePerSquaremeter[selectedArea];
+            value = parseInt(unitPrice * Volume);
         }
         else{
-            var selectedArea, selectedRoom, Volume;
-            selectedArea = $('#rentoutAreas :selected').val();
-            selectedRoom = $('#rooms').val();
+            var selectedRoom = $('#rooms').val();
             Volume = $('#volume').val();
             if($('#type-villa').is(':checked')){
                 value = VillaPrice[selectedArea];
@@ -461,15 +489,15 @@ WW.rentOutForm = function ($) {
             else if($('#type-terraced').is(':checked')){
                 value = sharedroomPrice[selectedArea];
             }
+        }
 
-            priceInput.val(value);
+        priceInput.val(value);
 
-            if (priceInput.val().length > 0) {
-                priceNotification.slideDown(200);
-                var valueRethia = Math.round(Number(value) * 1.1);
-                priceOutput.val(valueRethia);
-                $('#priceRenthiaDisplay').html(valueRethia);
-            }
+        if (priceInput.val() > 0) {
+            priceNotification.slideDown(200);
+            var valueRethia = Math.round(Number(value) * 1.1);
+            priceOutput.val(valueRethia);
+            $('#priceRenthiaDisplay').html(valueRethia);
         }
     }
 

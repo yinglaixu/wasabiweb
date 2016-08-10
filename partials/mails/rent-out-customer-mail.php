@@ -111,7 +111,7 @@
                                                         <p><strong>Price:</strong><br>
                                                             <?php
                                                             $currency = "SEK/Month";
-                                                            if ($country === 'Netherlands'){
+                                                            if ($country === 'Netherlands' || $country === 'Nederland'){
                                                                 $currency = "Eur/Month";
                                                             }
                                                             ?>

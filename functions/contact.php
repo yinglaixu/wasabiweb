@@ -17,9 +17,6 @@ if ( isset( $_POST['formname'] ) ) {
 
 		if( ! $mail->rapCheckErrors() ) {
 
-			$mail->addRecipient( get_field( 'email', 'options' ) );
-			$mail->addRecipient( $_POST['apply']['assistant-email']);
-
 			$vars = [
 				'subject'   => 'En besökare har ansökt om bostad',
 				'property'  => $_POST['apply']['address'],
@@ -27,8 +24,18 @@ if ( isset( $_POST['formname'] ) ) {
 				'telephone' => $_POST['apply']['telephone'],
 				'date'   	=> $_POST['apply']['select-date'],
 				'link'		=> $_POST['apply']['link'],
-				'assistant' => $_POST['apply']['assistant-email']
+				'assistant' => $_POST['apply']['assistant-email'],
+				'country'   => $_POST['apply']['country']
 			];
+
+			if ($vars['country'] === 'Sweden' || $vars['country'] === 'Sverige' || $vars['country'] === 'Zweden'){
+				$mail->addRecipient( get_field('email', 'options') );
+			}
+			else if($vars['country'] === 'Netherlands' || $vars['country'] === 'Nederland'){
+				$mail->addRecipient( get_field('email-nl', 'options') );
+			}
+
+			$mail->addRecipient( $_POST['apply']['assistant-email']);
 
 			$customer_mail = new Ww_Contact_Simple_Rap();
 			$customer_mail
@@ -74,10 +81,10 @@ if ( isset( $_POST['formname'] ) ) {
 				'message'   => $_POST['support']['message'],
 			];
 
-			if ($vars['country'] === 'Sweden' || $vars['country'] === 'Sverige' ){
+			if ($vars['country'] === 'Sweden' || $vars['country'] === 'Sverige'|| $vars['country'] === 'Zweden'){
 				$mail->addRecipient( get_field('support_email_sweden', 'options') );
 			}
-			else if($vars['country'] === 'Netherlands'){
+			else if($vars['country'] === 'Netherlands' || $vars['country'] === 'Nederland'){
 				$mail->addRecipient( get_field('support_email_netherlands', 'options') );
 			}
 
