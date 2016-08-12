@@ -7,8 +7,8 @@ WW.rentOutForm = function ($) {
     // Areas
     var GoteborgAreas = ['Hisingen','Göteborg-Centrum','Västra-Centrum','Östra-Centrum','Billda','Mölndal','Kungsbacka','Hovås','Partille','Lerum','Härryda','Sävedalen','Angered','Torslanda','Västra-Frölunda','Gunnilse','Kungälv','Långedrag','Kullavik'];
     var MalmoAreas = ['Lund','Malmö-Centrum','Malmö-Syd','Malmö-Väst','Malmö-Öst','Malmö-Norr'];
-    var StockholmAreas = ['Botkyrka','Danderyd','Ekerö','Haninge','Huddinge','Järfälla','Lidingö','Nacka--Skarpnäck','Norrtälje','Salem','Sigtuna','Sollentuna','Solna','Bromma','Enskede--Årsta','Hägersten--Liljeholmen','Katarina--Sofia','Kista--Spånga','Hässelby--Vällingby','Kungsholmen','Gamla-Stan','Södermalm','Skärholmen--Bredäng','Vasastan--Norrmalm','Farsta','Östermalm--Djurgården','Sundbyberg','Södertälje','Tyresö','Täby','Upplands-Väsby','Upplands-Bro','Vallentuna','Vaxholm','Värmdeö','Österåker'];
-    var AmsterdamAreas = ['Centrum', 'Noord', 'West', 'Nieuw-west', 'Zuid', 'Oost', 'Zuid-Oost'];
+    var StockholmAreas = ['Botkyrka','Danderyd','Ekerö','Haninge','Huddinge','Järfälla','Lidingö','Nacka-Skarpnäck','Norrtälje','Salem','Sigtuna','Sollentuna','Solna','Bromma','Enskede-Årsta','Hägersten-Liljeholmen','Katarina-Sofia','Kista-Spånga','Hässelby-Vällingby','Kungsholmen','Gamla-Stan','Södermalm','Skärholmen-Bredäng','Vasastan-Norrmalm','Farsta','Östermalm-Djurgården','Sundbyberg','Södertälje','Tyresö','Täby','Upplands-Väsby','Upplands-Bro','Vallentuna','Vaxholm','Värmdeö','Österåker'];
+    var AmsterdamAreas = ['Amsterdam-Centrum', 'Amsterdam-Noord', 'Amsterdam-West', 'Amsterdam-Nieuw-west', 'Amsterdam-Zuid', 'Amsterdam-Oost', 'Amsterdam-Zuid-Oost'];
 
     //Areas & apartment price
     var ApartmentPrice = {
@@ -20,25 +20,25 @@ WW.rentOutForm = function ($) {
         Huddinge:{room_1:6300,room_2:8500,room_3:11000,room_4:16000,room_5:17000},
         Järfälla:{room_1:7500,room_2:1e4,room_3:12000,room_4:17000,room_5:18000},
         Lidingö:{room_1:9000,room_2:11500,room_3:12500,room_4:18000,room_5:19000},
-        'Nacka--Skarpnäck':{room_1:8500,room_2:1e4,room_3:13500,room_4:18000,room_5:19000},
+        'Nacka-Skarpnäck':{room_1:8500,room_2:1e4,room_3:13500,room_4:18000,room_5:19000},
         Norrtälje:{room_1:4800,room_2:7000,room_3:9000,room_4:13000,room_5:14000},
         Salem:{room_1:4800,room_2:7000,room_3:9000,room_4:13000,room_5:14000},
         Sigtuna:{room_1:7500,room_2:9000,room_3:1e4,room_4:13000,room_5:14000},
         Sollentuna:{room_1:7500,room_2:1e4,room_3:13500,room_4:16500,room_5:17500},
         Solna:{room_1:9000,room_2:12000,room_3:1e4,room_4:16000,room_5:17000},
         Bromma:{room_1:9000,room_2:12000,room_3:13500,room_4:18500,room_5:19500},
-        'Enskede--Årsta':{room_1:8000,room_2:11000,room_3:13000,room_4:16000,room_5:17000},
-        'Hägersten--Liljeholmen':{room_1:9000,room_2:12000,room_3:1e4,room_4:15000,room_5:16000},
-        'Katarina--Sofia':{room_1:8500,room_2:12000,room_3:15000,room_4:17500,room_5:18500},
-        'Kista--Spånga':{room_1:6500,room_2:11600,room_3:14250,room_4:18900,room_5:19900},
-        'Hässelby--Vällingby':{room_1:6500,room_2:11600,room_3:14250,room_4:18900,room_5:19900},
+        'Enskede-Årsta':{room_1:8000,room_2:11000,room_3:13000,room_4:16000,room_5:17000},
+        'Hägersten-Liljeholmen':{room_1:9000,room_2:12000,room_3:1e4,room_4:15000,room_5:16000},        
+        'Katarina-Sofia':{room_1:8500,room_2:12000,room_3:15000,room_4:17500,room_5:18500},
+        'Kista-Spånga':{room_1:6500,room_2:11600,room_3:14250,room_4:18900,room_5:19900},
+        'Hässelby-Vällingby':{room_1:6500,room_2:11600,room_3:14250,room_4:18900,room_5:19900},
         Kungsholmen:{room_1:11000,room_2:14400,room_3:21000,room_4:24300,room_5:25300},
         'Gamla-Stan':{room_1:9500,room_2:11800,room_3:19500,room_4:22500,room_5:23500},
         'Södermalm':{room_1:11000,room_2:12000,room_3:2e4,room_4:23500,room_5:24500},
-        'Skärholmen--Bredäng':{room_1:6250,room_2:9500,room_3:14200,room_4:17500,room_5:18500},
-        'Vasastan--Norrmalm':{room_1:11000,room_2:14100,room_3:19350,room_4:25000,room_5:26500},
+        'Skärholmen-Bredäng':{room_1:6250,room_2:9500,room_3:14200,room_4:17500,room_5:18500},
+        'Vasastan-Norrmalm':{room_1:11000,room_2:14100,room_3:19350,room_4:25000,room_5:26500},
         Farsta:{room_1:9000,room_2:10250,room_3:13100,room_4:16400,room_5:17400},
-        'Östermalm--Djurgården':{room_1:11000,room_2:14500,room_3:19600,room_4:23500,room_5:24500},
+        'Östermalm-Djurgården':{room_1:11000,room_2:14500,room_3:19600,room_4:23500,room_5:24500},
         Sundbyberg:{room_1:9500,room_2:13250,room_3:12950,room_4:15200,room_5:16200},
         'Södertälje':{room_1:6000,room_2:7200,room_3:9500,room_4:12500,room_5:13500},
         'Tyresö':{room_1:8500,room_2:9500,room_3:12500,room_4:14000,room_5:15000},
@@ -86,25 +86,25 @@ WW.rentOutForm = function ($) {
         Huddinge:{under:17500,above:2e4},
         'Järfälla':{under:17500,above:2e4},
         'Lidingö':{under:19000,above:23000},
-        'Nacka--Skarpnäck':{under:19000,above:23000},
+        'Nacka-Skarpnäck':{under:19000,above:23000},
         'Norrtälje':{under:15000,above:17500},
         Salem:{under:15000,above:17500},
         Sigtuna:{under:15000,above:17500},
         Sollentuna:{under:17500,above:2e4},
         Solna:{under:17500,above:2e4},
         Bromma:{under:17500,above:2e4},
-        'Enskede--Årsta':{under:19000,above:22000},
-        'Hägersten--Liljeholmen':{under:17500,above:2e4},
+        'Enskede-Årsta':{under:19000,above:22000},
+        'Hägersten-Liljeholmen':{under:17500,above:2e4},
         'Katarina, Sofia':{under:19000,above:22000},
-        'Kista--Spånga':{under:17500,above:2e4},
-        'Hässelby--Vällingby':{under:17500,above:2e4}
-        ,Kungsholmen:{under:19000,above:22000},
+        'Kista-Spånga':{under:17500,above:2e4},
+        'Hässelby-Vällingby':{under:17500,above:2e4},
+        Kungsholmen:{under:19000,above:22000},
         'Gamla-Stan':{under:19000,above:22000},
         'Södermalm':{under:19000,above:22000},
-        'Skärholmen--Bredäng':{under:17500,above:2e4},
-        'Vasastan--Norrmalm':{under:19000,above:22000},
+        'Skärholmen-Bredäng':{under:17500,above:2e4},
+        'Vasastan-Norrmalm':{under:19000,above:22000},
         Farsta:{under:17500,above:2e4},
-        'Östermalm--Djurgården':{under:19000,above:22000},
+        'Östermalm-Djurgården':{under:19000,above:22000},
         Sundbyberg:{under:17500,above:2e4},
         'Södertälje':{under:17500,above:2e4},
         'Tyresö':{under:19000,above:22000},
@@ -150,25 +150,25 @@ WW.rentOutForm = function ($) {
         Huddinge:3000,
         'Järfälla':3000,
         'Lidingö':3500,
-        'Nacka--Skarpnäck':3500,
+        'Nacka-Skarpnäck':3500,
         'Norrtälje':2500,
         Salem:2500,
         Sigtuna:2500,
         Sollentuna:3000,
         Solna:3500,
         Bromma:4000,
-        'Enskede--Årsta':4000,
-        'Hägersten--Liljeholmen':3500,
-        'Katarina--Sofia':4000,
-        'Kista--Spånga':3000,
-        'Hässelby--Vällingby':3000,
+        'Enskede-Årsta':4000,
+        'Hägersten-Liljeholmen':3500,
+        'Katarina-Sofia':4000,
+        'Kista-Spånga':3000,
+        'Hässelby-Vällingby':3000,
         Kungsholmen:4000,
         'Gamla-Stan':4000,
         'Södermalm':4000,
-        'Skärholmen--Bredäng':3000,
-        'Vasastan--Norrmalm':4500,
+        'Skärholmen-Bredäng':3000,
+        'Vasastan-Norrmalm':4500,
         Farsta:2500,
-        'Östermalm--Djurgården':4500,
+        'Östermalm-Djurgården':4500,
         Sundbyberg:3500,
         'Södertälje':2500,
         'Tyresö':3000,
@@ -207,13 +207,13 @@ WW.rentOutForm = function ($) {
     };
 
     var pricePerSquaremeter = {
-        Centrum:26.32,
-        Noord:15.35,
-        West:26.12,
+        'Amsterdam-Centrum':26.32,
+        'Amsterdam-Noord':15.35,
+        'Amsterdam-West':26.12,
         'Nieuw-west':16.16,
-        Zuid:22.34,
-        Oost:19.41,
-        'Zuid-Oost':10.89
+        'Amsterdam-Zuid':22.34,
+        'Amsterdam-Oost':19.41,
+        'Amsterdam-Zuid-Oost':10.89
     };
 
     var priceInput = $('#price');
@@ -321,6 +321,7 @@ WW.rentOutForm = function ($) {
         $('#rentoutAreas option').each(function(){
             var myStr = $(this).val();
             myStr = myStr.replace(' ', '-');
+            myStr = myStr.replace(' ', '-');
             myStr = myStr.replace(',', '-');
             $(this).val(myStr);
         });
@@ -413,8 +414,8 @@ WW.rentOutForm = function ($) {
                     $(this).hide();
                 }
             });
-            $('#rentoutAreas option[value = "Centrum"]').prop('selected', true);
-            $('#chosenArea').html('Centrum');
+            $('#rentoutAreas option[value = "Amsterdam-Centrum"]').prop('selected', true);
+            $('#chosenArea').html('Amsterdam Centrum');
         }
     }
 
@@ -451,12 +452,13 @@ WW.rentOutForm = function ($) {
 
         var selectedArea, Volume, value;
         selectedArea = $('#rentoutAreas :selected').val();
-
+        // the calculation for netherlands
         if($('#rentoutCountries option:selected').val() === 'Netherlands' || $('#rentoutCountries option:selected').val() === 'Nederland'){
             Volume = $('#volume').val();
             var unitPrice = pricePerSquaremeter[selectedArea];
             value = parseInt(unitPrice * Volume);
         }
+        // the calculation for sweden
         else{
             var selectedRoom = $('#rooms').val();
             Volume = $('#volume').val();
@@ -483,6 +485,9 @@ WW.rentOutForm = function ($) {
                     value = ApartmentPrice[selectedArea].room_4;
                 }
                 else if(selectedRoom === '5 rooms' || selectedRoom === '5 rum'){
+                    value = ApartmentPrice[selectedArea].room_5;
+                }
+                else{
                     value = ApartmentPrice[selectedArea].room_5;
                 }
             }

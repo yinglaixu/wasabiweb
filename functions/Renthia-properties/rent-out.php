@@ -99,10 +99,11 @@ if ( 'true' === $_POST['rentoutform'] ) {
 		$property->mainContent  = $vars['description'];
 		$property->country      = $vars['country'];
 		$property->price        = $vars['price'];
-		$property->location     = $vars['area'];
 		$property->propertyType = $vars['property_type'];
 		$property->address      = sprintf( '%s, %s', $vars['address'], $vars['postcode'] );
 
+		// replace back all the area's '-' to ' '
+		$property->location     = str_replace('-', ' ', $vars['area'] );
 		// Date save format must be: yyyymmdd
 		$property->dateFrom = str_replace( '-', '', $vars['date_from'] );
 		$property->dateTo   = str_replace( '-', '', $vars['date_to'] );
