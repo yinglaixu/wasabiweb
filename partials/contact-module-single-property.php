@@ -96,15 +96,25 @@ $ass_acc=get_field('associate_account');
 					<?php echo intval( get_field('price') ); ?> <?php echo $currency; ?><?php echo icl_t('Theme-form', 'Month'); ?>
 				</li>
 			</ul>
+			<p class="u-flush--bottom"><strong><?php echo icl_t('Theme-properties', 'Share it with your friends'); ?></strong></p>
+			<?php echo DISPLAY_ULTIMATE_PLUS(); ?>
 		</div>
 		<div class="c-btn c-btn--lg c-btn--full">
 			&nbsp; <?php // placeholder for asbsolutely pos btn ?>
 		</div>
-		<a href="#" class="c-site-module__btn [ c-btn c-btn--alpha c-btn--md c-btn--full ] u-sharp"
-		   data-toggle="modal"
-		   data-target="<?php bloginfo( 'template_directory' );
-		   echo '/partials/modals/book-viewing.php?id=' . $post->ID . '&language=' . ICL_LANGUAGE_CODE; ?>">
-			<?php echo icl_t( 'Theme-properties', 'Apply' ); ?>
-		</a>
+		<?php if( ! get_field('rented_out') ) : ?>
+			<a href="#" class="c-site-module__btn [ c-btn c-btn--alpha c-btn--md c-btn--full ] u-sharp"
+			   data-toggle="modal"
+			   data-target="<?php bloginfo( 'template_directory' );
+			   echo '/partials/modals/book-viewing.php?id=' . $post->ID . '&language=' . ICL_LANGUAGE_CODE; ?>">
+				<?php echo icl_t( 'Theme-properties', 'Apply' ); ?>
+			</a>
+		<?php endif; ?>
+		<?php if( get_field('rented_out') ) : ?>
+			<button disabled class="c-site-module__btn [ c-btn c-btn--beta c-btn--md c-btn--full ] u-sharp">
+				<?php echo icl_t('Theme-properties', 'The property is rented out'); ?>
+			</button>
+		<?php endif; ?>
+
 	</div>
 </aside>

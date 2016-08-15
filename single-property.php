@@ -14,7 +14,7 @@
                         if( have_rows('images') ) : while( have_rows('images') ) : the_row();
                          ?>
                             <div class="c-slider__slide"> 
-                                <div class="c-img-control-wrap js-img-control-wrap">
+                                <div class="c-img-control-wrap js-img-control-wrap" style="margin: auto;">
                                     <div class="c-img-control-wrap__inner js-img-control-wrap__inner">
                                         <?php // 1170x700 ?>
                                         <?php // ensure data-attrs are populated with actual image dimensions. ?>

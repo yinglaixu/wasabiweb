@@ -103,16 +103,16 @@ Template Name: Page search
         $args['meta_key'] = $meta_key;
     }
 
-    if( ! isset( $_GET['include-rentedout'] ) ) {
-
-        $args['meta_query'] = [
-            [
-                'key' => 'rented_out',
-                'value' => 1,
-                'compare' => '!=',
-            ]
-        ];
-    }
+//    if( ! isset( $_GET['include-rentedout'] ) ) {
+//
+//        $args['meta_query'] = [
+//            [
+//                'key' => 'rented_out',
+//                'value' => 1,
+//                'compare' => '!=',
+//            ]
+//        ];
+//    }
 
     $query = new WP_Query( $args );
 

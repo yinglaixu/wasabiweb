@@ -1,11 +1,11 @@
-<article class="o-flag property-front-page<?php if ( get_field('rented_out') ) echo "is-unavailable"; ?>">
+<article class="o-flag property-front-page<?php //if ( get_field('rented_out') ) echo "is-unavailable"; ?>">
 	<div class="u-block@xs-down">
 		<figure class="c-results__img property-front-page_image">
 			<?php
 			// Different links based on where the visitor is on the site
 			$permalink = $GLOBALS['my-property'] === true ? icl_t('Theme-mypages', 'My property link') . '/?id=' . $post->ID : get_the_permalink();
 			?>
-			<a <?php if( ! get_field('rented_out') ) : ?>href="<?php echo $permalink; ?>" <?php endif; ?> class="c-results__img-inner c-img-control-wrap js-img-control-wrap">
+			<a <?php //if( ! get_field('rented_out') ) : ?>href="<?php echo $permalink; ?>" <?php //endif; ?> class="c-results__img-inner c-img-control-wrap js-img-control-wrap">
 				<div class="c-img-control-wrap__inner js-img-control-wrap__inner">
 					<?php // 370x222 ?>
 					<?php // ensure data-attrs are populated with actual image dimensions. ?>
@@ -80,11 +80,11 @@
 					</div>
 				</div>
 			</a>
-			<?php if ( get_field('rented_out') ) : ?>
-				<div class="c-results__banner">
-					<?php echo icl_t('Theme-properties', 'Rented out'); ?>
-				</div>
-			<?php endif; ?>
+<!--			--><?php //if ( get_field('rented_out') ) : ?>
+<!--				<div class="c-results__banner">-->
+<!--					--><?php //echo icl_t('Theme-properties', 'Rented out'); ?>
+<!--				</div>-->
+<!--			--><?php //endif; ?>
 		</figure>
 	</div>
 	<div class="u-block@xs-down property-front-page_bottom">
