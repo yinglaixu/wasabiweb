@@ -49,7 +49,7 @@
 											<?php the_field( 'rooms' ); ?> <?php echo icl_t('Theme-properties', 'Room', 'Rum'); ?>
 										</li>
 										<li data-breadcrumb="|" class = "property-front-page_label">
-											<?php the_field( 'volume' ); ?> kvm
+											<?php the_field( 'volume' ); ?> <?php echo icl_t('Theme', 'kvm', 'kvm'); ?>
 										</li>
 									</ul>
 								</li>
@@ -101,7 +101,7 @@
 							<?php the_field( 'rooms' ); ?> <?php echo icl_t('Theme-properties', 'Room', 'Rum'); ?>
 						</li>
 						<li data-breadcrumb="|" class = "property-front-page_label">
-							<?php the_field( 'volume' ); ?> kvm
+							<?php the_field( 'volume' ); ?> <?php echo icl_t('Theme', 'kvm', 'kvm'); ?>
 						</li>
 					</ul>
 				</li>

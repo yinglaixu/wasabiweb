@@ -133,11 +133,21 @@ if ( 'true' === $_POST['rentoutform'] ) {
 			$customer_mail
 				->addRecipient($vars['email'])
 				->setFrom('noreply-renthia@oshi.wasabiweb.se', 'Renthia.com');
-			
-			$customer_mail
-				->rapEscapeSetVariables($vars)
-				->rapBuildSetBody(get_template_directory() . '/partials/mails/rent-out-customer-mail.php')
-				->setSubject('Renthia.com - Thank you for using Renthia');
+
+			// separate emails to different countries
+			if ($vars['country'] === 'Sweden' || $vars['country'] === 'Sverige' || $vars['country'] === 'Zweden' ){
+				$customer_mail
+					->rapEscapeSetVariables($vars)
+					->rapBuildSetBody(get_template_directory() . '/partials/mails/rent-out-customer-mail.php')
+					->setSubject('Renthia.com - Thank you for using Renthia');
+			}
+			else if($vars['country'] === 'Netherlands' || $vars['country'] === 'Nederland'){
+				$customer_mail
+					->rapEscapeSetVariables($vars)
+					->rapBuildSetBody(get_template_directory() . '/partials/mails/rent-out-customer-mail-dutch.php')
+					->setSubject('Renthia.com - Thank you for using Renthia');
+			}
+
 			$customer_mail->rapSend();
 		} else {
 			// NOT LOGGED IN

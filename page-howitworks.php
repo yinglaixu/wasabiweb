@@ -112,8 +112,14 @@ Template Name: How it works
                         <div class = "o-grid o-grid--bottom">
                             <div class = "o-grid__item u-3/4@sm-up u-text-center">
                                 <h3><?php echo icl_t('Theme-how-it-works', 'contact-text'); ?></br>
-
-                                info@renthia.com</h3>
+                                    <?php
+                                        $email = get_field('email', 'options');
+                                        if(ICL_LANGUAGE_CODE === 'nl'){
+                                            $email = get_field('email-nl', 'options');
+                                        }
+                                    ?>
+                                    <?php echo $email; ?>
+                                </h3>
                             </div>
                             <div class = "o-grid__item u-1/4@sm-up">
                                 <a href="<?php the_field('button-link'); ?>" class="[ c-btn c-btn--xl c-btn--full c-btn--brand ] u-txt-normal-weight">

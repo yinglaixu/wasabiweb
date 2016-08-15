@@ -260,6 +260,9 @@
 }
 .c-svg-icon--rentout-property-type {
     margin-bottom: 0px;
+    &:hover {
+        opacity: 0.7;
+    }
     &__svg {
         $size: 100px;
         @include build-svg($size, left);

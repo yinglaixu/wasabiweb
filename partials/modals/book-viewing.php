@@ -89,6 +89,10 @@ $language_code = sanitize_text_field( $_GET['language'] );
                                 <input type="hidden" name="apply[country]" value="<?php the_field('country', $id); ?>">
                                 <input type="hidden" name="apply[link]" value="<?php echo $permalink; ?>">
                                 <input type="hidden" name="apply[assistant-email]" value="<?php echo $assistantEmail['user_email']; ?>">
+                                <input type="hidden" name="apply[landlord-firstname]" value="<?php the_field('first_name', $id); ?>">
+                                <input type="hidden" name="apply[landlord-surname]" value="<?php the_field('surname', $id); ?>">
+                                <input type="hidden" name="apply[landlord-telephone]" value="<?php the_field('telephone', $id); ?>">
+                                <input type="hidden" name="apply[landlord-email]" value="<?php the_field('email', $id); ?>">
 					            <button type="submit" class="c-btn c-btn--alpha c-btn--lg c-btn--full">
 					                <?php echo icl_t('Theme-properties', 'Apply', false, $parameter, false, $language_code); ?>
 					            </button>

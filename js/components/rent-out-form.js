@@ -210,7 +210,7 @@ WW.rentOutForm = function ($) {
         'Amsterdam-Centrum':26.32,
         'Amsterdam-Noord':15.35,
         'Amsterdam-West':26.12,
-        'Nieuw-west':16.16,
+        'Amsterdam-Nieuw-west':16.16,
         'Amsterdam-Zuid':22.34,
         'Amsterdam-Oost':19.41,
         'Amsterdam-Zuid-Oost':10.89
@@ -312,7 +312,7 @@ WW.rentOutForm = function ($) {
 
                 $(this).val(value);
                 priceOutput.val(valueRethia);
-                $('#priceRenthiaDisplay').html(valueRethia);
+                $('#priceRenthiaDisplay').val(valueRethia);
             }
         });
     }
@@ -502,7 +502,7 @@ WW.rentOutForm = function ($) {
             priceNotification.slideDown(200);
             var valueRethia = Math.round(Number(value) * 1.1);
             priceOutput.val(valueRethia);
-            $('#priceRenthiaDisplay').html(valueRethia);
+            $('#priceRenthiaDisplay').val(valueRethia);
         }
     }
 

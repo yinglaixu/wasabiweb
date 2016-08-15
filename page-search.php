@@ -36,14 +36,24 @@ Template Name: Page search
 
     /////////////////////////
     // temporary setting !!//
-    /////////////////////////   
+    /////////////////////////
+
     if( isset( $_GET['city'] ) ){
         if ($city !== 'stockholm'){
             $paged = set_query_var('$paged', 1);
             $arr_params = array( 'country', 'city', 'sort');
             remove_query_arg( $arr_params );
         }
+
+        if($country === 'sverige' && $city === 'amsterdam'){
+            $city = 'stockholm';
+        }
+        else if($country === 'netherlands' && $city !== 'amsterdam'){
+            $city = 'amsterdam';
+        }
     }
+
+    ///// end of temporary setting
 
     if( isset( $_GET['sort'] ) ){
 
@@ -61,9 +71,9 @@ Template Name: Page search
 
     } else {
         // Standard values
-        $meta_key = 'price';
-        $orderby = 'meta_value_num';
-        $order = 'asc';
+       // $meta_key = 'date';
+        $orderby = 'date';
+        $order = 'desc';
     }
 
 
@@ -223,7 +233,7 @@ Template Name: Page search
                                                     'date-desc' => icl_t('Theme-properties', 'Sort date desc'),
                                                 ];
 
-                                                $get_sort = sanitize_text_field( $_GET['sort'] ) ?: 'price-asc';
+                                                $get_sort = sanitize_text_field( $_GET['sort'] ) ?: 'date-desc';
                                                 ?>
                                                 <label class="c-styled-select__label c-styled-select__label--sm">
                                                     <span class="js-styled-select-text">
@@ -244,7 +254,7 @@ Template Name: Page search
                                     </ul>
                                 </li>
 
-                                <li class="c-filter-bar__item">
+<!--                                <li class="c-filter-bar__item">-->
 <!--                                    <input class="c-styled-input-el u-hidden" onchange="this.form.submit()" type="checkbox" name="include-rentedout"  value="true" id="show-rentout" --><?php //if( isset( $_GET['include-rentedout'] ) ) echo 'checked'; ?><!-->
 <!--                                    <label class="c-styled-input-option c-styled-input-option--radio" for="show-rentout">-->
 <!--                                        <span class="c-styled-input-option__icon c-styled-input-option__icon--checkbox">-->
@@ -254,7 +264,7 @@ Template Name: Page search
 <!--                                        </span>-->
 <!--                                        --><?php //echo icl_t('Theme-properties', 'Include'); ?>
 <!--                                    </label>-->
-                                </li>
+<!--                                </li>-->
 
                             </ul>
                         </div>

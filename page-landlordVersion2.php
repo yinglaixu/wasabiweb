@@ -429,9 +429,15 @@ if( ! is_user_logged_in() ) {
 
                                         <li>
                                             <div class="c-addon-group c-addon-group--inside c-addon-group--inside--right" id = 'priceRenthiaInput'>
-                                                <input required name="rentout[price]" id="priceRenthia" type="number" placeholder="139999" class="c-text-input c-text-input--lg c-addon-group--inside__input" value="<?php esc_html_e( $_POST['rentout']['price'] ); ?>">
+                                                <input required type="hidden" name="rentout[price]" id="priceRenthia" type="number" placeholder="139999" class="c-text-input c-text-input--lg c-addon-group--inside__input" value="<?php esc_html_e( $_POST['rentout']['price'] ); ?>">
                                             </div>
-                                            <strong id = "priceRenthiaDisplay"> </strong> <strong><span class="currency">kr</span><?php echo icl_t('Theme-form', 'Month'); ?></strong>
+
+                                            <div class="c-addon-group c-addon-group--inside c-addon-group--inside--right">
+                                                <input disabled type="number" id = "priceRenthiaDisplay" placeholder="139999" class="c-text-input c-text-input--lg c-addon-group--inside__input" value=" ">
+                                                    <span class="c-addon-group--inside__addon">
+                                                        <span class="currency">kr</span><?php echo icl_t('Theme-form', 'Month'); ?>
+                                                    </span>
+                                            </div>
                                         </li>
                                         <li class="js-price-notification display-none">
                                             <?php the_field( 'add_ten_percent_info_heading' ); ?>
@@ -803,7 +809,7 @@ if( ! is_user_logged_in() ) {
                                             </label>
                                         </li>
                                         <li>
-                                            <input type="tel" name="rentout[telephone]" id="telephone" class="c-text-input c-text-input--lg" placeholder="+46700 00 00 00" value="<?php esc_html_e( $_POST['rentout']['telephone'] ); ?>">
+                                            <input type="tel" name="rentout[telephone]" id="telephone" class="c-text-input c-text-input--lg" placeholder="<?php _e("+46 700 - 00 00 00"); ?>" value="<?php esc_html_e( $_POST['rentout']['telephone'] ); ?>">
                                         </li>
                                     </ul>
                                 </li>
@@ -815,7 +821,7 @@ if( ! is_user_logged_in() ) {
                                             </label>
                                         </li>
                                         <li>
-                                            <input required type="email" name="rentout[email]" id="email" class="c-text-input c-text-input--lg" placeholder="mail@mail.com" value="<?php esc_html_e( $_POST['rentout']['email'] ); ?>">
+                                            <input required type="email" name="rentout[email]" id="email" class="c-text-input c-text-input--lg" placeholder="<?php _e("mail@mail.se"); ?>" value="<?php esc_html_e( $_POST['rentout']['email'] ); ?>">
                                         </li>
                                     </ul>
                                 </li>
@@ -937,9 +943,6 @@ if( ! is_user_logged_in() ) {
         position: fixed;
         top: 0;
         z-index: 99;
-    }
-    #priceRenthiaInput{
-        display: none;
     }
 </style>
 

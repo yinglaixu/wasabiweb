@@ -41,7 +41,17 @@
 							<?php the_field( 'rooms' ); ?> <?php echo icl_t('Theme-properties', 'Room', 'Rum'); ?>
 						</li>
 						<li data-breadcrumb="|">
-							<?php the_field( 'volume' ); ?> kvm
+							<?php the_field( 'volume' ); ?> <?php echo icl_t('Theme', 'kvm', 'kvm'); ?>
+						</li>
+						<li data-breadcrumb="|">
+							<?php
+							$utils = get_field('utilities');
+							$furnished = icl_t('Theme-mycontract', 'Is furnished', 'Möblerad');
+							if( ! in_array('furniture', $utils)){
+								$furnished = icl_t('Theme-mycontract', 'Unfurnished', 'Omöblerad');
+							}
+							echo $furnished;
+							?>
 						</li>
 					</ul>
 				</li>

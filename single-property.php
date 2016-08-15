@@ -106,7 +106,7 @@
                                                 <svg class="c-svg-icon__svg c-svg-icon--property-detail__svg">
                                                     <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-arrows"></use>
                                                 </svg>
-                                                <strong><?php echo icl_t('Theme-properties', 'Size'); ?>:</strong> <?php the_field('volume'); ?>m<sup>2</sup>
+                                                <strong><?php echo icl_t('Theme-properties', 'Size'); ?>:</strong><?php the_field('volume'); ?> m<sup>2</sup>
                                             </div>
                                         </li>
                                     </ul>

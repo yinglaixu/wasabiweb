@@ -18,14 +18,18 @@ if ( isset( $_POST['formname'] ) ) {
 		if( ! $mail->rapCheckErrors() ) {
 
 			$vars = [
-				'subject'   => 'En besökare har ansökt om bostad',
+				'subject'   => 'A tenant is looking for apartments',
 				'property'  => $_POST['apply']['address'],
 				'email'     => $_POST['apply']['email'],
 				'telephone' => $_POST['apply']['telephone'],
 				'date'   	=> $_POST['apply']['select-date'],
 				'link'		=> $_POST['apply']['link'],
 				'assistant' => $_POST['apply']['assistant-email'],
-				'country'   => $_POST['apply']['country']
+				'country'   => $_POST['apply']['country'],
+				'landlordFirstname' => $_POST['apply']['landlord-firstname'],
+				'landlordSurname'   => $_POST['apply']['landlord-surname'],
+				'landlordTelephone' => $_POST['apply']['landlord-telephone'],
+				'landlordEmail'     => $_POST['apply']['landlord-email']
 			];
 
 			if ($vars['country'] === 'Sweden' || $vars['country'] === 'Sverige' || $vars['country'] === 'Zweden'){
@@ -33,6 +37,8 @@ if ( isset( $_POST['formname'] ) ) {
 			}
 			else if($vars['country'] === 'Netherlands' || $vars['country'] === 'Nederland'){
 				$mail->addRecipient( get_field('email-nl', 'options') );
+			}else{
+				$mail->addRecipient( get_field('email', 'options') );
 			}
 
 			$mail->addRecipient( $_POST['apply']['assistant-email']);
@@ -41,10 +47,26 @@ if ( isset( $_POST['formname'] ) ) {
 			$customer_mail
 				->addRecipient( $vars['email'] )
 				->setFrom( 'noreply-renthia@oshi.wasabiweb.se', 'Renthia.com' );
-			$customer_mail
-				->rapEscapeSetVariables($vars)
-				->rapBuildSetBody( get_template_directory() . '/partials/mails/apply-customer-mail.php' )
-				->setSubject('Renthia.com - Thank you for the application');
+
+			// separate different emails to different countries
+			if ($vars['country'] === 'Sweden' || $vars['country'] === 'Sverige' || $vars['country'] === 'Zweden'){
+				$customer_mail
+					->rapEscapeSetVariables($vars)
+					->rapBuildSetBody( get_template_directory() . '/partials/mails/apply-customer-mail.php' )
+					->setSubject('Renthia.com - Thank you for the application');
+			}
+			else if($vars['country'] === 'Netherlands' || $vars['country'] === 'Nederland'){
+				$customer_mail
+					->rapEscapeSetVariables($vars)
+					->rapBuildSetBody( get_template_directory() . '/partials/mails/apply-customer-mail-dutch.php' )
+					->setSubject('Renthia.com - Thank you for the application');
+			}else{
+				$customer_mail
+					->rapEscapeSetVariables($vars)
+					->rapBuildSetBody( get_template_directory() . '/partials/mails/apply-customer-mail.php' )
+					->setSubject('Renthia.com - Thank you for the application');
+			}
+
 			$customer_mail->rapSend();
 
 			$mail
@@ -70,7 +92,7 @@ if ( isset( $_POST['formname'] ) ) {
 		if ( ! $mail->rapCheckErrors() ) {
 
 			$vars = [
-				'subject'   => 'En besökare behöver hjälp',
+				'subject'   => 'A customer needs help',
 				'name'      => $_POST['support']['name'],
 				'email'     => $_POST['support']['email'],
 				'telephone' => $_POST['support']['telephone'],
@@ -81,22 +103,39 @@ if ( isset( $_POST['formname'] ) ) {
 				'message'   => $_POST['support']['message'],
 			];
 
-			if ($vars['country'] === 'Sweden' || $vars['country'] === 'Sverige'|| $vars['country'] === 'Zweden'){
-				$mail->addRecipient( get_field('support_email_sweden', 'options') );
-			}
-			else if($vars['country'] === 'Netherlands' || $vars['country'] === 'Nederland'){
-				$mail->addRecipient( get_field('support_email_netherlands', 'options') );
-			}
-
 			$customer_mail = new Ww_Contact_Simple_Rap();
 			$customer_mail
 				->addRecipient( $vars['email'] )
 				->setFrom( 'noreply-renthia@oshi.wasabiweb.se', 'Renthia.com' );
-			$customer_mail
-				->rapEscapeSetVariables($vars)
-				->rapBuildSetBody( get_template_directory() . '/partials/mails/support-customer-mail.php' )
-				->setSubject('Renthia.com - We will get back to you');
-			$customer_mail->rapSend();
+
+
+
+			if ($vars['country'] === 'Sweden' || $vars['country'] === 'Sverige'|| $vars['country'] === 'Zweden'){
+
+				$mail->addRecipient( get_field('support_email_sweden', 'options') );
+
+				$customer_mail
+					->rapEscapeSetVariables($vars)
+					->rapBuildSetBody( get_template_directory() . '/partials/mails/support-customer-mail.php' )
+					->setSubject('Renthia.com - We will get back to you');
+
+				$customer_mail->rapSend();
+			}
+			else if($vars['country'] === 'Netherlands' || $vars['country'] === 'Nederland'){
+
+				$mail->addRecipient( get_field('support_email_netherlands', 'options') );
+
+				$customer_mail
+					->rapEscapeSetVariables($vars)
+					->rapBuildSetBody( get_template_directory() . '/partials/mails/support-customer-mail-dutch.php' )
+					->setSubject('Renthia.com - We will get back to you');
+
+				$customer_mail->rapSend();
+			}
+
+
+
+
 			$mail
 				->rapEscapeSetVariables( $vars )
 				->rapBuildSetBody( get_template_directory() . '/partials/mails/support-mail.php' )
