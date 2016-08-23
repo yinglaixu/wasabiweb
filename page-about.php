@@ -62,9 +62,11 @@ Template Name: About/Text page
                                             ]
                                         ];
                                         $query = new WP_Query( $args );
-                                        if( $query->have_posts() ) : while( $query->have_posts() ) : $query->the_post();
+                                        $grid = [ 'u-1/2@md-up', 'u-1/4@md-up', 'u-1/4@md-up', 'u-1/4@md-up' ];
+                                        $i = -1;
+                                        if( $query->have_posts() ) : while( $query->have_posts() ) : $query->the_post(); $i++;
                                         ?>
-                                            <li class="o-grid__item u-1/2@xs-up u-1/4@md-up">
+                                            <li class="o-grid__item [ u-1/4@sm-up <?php echo $grid[$i]; ?> ] ">
                                                 <?php get_template_part('partials/about-employee'); ?>
                                             </li>
                                         <?php endwhile; endif; wp_reset_postdata(); ?>

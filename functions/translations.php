@@ -112,7 +112,7 @@ icl_register_string('Theme-properties', 'Sort date desc', 'Datum senaste först'
 icl_register_string('Theme-properties', 'Choose date', 'Välj datum', false, 'sv');
 icl_register_string('Theme-properties', 'Until further notice', 'Tills vidare', false, 'sv');
 icl_register_string('Theme-properties', 'Include', 'Inkludera uthyrda objekt', false, 'sv');
-icl_register_string('Theme-properties', 'The property is rented out', 'Den här bostaden är uthyrt', false, 'sv');
+icl_register_string('Theme-properties', 'The property is rented out', 'Den här bostaden är uthyrd', false, 'sv');
 icl_register_string('Theme-properties', 'Share it with your friends', 'Dela den med dina vänner:', false, 'sv');
 
 icl_register_string('Theme-contact', 'Get contacted', 'Ansök och boka visning', false, 'sv');

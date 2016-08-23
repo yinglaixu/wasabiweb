@@ -168,10 +168,21 @@ if ( 'true' === $_POST['rentoutform'] ) {
 				->addRecipient($vars['email'])
 				->setFrom('noreply-renthia@oshi.wasabiweb.se', 'Renthia.com');
 
-			$customer_mail
-				->rapEscapeSetVariables($vars)
-				->rapBuildSetBody(get_template_directory() . '/partials/mails/rent-out-customer-mail.php')
-				->setSubject('Renthia.com - Thank you for using Renthia');
+			// separate emails to different countries
+			if ($vars['country'] === 'Sweden' || $vars['country'] === 'Sverige' || $vars['country'] === 'Zweden' ){
+				$customer_mail
+					->rapEscapeSetVariables($vars)
+					->rapBuildSetBody(get_template_directory() . '/partials/mails/rent-out-customer-mail.php')
+					->setSubject('Renthia.com - Thank you for using Renthia');
+			}
+			else if($vars['country'] === 'Netherlands' || $vars['country'] === 'Nederland'){
+				$customer_mail
+					->rapEscapeSetVariables($vars)
+					->rapBuildSetBody(get_template_directory() . '/partials/mails/rent-out-customer-mail-dutch.php')
+					->setSubject('Renthia.com - Thank you for using Renthia');
+			}
+
+
 			$customer_mail->rapSend();
 		}
 
@@ -185,7 +196,15 @@ if ( 'true' === $_POST['rentoutform'] ) {
 		if( $user ) {
 			$mail->rapRedirect();
 		} else {
-			wp_safe_redirect( site_url() . '/login' );
+			if(ICL_LANGUAGE_CODE === 'sv'){
+				wp_safe_redirect( site_url() . '/logga-in' );
+			}
+			else if(ICL_LANGUAGE_CODE === 'nl'){
+				wp_safe_redirect( site_url() . '/log-in' );
+			}
+			else{
+				wp_safe_redirect( site_url() . '/login' );
+			}
 			exit;
 		}
 	}

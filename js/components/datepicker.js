@@ -7,7 +7,7 @@ WW.datepicker = function($) {
         });
     }
     if ($('.js-datepicker').length) {
-        $('.js-datepicker').ionDatePicker();        
+        $('.js-datepicker').ionDatePicker();
     }
 
     return this;

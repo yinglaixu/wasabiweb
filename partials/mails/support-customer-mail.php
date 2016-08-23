@@ -49,13 +49,13 @@
 								<table>
 									<tr>
 										<td>
-											<h3>Thank you for contacting us!</h3>
-											<p>We will look into the issue and get back to you as soon as possible.</p>
+											<h3>Tack för att ni kontaktar oss!</h3>
+											<p>Vi kollar på ert ärende och återkommer till er så snart som möjligt.</p>
 											<br>
-											<p>Your message to us:</p>
+											<p>Ditt meddelande till oss:</p>
 											<div class='main'>
 												<p><strong>Problem: </strong><br><?php echo $problem; ?></p>
-												<p><strong>Message: </strong><br><?php echo $message; ?></p>
+												<p><strong>Meddelande: </strong><br><?php echo $message; ?></p>
 											</div>
 										</td>
 									</tr>
@@ -73,8 +73,8 @@
 				<img width="150px" src="http://www.renthia.com/wp-content/uploads/2015/12/Renthia_logo.png">
 			</div>
 			<div class="col-xs-4 col-xs-offset-4">
-				<p>Thanks, have a lovely day.</p>
-				<p><a href="http://www.renthia.com">www.renthia.com</a></p>
+				<p>Tack, ha en underbar dag!</p>
+				<p><a href="http://www.renthia.com/sv">www.renthia.com</a></p>
 			</div>
 		</div>
 	</div>

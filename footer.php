@@ -119,7 +119,7 @@
                     <div class="c-site-footer__layout-item c-site-footer__layout-item--right">
                         <ul class="o-inline-list o-breadcrumbs u-txt-zeta">
                             <li class="u-txt-xs">
-                                Copyright <?php echo date(Y); ?> <?php echo apply_filters( 'wpml_translate_single_string', 'Renthia AB', 'Theme-header', 'Company name' ); ; ?>
+                                Copyright <?php echo date(Y); ?> <?php echo apply_filters( 'wpml_translate_single_string', 'Renthia AB', 'Theme-header', 'Company name' );?>
                             </li>
                             <!--                            <li class="u-txt-xs" data-breadcrumb="|">Skapad med-->
                             <!--                                <a href="http://wasabiweb.se" rel="nofollow" class="c-svg-icon c-svg-icon--heart" target="_blank" title="Webbyrån Wasabi Web i Uppsala producerade denna webbplats">-->

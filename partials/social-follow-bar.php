@@ -6,7 +6,7 @@
     <ul class="o-inline-list social-icon-list">
         <li>
             <div id = 'facebook'>
-                <a href="<?php the_field('facebook', 'options'); ?>" class="c-svg-icon c-svg-icon--social" target="_blank">
+                <a href="<?php echo apply_filters( 'wpml_translate_single_string', 'https://www.facebook.com/Renthia-103414326663128/', 'Theme-header', 'Facebook link' );?>" class="c-svg-icon c-svg-icon--social" target="_blank">
                 </a>
             </div>
         </li>

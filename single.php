@@ -1,5 +1,3 @@
-
-
 <?php get_header(); ?>
 <div class="c-page-content js-page-content" id="mainContent">
     <div class="c-site-header-placeholder">
@@ -17,7 +15,7 @@
                     <li class="u-hard--sides">
                         <div class="o-grid u-text-center">
                             <div class="o-grid__item u-3/4@sm-up u-text-center">
-                                <h1><?php the_title(); ?></h1>
+                                <h1><?php //the_title(); ?></h1>
                                 <?php the_post(); the_content(); ?>
                             </div>
                         </div>
@@ -47,8 +45,6 @@
                                             <h2>
                                                 <?php the_title(); ?>
                                             </h2>
-                                            
-                                           
                                           <?php echo substr(get_the_content(),0,100); ?>
                                           <h4><a href="<?php the_permalink()?>"><?php  echo _e('Read More');?></a></h4>
                                         </div>

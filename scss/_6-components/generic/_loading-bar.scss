@@ -1,0 +1,42 @@
+
+//  simulate the loading process
+//  <div class="loading-bar-container">
+//  <span class="loading-bar-outer-text"></span>
+//  <div class="loading-bar"></div>
+//  </div>
+
+.loading-bar-container {
+	width: 100%;
+	height: 35px;
+	max-width:500px;
+	background: #7CCF89;
+	border-radius: 2px;
+	overflow: hidden;
+	border:2px solid #CCC;
+	text-align:center;
+	display:none;
+	position: fixed;
+	top: 50%;
+	left: 30%;
+	z-index: 10;
+}
+
+.loading-bar {
+	width: 100%;
+	height: 100%;
+	background: #58b063;
+	position: absolute;
+	top: 0;
+	left: -100%;
+	color: #FFF;
+	text-align: center;
+	line-height: 35px;
+	font-size: 1em;
+}
+
+.loading-bar-outer-text {
+	line-height: 35px;
+	color:#FFF;
+	z-index:99;
+	position: relative;
+}

@@ -9032,11 +9032,11 @@
     //! author : Jens Alm : https://github.com/ulmus
 
     var sv = _moment__default.defineLocale('sv', {
-        months : 'januari_februari_mars_april_maj_juni_juli_augusti_september_oktober_november_december'.split('_'),
-        monthsShort : 'jan_feb_mar_apr_maj_jun_jul_aug_sep_okt_nov_dec'.split('_'),
-        weekdays : 'söndag_måndag_tisdag_onsdag_torsdag_fredag_lördag'.split('_'),
-        weekdaysShort : 'sön_mån_tis_ons_tor_fre_lör'.split('_'),
-        weekdaysMin : 'sö_må_ti_on_to_fr_lö'.split('_'),
+        months : 'january_february_mars_april_may_june_july_august_september_october_november_december'.split('_'),
+        monthsShort : 'jan_feb_mar_apr_may_jun_jul_aug_sep_oct_nov_dec'.split('_'),
+        weekdays : 'sunday_monday_tuesday_wednesday_thursday_friday_saturday'.split('_'),
+        weekdaysShort : 'sun_mon_tue_wed_thu_fri_sat'.split('_'),
+        weekdaysMin : 'su_mo_tu_we_th_fr_sa'.split('_'),
         longDateFormat : {
             LT : 'HH:mm',
             LTS : 'HH:mm:ss',

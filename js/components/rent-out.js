@@ -58,9 +58,6 @@ WW.rentOut = function($){
                     e.preventDefault();
                     e.stopPropagation();
                 }
-                else{
-                    $('body').addClass('is-loading');
-                }
             }
         });
     }

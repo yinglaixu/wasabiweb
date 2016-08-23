@@ -40,6 +40,7 @@
             .myPages($)
             .questionAnswer($)
             .scrollToHashLocations($)
+            .loadingBar($)
             .screenResizeEvents($,
                 WW.checkCurrentMediaQuery.init,
                 WW.sticky

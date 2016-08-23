@@ -24,9 +24,13 @@
     padding-bottom: 2rem;
 }
 
-
+.hide-dutch{
+    display: none;
+}
 @media(max-width: 840px){
     .employ-map{
         display: none;
     }
 }
+
+

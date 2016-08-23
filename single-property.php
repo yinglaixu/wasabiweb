@@ -141,6 +141,32 @@
                                                 <?php echo icl_t('Theme-form-options', 'Water'); ?>
                                             </div>
                                         </li>
+<!--                                        only for Netherlands-->
+                                        <li class="o-grid__item u-1/2@xs-up u-1/3@md-up <?php if(ICL_LANGUAGE_CODE !== 'nl') echo 'hide-dutch'; ?>">
+                                            <div class="c-svg-icon c-svg-icon--property-detail <?php if( ! in_array('gas', $utils) ) echo 'is-not-available'; ?>">
+                                                <svg class="c-svg-icon__svg c-svg-icon--property-detail__svg">
+                                                    <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-gas"></use>
+                                                </svg>
+                                                Gas
+                                            </div>
+                                        </li>
+                                        <li class="o-grid__item u-1/2@xs-up u-1/3@md-up  <?php if(ICL_LANGUAGE_CODE !== 'nl') echo 'hide-dutch'; ?>">
+                                            <div class="c-svg-icon c-svg-icon--property-detail <?php if( ! in_array('licht', $utils) ) echo 'is-not-available'; ?>">
+                                                <svg class="c-svg-icon__svg c-svg-icon--property-detail__svg">
+                                                    <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-licht"></use>
+                                                </svg>
+                                                Licht
+                                            </div>
+                                        </li>
+                                        <li class="o-grid__item u-1/2@xs-up u-1/3@md-up  <?php if(ICL_LANGUAGE_CODE !== 'nl') echo 'hide-dutch'; ?>">
+                                            <div class="c-svg-icon c-svg-icon--property-detail <?php if( ! in_array('balkon', $utils) ) echo 'is-not-available'; ?>">
+                                                <svg class="c-svg-icon__svg c-svg-icon--property-detail__svg">
+                                                    <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-balkon"></use>
+                                                </svg>
+                                                Balkon
+                                            </div>
+                                        </li>
+<!--                                        end of only for Netherlands-->
                                         <li class="o-grid__item u-1/2@xs-up u-1/3@md-up">
                                             <div class="c-svg-icon c-svg-icon--property-detail <?php if( ! in_array('dishwasher', $utils) ) echo 'is-not-available'; ?>">
                                                 <svg class="c-svg-icon__svg c-svg-icon--property-detail__svg">

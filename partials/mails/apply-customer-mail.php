@@ -47,13 +47,13 @@
 								<table>
 									<tr>
 										<td>
-											<h3>Thank you for using Renthia!</h3>
-											<p>We have received your application for and will get back to you as soon as possible</p>
+											<h3>Tack för att ni använder Renthia! </h3>
+											<p>Vi har mottagit din ansökan och återkommer till er så snart som möjligt. </p>
 											<br>
-											<p>You have applied for:</p>
+											<p>Ni har ansökt för:</p>
 											<p><?php echo $property; ?></p>
 											<br>
-											<p><strong>Asssistant Email: </strong><?php echo $assistant; ?></p>
+											<p><strong>Bostadens kontaktperson: </strong><?php echo $assistant; ?></p>
 										</td>
 									</tr>
 								</table>
@@ -70,8 +70,8 @@
 				<img width="150px" src="http://www.renthia.com/wp-content/uploads/2015/12/Renthia_logo.png">
 			</div>
 			<div class="col-xs-4 col-xs-offset-4">
-				<p>Thanks, have a lovely day.</p>
-				<p><a href="http://www.renthia.com">www.renthia.com</a></p>
+				<p>Tack, ha en underbar dag! </p>
+				<p><a href="http://www.renthia.com/sv">www.renthia.com</a></p>
 			</div>
 		</div>
 	</div>

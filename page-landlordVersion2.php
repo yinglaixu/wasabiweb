@@ -18,8 +18,10 @@ if( ! is_user_logged_in() ) {
 <?php get_header(); ?>
 
 <div class="c-page-content js-page-content" id="mainContent">
+
     <div class="c-site-header-placeholder">
     </div>
+
 	<main role="main">
             <?php get_template_part('partials/landlord-introduction'); ?>
 
@@ -501,6 +503,41 @@ if( ! is_user_logged_in() ) {
                                         <?php echo icl_t('Theme-form-options', 'Water'); ?>
                                     </label>
                                 </li>
+<!--                                only for Netherlands-->
+                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/4@lg-up <?php if(ICL_LANGUAGE_CODE !== 'nl') echo 'hide-dutch'; ?>">
+                                    <input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[utils][]"  value="gas" id="chk-gas">
+                                    <label class="c-styled-input-option c-styled-input-option--radio" for="chk-gas">
+                                        <span class="c-styled-input-option__icon c-styled-input-option__icon--checkbox">
+                                            <svg class="c-styled-input-option__svg">
+                                                <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-tick-alt"></use>
+                                            </svg>
+                                        </span>
+                                        Gas
+                                    </label>
+                                </li>
+                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/4@lg-up <?php if(ICL_LANGUAGE_CODE !== 'nl') echo 'hide-dutch'; ?>">
+                                    <input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[utils][]"  value="licht" id="chk-licht">
+                                    <label class="c-styled-input-option c-styled-input-option--radio" for="chk-licht">
+                                        <span class="c-styled-input-option__icon c-styled-input-option__icon--checkbox">
+                                            <svg class="c-styled-input-option__svg">
+                                                <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-tick-alt"></use>
+                                            </svg>
+                                        </span>
+                                        Licht
+                                    </label>
+                                </li>
+                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/4@lg-up <?php if(ICL_LANGUAGE_CODE !== 'nl') echo 'hide-dutch'; ?>">
+                                    <input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[utils][]"  value="balkon" id="chk-balkon">
+                                    <label class="c-styled-input-option c-styled-input-option--radio" for="chk-balkon">
+                                        <span class="c-styled-input-option__icon c-styled-input-option__icon--checkbox">
+                                            <svg class="c-styled-input-option__svg">
+                                                <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-tick-alt"></use>
+                                            </svg>
+                                        </span>
+                                        Balkon
+                                    </label>
+                                </li>
+<!--                                end of only for Netherlands-->
                                 <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/4@lg-up">
                                     <input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[utils][]"  value="dishwasher" id="chk-dishwasher">
                                     <label class="c-styled-input-option c-styled-input-option--radio" for="chk-dishwasher">
@@ -836,104 +873,16 @@ if( ! is_user_logged_in() ) {
                     </ul>
                 </div>
             </form>
-<!--            <div class = 'o-grid'>-->
-<!--                <div class = 'o-grid__item u-1/3@sm-up'id = 'confirmedSidebar'>-->
-<!--                    <div class="o-section" style = 'background: white; overflow:auto; height:750px; z-index: 99;'>-->
-<!--                        <ul style = 'list-style: none; '>-->
-<!--                            <li>-->
-<!--                                <h2> Your property </h2>-->
-<!--                                <p>Below here is a summary of your prospect</p>-->
-<!--                            </li>-->
-<!--                            <li>-->
-<!--                                <div class="c-svg-icon c-svg-icon--rentout-title">-->
-<!--                                    <svg class="c-svg-icon__svg c-svg-icon--rentout-title__svg">-->
-<!--                                        <use xlink:href="--><?php //bloginfo('template_directory'); ?><!--/build/img/sprite.svg#icon-rentout-address"></use>-->
-<!--                                    </svg>-->
-<!--                                    <strong>Address</strong>-->
-<!--                                </div>-->
-<!--                                <p id = 'confirmedAddress'></p>-->
-<!--                            </li>-->
-<!--                            <li>-->
-<!--                                <div class="c-svg-icon c-svg-icon--rentout-title">-->
-<!--                                    <svg class="c-svg-icon__svg c-svg-icon--rentout-title__svg">-->
-<!--                                        <use xlink:href="--><?php //bloginfo('template_directory'); ?><!--/build/img/sprite.svg#icon-rentout-property"></use>-->
-<!--                                    </svg>-->
-<!--                                    <strong>Property</strong>-->
-<!--                                </div>-->
-<!--                                <p id = 'confirmedProperty'></p>-->
-<!--                            </li>-->
-<!--                            <li>-->
-<!--                                <div class="c-svg-icon c-svg-icon--rentout-title">-->
-<!--                                    <svg class="c-svg-icon__svg c-svg-icon--rentout-title__svg">-->
-<!--                                        <use xlink:href="--><?php //bloginfo('template_directory'); ?><!--/build/img/sprite.svg#icon-rentout-date"></use>-->
-<!--                                    </svg>-->
-<!--                                    <strong>Rent out date</strong>-->
-<!--                                </div>-->
-<!--                                <p id = 'confirmedRentDate'></p>-->
-<!--                            </li>-->
-<!--                            <li>-->
-<!--                                <div class="c-svg-icon c-svg-icon--rentout-title">-->
-<!--                                    <svg class="c-svg-icon__svg c-svg-icon--rentout-title__svg">-->
-<!--                                        <use xlink:href="--><?php //bloginfo('template_directory'); ?><!--/build/img/sprite.svg#icon-rentout-price"></use>-->
-<!--                                    </svg>-->
-<!--                                    <strong>Rent out price</strong>-->
-<!--                                </div>-->
-<!--                                <p id = 'confirmedRentPrice'></p>-->
-<!--                            </li>-->
-<!--                            <li>-->
-<!--                                <div class="c-svg-icon c-svg-icon--rentout-title">-->
-<!--                                    <svg class="c-svg-icon__svg c-svg-icon--rentout-title__svg">-->
-<!--                                        <use xlink:href="--><?php //bloginfo('template_directory'); ?><!--/build/img/sprite.svg#icon-rentout-use"></use>-->
-<!--                                    </svg>-->
-<!--                                    <strong>Utilities</strong>-->
-<!--                                </div>-->
-<!--                                <p id = 'confirmedUtilities'></p>-->
-<!--                            </li>-->
-<!--                            <li>-->
-<!--                                <div class="c-svg-icon c-svg-icon--rentout-title">-->
-<!--                                    <svg class="c-svg-icon__svg c-svg-icon--rentout-title__svg">-->
-<!--                                        <use xlink:href="--><?php //bloginfo('template_directory'); ?><!--/build/img/sprite.svg#icon-rentout-openhouse"></use>-->
-<!--                                    </svg>-->
-<!--                                    <strong>Open House</strong>-->
-<!--                                </div>-->
-<!--                                <p id = 'confirmedOpenHouse'></p>-->
-<!--                            </li>-->
-<!--                            <li>-->
-<!--                                <div class="c-svg-icon c-svg-icon--rentout-title">-->
-<!--                                    <svg class="c-svg-icon__svg c-svg-icon--rentout-title__svg">-->
-<!--                                        <use xlink:href="--><?php //bloginfo('template_directory'); ?><!--/build/img/sprite.svg#icon-rentout-img"></use>-->
-<!--                                    </svg>-->
-<!--                                    <strong>Uploaded Images</strong>-->
-<!--                                </div>-->
-<!--                                <p> Preview in the left side form.</p>-->
-<!--                            </li>-->
-<!--                            <li>-->
-<!--                                <div class="c-svg-icon c-svg-icon--rentout-title">-->
-<!--                                    <svg class="c-svg-icon__svg c-svg-icon--rentout-title__svg">-->
-<!--                                        <use xlink:href="--><?php //bloginfo('template_directory'); ?><!--/build/img/sprite.svg#icon-rentout-extra"></use>-->
-<!--                                    </svg>-->
-<!--                                    <strong>Additional Services</strong>-->
-<!--                                </div>-->
-<!--                                <p id = 'confirmedExtra'></p>-->
-<!--                            </li>-->
-<!--                        </ul>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
         </section>
 
 	</main>
+
+    <div class="loading-bar-container">
+        <span class="loading-bar-outer-text"></span>
+        <div class="loading-bar"></div>
+    </div>
+
 </div>
-
-
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>-->
-<!--<script>-->
-<!---->
-<!--    function log(){-->
-<!--        $('#rooms').-->
-<!--    }-->
-<!---->
-<!--</script>-->
 
 <?php get_footer(); ?>
 
@@ -944,39 +893,18 @@ if( ! is_user_logged_in() ) {
         top: 0;
         z-index: 99;
     }
+    
+
 </style>
 
 
 
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
-<!--<script>-->
-<!---->
-<!--    var pricePerSquaremeter = {-->
-<!--        Centrum:26.32,-->
-<!--        Noord:15.35,-->
-<!--        West:26.12,-->
-<!--        'Nieuw-west':16.16,-->
-<!--        Zuid:22.34,-->
-<!--        Oost:19.41,-->
-<!--        'Zuid-Oost':10.89-->
-<!--    };-->
-<!---->
-<!--    function test(){-->
-<!--        var selectedArea, Volume, value;-->
-<!--        if($('#rentoutCountries option:selected').val() === 'Netherlands' || $('#rentoutCountries option:selected').val() === 'Nederland'){-->
-<!--            selectedArea = $('#chosenArea').html();-->
-<!--            Volume = $('#volume').val();-->
-<!--            var unitPrice = pricePerSquaremeter[selectedArea];-->
-<!--            value = parseInt(unitPrice * Volume);-->
-<!--        }-->
-<!--        console.log(Volume);-->
-<!--        console.log(selectedArea);-->
-<!--        console.log(typeof selectedArea);-->
-<!--        console.log(unitPrice);-->
-<!--        console.log(value)-->
-<!--    }-->
-<!---->
-<!--</script>-->
+<script>
+    //emulateProcesses();
+
+   
+</script>
 
 
 

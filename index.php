@@ -117,7 +117,7 @@ Template Name: Startpage
         <section class="o-section u-bg-eta">
             <div class="o-site-wrap o-site-wrap--padding">
                 <h1 class="u-text-center">
-                    <?php _e('Our latest apartment','Theme'); ?>
+                    <?php echo icl_t('Theme', 'Our latest apartment'); ?>
                 </h1>
                 <ul class="o-grid o-grid--matrix o-grid--equal-height">
                     <?php
@@ -203,56 +203,56 @@ Template Name: Startpage
         </section>
 
 <!--        our partners-->
-        <section class="o-section u-bg-eta">
-            <div class="o-site-wrap o-site-wrap--padding">
-                <h1 class="u-text-center">
-                    <?php echo apply_filters( 'wpml_translate_single_string','Våra samarbetspartners','Theme','Our partners'); ?>
-                </h1>
-                <div class="c-block-slider">
-                    <div class="o-site-wrap o-site-wrap--padding">
-                        <div id="block-slider">
-                            <div class="js-block-slider__wrap">
-                                <ul class="[ o-grid o-grid--center ] js-block-slider__items">
-                                    <?php
-                                    $args = [
-                                        'post_type' => 'partner',
-                                        'post_status' => 'publish',
-                                        'posts_per_page' => 5,
-                                        'orderby' => 'menu_order',
-                                        'order' => 'asc',
-                                    ];
-                                    $query = new WP_Query( $args );
-                                    if( $query->have_posts() ) : while( $query->have_posts() ) : $query->the_post();
-                                        ?>
-                                        <li class="o-grid__item [ u-1/2 u-1/3@xs-up u-1/5@md-up ]">
-                                            <div class="c-img-control-wrap u-center-block js-img-control-wrap">
-                                                <div class="c-img-control-wrap__inner u-no-bg js-img-control-wrap__inner">
-                                                    <?php // 250x100 ?>
-                                                    <?php // data attrs should be 1/2 actual value for retina ?>
-                                                    <?php $image = get_field('logo'); ?>
-                                                    <img src="<?php bloginfo('template_directory'); ?>/build/img/blank.gif"
-                                                         class="c-img-control-wrap__img js-img-control"
-                                                         data-lg-src="<?php echo $image['sizes']['250x100']; ?>"
-                                                         data-lg-width="<?php echo ($image['sizes']['250x100-width'] / 2); ?>"
-                                                         data-lg-height="<?php echo ($image['sizes']['250x100-height'] / 2); ?>"
-                                                         data-fluid="true"
-                                                         alt="">
-                                                </div>
-                                            </div>
-                                        </li>
-                                    <?php endwhile; endif; wp_reset_postdata(); ?>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                <p class="u-text-center u-soft--top">
-                    <a href="<?php the_field('view-more-partner_link'); ?>" class="[ c-btn c-btn--md c-btn--full c-btn--viewmore ] u-txt-normal-weight">
-                        <?php the_field('view-more-partner_text'); ?>
-                    </a>
-                </p>
-        </section>
+<!--        <section class="o-section u-bg-eta">-->
+<!--            <div class="o-site-wrap o-site-wrap--padding">-->
+<!--                <h1 class="u-text-center">-->
+<!--                    --><?php //echo apply_filters( 'wpml_translate_single_string','Våra samarbetspartners','Theme','Our partners'); ?>
+<!--                </h1>-->
+<!--                <div class="c-block-slider">-->
+<!--                    <div class="o-site-wrap o-site-wrap--padding">-->
+<!--                        <div id="block-slider">-->
+<!--                            <div class="js-block-slider__wrap">-->
+<!--                                <ul class="[ o-grid o-grid--center ] js-block-slider__items">-->
+<!--                                    --><?php
+//                                    $args = [
+//                                        'post_type' => 'partner',
+//                                        'post_status' => 'publish',
+//                                        'posts_per_page' => 5,
+//                                        'orderby' => 'menu_order',
+//                                        'order' => 'asc',
+//                                    ];
+//                                    $query = new WP_Query( $args );
+//                                    if( $query->have_posts() ) : while( $query->have_posts() ) : $query->the_post();
+//                                        ?>
+<!--                                        <li class="o-grid__item [ u-1/2 u-1/3@xs-up u-1/5@md-up ]">-->
+<!--                                            <div class="c-img-control-wrap u-center-block js-img-control-wrap">-->
+<!--                                                <div class="c-img-control-wrap__inner u-no-bg js-img-control-wrap__inner">-->
+<!--                                                    --><?php //// 250x100 ?>
+<!--                                                    --><?php //// data attrs should be 1/2 actual value for retina ?>
+<!--                                                    --><?php //$image = get_field('logo'); ?>
+<!--                                                    <img src="--><?php //bloginfo('template_directory'); ?><!--/build/img/blank.gif"-->
+<!--                                                         class="c-img-control-wrap__img js-img-control"-->
+<!--                                                         data-lg-src="--><?php //echo $image['sizes']['250x100']; ?><!--"-->
+<!--                                                         data-lg-width="--><?php //echo ($image['sizes']['250x100-width'] / 2); ?><!--"-->
+<!--                                                         data-lg-height="--><?php //echo ($image['sizes']['250x100-height'] / 2); ?><!--"-->
+<!--                                                         data-fluid="true"-->
+<!--                                                         alt="">-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </li>-->
+<!--                                    --><?php //endwhile; endif; wp_reset_postdata(); ?>
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--                <p class="u-text-center u-soft--top">-->
+<!--                    <a href="--><?php //the_field('view-more-partner_link'); ?><!--" class="[ c-btn c-btn--md c-btn--full c-btn--viewmore ] u-txt-normal-weight">-->
+<!--                        --><?php //the_field('view-more-partner_text'); ?>
+<!--                    </a>-->
+<!--                </p>-->
+<!--        </section>-->
 
 <!--latest blogs-->
         <section class="o-section">
@@ -270,38 +270,44 @@ Template Name: Startpage
 <!--                        </div>-->
 <!--                    </li>-->
                     <li class="u-hard--sides">
-                        <ul class="[ o-grid o-grid--matrix o-grid--gutter-sm] o-grid--equal-height">
+                        <ul class="[ o-grid o-grid--matrix o-grid--equal-height ] u-soft--top postList">
                             <?php
                             $args = [
                                 'post_type' => 'post',
                                 'post_status' => 'publish',
-                                'posts_per_page' => 4,
-                                'orderby' => 'menu_order',
-                                'order' => 'asc',
+                                'posts_per_page' => -1,
+                                'orderby' => 'date',
+                                'order' => 'desc',
                             ];
                             $query = new WP_Query( $args );
-                            if( $query->have_posts() ) : while( $query->have_posts() ) : $query->the_post();
+                            $grid = [ 'u-1/3@md-up', 'u-1/3@md-up', 'u-1/3@md-up', 'u-1/3@md-up' ];
+                            $i = -1;
+                            if( $query->have_posts() ) : while( $query->have_posts() ) : $query->the_post(); $i++;
+
                                 ?>
-                                <li class="o-grid__item u-1/2@xs-up u-1/3@sm-up u-1/4@md-up">
-                                    <article class="c-partner-module">
-                                        <figure class="c-partner-module__logo">
-                                            <div class="c-img-control-wrap u-center-block js-img-control-wrap">
-                                                <div class="c-img-control-wrap__inner u-no-bg js-img-control-wrap__inner">
-                                                    <?php // 380x140 ?>
-                                                    <?php // data attrs should be 1/2 actual value for retina ?>
-                                                    <?php $image = get_field('post_image'); ?>
+                                <li class="o-grid__item [ u-1/3@sm-up <?php echo $grid[$i]; ?> ]" style="display: none;">
+                                    <article>
+                                        <div class="portfolio-tag-media portfolio-item">
+                                            <a href="<?php the_permalink(); ?>" class="thumb">
+                                                <div class="c-img-control-wrap u-center-block js-img-control-wrap">
+                                                    <div class="c-img-control-wrap__inner u-no-bg js-img-control-wrap__inner">
+                                                        <?php // 380x140 ?>
+                                                        <?php // data attrs should be 1/2 actual value for retina ?>
+                                                        <?php $image = get_field('post_image'); ?>
 
 
-                                                    <?php if($image!=""):?> <img src="<?php echo $image;?>" alt="photo" style="max-height:140px;">  <?php endif;?>
+                                                        <?php if($image!=""):?> <img src="<?php echo $image;?>" alt="photo" >  <?php endif;?>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </figure>
-                                        <div class="c-partner-module__body">
-                                            <p>
-                                                <strong><?php the_title(); ?></strong>
-                                            </p>
-                                            <?php echo substr(strip_tags(get_the_content()),0,100); ?>
-                                            <h4><a href="<?php the_permalink()?>"><?php  echo _e('Read More');?></a></h4>
+                                                <div class="portfolio-hover">
+                                                    <div class="portfolio-description">
+                                                        <h4><?php the_title(); ?></h4>
+                                                        <div>
+                                                            <p><?php echo substr(strip_tags(get_the_content()),0,100); ?></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
                                         </div>
                                     </article>
                                 </li>

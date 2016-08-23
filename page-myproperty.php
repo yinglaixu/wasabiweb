@@ -296,6 +296,41 @@ setup_postdata( $post );
 										<?php echo icl_t('Theme-form-options', 'Water'); ?>
 									</label>
 								</li>
+<!--								only for Netherlands-->
+								<li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/5@lg-up <?php if(ICL_LANGUAGE_CODE !== 'nl') echo 'hide-dutch'; ?>">
+									<input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[utils][]"  value="gas" id="chk-gas" <?php if( in_array( 'gas', $utils ) ) echo 'checked'; ?>>
+									<label class="c-styled-input-option c-styled-input-option--radio" for="chk-gas">
+                                        <span class="c-styled-input-option__icon c-styled-input-option__icon--checkbox">
+                                            <svg class="c-styled-input-option__svg">
+												<use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-tick-alt"></use>
+											</svg>
+                                        </span>
+										Gas
+									</label>
+								</li>
+								<li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/5@lg-up  <?php if(ICL_LANGUAGE_CODE !== 'nl') echo 'hide-dutch'; ?>">
+									<input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[utils][]"  value="licht" id="chk-licht" <?php if( in_array( 'licht', $utils ) ) echo 'checked'; ?>>
+									<label class="c-styled-input-option c-styled-input-option--radio" for="chk-water">
+                                        <span class="c-styled-input-option__icon c-styled-input-option__icon--checkbox">
+                                            <svg class="c-styled-input-option__svg">
+												<use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-tick-alt"></use>
+											</svg>
+                                        </span>
+										Licht
+									</label>
+								</li>
+								<li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/5@lg-up  <?php if(ICL_LANGUAGE_CODE !== 'nl') echo 'hide-dutch'; ?>">
+									<input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[utils][]"  value="balkon" id="chk-balkon" <?php if( in_array( 'balkon', $utils ) ) echo 'checked'; ?>>
+									<label class="c-styled-input-option c-styled-input-option--radio" for="chk-balkon">
+                                        <span class="c-styled-input-option__icon c-styled-input-option__icon--checkbox">
+                                            <svg class="c-styled-input-option__svg">
+												<use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-tick-alt"></use>
+											</svg>
+                                        </span>
+										Balkon
+									</label>
+								</li>
+<!--								end of only for Netherlands-->
 								<li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/5@lg-up">
 									<input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[utils][]"  value="dishwasher" id="chk-dishwasher" <?php if( in_array( 'dishwasher', $utils ) ) echo 'checked'; ?>>
 									<label class="c-styled-input-option c-styled-input-option--radio" for="chk-dishwasher">
