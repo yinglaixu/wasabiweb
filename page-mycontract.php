@@ -77,7 +77,7 @@ setup_postdata( $post );
 
 // prepare the translation of the value to swedish
 $furnished_condition = get_field('contact_furnished_condition');
-$apartment_utilities = get_field('contract_house_rental_utilities');
+$apartment_utilities = get_field('contract_apartment_rental_utilities');
 $house_utilities = get_field('contract_house_rental_utilities');
 
 $property_type = get_field('property_type');
@@ -855,11 +855,13 @@ if ($current_language === 'sv'){
 							<strong><?php the_field('contract_enter_date'); ?></strong>
 							<?php echo icl_t('Theme-mycontract', 'between'); ?> (1)
 							<strong><?php the_field('first_name'); ?></strong>
-							<strong><?php the_field('surname'); ?></strong> -
-							<strong><?php the_field('contract_landlord_personal_number'); ?></strong>
+							<strong><?php the_field('surname'); ?></strong>-<strong><?php the_field('contract_landlord_personal_number'); ?></strong>
 							<?php echo icl_t('Theme-mycontract', 'Landlord and'); ?> (2)
-							<strong><?php the_field('contract_tenant_name'); ?></strong> -
-							<strong><?php the_field('contract_tenant_personal_number'); ?></strong>
+
+							<?php $i = 0; if( have_rows('contract_tenant') ) : while( have_rows('contract_tenant') ) : the_row(); $i++; ?>
+								<strong><?php the_sub_field('name'); ?></strong>-<strong><?php the_sub_field('personal_number'); ?></strong>,
+							<?php endwhile; endif; ?>
+
 							<?php echo icl_t('Theme-mycontract', 'Tenant'); ?>
 							<?php echo icl_t('Theme-mycontract', 'Renthia'); ?>.
 						</p>
@@ -954,7 +956,9 @@ if ($current_language === 'sv'){
 										<?php echo icl_t('Theme-mycontract', 'Invoice received mail'); ?>:
 									</li>
 									<li class="o-grid__item u-1/2">
-										<strong><?php the_field('contract_tenant_email'); ?></strong>
+										<?php $i = 0; if( have_rows('contract_tenant') ) : while( have_rows('contract_tenant') ) : the_row(); $i++; ?>
+											<strong><?php the_sub_field('email'); ?></strong>
+										<?php endwhile; endif; ?>
 									</li>
 									<li><p></p></li>
 									<li class="o-grid__item">
@@ -1023,7 +1027,7 @@ if ($current_language === 'sv'){
 								<?php echo icl_t('Theme-mycontract', 'The rental will include'); ?>:
 								<strong>
 									<?php
-									if ($property_type == 'villa') {
+									if ($property_type === 'villa') {
 
 										$length = count($house_utilities) - 1;
 										if ($current_language === 'en'){
@@ -1046,7 +1050,7 @@ if ($current_language === 'sv'){
 										}
 
 									}
-									else if ($property_type = 'apartment'){
+									else if ($property_type === 'apartment'){
 										$length = count($apartment_utilities) - 1;
 										if ($current_language === 'en'){
 											foreach ($apartment_utilities as $util){
@@ -1106,7 +1110,10 @@ if ($current_language === 'sv'){
 						<ul class="o-bare-list o-bare-list--spaced-sixth">
 						<h3><?php echo $subtitle_8; ?></h3>
 						<li>
-							- <?php echo icl_t('Theme-mycontract', 'The rent shall be occupied'); ?>: <strong><?php the_field('contract_tenant_name'); ?></strong>
+							- <?php echo icl_t('Theme-mycontract', 'The rent shall be occupied'); ?>: <br/>
+							<?php $i = 0; if( have_rows('contract_tenant') ) : while( have_rows('contract_tenant') ) : the_row(); $i++; ?>
+								<strong><?php the_sub_field('name'); ?></strong><br/>
+							<?php endwhile; endif; ?>
 						</li>
 						<?php echo $tenure; ?>
 						</ul>
