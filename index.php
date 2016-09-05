@@ -87,23 +87,34 @@ Template Name: Startpage
                                     <li class="c-stages__title u-txt-lg" style = "padding-top: 20px;">
                                         <?php the_sub_field('heading'); ?>
                                     </li>
+                                    <li>
+                                        <?php the_sub_field('text'); ?>
+                                    </li>
                                 </ul>
                             </li>
                         <?php endwhile; endif; ?>
                     </ol>
                     <div class="c-banner__howitworks">
-                    <ul class="o-grid o-grid--matrix">
-                        <li class="o-grid__item">
-                            <a href="<?php the_field('procedure-button_1_link'); ?>" class="[ c-btn c-btn--xl c-btn--full c-btn--howitworks1 ] u-txt-normal-weight">
-                                <?php the_field('procedure-button_1_text'); ?>
-                            </a>
-                        </li>
-                        <li class="o-grid__item">
-                            <a href="<?php the_field('procedure-button_2_link'); ?>" class = "[ c-btn c-btn--xl c-btn--full c-btn--howitworks2 ] u-txt-normal-weight" >
-                                <?php the_field('procedure-button_2_text'); ?>
-                            </a>
-                        </li>
-                    </ul>
+                        <ul class="o-grid o-grid--matrix">
+                            <li class="o-grid__item">
+                                <a href="<?php the_field('procedure-button_1_link'); ?>" class="[ c-btn c-btn--xl c-btn--full c-btn--howitworks1 ] u-txt-normal-weight">
+                                    <?php the_field('procedure-button_1_text'); ?>
+                                </a>
+                            </li>
+                            <li class="o-grid__item u-1/2@xs-up">
+                                <a href="<?php the_field('procedure-button_2_link'); ?>" class = "[ c-btn c-btn--xl c-btn--full c-btn--howitworks2 ] u-txt-normal-weight" >
+                                    <?php the_field('procedure-button_2_text'); ?>
+                                </a>
+                            </li>
+                            <li class="o-grid__item u-1/2@xs-up">
+                                <a href="<?php the_field('procedure-button_3_link'); ?>" class = "[ c-btn c-btn--xl c-btn--full c-btn--howitworks2 ] u-txt-normal-weight" >
+                                    <?php the_field('procedure-button_3_text'); ?>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="u-text-center">
+                        <p><?php the_field('procedure-complementing_text'); ?></p>
                     </div>
                 </div>
             </div>

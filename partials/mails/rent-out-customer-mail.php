@@ -52,6 +52,10 @@
                                                 Om ni vill ändra något i er annons, vänligen logga in via ert konto.
                                                 Där finner ni även ert kontrakt, inventarielista och besiktningsdokument.
                                             </p>
+                                            <p>Du vet väll att vi även erbjuder er en service tjänst. Vi har förhandlat fram dem bästa priserna inom städning och flytthjälp.</br>
+                                                Klicka på länken nedan och fyll i formuläret så kontaktar våra service partner er inom 24 timmar.
+                                            </p>
+                                            <p><a href="http://www.renthia.com/about-renthia/service/">Service Partner</a></p>
                                             <br>
                                         </td>
                                     </tr>

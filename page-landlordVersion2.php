@@ -480,18 +480,19 @@ if( ! is_user_logged_in() ) {
                             </h2>
                             <p><?php the_field('utilities-text'); ?></p>
                             <ul class="o-grid o-grid--matrix">
-                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/4@lg-up">
-                                    <input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[utils][]"  value="heat" id="chk-heat">
-                                    <label class="c-styled-input-option c-styled-input-option--radio" for="chk-heat">
+<!--                                only for Netherlands-->
+                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/4@lg-up <?php if(ICL_LANGUAGE_CODE !== 'nl') echo 'hide-dutch'; ?>">
+                                    <input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[utils][]"  value="wgl" id="chk-wgl">
+                                    <label class="c-styled-input-option c-styled-input-option--radio" for="chk-wgl">
                                         <span class="c-styled-input-option__icon c-styled-input-option__icon--checkbox">
                                             <svg class="c-styled-input-option__svg">
                                                 <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-tick-alt"></use>
                                             </svg>
                                         </span>
-                                        <?php echo icl_t('Theme-form-options', 'Heat'); ?>
+                                        Water/Gas/Licht
                                     </label>
-
                                 </li>
+<!--                                end of only for Netherlands-->
                                 <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/4@lg-up">
                                     <input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[utils][]"  value="water" id="chk-water">
                                     <label class="c-styled-input-option c-styled-input-option--radio" for="chk-water">
@@ -538,6 +539,17 @@ if( ! is_user_logged_in() ) {
                                     </label>
                                 </li>
 <!--                                end of only for Netherlands-->
+                                <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/4@lg-up">
+                                    <input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[utils][]"  value="heat" id="chk-heat">
+                                    <label class="c-styled-input-option c-styled-input-option--radio" for="chk-heat">
+                                        <span class="c-styled-input-option__icon c-styled-input-option__icon--checkbox">
+                                            <svg class="c-styled-input-option__svg">
+                                                <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-tick-alt"></use>
+                                            </svg>
+                                        </span>
+                                        <?php echo icl_t('Theme-form-options', 'Heat'); ?>
+                                    </label>
+                                </li>
                                 <li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/4@lg-up">
                                     <input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[utils][]"  value="dishwasher" id="chk-dishwasher">
                                     <label class="c-styled-input-option c-styled-input-option--radio" for="chk-dishwasher">

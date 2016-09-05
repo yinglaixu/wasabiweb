@@ -274,17 +274,19 @@ setup_postdata( $post );
 						<li class="u-hard--sides">
 							<ul class="o-grid o-grid--matrix">
 								<?php $utils = get_field('utilities'); ?>
-								<li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/5@lg-up">
-									<input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[utils][]"  value="heat" id="chk-heat" <?php if( in_array( 'heat', $utils ) ) echo 'checked'; ?>>
-									<label class="c-styled-input-option c-styled-input-option--radio" for="chk-heat">
+<!--								only for Netherlands-->
+								<li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/5@lg-up <?php if(ICL_LANGUAGE_CODE !== 'nl') echo 'hide-dutch'; ?>">
+									<input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[utils][]"  value="gas" id="chk-wgl" <?php if( in_array( 'watergaslicht', $utils ) ) echo 'checked'; ?>>
+									<label class="c-styled-input-option c-styled-input-option--radio" for="chk-wgl">
                                         <span class="c-styled-input-option__icon c-styled-input-option__icon--checkbox">
                                             <svg class="c-styled-input-option__svg">
-	                                            <use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-tick-alt"></use>
-                                            </svg>
+												<use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-tick-alt"></use>
+											</svg>
                                         </span>
-										<?php echo icl_t('Theme-form-options', 'Heat'); ?>
+										Water/Gas/Licht
 									</label>
 								</li>
+<!--								end of only for Netherlands-->
 								<li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/5@lg-up">
 									<input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[utils][]"  value="water" id="chk-water" <?php if( in_array( 'water', $utils ) ) echo 'checked'; ?>>
 									<label class="c-styled-input-option c-styled-input-option--radio" for="chk-water">
@@ -331,6 +333,17 @@ setup_postdata( $post );
 									</label>
 								</li>
 <!--								end of only for Netherlands-->
+								<li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/5@lg-up">
+									<input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[utils][]"  value="heat" id="chk-heat" <?php if( in_array( 'heat', $utils ) ) echo 'checked'; ?>>
+									<label class="c-styled-input-option c-styled-input-option--radio" for="chk-heat">
+                                        <span class="c-styled-input-option__icon c-styled-input-option__icon--checkbox">
+                                            <svg class="c-styled-input-option__svg">
+												<use xlink:href="<?php bloginfo('template_directory'); ?>/build/img/sprite.svg#icon-tick-alt"></use>
+											</svg>
+                                        </span>
+										<?php echo icl_t('Theme-form-options', 'Heat'); ?>
+									</label>
+								</li>
 								<li class="o-grid__item u-1/2 u-1/3@xs-up u-1/4@sm-up u-1/5@lg-up">
 									<input class="c-styled-input-el u-hidden" type="checkbox" name="rentout[utils][]"  value="dishwasher" id="chk-dishwasher" <?php if( in_array( 'dishwasher', $utils ) ) echo 'checked'; ?>>
 									<label class="c-styled-input-option c-styled-input-option--radio" for="chk-dishwasher">
