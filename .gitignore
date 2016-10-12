@@ -1,2 +1,8 @@
 
 *.scssc
+
+.DS_Store
+
+*.svg
+
+*.scss
